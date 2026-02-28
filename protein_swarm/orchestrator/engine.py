@@ -6,8 +6,11 @@ agent work to Modal (or runs locally in non-Modal mode).
 from __future__ import annotations
 
 import json
+import logging
 import math
 from pathlib import Path
+
+import numpy as np
 
 from protein_swarm.agents.constraint_guard import validate_proposals
 from protein_swarm.agents.memory_curator import curate_memory
@@ -15,6 +18,12 @@ from protein_swarm.agents.objective_compiler import compile_objective
 from protein_swarm.agents.residue_agent import run_residue_agent_local
 from protein_swarm.config import SwarmConfig, FoldingConfig, MemoryConfig
 from protein_swarm.folding.fold_engine import DummyFoldEngine, FoldEngine
+from protein_swarm.folding.goal_eval import evaluate_design_goal
+from protein_swarm.folding.structure_analysis import (
+    build_structure_context,
+    compute_distance_matrix_from_pdb,
+    dssp_secondary_structure,
+)
 from protein_swarm.memory.memory_store import MemoryStore
 from protein_swarm.orchestrator.decision import should_accept, should_stop
 from protein_swarm.orchestrator.mutation_merge import merge_mutations
@@ -22,9 +31,12 @@ from protein_swarm.schemas import (
     AgentInput,
     DesignResult,
     FoldResult,
+    GoalEvaluation,
+    GlobalMemoryStats,
     IterationRecord,
     MutationProposal,
     ObjectiveSpec,
+    StructureContext,
 )
 from protein_swarm.utils.logging import (
     log_debug,
@@ -35,6 +47,8 @@ from protein_swarm.utils.logging import (
     log_proposals_table,
     log_score_delta,
 )
+
+logger = logging.getLogger(__name__)
 
 
 def _rosetta_to_physics_score(
@@ -55,11 +69,13 @@ class DesignEngine:
         folding_config: FoldingConfig | None = None,
         memory_config: MemoryConfig | None = None,
         fold_engine: FoldEngine | None = None,
+        dump_prompts: bool = False,
     ) -> None:
         self._cfg = swarm_config or SwarmConfig()
         self._fold_cfg = folding_config or FoldingConfig()
         self._mem_cfg = memory_config or MemoryConfig()
         self._fold_engine: FoldEngine = fold_engine or self._make_fold_engine()
+        self._dump_prompts = dump_prompts
 
     def _make_fold_engine(self) -> FoldEngine:
         backend = self._cfg.fold_backend
@@ -76,7 +92,6 @@ class DesignEngine:
     # ── throttling helpers ───────────────────────────────────────────────
 
     def _effective_mutation_rate(self, consecutive_rejects: int) -> float:
-        """Decay mutation rate after repeated rejections."""
         cfg = self._cfg
         if consecutive_rejects < cfg.reject_throttle_after:
             return cfg.mutation_rate
@@ -84,12 +99,65 @@ class DesignEngine:
         return max(rate, cfg.min_mutation_rate)
 
     def _effective_conf_threshold(self, consecutive_rejects: int) -> float:
-        """Raise confidence bar after repeated rejections."""
         cfg = self._cfg
         if consecutive_rejects < cfg.reject_throttle_after:
             return cfg.confidence_threshold
         threshold = cfg.confidence_threshold + cfg.reject_conf_bump * consecutive_rejects
         return min(threshold, 0.99)
+
+    # ── structure context computation (once per iteration) ───────────────
+
+    def _compute_iteration_context(
+        self,
+        sequence: str,
+        objective: ObjectiveSpec,
+        last_pdb_path: str | None,
+    ) -> tuple[
+        list[StructureContext],
+        dict[int, str] | None,
+        np.ndarray | None,
+        list[tuple[int, str]] | None,
+        GoalEvaluation,
+    ]:
+        """Pre-compute structural context + goal evaluation for all positions.
+
+        Returns per-position StructureContext list, dssp_map, dist_matrix,
+        ca_positions, and GoalEvaluation.
+        """
+        n = len(sequence)
+        dist_matrix: np.ndarray | None = None
+        ca_positions: list[tuple[int, str]] | None = None
+        dssp_map: dict[int, str] | None = None
+
+        if last_pdb_path and Path(last_pdb_path).exists():
+            try:
+                ca_positions, dist_matrix = compute_distance_matrix_from_pdb(last_pdb_path)
+            except Exception as e:
+                logger.warning("Distance matrix computation failed: %s", e)
+                dist_matrix = None
+                ca_positions = None
+
+            try:
+                dssp_map = dssp_secondary_structure(last_pdb_path)
+                if not dssp_map:
+                    dssp_map = None
+            except Exception as e:
+                logger.warning("DSSP computation failed: %s", e)
+                dssp_map = None
+
+        contexts: list[StructureContext] = []
+        for pos in range(n):
+            ctx = build_structure_context(
+                sequence, pos, last_pdb_path,
+                dist_matrix=dist_matrix,
+                ca_positions=ca_positions,
+                dssp_map=dssp_map,
+            )
+            contexts.append(ctx)
+
+        goal_eval = evaluate_design_goal(sequence, objective, dssp_map)
+
+        return contexts, dssp_map, dist_matrix, ca_positions, goal_eval
 
     # ── main loop ────────────────────────────────────────────────────────
 
@@ -109,10 +177,12 @@ class DesignEngine:
         score_history: list[float] = []
         history: list[IterationRecord] = []
         consecutive_rejects = 0
+        last_pdb_path: str | None = None
 
         initial_fold = self._fold(current_seq, objective, output_dir, -1)
         best_score = initial_fold.combined_score
         score_history.append(best_score)
+        last_pdb_path = initial_fold.pdb_path
 
         for iteration in range(self._cfg.max_iterations):
             log_iteration_header(iteration, self._cfg.max_iterations)
@@ -127,9 +197,24 @@ class DesignEngine:
                     f"eff_conf_threshold={eff_conf_threshold:.4f}"
                 )
 
+            # pre-compute structure + goal context once per iteration
+            structure_contexts, dssp_map, _, _, goal_eval = (
+                self._compute_iteration_context(current_seq, objective, last_pdb_path)
+            )
+            global_stats = memory.get_global_stats(last_k=5)
+
+            if self._cfg.debug:
+                log_debug(
+                    f"Goal: {goal_eval.goal_score:.1f}/100 ({goal_eval.rating})  "
+                    f"Energy trend: {global_stats.energy_trend}"
+                )
+
             proposals = self._run_agents(
                 current_seq, memory, objective, iteration,
                 mutation_rate_override=eff_mutation_rate,
+                structure_contexts=structure_contexts,
+                global_stats=global_stats,
+                goal_eval=goal_eval,
             )
 
             proposals = validate_proposals(proposals, objective, len(current_seq))
@@ -160,13 +245,44 @@ class DesignEngine:
             )
             history.append(record)
 
+            num_mutations = len(applied)
+            reason_str = f"{'ACCEPTED' if accepted else 'REJECTED'} delta={score_delta:+.4f}"
+
+            memory.record_iteration_result(
+                iteration=iteration,
+                accepted=accepted,
+                combined_score=fold_result.combined_score,
+                objective_score=fold_result.objective_score,
+                physics_score=fold_result.energy,
+                rosetta_total_score=fold_result.rosetta_total_score,
+                design_goal_score=goal_eval.goal_score if goal_eval else 0.0,
+                num_mutations=num_mutations,
+                sequence=candidate_seq,
+                reason=reason_str,
+            )
+
             if accepted:
                 current_seq = candidate_seq
                 best_score = fold_result.combined_score
-                memory.record_success(applied)
+                last_pdb_path = fold_result.pdb_path
+                memory.record_success(
+                    applied, iteration=iteration,
+                    combined_score=fold_result.combined_score,
+                    objective_score=fold_result.objective_score,
+                    physics_score=fold_result.energy,
+                    rosetta_total_score=fold_result.rosetta_total_score,
+                    design_goal_score=goal_eval.goal_score if goal_eval else None,
+                )
                 consecutive_rejects = 0
             else:
-                memory.record_failure(applied)
+                memory.record_failure(
+                    applied, iteration=iteration,
+                    combined_score=fold_result.combined_score,
+                    objective_score=fold_result.objective_score,
+                    physics_score=fold_result.energy,
+                    rosetta_total_score=fold_result.rosetta_total_score,
+                    design_goal_score=goal_eval.goal_score if goal_eval else None,
+                )
                 consecutive_rejects += 1
 
             score_history.append(best_score)
@@ -204,15 +320,24 @@ class DesignEngine:
         iteration: int,
         *,
         mutation_rate_override: float | None = None,
+        structure_contexts: list[StructureContext] | None = None,
+        global_stats: GlobalMemoryStats | None = None,
+        goal_eval: GoalEvaluation | None = None,
     ) -> list[MutationProposal]:
         if self._cfg.modal_parallel:
             return self._run_agents_modal(
                 sequence, memory, objective, iteration,
                 mutation_rate_override=mutation_rate_override,
+                structure_contexts=structure_contexts,
+                global_stats=global_stats,
+                goal_eval=goal_eval,
             )
         return self._run_agents_local(
-            sequence, memory, objective,
+            sequence, memory, objective, iteration,
             mutation_rate_override=mutation_rate_override,
+            structure_contexts=structure_contexts,
+            global_stats=global_stats,
+            goal_eval=goal_eval,
         )
 
     def _run_agents_local(
@@ -220,14 +345,21 @@ class DesignEngine:
         sequence: str,
         memory: MemoryStore,
         objective: ObjectiveSpec,
+        iteration: int,
         *,
         mutation_rate_override: float | None = None,
+        structure_contexts: list[StructureContext] | None = None,
+        global_stats: GlobalMemoryStats | None = None,
+        goal_eval: GoalEvaluation | None = None,
     ) -> list[MutationProposal]:
         proposals: list[MutationProposal] = []
         for pos in range(len(sequence)):
             agent_input = self._build_agent_input(
-                sequence, pos, memory, objective,
+                sequence, pos, memory, objective, iteration,
                 mutation_rate_override=mutation_rate_override,
+                structure_context=structure_contexts[pos] if structure_contexts else None,
+                global_stats=global_stats,
+                goal_eval=goal_eval,
             )
             proposal = run_residue_agent_local(agent_input)
             proposals.append(proposal)
@@ -241,6 +373,9 @@ class DesignEngine:
         iteration: int,
         *,
         mutation_rate_override: float | None = None,
+        structure_contexts: list[StructureContext] | None = None,
+        global_stats: GlobalMemoryStats | None = None,
+        goal_eval: GoalEvaluation | None = None,
     ) -> list[MutationProposal]:
         import modal
 
@@ -249,8 +384,11 @@ class DesignEngine:
         inputs: list[AgentInput] = []
         for pos in range(len(sequence)):
             inputs.append(self._build_agent_input(
-                sequence, pos, memory, objective,
+                sequence, pos, memory, objective, iteration,
                 mutation_rate_override=mutation_rate_override,
+                structure_context=structure_contexts[pos] if structure_contexts else None,
+                global_stats=global_stats,
+                goal_eval=goal_eval,
             ))
 
         input_dicts = [inp.model_dump() for inp in inputs]
@@ -274,10 +412,20 @@ class DesignEngine:
         position: int,
         memory: MemoryStore,
         objective: ObjectiveSpec,
+        iteration: int,
         *,
         mutation_rate_override: float | None = None,
+        structure_context: StructureContext | None = None,
+        global_stats: GlobalMemoryStats | None = None,
+        goal_eval: GoalEvaluation | None = None,
     ) -> AgentInput:
         llm = self._cfg.llm
+
+        pos_history = memory.get_position_history(position, last_k=10)
+        nbr_history = memory.get_neighborhood_history(
+            position, radius=self._cfg.neighbourhood_window, last_k=10,
+        )
+
         return AgentInput(
             sequence=sequence,
             position=position,
@@ -293,6 +441,13 @@ class DesignEngine:
             llm_temperature=llm.temperature,
             llm_max_tokens=llm.max_tokens,
             llm_max_retries=llm.max_retries,
+            structure_context=structure_context,
+            global_memory_stats=global_stats,
+            position_history=pos_history,
+            neighborhood_history=nbr_history,
+            goal_evaluation=goal_eval,
+            iteration=iteration,
+            dump_prompt=self._dump_prompts and self._cfg.use_llm_agents,
         )
 
     # ── folding / scoring ────────────────────────────────────────────────
@@ -304,7 +459,6 @@ class DesignEngine:
         output_dir: Path,
         iteration: int,
     ) -> FoldResult:
-        """Run the fold engine locally or on Modal depending on config."""
         if self._cfg.modal_fold:
             return self._fold_modal(sequence, objective, iteration)
         return self._fold_local(sequence, objective, output_dir, iteration)
@@ -316,7 +470,6 @@ class DesignEngine:
         output_dir: Path,
         iteration: int,
     ) -> FoldResult:
-        """Fold locally and optionally run Rosetta scoring."""
         result = self._fold_engine.fold_and_score(sequence, objective, output_dir, iteration)
 
         if not self._fold_cfg.use_rosetta:
@@ -335,7 +488,6 @@ class DesignEngine:
         objective: ObjectiveSpec,
         iteration: int,
     ) -> FoldResult:
-        """Fold on Modal (ESMFold GPU) then score locally with Rosetta + heuristics."""
         import modal
 
         from protein_swarm.folding.scoring import compute_objective_score
@@ -392,12 +544,13 @@ class DesignEngine:
         objective: ObjectiveSpec,
         mean_plddt: float,
     ) -> FoldResult:
-        """Compute the 3-component combined score."""
         from protein_swarm.folding.scoring import compute_objective_score
 
         cfg = self._fold_cfg
         confidence_score = mean_plddt / 100.0
         obj_score = compute_objective_score(sequence, objective)
+
+        rosetta_total: float | None = None
 
         if cfg.use_rosetta:
             from protein_swarm.folding.rosetta_energy import score_pdb_with_pyrosetta
@@ -448,6 +601,7 @@ class DesignEngine:
             energy=round(physics_score, 6),
             objective_score=round(obj_score, 6),
             combined_score=round(combined, 6),
+            rosetta_total_score=round(rosetta_total, 2) if rosetta_total is not None else None,
         )
 
     # ── artefact persistence ─────────────────────────────────────────────

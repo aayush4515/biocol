@@ -28,3 +28,18 @@ class PositionRecord(BaseModel):
         if self.total_trials == 0:
             return 0.0
         return self.success_count / self.total_trials
+
+
+class IterationOutcome(BaseModel):
+    """Compact record of one iteration's result, stored in memory."""
+
+    iteration: int
+    accepted: bool
+    combined_score: float = 0.0
+    objective_score: float = 0.0
+    physics_score: float = 0.0
+    rosetta_total_score: float | None = None
+    design_goal_score: float = 0.0
+    num_mutations: int = 0
+    sequence: str = ""
+    reason: str = ""

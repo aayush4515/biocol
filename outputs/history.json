@@ -1,1700 +1,1528 @@
 [
   {
     "iteration": 0,
-    "sequence_before": "VVVVVVVVVVVVVVVVVVVV",
-    "sequence_after": "GPGPGGPGPPPPPGGGGGPG",
+    "sequence_before": "RRRRRRRRRRRRRRRRRRRR",
+    "sequence_after": "KKKKKKKEKKKKKKKKKKKG",
     "mutations": [
       {
         "position": 0,
-        "current_residue": "V",
-        "proposed_residue": "G",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility into protein structures, making it a good candidate for promoting turns while maintaining a repeating sequence motif."
+        "reason": "Lysine (K) maintains helical propensity, introduces diversity, and is charged, which may enhance interactions in the surface-exposed position."
       },
       {
         "position": 1,
-        "current_residue": "V",
-        "proposed_residue": "P",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Proline (P) is known for its ability to induce turns in protein structures, thus increasing flexibility while maintaining a repeating pattern."
+        "reason": "Maintains helical structure while introducing diversity and a charged residue that can stabilize the turn."
       },
       {
         "position": 2,
-        "current_residue": "V",
-        "proposed_residue": "G",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it suitable for introducing flexibility while maintaining a repeating pattern."
+        "reason": "Lysine (K) maintains helix stability while introducing diversity and improving surface charge interactions."
       },
       {
         "position": 3,
-        "current_residue": "V",
-        "proposed_residue": "P",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Proline is known for its ability to introduce turns and bends in protein structures, which can enhance flexibility while maintaining a repeating sequence pattern."
+        "reason": "Lysine (K) maintains helical structure while introducing diversity and has a favorable charge that can stabilize interactions in a moderately constrained environment."
       },
       {
         "position": 4,
-        "current_residue": "V",
-        "proposed_residue": "G",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it a suitable substitution to introduce flexibility in the repeating sequence."
+        "reason": "Lysine (K) maintains helical structure while introducing diversity and potential charge, enhancing stability in the helix-turn-helix motif."
       },
       {
         "position": 5,
-        "current_residue": "V",
-        "proposed_residue": "G",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures, making it a suitable substitution to achieve the objective."
+        "reason": "Lysine (K) is a positively charged residue that can help introduce sequence diversity while maintaining helical structure and stability, fitting the design goal."
       },
       {
         "position": 6,
-        "current_residue": "V",
-        "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Proline (P) is known for introducing bends and turns in protein structures, which will increase flexibility while maintaining the repetitive nature of the sequence."
+        "current_residue": "R",
+        "proposed_residue": "K",
+        "confidence": 0.8,
+        "reason": "Lysine (K) maintains helix stability while improving sequence diversity and potentially enhancing core stability."
       },
       {
         "position": 7,
-        "current_residue": "V",
-        "proposed_residue": "G",
+        "current_residue": "R",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Glycine (G) is a known turn-promoting residue that introduces flexibility, making it suitable for creating flexible regions in a repetitive sequence."
+        "reason": "Glutamic acid (E) introduces diversity and maintains helical structure while also adding some hydrophilicity, which may enhance surface interactions."
       },
       {
         "position": 8,
-        "current_residue": "V",
-        "proposed_residue": "P",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Proline (P) is known for introducing bends and flexibility in protein structures, making it suitable for promoting turns, especially in a repeating sequence context."
+        "reason": "Lysine (K) maintains alpha-helix stability and introduces sequence diversity while keeping charged character, which is suitable for the moderately exposed position."
       },
       {
         "position": 9,
-        "current_residue": "V",
-        "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Proline (P) is known for introducing flexibility and promoting turns in protein structures, which aligns with the objective of increasing flexibility while maintaining a repeating sequence pattern."
+        "current_residue": "R",
+        "proposed_residue": "K",
+        "confidence": 0.8,
+        "reason": "K is an alpha-helix favoring residue that introduces diversity, maintains helical structure, and improves potential hydrophobic packing."
       },
       {
         "position": 10,
-        "current_residue": "V",
-        "proposed_residue": "P",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Proline (P) is known for its ability to introduce turns and kinks in protein structures, promoting flexibility while maintaining a repeating sequence pattern."
+        "reason": "Lysine (K) maintains helix stability, adds diversity, and is favorable for helical structures, balancing surface accessibility and core stability."
       },
       {
         "position": 11,
-        "current_residue": "V",
-        "proposed_residue": "P",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Proline (P) is known for inducing turns and flexibility in protein structures, making it a suitable choice for enhancing flexibility while maintaining a repeating pattern."
+        "reason": "Lysine (K) is a helix-favoring residue that introduces diversity while maintaining the helical structure, improving both stability and surface interaction."
       },
       {
         "position": 12,
-        "current_residue": "V",
-        "proposed_residue": "P",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Proline is known for its ability to induce turns in protein structures, which would enhance flexibility while maintaining the repeating pattern."
+        "reason": "Lysine (K) maintains helical structure and introduces charge diversity, while also being compatible with the surrounding residues."
       },
       {
         "position": 13,
-        "current_residue": "V",
-        "proposed_residue": "G",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility in protein structures, particularly in regions that require turns. Substituting V with G at this position can help promote a turn in the repeating sequence."
+        "reason": "Lysine (K) maintains helical structure and introduces diversity while being surface exposed, enhancing stability and functionality in the helix-turn-helix motif."
       },
       {
         "position": 14,
-        "current_residue": "V",
-        "proposed_residue": "G",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for promoting flexibility and can disrupt regular secondary structure, making it suitable for introducing flexibility in a repetitive sequence."
+        "reason": "Lysine (K) maintains helical structure while introducing diversity and can support the formation of the helix-turn-helix motif."
       },
       {
         "position": 15,
-        "current_residue": "V",
-        "proposed_residue": "G",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility into protein structures, making it an ideal candidate for promoting turns in the sequence. Its substitution at this position could help achieve the objective of introducing flexibility while maintaining a repeating sequence pattern."
+        "reason": "Lysine (K) maintains helical properties, introduces sequence diversity, and is favorable for helix-turn-helix motif without disrupting secondary structure."
       },
       {
         "position": 16,
-        "current_residue": "V",
-        "proposed_residue": "G",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and is often used to promote turns in protein structures, making it suitable for introducing flexibility in the sequence."
+        "reason": "Lysine (K) maintains helix stability, adds diversity, and is positively charged, which may enhance interactions in a moderately exposed position."
       },
       {
         "position": 17,
-        "current_residue": "V",
-        "proposed_residue": "G",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its flexibility and ability to promote turns in protein structures, making it a suitable substitution at this position to introduce the desired flexibility."
+        "reason": "K is an alpha-helix favorable residue that introduces diversity while maintaining helical stability, improving overall structure."
       },
       {
         "position": 18,
-        "current_residue": "V",
-        "proposed_residue": "P",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Proline (P) is known for creating turns in protein structures, which can introduce flexibility while maintaining a repeating sequence pattern."
+        "reason": "Lysine (K) is a helix-favoring, charged residue that can introduce diversity while maintaining the helical structure, improving stability and functionality without significant disruption."
       },
       {
         "position": 19,
-        "current_residue": "V",
+        "current_residue": "R",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility in protein structures, especially in regions where turns or bends are required. Substituting V with G at this position can promote the desired turn while maintaining a repeating sequence pattern."
+        "reason": "Glycine promotes flexibility and is a strong turn/bend residue, which is beneficial for creating a helix-turn-helix motif while diversifying the sequence."
       }
     ],
     "fold_result": {
       "pdb_path": "outputs/iter_0.relaxed.pdb",
-      "energy": 0.028304,
-      "objective_score": 0.281883,
-      "combined_score": 0.115121
+      "energy": 0.832994,
+      "objective_score": 0.95,
+      "combined_score": 0.720448,
+      "rosetta_total_score": -42.14
     },
     "accepted": true,
-    "score_delta": 0.091129
+    "score_delta": 0.03306399999999998
   },
   {
     "iteration": 1,
-    "sequence_before": "GPGPGGPGPPPPPGGGGGPG",
-    "sequence_after": "PGPGPPGPGGGGGPPPPPGP",
+    "sequence_before": "KKKKKKKEKKKKKKKKKKKG",
+    "sequence_after": "EEEEEEEKEEEEEEREEEER",
     "mutations": [
       {
         "position": 0,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Proline (P) introduces a turn-promoting characteristic, which can enhance flexibility in the sequence while maintaining a repeat pattern."
+        "reason": "Glutamic acid (E) introduces diversity while maintaining helical propensity and providing surface exposure, aiding in the formation of the helix-turn-helix motif."
       },
       {
         "position": 1,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Substituting Proline (P) with Glycine (G) introduces flexibility as Glycine is known for promoting turns and flexibility in protein structures, aligning with the objective of creating a more flexible sequence."
+        "reason": "Introducing E enhances the diversity and maintains the helical structure while providing a negatively charged side chain that may improve interactions in the helix-turn-helix motif."
       },
       {
         "position": 2,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Proposing 'P' (Proline) at position 2 can introduce flexibility and promote turn formation due to its unique cyclic structure, while also maintaining a repeating pattern with the surrounding 'G's."
+        "reason": "Glutamic acid (E) introduces diversity and maintains helical stability while allowing for potential interactions that can enhance the helix-turn-helix motif."
       },
       {
         "position": 3,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.9,
-        "reason": "Substituting 'P' with 'G' can enhance flexibility and promote turn formation, fitting the objective of introducing flexibility while maintaining a repeating pattern."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.8,
+        "reason": "Glutamic acid (E) can maintain helical structure while introducing diversity and potentially enhancing surface interactions."
       },
       {
         "position": 4,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Proposing 'P' (proline) at this position can introduce a turn-promoting residue, enhancing flexibility in the sequence while maintaining a repeating pattern with the nearby 'G' residues."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.8,
+        "reason": "Glutamic acid (E) introduces sequence diversity while maintaining helical structure, and its negative charge may enhance interactions in the helix-turn-helix motif."
       },
       {
         "position": 5,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at this position can introduce a turn in the structure, promoting flexibility and potentially enhancing the repeating sequence pattern."
+        "reason": "Glutamic acid (E) introduces diversity, can maintain helical structure, and helps break the long stretch of K residues, improving sequence variety and potentially stabilizing the motif."
       },
       {
         "position": 6,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' introduces flexibility due to 'G's ability to adopt various conformations, promoting turn formation in the sequence while maintaining a repeating pattern."
+        "reason": "Glutamic acid (E) introduces diversity while maintaining helical stability and can enhance the turn structure, balancing sequence diversity and structural integrity."
       },
       {
         "position": 7,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at this position can introduce a turn-promoting characteristic, enhancing flexibility while maintaining a repeating pattern."
+        "reason": "Lysine (K) is a helix-favoring residue, introduces diversity, and maintains helical structure while providing potential for stabilizing interactions."
       },
       {
         "position": 8,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Substituting proline (P) with glycine (G) at this position can introduce flexibility due to glycine's small side chain, which promotes turn formation and maintains the repeating sequence pattern."
+        "reason": "Glutamic acid (E) introduces diversity, maintains helical stability, and can provide surface charge, beneficial for helix-turn-helix motifs."
       },
       {
         "position": 9,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can introduce flexibility due to glycine's small side chain, promoting turn formation within the repeating sequence pattern."
+        "reason": "E introduces sequence diversity while maintaining helix stability and could aid in forming the helix-turn-helix motif."
       },
       {
         "position": 10,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it a suitable substitution to enhance flexibility in the given sequence."
+        "reason": "Glutamic acid (E) introduces diversity, maintains helix stability, and can improve the overall energetic profile while complementing the surrounding charged residues."
       },
       {
         "position": 11,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can introduce flexibility due to glycine's small side chain, promoting a turn in the structure, while maintaining a repeating pattern with the surrounding residues."
+        "reason": "Glutamic acid (E) introduces diversity and can maintain helical stability while potentially improving hydrophobic interactions."
       },
       {
         "position": 12,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Substituting proline (P) with glycine (G) at position 12 can introduce flexibility due to glycine's unique ability to adopt various conformations, promoting turn formation while maintaining the repeating sequence pattern."
+        "reason": "Glutamic acid (E) introduces a charged side chain that can stabilize the helix-turn-helix motif while also increasing sequence diversity."
       },
       {
         "position": 13,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at position 13 introduces a turn-promoting residue that can enhance flexibility while maintaining a repetitive pattern."
+        "reason": "Glutamic acid (E) introduces diversity while maintaining a helical structure, improving sequence variety and potentially enhancing stability."
       },
       {
         "position": 14,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "R",
         "confidence": 0.8,
-        "reason": "Substituting G with P can introduce a turn-promoting effect due to proline's unique cyclic structure, enhancing flexibility in the sequence while maintaining the repeating pattern."
+        "reason": "Arginine (R) introduces diversity and maintains helical structure while enhancing potential interactions in the helix-turn-helix motif."
       },
       {
         "position": 15,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Proline (P) is known for promoting turns and introducing flexibility into protein structures, which aligns with the objective of creating turn-promoting residues while maintaining a repetitive sequence pattern."
+        "reason": "Glutamic acid (E) introduces diversity, retains helix stability, and is conducive to helix-turn-helix motifs."
       },
       {
         "position": 16,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at position 16 could introduce flexibility and promote turn formation, fitting well with the repeating sequence pattern while enhancing the structural dynamics of the protein."
+        "reason": "Glutamic acid (E) introduces diversity and can stabilize the helical structure while maintaining surface accessibility."
       },
       {
         "position": 17,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at this position can enhance flexibility and promote turn formation due to its unique cyclic structure, which can disrupt the regular backbone conformation, while also maintaining the repeating motif."
+        "reason": "Glutamic acid (E) introduces diversity, is helix-favorable, and maintains structural stability while potentially reducing the long stretch of lysines."
       },
       {
         "position": 18,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can introduce flexibility due to glycine's unique properties, promoting turn formation while maintaining the repeating pattern."
+        "reason": "Glutamic acid (E) introduces diversity while maintaining helix propensity and contributes to surface interactions."
       },
       {
         "position": 19,
         "current_residue": "G",
-        "proposed_residue": "P",
+        "proposed_residue": "R",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at position 19 can introduce a turn-promoting feature due to its unique cyclic structure, which enhances flexibility in the sequence while maintaining a repeating pattern."
+        "reason": "Arginine is a charged residue that can enhance stability and interactions in a surface-exposed position, helping to break the repetitive stretch and contribute to the helix-turn-helix motif."
       }
     ],
     "fold_result": {
       "pdb_path": "outputs/iter_1.relaxed.pdb",
-      "energy": 0.029417,
-      "objective_score": 0.281883,
-      "combined_score": 0.115742
+      "energy": 0.837812,
+      "objective_score": 1.0,
+      "combined_score": 0.744787,
+      "rosetta_total_score": -42.84
     },
     "accepted": true,
-    "score_delta": 0.0006209999999999966
+    "score_delta": 0.024339
   },
   {
     "iteration": 2,
-    "sequence_before": "PGPGPPGPGGGGGPPPPPGP",
-    "sequence_after": "GPGPGGPGPPPPPGGGGGPG",
+    "sequence_before": "EEEEEEEKEEEEEEREEEER",
+    "sequence_after": "KKKKKKKEKKKKKKKKKKKG",
     "mutations": [
       {
         "position": 0,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.9,
-        "reason": "Glycine is known for its high flexibility and ability to promote turns in protein structures, making it an excellent candidate for introducing flexibility in this repeating sequence."
+        "reason": "Lysine (K) introduces diversity while maintaining helical propensity and stabilizing the structure."
       },
       {
         "position": 1,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' at position 1 introduces flexibility and promotes a turn structure, aligning with the objective of enhancing flexibility while maintaining a repeating sequence pattern."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.9,
+        "reason": "K maintains helical structure while introducing diversity and enhancing potential interactions in the helix-turn-helix motif."
       },
       {
         "position": 2,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.9,
-        "reason": "Glycine (G) is known to introduce flexibility and is effective in turn-promoting structures, making it a suitable substitution for enhancing flexibility while maintaining a repetitive pattern."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.8,
+        "reason": "Lysine (K) introduces diversity, maintains helix stability, and is favorable for the helix-turn-helix motif."
       },
       {
         "position": 3,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting G with P at this position can introduce flexibility and promote turns in the structure, enhancing the potential for repeating sequence patterns."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.9,
+        "reason": "Lysine (K) introduces diversity, maintains helical structure, and can enhance stability in the helix-turn-helix motif."
       },
       {
         "position": 4,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can introduce flexibility due to glycine's ability to adopt various conformations, which is beneficial for turn formation in the repeating sequence."
+        "reason": "Lysine (K) introduces sequence diversity, maintains the helical structure, and is favorable for helix-turn-helix motifs."
       },
       {
         "position": 5,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.9,
-        "reason": "Glycine (G) is known for promoting flexibility and can enhance the turn characteristics of the sequence, fitting the objective of introducing flexibility while maintaining the repeating pattern."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.8,
+        "reason": "Lysine (K) introduces diversity, maintains helix stability, and may improve hydrophobic core interactions."
       },
       {
         "position": 6,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting 'G' with 'P' introduces a turn-promoting residue that enhances flexibility while maintaining the repeating sequence pattern."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.9,
+        "reason": "Lysine (K) introduces diversity, maintains helix stability, and fits well within the helical context, enhancing the potential for a helix-turn-helix motif."
       },
       {
         "position": 7,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.9,
-        "reason": "Substituting 'P' with 'G' introduces flexibility and promotes turn formation, aligning with the objective of creating repeating sequence patterns."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.8,
+        "reason": "Glutamic acid (E) maintains helical structure while introducing diversity, which is crucial for achieving the design goal."
       },
       {
         "position": 8,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' at position 8 may introduce flexibility and promote turns due to its unique backbone conformation, fitting well within the repeating sequence pattern observed."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.9,
+        "reason": "Lysine (K) introduces diversity, maintains helical stability, and enhances potential core hydrophobic interactions."
       },
       {
         "position": 9,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing proline (P) at position 9 is likely to introduce a turn and increase flexibility in the sequence, while maintaining a repeating pattern with adjacent proline residues."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.9,
+        "reason": "K is an alpha-helix favoring residue that introduces diversity and stabilizes the helix-turn-helix motif."
       },
       {
         "position": 10,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting G with P may promote flexibility through introducing a turn-promoting residue, while maintaining a repeating pattern with the existing P residues."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.9,
+        "reason": "Lysine (K) maintains helix stability, introduces diversity, and is favorable in helical environments."
       },
       {
         "position": 11,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.85,
-        "reason": "Proposing 'P' at position 11 can introduce flexibility and promote turn formation due to its unique structure, which can help in creating repeating sequence patterns."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.9,
+        "reason": "Lysine (K) is a helix-favoring residue that introduces diversity and improves the structural stability of the helix-turn-helix motif."
       },
       {
         "position": 12,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting 'G' with 'P' can introduce a turn-promoting structure, enhancing flexibility and maintaining a repeating pattern consistent with the current sequence."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.9,
+        "reason": "Lysine (K) maintains helical structure, introduces charge, and enhances sequence diversity, aligning with the design goal to create a helix-turn-helix motif."
       },
       {
         "position": 13,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, which aligns well with the objective of introducing flexibility while maintaining a repeating sequence pattern."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.9,
+        "reason": "Lysine (K) introduces diversity, maintains the helical structure, and is favorable for the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 14,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.9,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and is ideal for promoting turns in protein structures, fitting well with the surrounding glycine-rich sequence."
+        "reason": "Lysine (K) maintains helical structure while introducing diversity and improving hydrophobic content."
       },
       {
         "position": 15,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.9,
-        "reason": "Substituting 'P' with 'G' can introduce flexibility due to glycine's unique ability to adopt various conformations, promoting turn formation while maintaining the repeating sequence pattern."
+        "reason": "Lysine (K) introduces diversity while maintaining helical stability, helping to create the helix-turn-helix motif effectively."
       },
       {
         "position": 16,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.9,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and is effective in promoting turns in protein structures, fitting the objective of creating flexible regions while maintaining a repeating pattern."
+        "reason": "Lysine (K) introduces diversity, maintains helix stability, and improves potential interactions in the helix-turn-helix motif."
       },
       {
         "position": 17,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting P with G can introduce flexibility due to the small and flexible nature of glycine, promoting turn formation and maintaining a repeating sequence pattern."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.9,
+        "reason": "Lysine (K) is an alpha-helix favorable residue that introduces diversity and maintains stability in the helix-turn-helix motif."
       },
       {
         "position": 18,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.9,
-        "reason": "Substituting 'G' with 'P' is likely to introduce more flexibility and promote turn formation, especially in the context of the surrounding proline-rich sequence, enhancing the overall structural dynamics."
+        "reason": "Lysine (K) introduces diversity while maintaining helical stability, enhancing the likelihood of achieving the helix-turn-helix motif."
       },
       {
         "position": 19,
-        "current_residue": "P",
+        "current_residue": "R",
         "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and is often found in turns and loops, making it a strong candidate for promoting the desired structural flexibility while maintaining a repeating sequence pattern."
+        "confidence": 0.9,
+        "reason": "Glycine promotes flexibility and is a strong turn/bend residue, aligning well with the design goal of creating a helix-turn-helix motif."
       }
     ],
     "fold_result": {
       "pdb_path": "outputs/iter_2.relaxed.pdb",
-      "energy": 0.028304,
-      "objective_score": 0.281883,
-      "combined_score": 0.115121
+      "energy": 0.833,
+      "objective_score": 0.95,
+      "combined_score": 0.72045,
+      "rosetta_total_score": -42.14
     },
     "accepted": false,
-    "score_delta": -0.0006209999999999966
+    "score_delta": -0.024336999999999942
   },
   {
     "iteration": 3,
-    "sequence_before": "PGPGPPGPGGGGGPPPPPGP",
-    "sequence_after": "GPGPGGPGPPPPPGAGGGSG",
+    "sequence_before": "EEEEEEEKEEEEEEREEEER",
+    "sequence_after": "KKKKKKKEKKKKKKKKKKKK",
     "mutations": [
       {
         "position": 0,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known to introduce flexibility and is often found in turn regions, making it suitable for promoting a flexible structure in repeating patterns."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces diversity and maintains helical propensity, which is beneficial for the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 1,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting Glycine (G) with Proline (P) can promote flexibility due to Proline's unique cyclic structure, which can encourage turn formation. Additionally, it aligns with the objective of creating repeating sequence patterns, as Proline is already part of the accepted residues."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "K introduces diversity while maintaining helical structure, aligning with the design goal."
       },
       {
         "position": 2,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for promoting flexibility and can help create turn-promoting structures, fitting well with the objective of introducing flexibility while maintaining a repeating sequence pattern."
+        "reason": "Lysine (K) introduces diversity, maintains helix stability, and is favored in helical structures."
       },
       {
         "position": 3,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting G with P can promote flexibility and turn formation while maintaining the repeating sequence pattern, which aligns with the objective."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces diversity while maintaining the helical structure, potentially improving overall stability and fulfilling the design goal."
       },
       {
         "position": 4,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine is known for its ability to introduce flexibility in protein structures, particularly in turn regions, and is consistent with the observed success of G and P in the local context."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces sequence diversity while maintaining helical structure and stabilizing the motif, despite previous rejections."
       },
       {
         "position": 5,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can introduce flexibility due to glycine's unique structure, which promotes turns and allows for more dynamic conformations. This aligns with the objective of enhancing flexibility while maintaining the repeating nature of the sequence."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces sequence diversity while maintaining helix stability and can enhance interactions in the helix-turn-helix motif."
       },
       {
         "position": 6,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.7,
-        "reason": "Proposing 'P' to introduce flexibility and promote turns, aligning with the objective of creating repeating sequence patterns. Previous success with 'P' supports this choice."
+        "reason": "Lysine (K) introduces diversity and maintains helix stability while improving the energetic profile of the structure."
       },
       {
         "position": 7,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) promotes flexibility and is ideal for turn formation, and its previous acceptance suggests it fits well in this context."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.6,
+        "reason": "Glutamic acid (E) maintains helical structure while improving sequence diversity."
       },
       {
         "position": 8,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting 'G' with 'P' can introduce a turn-promoting feature due to proline's unique cyclic structure, which can enhance flexibility and promote the desired repeating pattern."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces diversity, maintains helical stability, and may enhance the structural integrity of the helix-turn-helix motif."
       },
       {
         "position": 9,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' introduces a turn-promoting residue that enhances flexibility and fits well within the repeating sequence pattern."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "K is an alpha-helix favoring residue that maintains the helical structure while introducing sequence diversity."
       },
       {
         "position": 10,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting 'G' with 'P' can introduce flexibility and promote turn formation, while also maintaining a repetitive pattern in the sequence."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.6,
+        "reason": "Lysine (K) introduces diversity and maintains helix stability, potentially improving the overall structure."
       },
       {
         "position": 11,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting 'G' with 'P' can introduce flexibility and promote turn formation, while also fitting within the repeating pattern established by the surrounding residues."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) is a helix-favoring residue that can introduce diversity while maintaining helical structure, which aligns with the design goal."
       },
       {
         "position": 12,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' introduces flexibility and promotes turn formation, aligning with the objective of creating repeating sequence patterns."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) maintains helical structure, introduces charge, and improves sequence diversity, aligning with the design goal to create a helix-turn-helix motif."
       },
       {
         "position": 13,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can introduce flexibility due to 'G's smaller side chain, promoting turn formation while maintaining a repeating pattern with adjacent 'G's."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces diversity and maintains the helical structure while potentially improving stability in this semi-buried position."
       },
       {
         "position": 14,
-        "current_residue": "P",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine (A) is a small and flexible residue that can promote turn formation while maintaining the repeating sequence pattern, thus enhancing overall flexibility."
+        "current_residue": "R",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces diversity while maintaining helical structure and is favorable for stability."
       },
       {
         "position": 15,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' introduces flexibility due to glycine's ability to promote turns and allows for repeating sequence patterns, which aligns with the objective."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces diversity while maintaining the helical structure, potentially stabilizing the motif."
       },
       {
         "position": 16,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its flexibility and ability to promote turns in protein structures. Given the local context of repetitive proline (P) residues, introducing G would create a more flexible region while maintaining a repeating pattern."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces diversity and maintains helix stability, which aligns with the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 17,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its flexibility and ability to promote turns in protein structures, making it a suitable substitution to introduce flexibility while maintaining the repeating sequence pattern."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) is an alpha-helix favorable residue that introduces diversity and maintains structural integrity in the helix-turn-helix motif."
       },
       {
         "position": 18,
-        "current_residue": "G",
-        "proposed_residue": "S",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Serine (S) is known to introduce flexibility and can promote turn formation, fitting well within the local context of proline-rich sequence while maintaining the repeating pattern."
+        "reason": "Lysine (K) is a helix-favoring residue that introduces diversity while maintaining helical stability, aligning with the design goal."
       },
       {
         "position": 19,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures, making it suitable for achieving the objective of introducing flexibility while maintaining a repeating sequence pattern."
+        "current_residue": "R",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) maintains the positive charge while potentially enhancing stability and promoting a turn structure, which aligns with the design goal."
       }
     ],
     "fold_result": {
       "pdb_path": "outputs/iter_3.relaxed.pdb",
-      "energy": 0.027214,
-      "objective_score": 0.365214,
-      "combined_score": 0.143688
+      "energy": 0.856794,
+      "objective_score": 1.0,
+      "combined_score": 0.7513,
+      "rosetta_total_score": -45.78
     },
     "accepted": true,
-    "score_delta": 0.027946000000000012
+    "score_delta": 0.006512999999999991
   },
   {
     "iteration": 4,
-    "sequence_before": "GPGPGGPGPPPPPGAGGGSG",
-    "sequence_after": "PGPGPPGPGGGGGPNPPPGP",
+    "sequence_before": "KKKKKKKEKKKKKKKKKKKK",
+    "sequence_after": "EEEEEEEKEEEEEEREEEER",
     "mutations": [
       {
         "position": 0,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Proline (P) is known to promote turns in protein structures and can enhance flexibility, fitting the objective of introducing turn-promoting residues while maintaining a repeating sequence pattern."
+        "reason": "Glutamic acid (E) introduces diversity while maintaining the helical structure, potentially improving the overall stability and achieving the design goal of a helix-turn-helix motif."
       },
       {
         "position": 1,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its flexibility and ability to promote turns in protein structures, which aligns with the objective of introducing flexibility while maintaining a repeating sequence pattern."
+        "reason": "E introduces diversity while maintaining helical structure, enhancing the potential for a helix-turn-helix motif."
       },
       {
         "position": 2,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting 'G' with 'P' introduces a turn-promoting residue that enhances flexibility while maintaining the repeating pattern of the sequence."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.85,
+        "reason": "Glutamic acid (E) introduces necessary diversity while maintaining helical stability, enhancing the potential for a helix-turn-helix motif."
       },
       {
         "position": 3,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Glycine is known for its flexibility and is often found in turns and loops, which aligns with the objective of introducing flexibility while maintaining a repeating pattern."
+        "reason": "Glutamic acid (E) introduces diversity while maintaining the helix structure and could improve overall stability."
       },
       {
         "position": 4,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' to enhance flexibility and promote turns while maintaining the repeating sequence pattern. 'P' is known for its turn-promoting properties."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.9,
+        "reason": "Glutamic acid (E) introduces sequence diversity and maintains helical structure while being a favorable residue for helix-turn-helix motifs."
       },
       {
         "position": 5,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing proline (P) to enhance flexibility and promote turn formation, aligning with the objective of creating repeating sequence patterns."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.9,
+        "reason": "Glutamic acid (E) introduces sequence diversity, maintains helical stability, and improves overall energy based on past successful iterations."
       },
       {
         "position": 6,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can enhance flexibility as glycine is known for its ability to promote turns and is already part of the repeating pattern."
+        "reason": "Glutamic acid (E) introduces diversity and maintains helix stability, contributing to the formation of a helix-turn-helix motif."
       },
       {
         "position": 7,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' to enhance flexibility and promote a turn in the sequence, aligning with the objective of introducing flexibility while maintaining repeating patterns."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.9,
+        "reason": "Lysine (K) is a helix-favoring residue that introduces diversity while maintaining the helical structure, improving sequence variability in the protein."
       },
       {
         "position": 8,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' introduces flexibility and promotes turn formation due to glycine's unique ability to fit into tight turns, while also maintaining the repeating pattern with other glycines in the sequence."
+        "reason": "Glutamic acid (E) introduces diversity and maintains helical stability, beneficial for breaking repeat stretches."
       },
       {
         "position": 9,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' introduces flexibility due to glycine's unique properties, promoting turns while maintaining a repeating pattern in the sequence."
+        "reason": "E introduces sequence diversity while maintaining helix stability and contributes positively to the overall structural integrity."
       },
       {
         "position": 10,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can introduce flexibility and promote turns due to 'G's small size, while maintaining a repetitive sequence pattern."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.75,
+        "reason": "Glutamic acid (E) introduces sequence diversity, maintains helix stability, and aligns with the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 11,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' introduces flexibility due to glycine's small size and ability to fit into tight turns, while maintaining the repeating pattern in the sequence."
+        "reason": "Glutamic acid (E) introduces diversity and is compatible with helix formation, helping to break the long repeat while maintaining structural integrity."
       },
       {
         "position": 12,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting P with G can enhance flexibility and promote turn formation due to G's smaller side chain, fitting well within the repeating sequence context."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.9,
+        "reason": "Glutamic acid (E) introduces charge, maintains helical structure, and improves sequence diversity, contributing positively to the design goal."
       },
       {
         "position": 13,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing proline (P) at this position can introduce a turn-promoting effect due to its unique cyclic structure, enhancing flexibility while maintaining the repeating sequence pattern with the surrounding proline residues."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.9,
+        "reason": "Glutamic acid (E) introduces diversity, maintains helical structure, and improves potential interactions while balancing core stability."
       },
       {
         "position": 14,
-        "current_residue": "A",
-        "proposed_residue": "N",
+        "current_residue": "K",
+        "proposed_residue": "R",
         "confidence": 0.8,
-        "reason": "Asparagine (N) promotes flexibility and can enhance turn formation, fitting well into the repeating pattern while maintaining structural integrity."
+        "reason": "Arginine (R) introduces diversity and maintains helical structure, which aligns well with the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 15,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Proposing 'P' to introduce flexibility and maintain the repeating sequence pattern. 'P' is known to promote turns and is already accepted in the surrounding sequence."
+        "reason": "Glutamic acid (E) introduces sequence diversity and maintains helical properties, which aligns well with the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 16,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Proposing 'P' (proline) at position 16 can enhance flexibility and promote turns due to its unique cyclic structure, which is known to induce bends in the backbone. This substitution also complements the existing sequence pattern of prolines and glycine, further supporting the objective."
+        "reason": "Glutamic acid (E) introduces diversity, stabilizes helix structure, and improves overall sequence variety."
       },
       {
         "position": 17,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Proposing 'P' to enhance flexibility and promote turn formation in the sequence, aligning with the objective of creating repeating patterns."
+        "reason": "Glutamic acid (E) introduces diversity, is helix-favorable, and can potentially stabilize the turn in a helix-turn-helix motif."
       },
       {
         "position": 18,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'S' with 'G' introduces flexibility and promotes turn formation, fitting well with the surrounding glycine residues to create a more consistent repeating pattern."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.85,
+        "reason": "Glutamic acid (E) introduces diversity and maintains helical stability, improving overall structural balance."
       },
       {
         "position": 19,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Substituting G with P can introduce flexibility and promote turn formation, contributing to the desired repeating sequence pattern."
+        "current_residue": "K",
+        "proposed_residue": "R",
+        "confidence": 0.8,
+        "reason": "Arginine (R) introduces diversity and maintains positive charge, enhancing stability and contributing to the helix-turn-helix motif."
       }
     ],
     "fold_result": {
       "pdb_path": "outputs/iter_4.relaxed.pdb",
-      "energy": 0.027753,
-      "objective_score": 0.324254,
-      "combined_score": 0.129653
+      "energy": 0.845896,
+      "objective_score": 1.0,
+      "combined_score": 0.747616,
+      "rosetta_total_score": -44.06
     },
     "accepted": false,
-    "score_delta": -0.01403500000000002
+    "score_delta": -0.0036840000000000206
   },
   {
     "iteration": 5,
-    "sequence_before": "GPGPGGPGPPPPPGAGGGSG",
-    "sequence_after": "PGPGPPGPGGSSGPSPPPNP",
+    "sequence_before": "KKKKKKKEKKKKKKKKKKKK",
+    "sequence_after": "EEKKEEKKEEEEKEKEEEEG",
     "mutations": [
       {
         "position": 0,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' at position 0 can introduce flexibility by promoting turns in the structure, while maintaining the repeating nature of the sequence."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) introduces diversity and can stabilize the turn/bend region, aligning with the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 1,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine is known for its flexibility and ability to promote turns in protein structures, making it suitable for introducing the desired flexibility while maintaining a repeating sequence pattern."
-      },
-      {
-        "position": 2,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting G with P can promote flexibility and turn formation due to proline's unique cyclic structure, while also maintaining a repeating pattern with the surrounding G and P residues."
-      },
-      {
-        "position": 3,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can introduce flexibility due to glycine's smaller side chain, which promotes turn formation in protein structures."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "E introduces diversity while maintaining helical structure and may enhance overall stability."
       },
       {
         "position": 4,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' at position 4 to enhance flexibility and promote turn formation while maintaining the repeating sequence pattern, which aligns with successful previous attempts."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.6,
+        "reason": "Glutamic acid (E) introduces sequence diversity and maintains helical structure, improving overall design goals."
       },
       {
         "position": 5,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Proposing 'P' at position 5 is likely to introduce flexibility as proline is known to promote turns in protein structures, enhancing overall flexibility while maintaining the repeating pattern."
-      },
-      {
-        "position": 6,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for promoting flexibility and is suitable for introducing turns in protein structures, aligning with the objective of enhancing flexibility while maintaining repeating patterns."
+        "reason": "Glutamic acid (E) can maintain helix stability while introducing sequence diversity, which is necessary to break the long repeat stretch of K and improve structural stability."
       },
       {
         "position": 7,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting G with P can introduce flexibility and promote turn formation, while maintaining a repeating pattern in the sequence."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) is a helix-favoring residue that introduces diversity and maintains the helical structure, which aligns with the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 8,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.9,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it a suitable substitution to enhance the desired flexibility while maintaining a repeating pattern."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) introduces diversity and supports helical stability, while also improving overall structural properties."
       },
       {
         "position": 9,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting P with G is likely to enhance flexibility and promote turn formation due to glycine's unique ability to adopt various conformations, while still fitting within the repeating pattern."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.6,
+        "reason": "E introduces sequence diversity while maintaining helix stability, aligning with the goal of creating a helix-turn-helix motif."
       },
       {
         "position": 10,
-        "current_residue": "P",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Serine (S) is a turn-promoting residue that can introduce flexibility and maintain the repeating pattern of the sequence."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) introduces sequence diversity and maintains helix stability, which is essential for achieving the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 11,
-        "current_residue": "P",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and is suitable for turn formation, fitting well within the local sequence context and enhancing the desired repeating pattern."
-      },
-      {
-        "position": 12,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, which aligns with the objective of introducing flexibility while maintaining a repeating sequence pattern."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) introduces diversity, is a helix-favoring residue, and has previously shown a beneficial energy trend."
       },
       {
         "position": 13,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Substituting 'G' with 'P' can introduce flexibility and promote turn formation, as proline is known for its ability to induce turns in protein structures, aiding in the creation of repeating sequence patterns."
-      },
-      {
-        "position": 14,
-        "current_residue": "A",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and can introduce turn-like structures, fitting well within the context of the repeating sequence while maintaining a similar size to alanine."
+        "reason": "Glutamic acid (E) introduces diversity, maintains the helical structure, and could improve overall stability."
       },
       {
         "position": 15,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Proposing 'P' at this position enhances flexibility and turn-promoting characteristics, aligning with the goal of creating repeating sequence patterns."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) maintains helix stability, introduces sequence diversity, and has been accepted in previous iterations."
       },
       {
         "position": 16,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' at this position can introduce flexibility and is consistent with the repeating sequence pattern, as it has been accepted in previous successful designs."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) introduces diversity, can stabilize the helix, and improves the overall sequence balance."
       },
       {
         "position": 17,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Proposing 'P' introduces flexibility and can promote turn formation while maintaining the repeating nature of the sequence."
+        "reason": "Glutamic acid (E) introduces diversity, is helix-favorable, and may improve structural stability in the helix-turn-helix motif."
       },
       {
         "position": 18,
-        "current_residue": "S",
-        "proposed_residue": "N",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.7,
-        "reason": "Asparagine (N) is known to promote flexibility and can form hydrogen bonds, which may aid in turn formation while maintaining the overall repeating pattern of the sequence."
+        "reason": "Glutamic acid (E) introduces diversity while maintaining helical structure and could improve energy."
       },
       {
         "position": 19,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Proposing 'P' to introduce flexibility and promote turn formation, while maintaining the repeating pattern established in the sequence."
+        "reason": "Glycine (G) is a strong turn/bend residue that can introduce flexibility in the helix-turn-helix motif, promoting the desired structural feature without disrupting the overall helix content."
       }
     ],
     "fold_result": {
       "pdb_path": "outputs/iter_5.relaxed.pdb",
-      "energy": 0.030731,
-      "objective_score": 0.4025,
-      "combined_score": 0.158663
+      "energy": 0.841454,
+      "objective_score": 0.95,
+      "combined_score": 0.723556,
+      "rosetta_total_score": -43.38
     },
-    "accepted": true,
-    "score_delta": 0.014974999999999988
+    "accepted": false,
+    "score_delta": -0.02774399999999999
   },
   {
     "iteration": 6,
-    "sequence_before": "PGPGPPGPGGSSGPSPPPNP",
-    "sequence_after": "GPGPNSSGPPTTSNPNNETN",
+    "sequence_before": "KKKKKKKEKKKKKKKKKKKK",
+    "sequence_after": "EEEEKEEKEEKEKEKEEEER",
     "mutations": [
       {
         "position": 0,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures, which aligns with the objective of increasing flexibility and creating repeating sequence patterns."
+        "reason": "Glutamic acid (E) increases diversity and helps maintain helix stability while potentially promoting a turn structure."
       },
       {
         "position": 1,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting G with P can promote flexibility and turn formation, fitting the objective of creating repeating sequence patterns."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "E introduces diversity while maintaining helical structure and is favored in the context of a helix-turn-helix motif."
       },
       {
         "position": 2,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.7,
-        "reason": "Glycine (G) is known to promote flexibility and is often found in turn-forming regions. Substituting P with G can introduce the desired flexibility while maintaining a repeating pattern."
+        "reason": "Glutamic acid (E) introduces necessary diversity while maintaining helix stability and may improve overall structural integrity."
       },
       {
         "position": 3,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting 'G' with 'P' introduces a turn-promoting residue, which can enhance flexibility and maintain the repeating pattern in the sequence."
-      },
-      {
-        "position": 4,
-        "current_residue": "P",
-        "proposed_residue": "N",
-        "confidence": 0.8,
-        "reason": "The substitution of 'P' with 'N' introduces a polar side chain that can promote flexibility and potentially stabilize turns, aligning with the objective of creating repeating sequence patterns."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) introduces diversity and maintains helical structure, potentially improving stability and fulfilling the design goal."
       },
       {
         "position": 5,
-        "current_residue": "P",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and can facilitate turn formation, thus aiding in introducing the desired flexibility while maintaining a repeating pattern."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) introduces sequence diversity and can stabilize the helix, aligning with the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 6,
-        "current_residue": "G",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Substituting 'G' with 'S' can introduce flexibility due to the hydroxyl group, promoting turn formation while maintaining a repeating pattern with the nearby 'P' residues."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) introduces diversity and maintains helix stability, improving the potential for a helix-turn-helix motif."
       },
       {
         "position": 7,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it a suitable substitution to enhance flexibility in the local context while maintaining a repeating sequence pattern."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) is a helix-favoring residue that can help maintain the helical structure while introducing some diversity, which is beneficial given the low sequence diversity observed."
       },
       {
         "position": 8,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Substituting 'G' with 'P' can introduce a turn-promoting feature, enhancing flexibility in the sequence while maintaining a repeating pattern."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) introduces diversity, maintains helical stability, and improves sequence variety."
       },
       {
         "position": 9,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' introduces a proline which is known to promote turns in protein structures, enhancing flexibility while fitting well into the repeating sequence pattern."
-      },
-      {
-        "position": 10,
-        "current_residue": "S",
-        "proposed_residue": "T",
-        "confidence": 0.8,
-        "reason": "Threonine (T) is known to promote flexibility and can help in forming turns due to its hydroxyl group, making it suitable for introducing flexibility while maintaining a repeating pattern."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "E introduces sequence diversity while maintaining helix stability, which aligns with the design goal."
       },
       {
         "position": 11,
-        "current_residue": "S",
-        "proposed_residue": "T",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.7,
-        "reason": "Threonine (T) is known to promote flexibility and can facilitate turn formation due to its hydroxyl group, while maintaining the repeating pattern with the existing sequence."
-      },
-      {
-        "position": 12,
-        "current_residue": "G",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Serine (S) is known for promoting flexibility and is effective in turn formation due to its hydroxyl group, which can form hydrogen bonds, enhancing local structural dynamics."
+        "reason": "Glutamic acid (E) can introduce diversity and is a helix-favoring residue, which may enhance the helix-turn-helix motif."
       },
       {
         "position": 13,
-        "current_residue": "P",
-        "proposed_residue": "N",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.7,
-        "reason": "Asparagine (N) can introduce flexibility and promote turns due to its polar side chain, while also fitting well within the existing sequence pattern."
-      },
-      {
-        "position": 14,
-        "current_residue": "S",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' to introduce flexibility and promote turn formation, while maintaining a repeating sequence pattern with existing 'P' residues."
+        "reason": "Glutamic acid (E) introduces diversity and maintains the helical structure, improving overall sequence variety while potentially stabilizing the helix-turn-helix motif."
       },
       {
         "position": 15,
-        "current_residue": "P",
-        "proposed_residue": "N",
-        "confidence": 0.8,
-        "reason": "Asparagine (N) can introduce flexibility and promote turn formation while fitting well into the repeating pattern of the sequence."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) introduces sequence diversity, maintains helical stability, and could help break the long stretch of K residues."
       },
       {
         "position": 16,
-        "current_residue": "P",
-        "proposed_residue": "N",
-        "confidence": 0.8,
-        "reason": "Substituting 'P' with 'N' introduces a polar side chain that can promote flexibility and potentially facilitate turn formation in the sequence, aligning with the objective of creating repeating patterns."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) can introduce diversity, stabilize the helix, and improve the overall energy while maintaining helical structure."
       },
       {
         "position": 17,
-        "current_residue": "P",
+        "current_residue": "K",
         "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) can introduce flexibility and is known to promote turns in protein structures, fitting the objective of creating flexible repeating patterns."
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) introduces diversity and is helical, which aligns with the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 18,
-        "current_residue": "N",
-        "proposed_residue": "T",
-        "confidence": 0.8,
-        "reason": "Threonine (T) is known to promote flexibility and can encourage turn formation in protein structures, fitting well with the objective of introducing flexibility while maintaining a repeating sequence pattern."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) introduces diversity while maintaining helical structure; it is a helix-favoring residue and can enhance overall stability."
       },
       {
         "position": 19,
-        "current_residue": "P",
-        "proposed_residue": "N",
-        "confidence": 0.8,
-        "reason": "Asparagine (N) introduces a turn-promoting element and increases flexibility while maintaining a polar character, which can support the overall structural dynamics in the context of the sequence."
+        "current_residue": "K",
+        "proposed_residue": "R",
+        "confidence": 0.7,
+        "reason": "Arginine (R) maintains charge diversity while possibly enhancing stability and facilitating the helix-turn-helix motif."
       }
     ],
     "fold_result": {
       "pdb_path": "outputs/iter_6.relaxed.pdb",
-      "energy": 0.025672,
-      "objective_score": 0.526541,
-      "combined_score": 0.199031
+      "energy": 0.874656,
+      "objective_score": 1.0,
+      "combined_score": 0.757678,
+      "rosetta_total_score": -48.86
     },
     "accepted": true,
-    "score_delta": 0.040368000000000015
+    "score_delta": 0.006377999999999995
   },
   {
     "iteration": 7,
-    "sequence_before": "GPGPNSSGPPTTSNPNNETN",
-    "sequence_after": "PGPGPTTPNTSSGPTPPNPP",
+    "sequence_before": "EEEEKEEKEEKEKEKEEEER",
+    "sequence_after": "KKKKEKKEKKEKEKRKKKKK",
     "mutations": [
       {
         "position": 0,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Proposing 'P' to introduce flexibility and promote turn formation, which aligns with the objective of creating repeating sequence patterns."
+        "reason": "Lysine (K) introduces diversity and maintains helical propensity, which aligns with the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 1,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known to promote flexibility and is often found in turns, making it a suitable substitution to introduce flexibility while maintaining a repeating pattern."
+        "reason": "K introduces diversity while maintaining helical structure and potentially stabilizing the motif."
       },
       {
         "position": 2,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Proposing 'P' (proline) at position 2 can introduce flexibility and promote turn formation due to its unique cyclic structure, while also maintaining a repeating pattern with the adjacent 'G' residues."
+        "reason": "Lysine (K) introduces necessary diversity while maintaining helix stability, supporting the design goal of a helix-turn-helix motif."
       },
       {
         "position": 3,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' introduces flexibility due to glycine's small size and ability to promote turns, which aligns with the objective of enhancing flexibility while maintaining a repeating pattern."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces diversity and maintains the helical structure, aligning with the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 4,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' to enhance flexibility through a turn-promoting residue while maintaining the potential for sequence repetition."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) introduces sequence diversity while maintaining helical structure, supporting the design goal for a helix-turn-helix motif."
       },
       {
         "position": 5,
-        "current_residue": "S",
-        "proposed_residue": "T",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Threonine (T) is known to promote flexibility and can support turn formation, enhancing the desired repeat patterns in the sequence."
+        "reason": "Lysine (K) introduces sequence diversity, maintains helix stability, and its positive charge can enhance interactions in a helix-turn-helix motif."
       },
       {
         "position": 6,
-        "current_residue": "S",
-        "proposed_residue": "T",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Threonine (T) is known to promote flexibility and can introduce a turn in protein structures, enhancing the potential for repeating sequence patterns."
+        "reason": "Lysine (K) introduces diversity and enhances helix stability, aligning with the design goal for a helix-turn-helix motif."
       },
       {
         "position": 7,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Proposing 'P' at position 7 is likely to enhance flexibility and promote turn formation due to its unique backbone conformation, which can facilitate the introduction of repeating sequence patterns."
+        "reason": "Glutamic acid (E) maintains helical structure while improving sequence diversity and reducing repeat stretch."
       },
       {
         "position": 8,
-        "current_residue": "P",
-        "proposed_residue": "N",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'N' can introduce flexibility due to the polar nature of 'N', promoting turns and aiding in the formation of repeating sequence patterns."
+        "reason": "Lysine (K) introduces diversity and maintains helical stability, while also potentially improving energy profile."
       },
       {
         "position": 9,
-        "current_residue": "P",
-        "proposed_residue": "T",
-        "confidence": 0.8,
-        "reason": "Threonine (T) can introduce flexibility due to its hydroxyl group and has the potential to promote turns, while also fitting well in repeating sequence patterns."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.85,
+        "reason": "K is an alpha-helix favoring residue that enhances stability and introduces diversity in the sequence."
       },
       {
         "position": 10,
-        "current_residue": "T",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and is often found in turns, which aligns with the objective of introducing flexibility while maintaining a repeatable pattern in the sequence."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.75,
+        "reason": "Glutamic acid (E) introduces sequence diversity and maintains helix stability, supporting the formation of a helix-turn-helix motif."
       },
       {
         "position": 11,
-        "current_residue": "T",
-        "proposed_residue": "S",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Substituting 'T' with 'S' can enhance flexibility due to 'S' being a smaller side chain, and it maintains a similar polar character, promoting turn formation and contributing to the desired repeating sequence pattern."
+        "reason": "Lysine (K) is a helix-favoring residue that introduces diversity and can stabilize the helix-turn-helix motif while breaking the long repeat stretch."
       },
       {
         "position": 12,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine is known to promote flexibility and is effective in creating turns in protein structures, aligning well with the objective of introducing flexibility while maintaining a repeating pattern."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.6,
+        "reason": "Glutamic acid (E) can introduce charge and promote helix-turn-helix formation while maintaining the helical structure."
       },
       {
         "position": 13,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing proline at this position could introduce flexibility and promote turn formation due to its unique cyclic structure, while also fitting well into the repeating pattern observed in the local sequence."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces diversity and is favorable for maintaining helical structure, supporting the design goal of a helix-turn-helix motif."
       },
       {
         "position": 14,
-        "current_residue": "P",
-        "proposed_residue": "T",
+        "current_residue": "K",
+        "proposed_residue": "R",
         "confidence": 0.8,
-        "reason": "Threonine (T) is known to promote flexibility and is often found in turns, which aligns with the objective of introducing flexibility and creating repeating sequence patterns."
+        "reason": "Arginine (R) introduces diversity while maintaining the helical structure, which is beneficial for the helix-turn-helix motif."
       },
       {
         "position": 15,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' (proline) at this position to introduce flexibility and promote turn formation, which aligns with the objective of creating repeating sequence patterns."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces sequence diversity and maintains helical stability, fitting the design goal for a helix-turn-helix motif."
       },
       {
         "position": 16,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting 'N' with 'P' can introduce flexibility and promote turns due to the unique backbone conformation of proline, while also fitting into the repeating sequence pattern observed."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) maintains helix stability and introduces diversity, which is needed to enhance the current sequence and meet the design goal."
       },
       {
         "position": 17,
         "current_residue": "E",
-        "proposed_residue": "N",
-        "confidence": 0.7,
-        "reason": "Substituting 'E' with 'N' can introduce flexibility as 'N' is known to promote turns, and it fits well within the repeating sequence pattern observed in the local context."
+        "proposed_residue": "K",
+        "confidence": 0.8,
+        "reason": "Lysine (K) is a helix-favorable residue that can enhance the structural integrity of the helix-turn-helix motif while introducing diversity and maintaining favorable energy."
       },
       {
         "position": 18,
-        "current_residue": "T",
-        "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Proposing 'P' to introduce flexibility and promote the formation of turns, as it is known to favor such conformations and can help create repeating sequence patterns."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.8,
+        "reason": "Lysine (K) is a helix-favoring residue that introduces diversity and maintains the helical structure, improving the overall stability and functionality of the motif."
       },
       {
         "position": 19,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Proposing 'P' at this position can enhance flexibility as proline is known to promote turns in protein structures. It also maintains a repetitive pattern with the adjacent residues."
+        "current_residue": "R",
+        "proposed_residue": "K",
+        "confidence": 0.8,
+        "reason": "Lysine (K) maintains positive charge and promotes helix stability while introducing diversity in the sequence."
       }
     ],
     "fold_result": {
       "pdb_path": "outputs/iter_7.relaxed.pdb",
-      "energy": 0.028669,
-      "objective_score": 0.470444,
-      "combined_score": 0.181263
+      "energy": 0.848202,
+      "objective_score": 1.0,
+      "combined_score": 0.748359,
+      "rosetta_total_score": -44.41
     },
     "accepted": false,
-    "score_delta": -0.017768000000000006
+    "score_delta": -0.009318999999999966
   },
   {
     "iteration": 8,
-    "sequence_before": "GPGPNSSGPPTTSNPNNETN",
-    "sequence_after": "PGPGSNGSGSPGGSGPPSSS",
+    "sequence_before": "EEEEKEEKEEKEKEKEEEER",
+    "sequence_after": "KKKKKKKEKKKKEKRKKKKK",
     "mutations": [
       {
         "position": 0,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Substituting G with P can introduce flexibility by promoting turn formation while maintaining a repeating sequence pattern."
+        "reason": "Lysine (K) introduces diversity and maintains helical propensity, which aligns with the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 1,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures, and it aligns with the objective of creating repeating sequence patterns."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "K introduces diversity while maintaining helical structure, which is beneficial for the design goal."
       },
       {
         "position": 2,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Proposing 'P' introduces flexibility and can promote turns, aligning with the objective of creating repeating patterns."
+        "reason": "Lysine (K) introduces necessary diversity while maintaining helix stability, and it has been previously accepted with favorable energy."
       },
       {
         "position": 3,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' may enhance flexibility due to 'G's smaller size and ability to introduce turns, while also aligning with the goal of creating repeating sequence patterns."
-      },
-      {
-        "position": 4,
-        "current_residue": "N",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Substituting 'N' with 'S' can introduce flexibility due to the smaller side chain of serine and promote turn formation, which aligns with the objective of creating repeating sequence patterns."
+        "reason": "Lysine (K) introduces diversity while maintaining the helical structure and improving overall stability."
       },
       {
         "position": 5,
-        "current_residue": "S",
-        "proposed_residue": "N",
-        "confidence": 0.8,
-        "reason": "Substituting 'S' with 'N' can introduce flexibility while maintaining hydrogen bonding capabilities, promoting turn formation and fitting well into the repeating sequence pattern."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces diversity and maintains helix stability, which is beneficial for achieving a helix-turn-helix motif."
       },
       {
         "position": 6,
-        "current_residue": "S",
-        "proposed_residue": "G",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Substituting 'S' with 'G' can introduce flexibility due to glycine's small size and ability to adopt various conformations, promoting turn formation while maintaining a repeating pattern."
+        "reason": "Lysine (K) introduces diversity, maintains helical stability, and potentially improves core packing."
       },
       {
         "position": 7,
-        "current_residue": "G",
-        "proposed_residue": "S",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and can form hydrogen bonds, which may help in creating turn-like structures while also fitting well with the surrounding residues."
+        "reason": "Glutamic acid (E) maintains helical structure and introduces diversity, improving overall stability."
       },
       {
         "position": 8,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for promoting flexibility in protein structures and can help create turn-promoting residues, enhancing the overall flexibility while maintaining the repeating pattern in the sequence."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) provides a balance of helical stability and introduces diversity to the sequence, enhancing the helix-turn-helix motif."
       },
       {
         "position": 9,
-        "current_residue": "P",
-        "proposed_residue": "S",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.7,
-        "reason": "Substituting Proline (P) with Serine (S) can introduce flexibility due to Serine's smaller side chain and ability to participate in hydrogen bonding, promoting a turn structure while maintaining some repeating sequence patterns."
-      },
-      {
-        "position": 10,
-        "current_residue": "T",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' (proline) at position 10 is likely to introduce flexibility by promoting turn formation, which aligns with the objective of creating repeating sequence patterns while maintaining structural integrity."
+        "reason": "K is an alpha-helix favoring residue that enhances structural stability while also introducing sequence diversity."
       },
       {
         "position": 11,
-        "current_residue": "T",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for promoting flexibility and is often found in turns, which aligns with the objective of introducing flexibility and creating repeating sequence patterns."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.6,
+        "reason": "Lysine (K) is a helix-favoring residue that can enhance structural stability and introduce necessary diversity."
       },
       {
         "position": 12,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine is known for its ability to introduce flexibility and is often found in turns. It can help promote the desired flexibility while maintaining a repeating sequence pattern."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) maintains helical structure, adds charge for interaction, and improves sequence diversity."
       },
       {
         "position": 13,
-        "current_residue": "N",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Substituting 'N' with 'S' can introduce flexibility due to the smaller side chain of serine, which can promote turn formation and fits with the surrounding sequence to maintain repeat patterns."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) maintains helical structure while introducing diversity and enhancing stability in the helix-turn-helix motif."
       },
       {
         "position": 14,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.6,
-        "reason": "Glycine is known to promote flexibility and can fit well in turns, potentially enhancing the turn-promoting characteristics of the sequence."
+        "current_residue": "K",
+        "proposed_residue": "R",
+        "confidence": 0.7,
+        "reason": "Arginine (R) introduces diversity and maintains helical structure, beneficial for achieving the helix-turn-helix motif."
       },
       {
         "position": 15,
-        "current_residue": "N",
-        "proposed_residue": "P",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.7,
-        "reason": "Proposing 'P' (Proline) at position 15 as it is known to promote turns and introduce flexibility in protein structures, potentially creating a repeating sequence pattern."
+        "reason": "Lysine (K) maintains helical stability, introduces sequence diversity, and is compatible with the helix-turn-helix motif."
       },
       {
         "position": 16,
-        "current_residue": "N",
-        "proposed_residue": "P",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.7,
-        "reason": "Proposing 'P' (Proline) introduces flexibility and promotes turn formation, aligning with the objective of creating repeating sequence patterns."
+        "reason": "Lysine (K) maintains helix stability, introduces diversity, and is favorable for the helix-turn-helix motif."
       },
       {
         "position": 17,
         "current_residue": "E",
-        "proposed_residue": "S",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and can facilitate turn formation in protein structures, which aligns well with the objective of introducing flexibility and creating repeating sequence patterns."
+        "reason": "Lysine (K) is a helix-favorable residue that maintains helical structure while introducing diversity, and could improve compactness."
       },
       {
         "position": 18,
-        "current_residue": "T",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Substituting 'T' with 'S' may enhance flexibility due to the smaller side chain of serine, promoting turn formation while maintaining a similar polar character. This aligns with the objective of introducing flexibility and maintaining repeating sequence patterns."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.6,
+        "reason": "Lysine (K) is a helix-favoring residue that introduces diversity while maintaining helical structure, although it has been previously rejected."
       },
       {
         "position": 19,
-        "current_residue": "N",
-        "proposed_residue": "S",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Serine (S) has a small side chain that can promote flexibility and is known to facilitate turn formation, making it suitable for creating repeating sequence patterns."
+        "reason": "Lysine (K) maintains positive charge and promotes helix stability, which aligns with the design goal of creating a helix-turn-helix motif while introducing sequence diversity."
       }
     ],
     "fold_result": {
       "pdb_path": "outputs/iter_8.relaxed.pdb",
-      "energy": 0.025863,
-      "objective_score": 0.414399,
-      "combined_score": 0.160132
+      "energy": 0.856459,
+      "objective_score": 1.0,
+      "combined_score": 0.751199,
+      "rosetta_total_score": -45.72
     },
     "accepted": false,
-    "score_delta": -0.03889900000000002
+    "score_delta": -0.0064790000000000125
   },
   {
     "iteration": 9,
-    "sequence_before": "GPGPNSSGPPTTSNPNNETN",
-    "sequence_after": "PGPGPGGPGNNPGPGGPGPP",
+    "sequence_before": "EEEEKEEKEEKEKEKEEEER",
+    "sequence_after": "EEEKKKKEEKKEKEKEEKEK",
     "mutations": [
       {
-        "position": 0,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' introduces a proline residue which is known to promote turns and flexibility in protein structures, aligning with the objective of enhancing flexibility while maintaining a repeating pattern."
-      },
-      {
-        "position": 1,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, which aligns with the objective of introducing flexibility while maintaining a repeating pattern."
-      },
-      {
-        "position": 2,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting 'G' with 'P' can introduce a proline residue, which is known for promoting turns and flexibility in protein structures, while also maintaining sequence repetition with 'P' already present in the sequence."
-      },
-      {
         "position": 3,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can introduce flexibility due to 'G's smaller size and ability to promote turns, aligning with the objective of enhancing flexibility and creating repeating patterns."
-      },
-      {
-        "position": 4,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' introduces flexibility as proline is known to promote turns and can create a repeating pattern with existing prolines in the sequence."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces diversity while maintaining helical structure, and past iterations show potential energy improvements with this mutation."
       },
       {
         "position": 5,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for introducing flexibility and is often found in turns, making it a suitable substitution to promote the desired flexibility in the sequence."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) introduces slight diversity while maintaining helical stability, aligning with design goals."
       },
       {
         "position": 6,
-        "current_residue": "S",
-        "proposed_residue": "G",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Substituting 'S' with 'G' introduces flexibility due to 'G's small side chain, promoting turn formation and aligning with the objective of creating repeating sequence patterns."
+        "reason": "Lysine (K) introduces diversity and enhances helical stability, aligning with the goal of creating a helix-turn-helix motif."
       },
       {
         "position": 7,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Proposing 'P' at this position can introduce flexibility and promote turn formation, aligning with the objective of creating repeating sequence patterns."
-      },
-      {
-        "position": 8,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.7,
-        "reason": "Substituting 'P' with 'G' introduces flexibility due to glycine's unique backbone structure, which is known to promote turns in protein structures. Additionally, it aligns with the objective of creating repeating sequence patterns."
+        "current_residue": "K",
+        "proposed_residue": "E",
+        "confidence": 0.8,
+        "reason": "Glutamic acid (E) maintains the helical structure while introducing diversity and improving energy stability."
       },
       {
         "position": 9,
-        "current_residue": "P",
-        "proposed_residue": "N",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'N' can introduce flexibility and promote turn formation, while maintaining a repeating pattern with the nearby 'N' residues."
-      },
-      {
-        "position": 10,
-        "current_residue": "T",
-        "proposed_residue": "N",
-        "confidence": 0.7,
-        "reason": "Asparagine (N) can promote flexibility in protein structures and fits well within turn-promoting contexts, while also being compatible with the surrounding residues to maintain structural integrity."
-      },
-      {
-        "position": 11,
-        "current_residue": "T",
-        "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Proposing 'P' at position 11 can introduce flexibility and promote turns due to its unique structure, while also contributing to potential repeating sequence patterns."
-      },
-      {
-        "position": 12,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'S' with 'G' can introduce flexibility due to glycine's unique backbone structure, promoting turn formation and aligning with the objective of creating repeating sequence patterns."
-      },
-      {
-        "position": 13,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' introduces flexibility due to its unique cyclic structure, which can promote turns and enhance the overall flexibility of the sequence, while also aligning with the observed success of 'P' in past substitutions."
-      },
-      {
-        "position": 14,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.7,
-        "reason": "Glycine (G) is known to promote flexibility and can fit into tight turns, making it suitable for introducing flexibility in the sequence while aligning with the objective of creating repeating patterns."
-      },
-      {
-        "position": 15,
-        "current_residue": "N",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to introduce turns in protein structures, making it a strong candidate for enhancing flexibility while maintaining a repeating pattern."
-      },
-      {
-        "position": 16,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Proposing 'P' introduces a turn-promoting residue that can enhance flexibility and facilitate the formation of repeating sequence patterns."
+        "reason": "K is an alpha-helix favoring residue that can enhance the structural stability while introducing some sequence diversity."
       },
       {
         "position": 17,
         "current_residue": "E",
-        "proposed_residue": "G",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known to introduce flexibility and is often found in turn regions, making it suitable for promoting turns while creating repeating sequence patterns."
-      },
-      {
-        "position": 18,
-        "current_residue": "T",
-        "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Proposing 'P' as it is a known turn-promoting residue that can introduce flexibility in the structure and fits well with the goal of creating repeating sequence patterns."
+        "reason": "Lysine (K) is an alpha-helix favorable residue that can enhance stability while introducing some diversity, aligning with the design goal of creating a helix-turn-helix motif."
       },
       {
         "position": 19,
-        "current_residue": "N",
-        "proposed_residue": "P",
+        "current_residue": "R",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Proposing 'P' (Proline) at this position can introduce a turn due to its unique cyclic structure, promoting flexibility and aiding in the formation of repeating sequence patterns."
+        "reason": "Lysine (K) maintains positive charge and promotes helix stability while introducing some diversity, aligning with the design goal."
       }
     ],
     "fold_result": {
       "pdb_path": "outputs/iter_9.relaxed.pdb",
-      "energy": 0.026762,
-      "objective_score": 0.366702,
-      "combined_score": 0.143955
+      "energy": 0.867693,
+      "objective_score": 1.0,
+      "combined_score": 0.755228,
+      "rosetta_total_score": -47.61
     },
     "accepted": false,
-    "score_delta": -0.055076000000000014
+    "score_delta": -0.002449999999999952
   },
   {
     "iteration": 10,
-    "sequence_before": "GPGPNSSGPPTTSNPNNETN",
-    "sequence_after": "PGPSPGNTSAPGNGPPGGGP",
+    "sequence_before": "EEEEKEEKEEKEKEKEEEER",
+    "sequence_after": "EEKEKEKEEKKEKEKEEEEG",
     "mutations": [
       {
-        "position": 0,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' introduces a turn-promoting character that enhances flexibility and aligns with the repeating sequence pattern observed in the local context."
-      },
-      {
-        "position": 1,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can enhance flexibility due to 'G' being a smaller residue, which promotes turns. The context indicates 'G' has been accepted before, suggesting it may fit well in creating repeating sequence patterns."
-      },
-      {
         "position": 2,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Proposing 'P' at position 2 can introduce flexibility and promote turn formation, which aligns with the objective of creating repeating sequence patterns."
-      },
-      {
-        "position": 3,
-        "current_residue": "P",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and can act as a turn-promoting residue, which aligns with the objective to introduce flexibility and create repeating sequence patterns."
-      },
-      {
-        "position": 4,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Proposing 'P' at this position may introduce flexibility due to its unique cyclic structure, which can promote turns while maintaining a repeating sequence pattern."
-      },
-      {
-        "position": 5,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to promote flexibility and can facilitate turns in protein structures, making it a suitable choice for this position while aligning with the goal of creating repeating sequence patterns."
+        "reason": "Lysine (K) introduces necessary diversity and maintains stability of the helix-turn-helix motif."
       },
       {
         "position": 6,
-        "current_residue": "S",
-        "proposed_residue": "N",
+        "current_residue": "E",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Substituting 'S' with 'N' can introduce flexibility and is known to promote turn formation, while also maintaining a similar size and polarity, which can help in creating repeating sequence patterns."
+        "reason": "Lysine (K) enhances helical stability and introduces diversity, aligning with design goals for a helix-turn-helix motif."
       },
       {
         "position": 7,
-        "current_residue": "G",
-        "proposed_residue": "T",
+        "current_residue": "K",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Threonine (T) is known to promote flexibility and can enhance turn formation, fitting well with the objective of introducing flexibility while maintaining a repeating sequence pattern."
-      },
-      {
-        "position": 8,
-        "current_residue": "P",
-        "proposed_residue": "S",
-        "confidence": 0.7,
-        "reason": "Substituting 'P' with 'S' can introduce flexibility due to 'S's smaller side chain, which may help in promoting turn formation and contribute to repeating sequence patterns."
+        "reason": "Glutamic acid (E) maintains the helical structure while improving sequence diversity and fits well in the moderately exposed position."
       },
       {
         "position": 9,
-        "current_residue": "P",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is known to promote flexibility and can fit well in turn regions, potentially enhancing the desired structural properties while maintaining the repeating sequence pattern."
-      },
-      {
-        "position": 10,
-        "current_residue": "T",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' at position 10 can enhance flexibility and promote turn formation, fitting the objective of creating repeating sequence patterns."
-      },
-      {
-        "position": 11,
-        "current_residue": "T",
-        "proposed_residue": "G",
-        "confidence": 0.7,
-        "reason": "Glycine (G) is a small and flexible amino acid that can promote turns in protein structures, making it suitable for introducing flexibility while maintaining a repeating pattern."
-      },
-      {
-        "position": 12,
-        "current_residue": "S",
-        "proposed_residue": "N",
-        "confidence": 0.8,
-        "reason": "Asparagine (N) can promote flexibility and is known to facilitate turn formation, which aligns with the objective of introducing flexibility while maintaining a repeating pattern."
-      },
-      {
-        "position": 13,
-        "current_residue": "N",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is a turn-promoting residue that can increase flexibility in the structure, which aligns with the objective of introducing flexibility while allowing for repeating patterns."
-      },
-      {
-        "position": 15,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Proposing 'P' (proline) at this position can help introduce a turn due to its unique cyclic structure, promoting flexibility and potentially creating a repeating sequence pattern."
-      },
-      {
-        "position": 16,
-        "current_residue": "N",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known to promote flexibility and is often found in turns or loops, which aligns with the objective of introducing flexibility and creating repeating sequence patterns."
-      },
-      {
-        "position": 17,
         "current_residue": "E",
-        "proposed_residue": "G",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Glycine is known for its high flexibility and ability to promote turns in protein structures, which aligns well with the objective of introducing flexibility while maintaining a repeating sequence pattern."
-      },
-      {
-        "position": 18,
-        "current_residue": "T",
-        "proposed_residue": "G",
-        "confidence": 0.7,
-        "reason": "Glycine (G) is a well-known turn-promoting residue that can introduce flexibility into protein structures, making it suitable for enhancing turn regions while maintaining the repeating sequence pattern."
+        "reason": "K is an alpha-helix favoring residue that can enhance structural stability and break the repeat stretch, contributing positively to the helix-turn-helix motif."
       },
       {
         "position": 19,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Proposing 'P' introduces flexibility due to its unique backbone conformation, promoting turn formation and aligns with the objective of creating repeating sequence patterns."
+        "current_residue": "R",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a strong turn/bend residue that increases flexibility and can help in forming the desired helix-turn-helix motif."
       }
     ],
     "fold_result": {
       "pdb_path": "outputs/iter_10.relaxed.pdb",
-      "energy": 0.02529,
-      "objective_score": 0.489613,
-      "combined_score": 0.186145
+      "energy": 0.842366,
+      "objective_score": 0.95,
+      "combined_score": 0.723836,
+      "rosetta_total_score": -43.52
     },
     "accepted": false,
-    "score_delta": -0.012886000000000009
+    "score_delta": -0.03384199999999993
+  },
+  {
+    "iteration": 11,
+    "sequence_before": "EEEEKEEKEEKEKEKEEEER",
+    "sequence_after": "EEEEKEKKEEKEKEKEEEER",
+    "mutations": [
+      {
+        "position": 6,
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.8,
+        "reason": "Lysine (K) enhances helical stability and introduces diversity, which is needed for improving structural integrity while maintaining the helix-turn-helix motif."
+      }
+    ],
+    "fold_result": {
+      "pdb_path": "outputs/iter_11.relaxed.pdb",
+      "energy": 0.872695,
+      "objective_score": 1.0,
+      "combined_score": 0.756966,
+      "rosetta_total_score": -48.5
+    },
+    "accepted": false,
+    "score_delta": -0.0007119999999999349
+  },
+  {
+    "iteration": 12,
+    "sequence_before": "EEEEKEEKEEKEKEKEEEER",
+    "sequence_after": "EEEEKEEKEEKEKEKEEEER",
+    "mutations": [],
+    "fold_result": {
+      "pdb_path": "outputs/iter_12.relaxed.pdb",
+      "energy": 0.864239,
+      "objective_score": 1.0,
+      "combined_score": 0.754032,
+      "rosetta_total_score": -47.02
+    },
+    "accepted": false,
+    "score_delta": -0.003645999999999927
+  },
+  {
+    "iteration": 13,
+    "sequence_before": "EEEEKEEKEEKEKEKEEEER",
+    "sequence_after": "EEEEKEEKEEKEKEKEEEER",
+    "mutations": [],
+    "fold_result": {
+      "pdb_path": "outputs/iter_13.relaxed.pdb",
+      "energy": 0.869091,
+      "objective_score": 1.0,
+      "combined_score": 0.75573,
+      "rosetta_total_score": -47.86
+    },
+    "accepted": false,
+    "score_delta": -0.0019479999999999498
+  },
+  {
+    "iteration": 14,
+    "sequence_before": "EEEEKEEKEEKEKEKEEEER",
+    "sequence_after": "EEEEKEEKEEKEKEKEEEER",
+    "mutations": [],
+    "fold_result": {
+      "pdb_path": "outputs/iter_14.relaxed.pdb",
+      "energy": 0.871635,
+      "objective_score": 1.0,
+      "combined_score": 0.756621,
+      "rosetta_total_score": -48.31
+    },
+    "accepted": false,
+    "score_delta": -0.0010569999999999746
+  },
+  {
+    "iteration": 15,
+    "sequence_before": "EEEEKEEKEEKEKEKEEEER",
+    "sequence_after": "EEEEKEEKEEKEKEKEEEER",
+    "mutations": [],
+    "fold_result": {
+      "pdb_path": "outputs/iter_15.relaxed.pdb",
+      "energy": 0.871633,
+      "objective_score": 1.0,
+      "combined_score": 0.75662,
+      "rosetta_total_score": -48.31
+    },
+    "accepted": false,
+    "score_delta": -0.0010580000000000034
   }
 ]

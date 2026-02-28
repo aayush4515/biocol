@@ -81,6 +81,8 @@ def design(
     w_confidence: float = typer.Option(0.10, "--w-confidence", help="Scoring weight: pLDDT confidence"),
     rosetta_norm_target: float = typer.Option(-200.0, "--rosetta-norm-target", help="Sigmoid centre for Rosetta normalisation"),
     rosetta_norm_scale: float = typer.Option(50.0, "--rosetta-norm-scale", help="Sigmoid scale for Rosetta normalisation"),
+    # ── Prompt debug flags ───────────────────────────────────────────────
+    dump_prompts: bool = typer.Option(False, "--dump-prompts", help="Dump LLM prompts to outputs/debug/prompts/ (requires --debug)"),
 ) -> None:
     """Run the swarm-based protein design loop.
 
@@ -168,10 +170,14 @@ def design(
         plateau_window=plateau_window,
     )
 
+    if dump_prompts:
+        console.print(f"  Prompt dump     : ON (outputs/debug/prompts/)")
+
     engine = DesignEngine(
         swarm_config=swarm_cfg,
         folding_config=folding_cfg,
         memory_config=MemoryConfig(),
+        dump_prompts=dump_prompts and debug,
     )
 
     try:

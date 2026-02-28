@@ -69,14 +69,55 @@ The combined score is: `w_physics * physics + w_objective * objective + w_confid
 
 Weights are auto-normalised to sum to 1.0.
 
+### Optional: DSSP for secondary structure
+
+The prompt pipeline uses DSSP (via BioPython) to assign secondary structure labels
+(H/E/C) per residue. If DSSP is not installed, the system continues gracefully with
+"UNKNOWN" labels and a warning.
+
+```bash
+# macOS
+brew install dssp
+
+# Ubuntu/Debian
+sudo apt-get install dssp
+
+# Verify
+mkdssp --version
+```
+
+BioPython (`biopython>=1.81`) is required and included in `requirements.txt`.
+
+### Prompt debugging (--dump-prompts)
+
+When running with `--debug --dump-prompts`, the engine writes every LLM agent prompt
+to `outputs/debug/prompts/iter_X_pos_Y.txt` for inspection:
+
+```bash
+python -m protein_swarm.main design \
+  -s "VVVVVVVVVVVVVVVVVVVV" \
+  -o "Design a stable helix-rich protein" \
+  --use-llm --modal-fold --remote-fold-backend esmfold \
+  --max-iterations 2 --debug --dump-prompts
+```
+
+Each prompt file contains the full PART 1–4 structured context sent to the LLM:
+- **PART 1**: Role, design goal, decision rules, folding principles
+- **PART 2**: Local neighborhood (DSSP secondary structure, spatial neighbors, compactness)
+- **PART 3**: Memory history (global stats, per-position events, recommendations)
+- **PART 4**: Design goal evaluation (goal score, key aspects, recommendations)
+
 ## Architecture
 
 ```
 CLI (main.py)
   └─ DesignEngine (orchestrator/engine.py)
        ├─ Agents: residue_agent × N  [Modal parallel or local]
+       │    └─ Paper-style PART 1–4 prompts (structure, memory, goal eval)
+       ├─ Structure analysis: PDB → DSSP + distance matrix [local]
        ├─ Folding: ESMFold            [Modal GPU or local]
        ├─ Scoring: PyRosetta          [local only, optional]
        ├─ Scoring: objective heuristic [local]
-       └─ Memory: shared memory store  [local]
+       ├─ Goal evaluation: sequence + objective → score + recommendations [local]
+       └─ Memory: shared memory store with per-position event history [local]
 ```

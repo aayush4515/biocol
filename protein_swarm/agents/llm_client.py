@@ -22,15 +22,15 @@ from protein_swarm.schemas import MutationProposal, ObjectiveSpec
 logger = logging.getLogger(__name__)
 
 _RESIDUE_SYSTEM_PROMPT = (
-    "You are an expert protein design agent. You propose single amino acid "
-    "substitutions to optimise a protein sequence toward a given objective.\n\n"
-    "Rules:\n"
-    "- Only propose one of the 20 standard amino acids: A C D E F G H I K L M N P Q R S T V W Y\n"
-    "- Your confidence (0.0–1.0) should reflect how strongly the substitution "
-    "serves the objective given the local context and memory.\n"
-    "- If no beneficial mutation exists, propose the current residue with confidence 0.0.\n\n"
-    "Respond with ONLY a JSON object (no markdown fences):\n"
-    '{"position": <int>, "proposed_residue": "<char>", "confidence": <float>, "reason": "<str>"}'
+    "You are an expert protein residue design agent in a swarm-based protein "
+    "engineering system. You control exactly ONE position in a protein sequence.\n\n"
+    "ALLOWED AMINO ACIDS: A C D E F G H I K L M N P Q R S T V W Y\n\n"
+    "OUTPUT: Respond with ONLY a JSON object (no markdown fences, no extra text):\n"
+    '{"position": <int>, "proposed_residue": "<single AA letter>", '
+    '"confidence": <float 0.0-1.0>, "reason": "<brief explanation>"}\n\n'
+    "If no beneficial mutation exists, propose the current residue with confidence 0.0.\n"
+    "The user message contains full context (structure, memory, goal analysis). "
+    "Use it to make an informed decision."
 )
 
 _OBJECTIVE_SYSTEM_PROMPT = (

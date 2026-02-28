@@ -9,6 +9,67 @@ from __future__ import annotations
 from pydantic import BaseModel, Field
 
 
+# ── Structure Context (computed from PDB per position) ─────────────────────────
+
+class SpatialNeighbor(BaseModel):
+    """A residue that is spatially close (within Å cutoff) to the query position."""
+    position: int
+    residue: str
+    distance: float
+
+
+class StructureContext(BaseModel):
+    """Per-position structural context derived from the latest accepted PDB."""
+
+    secondary_structure: str = Field(default="UNKNOWN", description="DSSP label: H/E/C/T/S/G/B/I or UNKNOWN")
+    linear_neighbors_n: str = Field(default="", description="N-terminal linear neighbors (up to 2 residues)")
+    linear_neighbors_c: str = Field(default="", description="C-terminal linear neighbors (up to 2 residues)")
+    spatial_neighbors: list[SpatialNeighbor] = Field(default_factory=list, description="Residues within distance cutoff")
+    contact_density: int = Field(default=0, description="Number of Cα contacts within cutoff")
+    avg_local_distance: float = Field(default=0.0, description="Mean Cα distance to ±window residues (compactness)")
+    std_local_distance: float = Field(default=0.0, description="Std of Cα distances (flexibility proxy)")
+    region_guess: str = Field(default="unknown", description="Heuristic: buried/surface/helical-like/loop-like")
+
+
+# ── Memory Schemas ─────────────────────────────────────────────────────────────
+
+class PositionMutationEvent(BaseModel):
+    """A single mutation event at a specific position, stored in memory."""
+    iteration: int
+    position: int
+    from_res: str
+    to_res: str
+    accepted: bool
+    reason: str = ""
+    combined_score: float | None = None
+    objective_score: float | None = None
+    physics_score: float | None = None
+    rosetta_total_score: float | None = None
+    design_goal_score: float | None = None
+    num_mutations_in_iteration: int | None = None
+
+
+class GlobalMemoryStats(BaseModel):
+    """Aggregate stats across all iterations, computed once per iteration."""
+    total_iterations: int = 0
+    accepted_count: int = 0
+    rejected_count: int = 0
+    acceptance_rate: float = 0.0
+    recent_acceptance_rate: float = 0.0
+    energy_trend: str = Field(default="unknown", description="improving / flat / worsening / unknown")
+    recent_scores: list[float] = Field(default_factory=list, description="Last K combined scores (accepted only)")
+
+
+# ── Goal Evaluation ────────────────────────────────────────────────────────────
+
+class GoalEvaluation(BaseModel):
+    """Design goal evaluation summary for prompt context."""
+    goal_score: float = Field(default=0.0, description="Goal achievement score 0-100")
+    rating: str = Field(default="UNKNOWN", description="POOR / OK / GOOD")
+    key_aspects: dict[str, float] = Field(default_factory=dict, description="Sub-scores")
+    recommendations: list[str] = Field(default_factory=list)
+
+
 # ── Agent I/O ──────────────────────────────────────────────────────────────────
 
 class AgentInput(BaseModel):
@@ -29,6 +90,15 @@ class AgentInput(BaseModel):
     llm_temperature: float = 0.7
     llm_max_tokens: int = 512
     llm_max_retries: int = 2
+
+    # ── paper-style context (populated by orchestrator) ──────────────────
+    structure_context: StructureContext | None = None
+    global_memory_stats: GlobalMemoryStats | None = None
+    position_history: list[PositionMutationEvent] = Field(default_factory=list)
+    neighborhood_history: list[PositionMutationEvent] = Field(default_factory=list)
+    goal_evaluation: GoalEvaluation | None = None
+    iteration: int = 0
+    dump_prompt: bool = False
 
 
 class MutationProposal(BaseModel):
@@ -52,10 +122,10 @@ class ObjectiveSpec(BaseModel):
     favour_stability: bool = True
     favour_diversity: bool = False
     custom_constraints: list[str] = Field(default_factory=list)
-    target_properties: list[str] = Field(default_factory=list, description="e.g. thermostable, soluble, membrane-spanning")
-    avoid_residues: list[str] = Field(default_factory=list, description="Single-letter AA codes to globally avoid")
-    structural_motifs: list[str] = Field(default_factory=list, description="e.g. coiled-coil, beta-barrel, zinc-finger")
-    free_text_reasoning: str = Field(default="", description="LLM chain-of-thought explaining the parsed objective")
+    target_properties: list[str] = Field(default_factory=list)
+    avoid_residues: list[str] = Field(default_factory=list)
+    structural_motifs: list[str] = Field(default_factory=list)
+    free_text_reasoning: str = Field(default="")
 
 
 # ── Folding / Scoring ─────────────────────────────────────────────────────────
@@ -67,6 +137,7 @@ class FoldResult(BaseModel):
     energy: float
     objective_score: float
     combined_score: float
+    rosetta_total_score: float | None = None
 
 
 # ── Memory ─────────────────────────────────────────────────────────────────────
@@ -79,7 +150,7 @@ class PositionMemorySummary(BaseModel):
     failure_count: int = 0
     accepted_residues: list[str] = Field(default_factory=list)
     rejected_residues: list[str] = Field(default_factory=list)
-    mutation_bias: float = Field(default=1.0, description="Multiplier on mutation probability")
+    mutation_bias: float = Field(default=1.0)
 
 
 # ── Iteration Record ──────────────────────────────────────────────────────────
@@ -108,5 +179,5 @@ class DesignResult(BaseModel):
     final_pdb_path: str
 
 
-# Forward-reference resolution (PositionMemorySummary referenced before definition)
+# Forward-reference resolution
 AgentInput.model_rebuild()
