@@ -1,8 +1,8 @@
 {
-  "initial_sequence": "AAAALLLLAAAAGGGGAAAA",
-  "final_sequence": "AAAKALAQMAAKMAKLLAKA",
+  "initial_sequence": "ACDEFGHIKLMNPQRSTVWY",
+  "final_sequence": "ACDEFGHIKLMNPQRSTVWY",
   "objective": "Design a stable helix-rich protein",
-  "best_score": 0.987318,
-  "total_iterations": 5,
+  "best_score": 1.1741,
+  "total_iterations": 4,
   "final_pdb_path": "outputs/final_structure.pdb"
 }

@@ -187,7 +187,7 @@ class DesignEngine:
         except Exception as e:
             raise RuntimeError(
                 "Failed to call Modal agents. Make sure the app is deployed:\n"
-                "  modal deploy protein_swarm/modal_app/app.py\n"
+                "  modal deploy protein_swarm/modal_app/functions.py\n"
                 "Or run fully local with --no-modal"
             ) from e
         return [MutationProposal(**r) for r in results]

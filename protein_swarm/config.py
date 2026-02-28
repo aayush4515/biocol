@@ -14,15 +14,23 @@ from pydantic import BaseModel, Field
 class LLMConfig(BaseModel):
     """Configuration for LLM-backed agents and objective parsing."""
 
-    provider: str = Field(default="openai", description="LLM provider: openai | anthropic | together")
-    model: str = Field(default="gpt-4o", description="Model identifier")
+    provider: str = Field(
+        default="openai",
+        description="LLM provider: openai | anthropic | together | modal_local",
+    )
+    model: str = Field(default="gpt-4o", description="Model identifier (ignored for modal_local)")
     api_key: str | None = Field(default=None, description="API key; falls back to OPENAI_API_KEY env var")
     temperature: float = Field(default=0.7, ge=0.0, le=2.0)
     max_tokens: int = Field(default=512, ge=64)
     max_retries: int = Field(default=2, ge=0, description="Retries on malformed LLM JSON responses")
 
     def resolve_api_key(self) -> str:
-        """Return the effective API key, falling back to env vars."""
+        """Return the effective API key, falling back to env vars.
+
+        modal_local uses a Modal GPU function and does not require an API key.
+        """
+        if self.provider == "modal_local":
+            return ""
         if self.api_key:
             return self.api_key
         env_map = {

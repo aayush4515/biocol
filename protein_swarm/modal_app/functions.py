@@ -13,6 +13,8 @@ Two fold paths:
 from __future__ import annotations
 
 from protein_swarm.modal_app.app import app, agent_image, fold_image
+# Register GPU LLM function (modal_local) so it is deployed with the app.
+from protein_swarm.modal_app import llm_inference  # noqa: F401
 
 # ── Residue Agent (CPU, with optional LLM API key via Modal secret) ──────────
 

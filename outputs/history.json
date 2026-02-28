@@ -1,637 +1,209 @@
 [
   {
     "iteration": 0,
-    "sequence_before": "AAAALLLLAAAAGGGGAAAA",
-    "sequence_after": "AAEAAAAAEEEAAAAAEEEE",
+    "sequence_before": "ACDEFGHIKLMNPQRSTVWY",
+    "sequence_after": "AAEEFGHFKLMLLQRSTVVY",
     "mutations": [
       {
+        "position": 1,
+        "current_residue": "C",
+        "proposed_residue": "A",
+        "confidence": 1.0,
+        "reason": "Helix stability is a critical feature for stabilizing a stable helix-rich protein"
+      },
+      {
         "position": 2,
-        "current_residue": "A",
+        "current_residue": "D",
         "proposed_residue": "E",
-        "confidence": 0.7,
-        "reason": "Glutamic acid (E) is known to be a strong helix former and can contribute to helix stability through hydrogen bonding and ionic interactions. Substituting alanine with glutamic acid at this position is likely to enhance helix formation and stability."
-      },
-      {
-        "position": 4,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is a strong helix-forming residue and replacing leucine with alanine at position 4 can enhance helix stability, particularly given the presence of alanine residues nearby, which already promote helical structure."
-      },
-      {
-        "position": 5,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to be a strong helix former due to its small size and favorable backbone torsion angles. Substituting leucine with alanine at this position may enhance helical stability in the local region."
-      },
-      {
-        "position": 6,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine has a high helix-forming propensity and can stabilize alpha-helices, which aligns with the objective of designing a helix-rich protein. Substituting leucine with alanine at this position could enhance the helical stability of the segment."
+        "confidence": 0.6,
+        "reason": "Design a stable helix-rich protein"
       },
       {
         "position": 7,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is a small, helix-favoring residue and can enhance helix stability. Replacing leucine with alanine at this position may promote helical propensity in this region without introducing steric hindrance or disrupting the existing structure."
+        "current_residue": "I",
+        "proposed_residue": "F",
+        "confidence": 1.0,
+        "reason": "F"
       },
       {
-        "position": 8,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is a helix-promoting residue due to its side chain properties which favor helical stability and can form hydrogen bonds, enhancing the overall stability of helical structures."
-      },
-      {
-        "position": 9,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is a strong helix-forming residue. Substituting alanine (A) with glutamic acid at this position could enhance helix stability. The local context of the sequence supports helix formation, and E is commonly found in helix regions."
-      },
-      {
-        "position": 10,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is known to be a strong helix former due to its ability to form hydrogen bonds and its side chain length, which stabilizes the helical structure. Substituting 'A' with 'E' at this position should enhance the helicity of the sequence."
+        "position": 11,
+        "current_residue": "N",
+        "proposed_residue": "L",
+        "confidence": 0.9,
+        "reason": "L"
       },
       {
         "position": 12,
-        "current_residue": "G",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is a strong helix former and replacing glycine, which is a helix breaker, with alanine can increase helix stability in this region."
-      },
-      {
-        "position": 13,
-        "current_residue": "G",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is known to be a strong helix former, and replacing glycine with alanine in a potential helix region can enhance helical stability. Glycine tends to disrupt helices due to its flexibility, so this substitution is likely to support the objective of designing a more stable helix-rich protein."
-      },
-      {
-        "position": 14,
-        "current_residue": "G",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Ala (A) is known to be a strong helix former and replacing Gly (G) with Ala at this position can enhance alpha-helical stability in the local sequence context."
-      },
-      {
-        "position": 15,
-        "current_residue": "G",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is known to be a strong helix-forming residue. Substituting glycine (which is helix-disrupting) with alanine at this position is likely to stabilize helical structure in this region."
-      },
-      {
-        "position": 16,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is a helix-promoting residue due to its ability to form hydrogen bonds and its negative charge, which can stabilize the helix structure. Substituting alanine with glutamic acid at this position can enhance helix stability in the local context."
-      },
-      {
-        "position": 17,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is known to be a strong helix former due to its ability to form hydrogen bonds and its side chain properties. Substituting alanine (A) with glutamic acid in this context should enhance the helical propensity of the sequence."
+        "current_residue": "P",
+        "proposed_residue": "L",
+        "confidence": 1.0,
+        "reason": "Stability and helix design"
       },
       {
         "position": 18,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is a helix-promoting residue due to its ability to form hydrogen bonds and interact favorably within a helix structure. Replacing alanine with glutamic acid at position 18 may enhance helical stability in this context, where the surrounding region is composed of amino acids conducive to helix formation."
-      },
-      {
-        "position": 19,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is known to stabilize alpha-helices by participating in hydrogen bonds and salt bridges. Given the local context of alanines, introducing a glutamic acid can enhance helix formation without disrupting the existing structure."
+        "current_residue": "W",
+        "proposed_residue": "V",
+        "confidence": 1.0,
+        "reason": "Design a stable helix-rich protein"
       }
     ],
     "fold_result": {
-      "pdb_path": "/tmp/fold_output/iter_0.pdb",
-      "energy": 0.947849,
-      "objective_score": 0.769966,
-      "combined_score": 0.841119
+      "pdb_path": "outputs/iter_0.pdb",
+      "energy": 1.641074,
+      "objective_score": 0.737744,
+      "combined_score": 1.099076
     },
     "accepted": false,
-    "score_delta": -0.0030420000000001
+    "score_delta": -0.07502399999999998
   },
   {
     "iteration": 1,
-    "sequence_before": "AAAALLLLAAAAGGGGAAAA",
-    "sequence_after": "AAEAEAEEALAEAEAELEEL",
+    "sequence_before": "ACDEFGHIKLMNPQRSTVWY",
+    "sequence_after": "AAEEFGHFKLPNLQQSTVWY",
     "mutations": [
       {
-        "position": 2,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.6,
-        "reason": "Glutamic acid (E) is a helix-promoting residue due to its ability to form hydrogen bonds and its negative charge which can interact favorably with other residues in the helix. Despite its previous rejection, it remains a common substitution for enhancing helical stability in this context due to the adjacent helix-favorable leucines (L)."
-      },
-      {
-        "position": 4,
-        "current_residue": "L",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is a helix-promoting residue that can enhance alpha-helical stability and is often found in helical regions. The local context contains multiple leucines, which are also helix-favoring, and introducing E could improve helix propensity without disrupting the local structure."
-      },
-      {
-        "position": 5,
-        "current_residue": "L",
+        "position": 1,
+        "current_residue": "C",
         "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is often found in helices due to its small size and helix-promoting nature. While 'A' was previously rejected, the local context of consecutive leucines may benefit from increased helix propensity by introducing alanine, facilitating a more stable helix formation."
+        "confidence": 1.0,
+        "reason": "A"
       },
       {
-        "position": 6,
-        "current_residue": "L",
+        "position": 2,
+        "current_residue": "D",
         "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is known to be a strong helix former. Substituting L with E at this position could enhance the helical propensity of the sequence, contributing to the objective of designing a stable helix-rich protein. The local window suggests a context where introducing a helix-promoting residue could be beneficial."
+        "confidence": 0.9,
+        "reason": "Provided evidence that the proposed substitution is beneficial for the objective of designing a stable helix-rich protein"
       },
       {
         "position": 7,
-        "current_residue": "L",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is known to be a strong helix former due to its ability to form hydrogen bonds and its charged side chain, which can stabilize the helix structure. The current residue leucine (L) is also a helix former, but introducing E could enhance helix stability by increasing the likelihood of forming a stable helical dipole and potential salt bridges with other residues in the sequence."
-      },
-      {
-        "position": 9,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.7,
-        "reason": "Leucine (L) is a strong helix former and fits well in the local context of leucines, potentially enhancing helix stability. Previous rejection of glutamic acid (E) suggests preference for non-polar residues in this region."
-      },
-      {
-        "position": 11,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is known to be a strong helix former and can stabilize alpha-helical structures. Replacing alanine (A) with glutamic acid in this region could enhance the helical propensity of the sequence."
-      },
-      {
-        "position": 12,
-        "current_residue": "G",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to be a strong helix former, and replacing glycine with alanine can increase the helical propensity of the sequence. Although alanine was previously rejected, it is generally a favorable choice for introducing helices, especially given the context of neighboring alanines that can support helix formation."
-      },
-      {
-        "position": 13,
-        "current_residue": "G",
-        "proposed_residue": "E",
-        "confidence": 0.7,
-        "reason": "Glutamate (E) is a helix-promoting residue due to its ability to form hydrogen bonds and stabilize helical structures. Replacing glycine (G), which is helix-disruptive, with glutamate can enhance helical stability in this region."
-      },
-      {
-        "position": 14,
-        "current_residue": "G",
-        "proposed_residue": "A",
-        "confidence": 0.5,
-        "reason": "Alanine is a helix-promoting residue and could help in stabilizing a helical structure. Though it was previously rejected, it still has potential in this context due to its small size and helix-forming propensity."
-      },
-      {
-        "position": 15,
-        "current_residue": "G",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is known to promote alpha-helix formation due to its ability to form hydrogen bonds and its favorable side-chain interactions in helical structures. Substituting glycine (G), which is a helix breaker, with E could enhance helical stability in this region."
-      },
-      {
-        "position": 16,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.7,
-        "reason": "Leucine is a strong helix former and replacing alanine with leucine can enhance helical stability. The local context is a stretch of alanines which can support helix formation, and introducing leucine could further stabilize this region, promoting a helix-rich structure."
-      },
-      {
-        "position": 17,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.7,
-        "reason": "Glutamic acid (E) is a known helix former, and despite its previous rejection, it is a strong candidate for stabilizing helical structures. The local context contains Gly and Ala, which are neutral for helices, so introducing E might enhance helix propensity."
-      },
-      {
-        "position": 18,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.7,
-        "reason": "Glutamic acid (E) is a helix-promoting residue that can enhance helix stability. Although it was previously rejected, it remains a strong candidate for promoting helical structure in this context. Re-evaluating its potential could be beneficial given the objective to design a helix-rich protein."
-      },
-      {
-        "position": 19,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a strong helix former and can enhance the stability of helices. Given the local context of alanines, which are also helix formers, substituting with leucine can strengthen the helical propensity without disrupting the existing sequence."
-      }
-    ],
-    "fold_result": {
-      "pdb_path": "/tmp/fold_output/iter_1.pdb",
-      "energy": 1.172405,
-      "objective_score": 0.831228,
-      "combined_score": 0.967699
-    },
-    "accepted": true,
-    "score_delta": 0.12353799999999993
-  },
-  {
-    "iteration": 2,
-    "sequence_before": "AAEAEAEEALAEAEAELEEL",
-    "sequence_after": "AAALALAALAAALALAALLL",
-    "mutations": [
-      {
-        "position": 2,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is a strong helix former and can increase the stability of an alpha helix, which aligns with the objective of designing a helix-rich protein. The local context already has several alanine residues, suggesting that alanine may be well tolerated in this region."
-      },
-      {
-        "position": 3,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a strong helix former and can enhance the helical stability of the sequence, especially in a region that already contains other helix-promoting residues like alanine and glutamic acid."
-      },
-      {
-        "position": 4,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to be a strong helix former, and replacing glutamic acid with alanine at this position can increase the helical propensity of the sequence. Although 'A' was previously rejected, the context may differ, and alanine's strong helix-forming tendency is beneficial in this case."
-      },
-      {
-        "position": 5,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a strong helix former due to its hydrophobic nature and ability to stabilize helices through favorable packing interactions. The current region is rich in helix-promoting residues, and substituting alanine with leucine can enhance helix stability."
-      },
-      {
-        "position": 6,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is a strong helix former and is often used to promote helix stability. Given the context of the sequence, replacing glutamic acid with alanine could enhance helical propensity. Previous rejection of alanine may be context-specific, but in this context, it serves the objective well."
-      },
-      {
-        "position": 7,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is a strong helix former and replacing glutamate with alanine can enhance helical stability, especially given the local sequence context which already contains multiple alanines that support helix formation. Despite 'A' being previously rejected, the local context suggests it may now be beneficial."
-      },
-      {
-        "position": 8,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.7,
-        "reason": "Leucine is a strong helix former and can enhance helical stability. Given the failure with glutamic acid (E), which can be helical but might lead to charge repulsion, leucine is a non-polar alternative that should enhance stability in a helix-rich context."
-      },
-      {
-        "position": 9,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known for its strong helix-forming propensity, and replacing leucine with alanine could enhance the helical stability of this region. Despite leucine also being helix-friendly, alanine's smaller size and frequent occurrence in helices make it a potentially better choice given our objective to design a helix-rich protein."
-      },
-      {
-        "position": 11,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is known to promote alpha-helix formation due to its small, non-bulky side chain, which minimizes steric hindrance. Replacing glutamic acid (E) with alanine (A) at this position could enhance helical stability in the local context, as the sequence already contains several alanines and forms a pattern supportive of helical structures."
-      },
-      {
-        "position": 12,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a strong helix former and its substitution for alanine can enhance helical stability. The presence of leucine at adjacent positions supports local helical structure. Previous success and failure memory suggests exploring options other than alanine."
-      },
-      {
-        "position": 13,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to be a strong helix-forming residue due to its small side chain, reducing steric hindrance. In the context of a stable helix, alanine can enhance helix propensity. Given the local context where A has been previously rejected, I propose it again with moderate confidence, considering the objective of enhancing helical stability."
-      },
-      {
-        "position": 14,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a strong alpha-helix former and could enhance helical stability in the context of surrounding residues. The current residue, alanine, is also helix-favoring, but leucine may provide greater hydrophobic interaction and stability in a helical structure."
-      },
-      {
-        "position": 15,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to be a strong helix former due to its small size and hydrophobic character, which contributes to helix stability. Despite being previously rejected, the current objective of enhancing helix content justifies re-evaluating alanine at this position to potentially increase overall helix propensity."
-      },
-      {
-        "position": 16,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is a helix-promoting residue that can enhance helical stability. Given the local context of alternating glutamic acid and leucine, introducing alanine could help stabilize the helical structure. Previous acceptance of leucine suggests that maintaining a hydrophobic residue here is beneficial, and alanine's helix-favoring properties make it a strong candidate for this position."
-      },
-      {
-        "position": 17,
-        "current_residue": "E",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a strong helix former and can stabilize the helix due to its hydrophobic interactions. Given the high presence of helix-promoting residues in the local context and the objective of stabilizing a helix-rich protein, substituting Glutamic acid with Leucine should enhance helical stability."
-      },
-      {
-        "position": 18,
-        "current_residue": "E",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a strong helix former and could enhance helical stability in the sequence. The current residue, glutamic acid, can also support helices but might introduce negative charge repulsion with nearby glutamic acids. Since leucine is neutral and hydrophobic, it may stabilize the helix without introducing charge-related issues."
-      }
-    ],
-    "fold_result": {
-      "pdb_path": "/tmp/fold_output/iter_2.pdb",
-      "energy": 1.049849,
-      "objective_score": 0.799966,
-      "combined_score": 0.899919
-    },
-    "accepted": false,
-    "score_delta": -0.06777999999999995
-  },
-  {
-    "iteration": 3,
-    "sequence_before": "AAEAEAEEALAEAEAELEEL",
-    "sequence_after": "AAAEAEALAALLEAEAAAAA",
-    "mutations": [
-      {
-        "position": 2,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is a small, non-polar amino acid that is known to be helix-promoting. The local context already contains a high proportion of helix-promoting residues, and alanine can help stabilize the helix structure. Previous attempts with glutamic acid and alanine have been mixed, but the presence of alanine in a helix could improve stability more reliably than glutamic acid in this context."
-      },
-      {
-        "position": 3,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is a helix-promoting residue, and the sequence already contains several E residues, indicating a potential role in stabilizing helical regions. The local context supports replacing A with E to enhance helicity."
-      },
-      {
-        "position": 4,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to promote alpha-helix formation due to its small and uncharged side chain, which is conducive to the helical structure. Since the objective is to design a stable helix-rich protein, substituting glutamic acid with alanine at position 4 could enhance helical stability. The local context has a significant presence of alanine, suggesting it may be tolerated and potentially beneficial despite one previous rejection."
-      },
-      {
-        "position": 5,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.7,
-        "reason": "Glutamic acid (E) is known to be a helix-promoting residue and is already prevalent in the local sequence, suggesting a stable helical environment. Previous attempts with alanine (A) have been mostly rejected, indicating a need for a different approach to enhance helicity. Substituting with E at this position could strengthen helical stability by maintaining a consistent pattern of helix-forming residues."
-      },
-      {
-        "position": 6,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.6,
-        "reason": "The objective is to design a stable helix-rich protein. Alanine (A) is a strong helix-forming residue due to its small size and favorable helix propensity. Given the local context, replacing glutamic acid (E) with alanine at position 6 could enhance helix stability. Although 'A' was previously rejected, the current local sequence context and objective make 'A' a reasonable choice here."
-      },
-      {
-        "position": 7,
-        "current_residue": "E",
-        "proposed_residue": "L",
-        "confidence": 0.7,
-        "reason": "Leucine is a strong helix former and its substitution could enhance helical stability. Given the local context, replacing the current E with L may promote helix formation, supporting the objective of a helix-rich protein. Previous success with glutamate suggests considering hydrophobic residues like L to balance the charge and aid helicity, despite past rejections of similar hydrophobic residues."
-      },
-      {
-        "position": 9,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Replacing 'L' with 'A' could improve helical propensity as alanine is a helix-favoring residue. The local context has several alanines and is generally helix-prone, suggesting this substitution could enhance helix stability. 'A' was previously rejected, possibly due to a different context, but here it seems more appropriate."
+        "current_residue": "I",
+        "proposed_residue": "F",
+        "confidence": 0.9,
+        "reason": "Design a stable helix-rich protein"
       },
       {
         "position": 10,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a strong helix former and can help stabilize alpha-helices. It fits well within the context of the local sequence and maintains the non-polar character at this position, enhancing helix stability."
-      },
-      {
-        "position": 11,
-        "current_residue": "E",
-        "proposed_residue": "L",
-        "confidence": 0.75,
-        "reason": "Leucine is known to stabilize alpha helices due to its hydrophobic nature and ability to engage in favorable hydrophobic interactions, which can promote helix formation and stability. Given the local context of alternating alanines and glutamates, introducing leucine could enhance helical propensity while avoiding previously rejected alanine."
+        "current_residue": "M",
+        "proposed_residue": "P",
+        "confidence": 1.0,
+        "reason": "P"
       },
       {
         "position": 12,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is a helix-promoting residue and could improve alpha-helix stability in this context. Given the local window and previous rejections of 'L' and 'A', introducing 'E' here could enhance helix propensity, aligning with the objective of designing a stable helix-rich protein."
-      },
-      {
-        "position": 13,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to be a strong helix former and can enhance helical stability. The local window shows a repetitive pattern of alanines, which suggests that introducing another alanine could promote helix formation. Despite 'A' being rejected in previous attempts, its known helical propensities make it a reasonable choice here."
+        "current_residue": "P",
+        "proposed_residue": "L",
+        "confidence": 0.99,
+        "reason": "L"
       },
       {
         "position": 14,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.7,
-        "reason": "Glutamic acid (E) is known to favor alpha-helix formation due to its ability to form stabilizing hydrogen bonds. The local context already has a high presence of glutamic acid, indicating that its inclusion is beneficial for helical stability. The previous rejection of alanine (A) suggests that a different residue might improve helix propensity."
-      },
-      {
-        "position": 15,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is a strong helix former and the sequence has accepted alanine previously. Substituting E with A could enhance helical propensity given the local context."
-      },
-      {
-        "position": 16,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to be a strong helix former and can contribute to the stability of an alpha-helix, unlike leucine, which has been accepted but does not have as strong a propensity for helix formation as alanine. Previous rejection of alanine may have been context-dependent, but in this local sequence context, it can enhance helical stability."
-      },
-      {
-        "position": 17,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is a helix-promoting residue and replacing glutamic acid (E) with alanine can enhance helical stability. E has been rejected previously, indicating a need for change. Local context supports this substitution as it aligns with the objective of helix-rich design."
-      },
-      {
-        "position": 18,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to be a strong helix former, potentially increasing the helical propensity of the segment. Given the objective to design a stable helix-rich protein, substituting the current residue with alanine could enhance local helical structure and stability."
-      },
-      {
-        "position": 19,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is a strong helix former and replacing leucine with alanine can enhance helix stability. The local context LEEL suggests that introducing another helix-favoring residue like alanine could support the objective of designing a stable helix-rich protein. Previous acceptance of leucine suggests hydrophobic residues are tolerated here, and alanine fits this profile while having a higher helix propensity."
+        "current_residue": "R",
+        "proposed_residue": "Q",
+        "confidence": 0.9,
+        "reason": "Design a stable helix-rich protein"
       }
     ],
     "fold_result": {
-      "pdb_path": "/tmp/fold_output/iter_3.pdb",
-      "energy": 1.0012,
-      "objective_score": 0.782091,
-      "combined_score": 0.869735
+      "pdb_path": "outputs/iter_1.pdb",
+      "energy": 1.677097,
+      "objective_score": 0.695931,
+      "combined_score": 1.088397
     },
     "accepted": false,
-    "score_delta": -0.09796399999999994
+    "score_delta": -0.08570299999999986
   },
   {
-    "iteration": 4,
-    "sequence_before": "AAEAEAEEALAEAEAELEEL",
-    "sequence_after": "AAAKALAQMAAKMAKLLAKA",
+    "iteration": 2,
+    "sequence_before": "ACDEFGHIKLMNPQRSTVWY",
+    "sequence_after": "AADEFGHIKLDNPQRSQVWY",
     "mutations": [
       {
-        "position": 2,
-        "current_residue": "E",
+        "position": 1,
+        "current_residue": "C",
         "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Substituting E with A at this position can increase helix propensity due to the reduced side chain steric hindrance and the hydrophobic nature of alanine, which is known to stabilize \u03b1-helices. Given the local context, replacing E with A could enhance overall helical stability, although it was previously rejected, the failure rate suggests it might be worth reconsidering with the current objective."
+        "confidence": 0.9,
+        "reason": "Design a stable helix-rich protein"
       },
+      {
+        "position": 10,
+        "current_residue": "M",
+        "proposed_residue": "D",
+        "confidence": 1.0,
+        "reason": "Design a stable helix-rich protein"
+      },
+      {
+        "position": 16,
+        "current_residue": "T",
+        "proposed_residue": "Q",
+        "confidence": 0.96,
+        "reason": "QRSTVWY"
+      }
+    ],
+    "fold_result": {
+      "pdb_path": "outputs/iter_2.pdb",
+      "energy": 1.741458,
+      "objective_score": 0.685559,
+      "combined_score": 1.107918
+    },
+    "accepted": false,
+    "score_delta": -0.06618199999999996
+  },
+  {
+    "iteration": 3,
+    "sequence_before": "ACDEFGHIKLMNPQRSTVWY",
+    "sequence_after": "ACDAFGHFKHMALQRSTVWT",
+    "mutations": [
       {
         "position": 3,
-        "current_residue": "A",
-        "proposed_residue": "K",
-        "confidence": 0.8,
-        "reason": "Lysine (K) is a helix-promoting residue due to its positive charge, which can form favorable interactions that stabilize an alpha-helix. Additionally, lysine can interact with the negative charge of glutamic acid (E) residues nearby, further enhancing helical stability. Given the rejection of E and the need for helix stabilization, K is a strong candidate."
-      },
-      {
-        "position": 4,
         "current_residue": "E",
         "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to be a strong helix former and is often used to stabilize alpha helices. Given the local context and the objective to design a stable helix-rich protein, substituting glutamic acid with alanine at this position could enhance helicity. Despite 'A' being previously rejected, the context and objective suggest this change could be beneficial."
-      },
-      {
-        "position": 5,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.7,
-        "reason": "Leucine is a strong helix-forming residue and can help stabilize the helical structure. Despite being previously rejected, given the context of the sequence with several glutamic acids, it might still support helix formation better than alanine."
-      },
-      {
-        "position": 6,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to promote helix formation and the surrounding sequence already has several glutamic acid residues which can stabilize the helix through their side chain interactions. Substituting E with A could enhance helix stability given the local context, despite the previous rejection of A in this context."
+        "confidence": 0.9,
+        "reason": "Designing a helix-rich protein"
       },
       {
         "position": 7,
-        "current_residue": "E",
-        "proposed_residue": "Q",
-        "confidence": 0.7,
-        "reason": "Glutamine (Q) can stabilize alpha helices through hydrogen bonding and is similar in size and polarity to glutamic acid (E). It is also not in the rejected list, making it a viable alternative to enhance helix stability."
-      },
-      {
-        "position": 8,
-        "current_residue": "A",
-        "proposed_residue": "M",
-        "confidence": 0.7,
-        "reason": "Methionine (M) has a strong helix-forming propensity and can enhance helix stability without introducing negative electrostatic interactions like charged residues might. Given the failures with glutamic acid (E) and leucine (L), methionine is a reasonable choice to attempt stabilizing the helical structure."
+        "current_residue": "I",
+        "proposed_residue": "F",
+        "confidence": 1.0,
+        "reason": "Design a stable helix-rich protein"
       },
       {
         "position": 9,
         "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Ala (A) is a known helix former and is common in helix-rich structures. The local context of the sequence is rich in Glu (E), which also promotes helicity. Although Ala was previously rejected, the high frequency of Glu nearby may enhance the helix propensity sufficiently to warrant another trial."
+        "proposed_residue": "H",
+        "confidence": 0.9,
+        "reason": "Provides a stable helix-rich protein"
       },
       {
         "position": 11,
-        "current_residue": "E",
-        "proposed_residue": "K",
-        "confidence": 0.8,
-        "reason": "Lysine (K) is a helix-favoring residue similar to glutamic acid (E) but provides additional stability through potential salt bridge formation with nearby acidic residues, enhancing the helical stability in the context of the local sequence and objective."
+        "current_residue": "N",
+        "proposed_residue": "A",
+        "confidence": 0.91,
+        "reason": "Design a stable helix-rich protein"
       },
       {
         "position": 12,
-        "current_residue": "A",
-        "proposed_residue": "M",
-        "confidence": 0.7,
-        "reason": "Methionine (M) is known to stabilize alpha helices due to its moderate size and hydrophobic nature. Given the local context of alternating polar and non-polar residues, M could enhance the helical propensity of the segment. This choice also differentiates from previously rejected amino acids."
-      },
-      {
-        "position": 13,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "The objective is to design a stable helix-rich protein. Alanine (A) is a small, non-polar residue that is known to promote \u03b1-helix formation due to its minimal steric hindrance and favorable helix propensity. This substitution could enhance the helical stability in this region, especially given the presence of helix-disrupting glutamic acid (E) residues nearby."
-      },
-      {
-        "position": 14,
-        "current_residue": "A",
-        "proposed_residue": "K",
-        "confidence": 0.7,
-        "reason": "Lysine (K) is known to stabilize alpha helices through electrostatic interactions and hydrogen bonding. The local sequence has a high density of glutamic acid (E), which could form salt bridges with lysine, enhancing helix stability. Previous rejections of 'A', 'L', and 'E' suggest that a different strategy might be beneficial."
-      },
-      {
-        "position": 15,
-        "current_residue": "E",
+        "current_residue": "P",
         "proposed_residue": "L",
-        "confidence": 0.7,
-        "reason": "Leucine is a strong helix former and can enhance helix stability. The local context includes many helix-promoting residues like alanine and glutamate, and leucine fits well into this pattern. Given the objective to design a stable helix-rich protein, leucine is a favorable choice. Previous successes with 'E' suggest it was accepted in other contexts, but the objective suggests exploring alternatives here."
-      },
-      {
-        "position": 17,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to be a strong helix-forming residue and can enhance helical stability. Given the local context with alternating acidic residues, replacing E with A at position 17 may promote alpha-helix formation by reducing potential electrostatic repulsion and increasing overall helix propensity, hence increasing stability."
-      },
-      {
-        "position": 18,
-        "current_residue": "E",
-        "proposed_residue": "K",
-        "confidence": 0.7,
-        "reason": "Substituting glutamic acid (E) with lysine (K) at position 18 could enhance helical stability. Lysine is positively charged and can form favorable salt bridges with negatively charged residues, potentially stabilizing helix formation. Given the local context and previous rejections, lysine has not been tried and may offer a new avenue to increase helical content."
+        "confidence": 1.0,
+        "reason": "Design a stable helix-rich protein"
       },
       {
         "position": 19,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is a strong helix former and is often used in designing helix-rich proteins. The current residue, leucine, is also helix-favorable, but alanine can provide greater stability in helical structures. The prior rejection of 'A' was likely context-specific, and here it may contribute positively to the overall helical propensity in this sequence."
+        "current_residue": "Y",
+        "proposed_residue": "T",
+        "confidence": 0.9,
+        "reason": "Stability enhancement via a helix-rich residue"
       }
     ],
     "fold_result": {
-      "pdb_path": "/tmp/fold_output/iter_4.pdb",
-      "energy": 1.212796,
-      "objective_score": 0.836999,
-      "combined_score": 0.987318
+      "pdb_path": "outputs/iter_3.pdb",
+      "energy": 1.724254,
+      "objective_score": 0.710058,
+      "combined_score": 1.115736
     },
-    "accepted": true,
-    "score_delta": 0.019619000000000053
+    "accepted": false,
+    "score_delta": -0.05836399999999986
   }
 ]

@@ -116,6 +116,28 @@ def call_llm_for_mutation(
     """Call the LLM to propose a residue mutation, with retry on parse failure."""
     last_error: Exception | None = None
 
+    if provider == "modal_local":
+        from protein_swarm.llm.providers import ModalLLMProvider
+
+        for attempt in range(1 + max_retries):
+            try:
+                data = ModalLLMProvider().propose(_RESIDUE_SYSTEM_PROMPT, user_prompt)
+                data["position"] = position
+                if "current_residue" not in data:
+                    data["current_residue"] = current_residue
+                return MutationProposal(**data)
+            except Exception as e:
+                last_error = e
+                logger.warning("Modal LLM mutation attempt %d failed: %s", attempt + 1, e)
+        logger.error("Modal LLM mutation failed after %d attempts, returning no-op", 1 + max_retries)
+        return MutationProposal(
+            position=position,
+            current_residue=current_residue,
+            proposed_residue=current_residue,
+            confidence=0.0,
+            reason=f"Modal LLM failure after {1 + max_retries} attempts: {last_error}",
+        )
+
     for attempt in range(1 + max_retries):
         try:
             raw = _call_llm_raw(

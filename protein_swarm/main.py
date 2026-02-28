@@ -57,7 +57,7 @@ def design(
     confidence_threshold: float = typer.Option(0.5, "--confidence-threshold", help="Minimum agent confidence"),
     plateau_window: int = typer.Option(5, "--plateau-window", help="Iterations for plateau detection"),
     use_llm: bool = typer.Option(False, "--use-llm", help="Use LLM-backed agents instead of heuristics"),
-    llm_provider: str = typer.Option("openai", "--llm-provider", help="LLM provider: openai | anthropic | together"),
+    llm_provider: str = typer.Option("openai", "--llm-provider", help="LLM provider: openai | anthropic | together | modal_local"),
     llm_model: str = typer.Option("gpt-4o", "--llm-model", help="LLM model identifier"),
     llm_api_key: Optional[str] = typer.Option(None, "--llm-api-key", help="LLM API key (or set OPENAI_API_KEY env var)"),
     llm_temperature: float = typer.Option(0.7, "--llm-temperature", help="LLM sampling temperature"),
@@ -65,7 +65,7 @@ def design(
     """Run the swarm-based protein design loop.
 
     Modal flags require a running Modal app. Either deploy first with
-    'modal deploy protein_swarm/modal_app/app.py' or run the whole script
+    'modal deploy protein_swarm/modal_app/functions.py' or run the whole script
     under 'modal run'.  Use --no-modal for fully local execution.
     """
     sequence = _validate_sequence(sequence)
