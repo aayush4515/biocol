@@ -18,7 +18,7 @@ from queue import Empty, Queue
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, StreamingResponse
+from fastapi.responses import FileResponse, HTMLResponse, PlainTextResponse, StreamingResponse
 from pydantic import BaseModel, Field
 
 from protein_swarm.config import FoldingConfig, LLMConfig, MemoryConfig, SwarmConfig
@@ -31,6 +31,8 @@ logger = logging.getLogger(__name__)
 _event_queue: Queue[dict] = Queue()
 _run_lock = threading.Lock()
 _run_active = False
+# Output dir of the last completed run (for View Protein).
+_last_output_dir: Path | None = None
 
 app = FastAPI(title="Protein Swarm Dashboard", version="0.1.0")
 app.add_middleware(
@@ -90,7 +92,8 @@ def _validate_sequence(sequence: str) -> str:
 
 def _run_engine(req: RunRequest) -> None:
     """Run the design engine in the current thread; events are pushed to _event_queue."""
-    global _run_active
+    global _run_active, _last_output_dir
+    _last_output_dir = (Path.cwd() / req.output_dir).resolve()
     sequence = _validate_sequence(req.sequence)
 
     llm_cfg = LLMConfig(
@@ -193,6 +196,18 @@ async def api_events():
         media_type="text/event-stream",
         headers={"Cache-Control": "no-cache", "Connection": "keep-alive"},
     )
+
+
+@app.get("/api/final-pdb", response_model=None)
+def api_final_pdb() -> PlainTextResponse:
+    """Return the final_structure.pdb content from the last run (for modal viewer)."""
+    global _last_output_dir
+    if _last_output_dir is None:
+        return PlainTextResponse(content="No run completed yet.", status_code=404)
+    pdb_path = _last_output_dir / "final_structure.pdb"
+    if not pdb_path.is_file():
+        return PlainTextResponse(content="Final structure file not found.", status_code=404)
+    return PlainTextResponse(content=pdb_path.read_text())
 
 
 @app.get("/")

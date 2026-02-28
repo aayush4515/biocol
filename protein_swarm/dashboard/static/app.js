@@ -11,8 +11,15 @@
   const energyTrendEl = document.getElementById("energy-trend");
   const meanPlddtEl = document.getElementById("mean-plddt");
   const logContent = document.getElementById("log-content");
+  const proteinModal = document.getElementById("protein-modal");
+  const proteinModalViewer = document.getElementById("protein-modal-viewer");
+  const proteinModalError = document.getElementById("protein-modal-error");
+  const proteinModalClose = document.getElementById("protein-modal-close");
+  const proteinModalSave = document.getElementById("protein-modal-save");
+  const viewProteinBtn = document.getElementById("view-protein-btn");
 
   let eventSource = null;
+  let proteinViewerInstance = null;
   let lastSequence = "";
   let currentIteration = 0;
   let completedCount = 0;
@@ -317,4 +324,84 @@
       setRunning(false);
     };
   });
+
+  function openProteinModal() {
+    if (!proteinModal || !proteinModalViewer || !proteinModalError) return;
+    proteinModalError.style.display = "none";
+    proteinModalError.textContent = "";
+    proteinModalViewer.innerHTML = "";
+    proteinViewerInstance = null;
+    proteinModal.setAttribute("aria-hidden", "false");
+
+    fetch("/api/final-pdb")
+      .then(function (res) {
+        if (!res.ok) return res.text().then(function (t) { throw new Error(t || "Failed to load PDB"); });
+        return res.text();
+      })
+      .then(function (pdbText) {
+        if (typeof $3Dmol === "undefined") {
+          throw new Error("3Dmol.js not loaded");
+        }
+        function initViewer() {
+          var w = proteinModalViewer.offsetWidth;
+          var h = proteinModalViewer.offsetHeight;
+          if (w <= 0 || h <= 0) {
+            setTimeout(initViewer, 50);
+            return;
+          }
+          proteinModalViewer.style.width = w + "px";
+          proteinModalViewer.style.height = h + "px";
+          var viewer = $3Dmol.createViewer(proteinModalViewer, { backgroundColor: "white" });
+          viewer.addModel(pdbText, "pdb");
+          viewer.setStyle({ cartoon: { color: "spectrum" } });
+          viewer.zoomTo();
+          viewer.render();
+          proteinViewerInstance = viewer;
+        }
+        requestAnimationFrame(function () {
+          requestAnimationFrame(initViewer);
+        });
+      })
+      .catch(function (err) {
+        proteinModalError.textContent = err.message || "Could not load structure.";
+        proteinModalError.style.display = "block";
+      });
+  }
+
+  function closeProteinModal() {
+    if (proteinModal) proteinModal.setAttribute("aria-hidden", "true");
+    proteinViewerInstance = null;
+    if (proteinModalViewer) proteinModalViewer.innerHTML = "";
+  }
+
+  if (viewProteinBtn) {
+    viewProteinBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      openProteinModal();
+    });
+  }
+  if (proteinModalClose) {
+    proteinModalClose.addEventListener("click", closeProteinModal);
+  }
+  if (proteinModal && proteinModal.querySelector(".protein-modal__backdrop")) {
+    proteinModal.querySelector(".protein-modal__backdrop").addEventListener("click", closeProteinModal);
+  }
+  if (proteinModalSave) {
+    proteinModalSave.addEventListener("click", function () {
+      if (!proteinViewerInstance) return;
+      var png = proteinViewerInstance.pngURI();
+      var p = typeof png === "object" && png && typeof png.then === "function" ? png : Promise.resolve(png);
+      p.then(function (dataUrl) {
+        var a = document.createElement("a");
+        a.href = dataUrl;
+        a.download = "protein_structure.png";
+        a.click();
+      }).catch(function () {
+        if (proteinModalError) {
+          proteinModalError.textContent = "Could not export image.";
+          proteinModalError.style.display = "block";
+        }
+      });
+    });
+  }
 })();

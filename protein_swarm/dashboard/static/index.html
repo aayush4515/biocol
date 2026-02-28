@@ -19,9 +19,12 @@
         <section class="control-section">
           <h3 class="section-title">Sequence &amp; objective</h3>
           <label>Sequence</label>
-          <textarea id="sequence" name="sequence" rows="2" placeholder="e.g. VVVVVVVVVVVVVVVVVVVV"></textarea>
+          <textarea id="sequence" name="sequence" rows="2" placeholder="e.g. VVVVVVVVVVVVVVVVVVVV">VVVVVVVVVVVVVVVVVVVV</textarea>
           <label>Objective / Prompt</label>
-          <textarea id="objective" name="objective" rows="2" placeholder="e.g. introduce flexibility through turn-promoting residues"></textarea>
+          <textarea id="objective" name="objective" rows="2" placeholder="e.g. introduce flexibility through turn-promoting residues">introduce flexibility through
+turn-promoting residues while
+creating repeating sequence
+patterns</textarea>
         </section>
         <section class="control-section">
           <h3 class="section-title">Run</h3>
@@ -143,6 +146,7 @@
             </span>
             <h2 class="panel-title">Completed</h2>
             <span id="completed-badge" class="panel-badge">0</span>
+            <button type="button" id="view-protein-btn" class="view-protein-btn">View Protein</button>
           </header>
           <div id="completed-content" class="pane-content scrollable"></div>
         </section>
@@ -203,6 +207,23 @@
       </section>
     </main>
   </div>
+
+  <div id="protein-modal" class="protein-modal" aria-hidden="true">
+    <div class="protein-modal__backdrop"></div>
+    <div class="protein-modal__panel">
+      <header class="protein-modal__header">
+        <h2 class="protein-modal__title">Protein Structure</h2>
+        <div class="protein-modal__actions">
+          <button type="button" id="protein-modal-save" class="protein-modal__btn protein-modal__btn--secondary">Save image</button>
+          <button type="button" id="protein-modal-close" class="protein-modal__btn protein-modal__btn--primary">Close</button>
+        </div>
+      </header>
+      <div id="protein-modal-viewer" class="protein-modal__viewer"></div>
+      <div id="protein-modal-error" class="protein-modal__error" style="display: none;"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/3dmol@2.5.4/build/3Dmol-min.js"></script>
   <script src="/static/app.js"></script>
 </body>
 </html>

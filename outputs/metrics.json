@@ -1,8 +1,8 @@
 {
-  "initial_sequence": "AAAAAAAAAAAAAAAAAAAA",
-  "final_sequence": "SASAAAGSAAAAAAASAAAA",
-  "objective": "make the protein flexible",
-  "best_score": 0.384168,
+  "initial_sequence": "VVVVVVVVVVVVVVVVVVVV",
+  "final_sequence": "VVVVPGGSVVNPGGGVGPVV",
+  "objective": "introduce flexibility through\nturn-promoting residues while\ncreating repeating sequence\npatterns",
+  "best_score": 0.359342,
   "total_iterations": 5,
   "final_pdb_path": "outputs/final_structure.pdb"
 }

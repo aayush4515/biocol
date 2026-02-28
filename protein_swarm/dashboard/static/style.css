@@ -354,6 +354,158 @@ body {
   color: var(--green-500);
 }
 
+.view-protein-btn {
+  display: none;
+  margin-left: auto;
+  padding: 0.4rem 0.75rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--blue-600);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease, filter 0.15s ease;
+}
+
+.view-protein-btn:hover {
+  background: var(--blue-500);
+  filter: brightness(1.05);
+  color: white;
+}
+
+.agent-window__content.run-finished .view-protein-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Protein viewer modal */
+.protein-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gap);
+}
+
+.protein-modal[aria-hidden="false"] {
+  display: flex;
+}
+
+.protein-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.protein-modal__panel {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--zinc-900);
+  border: 1px solid var(--zinc-800);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.protein-modal__header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  padding: var(--gap);
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--zinc-800);
+  background: var(--zinc-800-50);
+}
+
+.protein-modal__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--zinc-100);
+}
+
+.protein-modal__actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.protein-modal__btn {
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s ease, filter 0.15s ease;
+}
+
+.protein-modal__btn--primary {
+  background: var(--blue-600);
+  color: white;
+}
+
+.protein-modal__btn--primary:hover {
+  background: var(--blue-500);
+  filter: brightness(1.05);
+}
+
+.protein-modal__btn--secondary {
+  background: var(--zinc-700);
+  color: var(--zinc-200);
+}
+
+.protein-modal__btn--secondary:hover {
+  background: var(--zinc-600);
+  filter: brightness(1.05);
+}
+
+.protein-modal__viewer {
+  position: relative;
+  z-index: 0;
+  flex: 1;
+  min-height: 420px;
+  width: 100%;
+  max-height: calc(90vh - 120px);
+  background: var(--zinc-950);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.protein-modal__viewer canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.protein-modal__error {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  padding: var(--gap);
+  color: var(--red-500);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--zinc-800);
+}
+
 /* Spinner animation for in-progress icon */
 .spinner {
   animation: spin 1s linear infinite;
