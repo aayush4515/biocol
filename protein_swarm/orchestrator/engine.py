@@ -42,10 +42,7 @@ def _rosetta_to_physics_score(
     norm_target: float,
     norm_scale: float,
 ) -> float:
-    """Convert Rosetta energy (lower=better) to a 0-1 score (higher=better).
-
-    Uses a logistic sigmoid centred on norm_target.
-    """
+    """Convert Rosetta energy (lower=better) to a 0-1 score (higher=better)."""
     return 1.0 / (1.0 + math.exp((rosetta_total - norm_target) / norm_scale))
 
 
@@ -76,6 +73,26 @@ class DesignEngine:
 
         raise ValueError(f"Unknown fold_backend='{backend}'")
 
+    # ── throttling helpers ───────────────────────────────────────────────
+
+    def _effective_mutation_rate(self, consecutive_rejects: int) -> float:
+        """Decay mutation rate after repeated rejections."""
+        cfg = self._cfg
+        if consecutive_rejects < cfg.reject_throttle_after:
+            return cfg.mutation_rate
+        rate = cfg.mutation_rate * (cfg.reject_mutation_decay ** consecutive_rejects)
+        return max(rate, cfg.min_mutation_rate)
+
+    def _effective_conf_threshold(self, consecutive_rejects: int) -> float:
+        """Raise confidence bar after repeated rejections."""
+        cfg = self._cfg
+        if consecutive_rejects < cfg.reject_throttle_after:
+            return cfg.confidence_threshold
+        threshold = cfg.confidence_threshold + cfg.reject_conf_bump * consecutive_rejects
+        return min(threshold, 0.99)
+
+    # ── main loop ────────────────────────────────────────────────────────
+
     def run(self, sequence: str, objective_text: str) -> DesignResult:
         """Execute the full design loop and return the result."""
         objective = compile_objective(
@@ -91,6 +108,7 @@ class DesignEngine:
         best_score = float("-inf")
         score_history: list[float] = []
         history: list[IterationRecord] = []
+        consecutive_rejects = 0
 
         initial_fold = self._fold(current_seq, objective, output_dir, -1)
         best_score = initial_fold.combined_score
@@ -99,7 +117,20 @@ class DesignEngine:
         for iteration in range(self._cfg.max_iterations):
             log_iteration_header(iteration, self._cfg.max_iterations)
 
-            proposals = self._run_agents(current_seq, memory, objective, iteration)
+            eff_mutation_rate = self._effective_mutation_rate(consecutive_rejects)
+            eff_conf_threshold = self._effective_conf_threshold(consecutive_rejects)
+
+            if self._cfg.debug:
+                log_debug(
+                    f"Throttle: consecutive_rejects={consecutive_rejects}  "
+                    f"eff_mutation_rate={eff_mutation_rate:.4f}  "
+                    f"eff_conf_threshold={eff_conf_threshold:.4f}"
+                )
+
+            proposals = self._run_agents(
+                current_seq, memory, objective, iteration,
+                mutation_rate_override=eff_mutation_rate,
+            )
 
             proposals = validate_proposals(proposals, objective, len(current_seq))
 
@@ -107,7 +138,7 @@ class DesignEngine:
                 log_proposals_table([p.model_dump() for p in proposals])
 
             candidate_seq, applied = merge_mutations(
-                current_seq, proposals, self._cfg.confidence_threshold
+                current_seq, proposals, eff_conf_threshold,
             )
 
             log_mutation_summary(len(current_seq), len(applied))
@@ -133,8 +164,10 @@ class DesignEngine:
                 current_seq = candidate_seq
                 best_score = fold_result.combined_score
                 memory.record_success(applied)
+                consecutive_rejects = 0
             else:
                 memory.record_failure(applied)
+                consecutive_rejects += 1
 
             score_history.append(best_score)
 
@@ -169,20 +202,33 @@ class DesignEngine:
         memory: MemoryStore,
         objective: ObjectiveSpec,
         iteration: int,
+        *,
+        mutation_rate_override: float | None = None,
     ) -> list[MutationProposal]:
         if self._cfg.modal_parallel:
-            return self._run_agents_modal(sequence, memory, objective, iteration)
-        return self._run_agents_local(sequence, memory, objective)
+            return self._run_agents_modal(
+                sequence, memory, objective, iteration,
+                mutation_rate_override=mutation_rate_override,
+            )
+        return self._run_agents_local(
+            sequence, memory, objective,
+            mutation_rate_override=mutation_rate_override,
+        )
 
     def _run_agents_local(
         self,
         sequence: str,
         memory: MemoryStore,
         objective: ObjectiveSpec,
+        *,
+        mutation_rate_override: float | None = None,
     ) -> list[MutationProposal]:
         proposals: list[MutationProposal] = []
         for pos in range(len(sequence)):
-            agent_input = self._build_agent_input(sequence, pos, memory, objective)
+            agent_input = self._build_agent_input(
+                sequence, pos, memory, objective,
+                mutation_rate_override=mutation_rate_override,
+            )
             proposal = run_residue_agent_local(agent_input)
             proposals.append(proposal)
         return proposals
@@ -193,6 +239,8 @@ class DesignEngine:
         memory: MemoryStore,
         objective: ObjectiveSpec,
         iteration: int,
+        *,
+        mutation_rate_override: float | None = None,
     ) -> list[MutationProposal]:
         import modal
 
@@ -200,7 +248,10 @@ class DesignEngine:
 
         inputs: list[AgentInput] = []
         for pos in range(len(sequence)):
-            inputs.append(self._build_agent_input(sequence, pos, memory, objective))
+            inputs.append(self._build_agent_input(
+                sequence, pos, memory, objective,
+                mutation_rate_override=mutation_rate_override,
+            ))
 
         input_dicts = [inp.model_dump() for inp in inputs]
 
@@ -223,6 +274,8 @@ class DesignEngine:
         position: int,
         memory: MemoryStore,
         objective: ObjectiveSpec,
+        *,
+        mutation_rate_override: float | None = None,
     ) -> AgentInput:
         llm = self._cfg.llm
         return AgentInput(
@@ -231,7 +284,7 @@ class DesignEngine:
             neighbourhood_window=self._cfg.neighbourhood_window,
             memory_summary=memory.get_summary_for_position(position),
             objective=objective,
-            mutation_rate=self._cfg.mutation_rate,
+            mutation_rate=mutation_rate_override if mutation_rate_override is not None else self._cfg.mutation_rate,
             random_seed=self._cfg.random_seed,
             use_llm=self._cfg.use_llm_agents,
             llm_provider=llm.provider,
@@ -339,12 +392,7 @@ class DesignEngine:
         objective: ObjectiveSpec,
         mean_plddt: float,
     ) -> FoldResult:
-        """Compute the 3-component combined score.
-
-        physics_score:    from Rosetta energy (or falls back to confidence)
-        objective_score:  heuristic sequence-level scoring
-        confidence_score: ESMFold mean pLDDT / 100
-        """
+        """Compute the 3-component combined score."""
         from protein_swarm.folding.scoring import compute_objective_score
 
         cfg = self._fold_cfg

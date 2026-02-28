@@ -64,6 +64,24 @@ class SwarmConfig(BaseModel):
     remote_fold_backend: str = Field(default="esmfold", description="Remote (Modal) folding backend when modal_fold=True: 'dummy' | 'esmfold'")
     output_dir: str = Field(default="outputs", description="Directory for artefacts")
 
+    # ── rejection-aware mutation throttling ───────────────────────────────
+    reject_throttle_after: int = Field(
+        default=2, ge=1,
+        description="Consecutive rejections before throttling kicks in",
+    )
+    reject_conf_bump: float = Field(
+        default=0.05, ge=0.0, le=0.5,
+        description="Per-rejection increase to the confidence threshold (additive)",
+    )
+    reject_mutation_decay: float = Field(
+        default=0.7, gt=0.0, le=1.0,
+        description="Multiplicative decay applied to mutation_rate per consecutive rejection",
+    )
+    min_mutation_rate: float = Field(
+        default=0.05, ge=0.0, le=1.0,
+        description="Floor for the dynamically reduced mutation rate",
+    )
+
 
 class FoldingConfig(BaseModel):
     """Configuration for the folding / scoring subsystem.
