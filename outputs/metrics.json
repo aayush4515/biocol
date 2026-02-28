@@ -1,0 +1,8 @@
+{
+  "initial_sequence": "AAAALLLLAAAAGGGGAAAA",
+  "final_sequence": "MLALVALVIMVAALQLALII",
+  "objective": "Design a thermostable alpha-helical protein that resists proteolysis",
+  "best_score": 0.964032,
+  "total_iterations": 9,
+  "final_pdb_path": "outputs/final_structure.pdb"
+}
