@@ -4,7 +4,7 @@ LLM client for residue agents and objective compilation.
 Thin wrapper around the OpenAI SDK that handles:
 - Prompt dispatch with system/user message separation
 - Structured JSON output parsing with schema validation
-- Retries on malformed responses
+- Retries on malformed responses with exponential backoff on rate limits
 - Provider abstraction (OpenAI today, Anthropic/Together ready)
 """
 
@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import logging
+import time
 from typing import Any
 
 from openai import OpenAI
@@ -54,6 +55,25 @@ _OBJECTIVE_SYSTEM_PROMPT = (
     "structural_motifs examples: coiled-coil, beta-barrel, zinc-finger, transmembrane-helix.\n"
     "free_text_reasoning: 1-2 sentence explanation of your interpretation."
 )
+
+_BASE_BACKOFF_SECONDS = 1.0
+_MAX_BACKOFF_SECONDS = 30.0
+
+
+def _is_rate_limit_error(exc: Exception) -> bool:
+    """Check if an exception is a rate-limit (429) error."""
+    cls_name = type(exc).__name__
+    if cls_name == "RateLimitError":
+        return True
+    err_str = str(exc)
+    return "429" in err_str or "rate_limit" in err_str.lower() or "Rate limit" in err_str
+
+
+def _backoff_sleep(attempt: int) -> None:
+    """Sleep with exponential backoff: 1s, 2s, 4s, 8s, ... capped at 30s."""
+    delay = min(_BASE_BACKOFF_SECONDS * (2 ** attempt), _MAX_BACKOFF_SECONDS)
+    logger.info("Rate limit hit — backing off %.1fs before retry", delay)
+    time.sleep(delay)
 
 
 def _build_openai_client(api_key: str, provider: str) -> OpenAI:
@@ -116,28 +136,6 @@ def call_llm_for_mutation(
     """Call the LLM to propose a residue mutation, with retry on parse failure."""
     last_error: Exception | None = None
 
-    if provider == "modal_local":
-        from protein_swarm.llm.providers import ModalLLMProvider
-
-        for attempt in range(1 + max_retries):
-            try:
-                data = ModalLLMProvider().propose(_RESIDUE_SYSTEM_PROMPT, user_prompt)
-                data["position"] = position
-                if "current_residue" not in data:
-                    data["current_residue"] = current_residue
-                return MutationProposal(**data)
-            except Exception as e:
-                last_error = e
-                logger.warning("Modal LLM mutation attempt %d failed: %s", attempt + 1, e)
-        logger.error("Modal LLM mutation failed after %d attempts, returning no-op", 1 + max_retries)
-        return MutationProposal(
-            position=position,
-            current_residue=current_residue,
-            proposed_residue=current_residue,
-            confidence=0.0,
-            reason=f"Modal LLM failure after {1 + max_retries} attempts: {last_error}",
-        )
-
     for attempt in range(1 + max_retries):
         try:
             raw = _call_llm_raw(
@@ -160,6 +158,8 @@ def call_llm_for_mutation(
         except Exception as e:
             last_error = e
             logger.warning("LLM mutation parse attempt %d failed: %s", attempt + 1, e)
+            if _is_rate_limit_error(e) and attempt < max_retries:
+                _backoff_sleep(attempt)
 
     logger.error("LLM mutation failed after %d attempts, returning no-op", 1 + max_retries)
     return MutationProposal(
@@ -202,6 +202,8 @@ def call_llm_for_objective(
         except Exception as e:
             last_error = e
             logger.warning("LLM objective parse attempt %d failed: %s", attempt + 1, e)
+            if _is_rate_limit_error(e) and attempt < max_retries:
+                _backoff_sleep(attempt)
 
     logger.error(
         "LLM objective parsing failed after %d attempts, falling back to keyword parser",

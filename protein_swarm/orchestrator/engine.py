@@ -49,7 +49,32 @@ class DesignEngine:
         self._cfg = swarm_config or SwarmConfig()
         self._fold_cfg = folding_config or FoldingConfig()
         self._mem_cfg = memory_config or MemoryConfig()
-        self._fold_engine: FoldEngine = fold_engine or DummyFoldEngine(self._fold_cfg)
+        # self._fold_engine: FoldEngine = fold_engine or DummyFoldEngine(self._fold_cfg)
+        self._fold_engine: FoldEngine = fold_engine or self._make_fold_engine()
+
+    # def _make_fold_engine(self) -> FoldEngine:
+    #     """
+    #     Choose local fold engine based on config flags.
+    #     Note: Modal folding is handled separately in _fold() when modal_fold=True.
+    #     """
+    #     backend = getattr(self._cfg, "fold_backend", "dummy")  # e.g. "dummy" | "esmfold-local"
+    #     if backend == "dummy":
+    #         return DummyFoldEngine(self._fold_cfg)
+    #     if backend == "esmfold-local":
+    #         return ESMFoldEngine(self._fold_cfg)
+    #     raise ValueError(f"Unknown fold_backend={backend}")
+
+    def _make_fold_engine(self) -> FoldEngine:
+        backend = self._cfg.fold_backend
+
+        if backend == "dummy":
+            return DummyFoldEngine(self._fold_cfg)
+
+        if backend == "esmfold-local":
+            from protein_swarm.folding.fold_engine import ESMFoldEngine
+            return ESMFoldEngine(self._fold_cfg)
+
+        raise ValueError(f"Unknown fold_backend='{backend}'")
 
     def run(self, sequence: str, objective_text: str) -> DesignResult:
         """Execute the full design loop and return the result."""
@@ -187,7 +212,7 @@ class DesignEngine:
         except Exception as e:
             raise RuntimeError(
                 "Failed to call Modal agents. Make sure the app is deployed:\n"
-                "  modal deploy protein_swarm/modal_app/functions.py\n"
+                "  modal deploy protein_swarm/modal_app/app.py\n"
                 "Or run fully local with --no-modal"
             ) from e
         return [MutationProposal(**r) for r in results]
@@ -229,38 +254,194 @@ class DesignEngine:
             return self._fold_modal(sequence, objective, iteration)
         return self._fold_engine.fold_and_score(sequence, objective, output_dir, iteration)
 
+    # def _fold_modal(
+    #     self,
+    #     sequence: str,
+    #     objective: ObjectiveSpec,
+    #     iteration: int,
+    # ) -> FoldResult:
+    #     """Dispatch folding to Modal — CPU (dummy) or GPU ESMFold worker."""
+    #     import modal
+
+    #     from protein_swarm.folding.structure_utils import write_pdb_text, sanitize_sequence
+    #     from protein_swarm.folding.scoring import compute_objective_score
+    #     from protein_swarm.schemas import FoldResult
+
+    #     sequence = sanitize_sequence(sequence)
+
+    #     # remote_backend = getattr(self._cfg, "remote_fold_backend", "esmfold")  # "esmfold" | "dummy"
+
+    #     # if remote_backend == "esmfold":
+    #     #     fn_name = "run_esmfold"   # must match @app.function name
+    #     # elif remote_backend == "dummy":
+    #     #     fn_name = "run_fold_dummy_remote"
+    #     # else:
+    #     #     raise ValueError(f"Unknown remote_fold_backend={remote_backend}")
+
+    #     remote_backend = self._cfg.remote_fold_backend
+    #     if remote_backend == "esmfold":
+    #         fn_name = "run_esmfold"
+    #     elif remote_backend == "dummy":
+    #         fn_name = "run_fold_dummy_remote"
+    #     else:
+    #         raise ValueError(f"Unknown remote_fold_backend='{remote_backend}'")
+
+    #     fold_fn = modal.Function.from_name("protein-swarm", fn_name)
+
+    #     if self._cfg.debug:
+    #         log_debug(f"Folding on Modal backend='{remote_backend}' (iteration {iteration})")
+
+    #     try:
+    #         if remote_backend == "esmfold":
+    #             # Returns {"pdb": <pdb_text>, "mean_plddt": <0..100>}
+    #             result = fold_fn.remote(sequence)
+    #             pdb_text = result["pdb"]
+    #             mean_plddt = float(result["mean_plddt"])
+
+    #             # Write local PDB
+    #             output_dir = Path(self._cfg.output_dir)
+    #             output_dir.mkdir(parents=True, exist_ok=True)
+    #             pdb_path = write_pdb_text(pdb_text, output_dir / f"iter_{iteration}.pdb")
+
+    #             # Score locally
+    #             obj_score = compute_objective_score(sequence, objective)
+
+    #             # Energy proxy
+    #             energy = mean_plddt / 100.0
+
+    #             cfg = self._fold_cfg
+    #             combined = cfg.energy_weight * energy + cfg.objective_weight * obj_score
+
+    #             return FoldResult(
+    #                 pdb_path=pdb_path,
+    #                 energy=round(energy, 6),
+    #                 objective_score=round(obj_score, 6),
+    #                 combined_score=round(combined, 6),
+    #             )
+
+    #         # Dummy remote path (keeps your existing contract)
+    #         objective_dict = objective.model_dump()
+    #         result_dict = fold_fn.remote(sequence, objective_dict, iteration)
+    #         return FoldResult(**result_dict)
+
+    #     except Exception as e:
+    #         raise RuntimeError(
+    #             f"Failed to call Modal fold function '{fn_name}' ({type(e).__name__}: {e}).\n"
+    #             "Make sure the app is deployed: modal deploy protein_swarm/modal_app/functions.py\n"
+    #             "Or remove --modal-fold to fold locally."
+    #         ) from e
+
+
+    # def _fold_modal(
+    #     self,
+    #     sequence: str,
+    #     objective: ObjectiveSpec,
+    #     iteration: int,
+    # ) -> FoldResult:
+    #     """Dispatch folding to Modal — CPU (dummy) or GPU worker."""
+    #     import modal
+
+    #     objective_dict = objective.model_dump()
+
+    #     # if self._cfg.modal_fold_gpu:
+    #     #     fn_name = "run_fold_gpu_remote"
+    #     # else:
+    #     #     fn_name = "run_fold_dummy_remote"
+
+    #     # Decide which remote fold backend to call.
+    #     remote_backend = getattr(self._cfg, "remote_fold_backend", "dummy")  # "dummy" | "esmfold"
+
+    #     if remote_backend == "esmfold":
+    #         fn_name = "run_esmfold"  # the Modal function name in modal_app/functions.py
+    #     elif remote_backend == "dummy":
+    #         fn_name = "run_fold_dummy_remote"
+    #     else:
+    #         raise ValueError(f"Unknown remote_fold_backend={remote_backend}")
+
+    #     fold_fn = modal.Function.from_name("protein-swarm", fn_name)
+
+    #     if self._cfg.debug:
+    #         label = "GPU" if self._cfg.modal_fold_gpu else "CPU"
+    #         log_debug(f"Folding on Modal {label} worker (iteration {iteration})")
+
+    #     try:
+    #         result_dict = fold_fn.remote(sequence, objective_dict, iteration)
+    #     except Exception as e:
+    #         raise RuntimeError(
+    #             f"Failed to call Modal fold function ({type(e).__name__}: {e}).\n"
+    #             "  Make sure the app is deployed: modal deploy protein_swarm/modal_app/app.py\n"
+    #             "  Or remove --modal-fold to fold locally"
+    #         ) from e
+
+    #     return FoldResult(**result_dict)
+
     def _fold_modal(
         self,
         sequence: str,
         objective: ObjectiveSpec,
         iteration: int,
     ) -> FoldResult:
-        """Dispatch folding to Modal — CPU (dummy) or GPU worker."""
+        """Dispatch folding to Modal — supports ESMFold GPU backend."""
         import modal
 
-        objective_dict = objective.model_dump()
+        from protein_swarm.folding.scoring import compute_objective_score
+        from protein_swarm.folding.structure_utils import sanitize_sequence, write_pdb_text
 
-        if self._cfg.modal_fold_gpu:
-            fn_name = "run_fold_gpu_remote"
+        sequence = sanitize_sequence(sequence)
+
+        remote_backend = getattr(self._cfg, "remote_fold_backend", "esmfold")
+
+        if remote_backend == "esmfold":
+            fn_name = "run_esmfold"
+        elif remote_backend == "dummy":
+            fn_name = "run_fold_dummy_remote"  # only if you implement it
         else:
-            fn_name = "run_fold_dummy_remote"
+            raise ValueError(f"Unknown remote_fold_backend='{remote_backend}'")
 
         fold_fn = modal.Function.from_name("protein-swarm", fn_name)
 
         if self._cfg.debug:
-            label = "GPU" if self._cfg.modal_fold_gpu else "CPU"
-            log_debug(f"Folding on Modal {label} worker (iteration {iteration})")
+            log_debug(f"Folding on Modal backend='{remote_backend}' (iteration {iteration})")
 
         try:
+            if remote_backend == "esmfold":
+                # Modal returns {"pdb": "...", "mean_plddt": 0..100}
+                result = fold_fn.remote(sequence)
+                pdb_text = result["pdb"]
+                mean_plddt = float(result["mean_plddt"])
+
+                # Save PDB locally in the same outputs directory
+                output_dir = Path(self._cfg.output_dir)
+                output_dir.mkdir(parents=True, exist_ok=True)
+                pdb_path = write_pdb_text(pdb_text, output_dir / f"iter_{iteration}.pdb")
+
+                # Score locally
+                obj_score = compute_objective_score(sequence, objective)
+
+                # Energy proxy from confidence
+                energy = mean_plddt / 100.0
+
+                cfg = self._fold_cfg
+                combined = cfg.energy_weight * energy + cfg.objective_weight * obj_score
+
+                return FoldResult(
+                    pdb_path=pdb_path,
+                    energy=round(energy, 6),
+                    objective_score=round(obj_score, 6),
+                    combined_score=round(combined, 6),
+                )
+
+            # If you ever add dummy remote folding function, keep this:
+            objective_dict = objective.model_dump()
             result_dict = fold_fn.remote(sequence, objective_dict, iteration)
+            return FoldResult(**result_dict)
+
         except Exception as e:
             raise RuntimeError(
-                f"Failed to call Modal fold function ({type(e).__name__}: {e}).\n"
-                "  Make sure the app is deployed: modal deploy protein_swarm/modal_app/app.py\n"
-                "  Or remove --modal-fold to fold locally"
+                f"Failed to call Modal fold function '{fn_name}' ({type(e).__name__}: {e}).\n"
+                "Make sure the app is deployed: modal deploy protein_swarm/modal_app/functions.py\n"
+                "Or remove --modal-fold to fold locally."
             ) from e
-
-        return FoldResult(**result_dict)
 
     @staticmethod
     def _save_artefacts(result: DesignResult, output_dir: Path) -> None:

@@ -51,27 +51,46 @@ def design(
     seed: Optional[int] = typer.Option(None, "--seed", help="Random seed for reproducibility"),
     debug: bool = typer.Option(False, "--debug", "-d", help="Enable verbose debug output"),
     no_modal: bool = typer.Option(False, "--no-modal", help="Run locally without Modal"),
+    fold_backend: str = typer.Option(
+        "dummy",
+        "--fold-backend",
+        help="Local folding backend: dummy | esmfold-local",
+    ),
     modal_fold: bool = typer.Option(False, "--modal-fold", help="Run folding engine on Modal (remote)"),
+    remote_fold_backend: str = typer.Option(
+        "esmfold",
+        "--remote-fold-backend",
+        help="Remote (Modal) folding backend when --modal-fold: dummy | esmfold",
+    ),
     modal_fold_gpu: bool = typer.Option(False, "--modal-fold-gpu", help="Use GPU worker for Modal folding"),
     output_dir: str = typer.Option("outputs", "--output-dir", help="Directory for output artefacts"),
     confidence_threshold: float = typer.Option(0.5, "--confidence-threshold", help="Minimum agent confidence"),
     plateau_window: int = typer.Option(5, "--plateau-window", help="Iterations for plateau detection"),
     use_llm: bool = typer.Option(False, "--use-llm", help="Use LLM-backed agents instead of heuristics"),
-    llm_provider: str = typer.Option("openai", "--llm-provider", help="LLM provider: openai | anthropic | together | modal_local"),
-    llm_model: str = typer.Option("gpt-4o", "--llm-model", help="LLM model identifier"),
+    llm_provider: str = typer.Option("openai", "--llm-provider", help="LLM provider: openai | anthropic | together"),
+    llm_model: str = typer.Option("gpt-4o-mini", "--llm-model", help="LLM model identifier"),
     llm_api_key: Optional[str] = typer.Option(None, "--llm-api-key", help="LLM API key (or set OPENAI_API_KEY env var)"),
     llm_temperature: float = typer.Option(0.7, "--llm-temperature", help="LLM sampling temperature"),
 ) -> None:
     """Run the swarm-based protein design loop.
 
     Modal flags require a running Modal app. Either deploy first with
-    'modal deploy protein_swarm/modal_app/functions.py' or run the whole script
+    'modal deploy protein_swarm/modal_app/app.py' or run the whole script
     under 'modal run'.  Use --no-modal for fully local execution.
     """
     sequence = _validate_sequence(sequence)
 
     if modal_fold_gpu and not modal_fold:
         modal_fold = True
+    
+    # newly added
+    allowed_local = {"dummy", "esmfold-local"}
+    if fold_backend not in allowed_local:
+        raise typer.BadParameter(f"--fold-backend must be one of {sorted(allowed_local)}")
+
+    allowed_remote = {"dummy", "esmfold"}
+    if remote_fold_backend not in allowed_remote:
+        raise typer.BadParameter(f"--remote-fold-backend must be one of {sorted(allowed_remote)}")
 
     llm_cfg = LLMConfig(
         provider=llm_provider,
@@ -87,6 +106,7 @@ def design(
     console.print(f"  Mutation rate   : {mutation_rate}")
     console.print(f"  Modal parallel  : {not no_modal}")
     console.print(f"  Modal fold      : {modal_fold}" + (f" (GPU)" if modal_fold_gpu else " (CPU)" if modal_fold else ""))
+    console.print(f"  Fold backend    : {fold_backend}" if not modal_fold else f"  Fold backend    : Modal/{remote_fold_backend}")
     console.print(f"  LLM agents      : {use_llm} ({llm_provider}/{llm_model})" if use_llm else f"  LLM agents      : {use_llm}")
     console.print(f"  Output dir      : {output_dir}")
     console.print()
@@ -101,6 +121,8 @@ def design(
         modal_parallel=not no_modal,
         modal_fold=modal_fold,
         modal_fold_gpu=modal_fold_gpu,
+        fold_backend=fold_backend,
+        remote_fold_backend=remote_fold_backend,
         output_dir=output_dir,
         confidence_threshold=confidence_threshold,
         plateau_window=plateau_window,

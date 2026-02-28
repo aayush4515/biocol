@@ -29,8 +29,6 @@ def compile_objective(
     Falls back to the heuristic parser on failure or when LLM is disabled.
     """
     if use_llm and llm_config is not None:
-        if llm_config.provider == "modal_local":
-            return _compile_objective_heuristic(raw_text)
         return _compile_objective_llm(raw_text, llm_config)
     return _compile_objective_heuristic(raw_text)
 
