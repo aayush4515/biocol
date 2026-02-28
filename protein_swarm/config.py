@@ -55,6 +55,8 @@ class SwarmConfig(BaseModel):
     random_seed: int | None = Field(default=None, description="Reproducibility seed; None for non-deterministic runs")
     debug: bool = Field(default=False, description="Enable verbose debug logging")
     modal_parallel: bool = Field(default=True, description="Use Modal for distributed agent execution")
+    modal_fold: bool = Field(default=False, description="Run folding engine on Modal (remote). False = fold locally.")
+    modal_fold_gpu: bool = Field(default=False, description="Use GPU worker for folding on Modal (requires fold_image)")
     output_dir: str = Field(default="outputs", description="Directory for artefacts")
 
 

@@ -51,6 +51,8 @@ def design(
     seed: Optional[int] = typer.Option(None, "--seed", help="Random seed for reproducibility"),
     debug: bool = typer.Option(False, "--debug", "-d", help="Enable verbose debug output"),
     no_modal: bool = typer.Option(False, "--no-modal", help="Run locally without Modal"),
+    modal_fold: bool = typer.Option(False, "--modal-fold", help="Run folding engine on Modal (remote)"),
+    modal_fold_gpu: bool = typer.Option(False, "--modal-fold-gpu", help="Use GPU worker for Modal folding"),
     output_dir: str = typer.Option("outputs", "--output-dir", help="Directory for output artefacts"),
     confidence_threshold: float = typer.Option(0.5, "--confidence-threshold", help="Minimum agent confidence"),
     plateau_window: int = typer.Option(5, "--plateau-window", help="Iterations for plateau detection"),
@@ -60,8 +62,16 @@ def design(
     llm_api_key: Optional[str] = typer.Option(None, "--llm-api-key", help="LLM API key (or set OPENAI_API_KEY env var)"),
     llm_temperature: float = typer.Option(0.7, "--llm-temperature", help="LLM sampling temperature"),
 ) -> None:
-    """Run the swarm-based protein design loop."""
+    """Run the swarm-based protein design loop.
+
+    Modal flags require a running Modal app. Either deploy first with
+    'modal deploy protein_swarm/modal_app/app.py' or run the whole script
+    under 'modal run'.  Use --no-modal for fully local execution.
+    """
     sequence = _validate_sequence(sequence)
+
+    if modal_fold_gpu and not modal_fold:
+        modal_fold = True
 
     llm_cfg = LLMConfig(
         provider=llm_provider,
@@ -76,6 +86,7 @@ def design(
     console.print(f"  Max iterations  : {max_iterations}")
     console.print(f"  Mutation rate   : {mutation_rate}")
     console.print(f"  Modal parallel  : {not no_modal}")
+    console.print(f"  Modal fold      : {modal_fold}" + (f" (GPU)" if modal_fold_gpu else " (CPU)" if modal_fold else ""))
     console.print(f"  LLM agents      : {use_llm} ({llm_provider}/{llm_model})" if use_llm else f"  LLM agents      : {use_llm}")
     console.print(f"  Output dir      : {output_dir}")
     console.print()
@@ -88,6 +99,8 @@ def design(
         random_seed=seed,
         debug=debug,
         modal_parallel=not no_modal,
+        modal_fold=modal_fold,
+        modal_fold_gpu=modal_fold_gpu,
         output_dir=output_dir,
         confidence_threshold=confidence_threshold,
         plateau_window=plateau_window,
@@ -99,7 +112,13 @@ def design(
         memory_config=MemoryConfig(),
     )
 
-    result = engine.run(sequence, objective)
+    try:
+        result = engine.run(sequence, objective)
+    except RuntimeError as e:
+        if "Modal" in str(e):
+            console.print(f"\n[bold red]Error:[/bold red] {e}")
+            raise typer.Exit(code=1)
+        raise
 
     console.print(f"\n[bold green]Done.[/bold green]  Artefacts saved to [cyan]{output_dir}/[/cyan]")
     console.print(f"  final_sequence.txt   — optimised sequence")

@@ -2,1340 +2,636 @@
   {
     "iteration": 0,
     "sequence_before": "AAAALLLLAAAAGGGGAAAA",
-    "sequence_after": "LLLLIIIILLLELAAAELLL",
+    "sequence_after": "AAEAAAAAEEEAAAAAEEEE",
     "mutations": [
-      {
-        "position": 0,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.7,
-        "reason": "Leucine is often found in alpha-helices due to its hydrophobic nature, which can contribute to protein stability. Replacing alanine with leucine at the start of an alpha-helix could enhance helical stability and resistance to proteolysis by increasing hydrophobic interactions and packing density."
-      },
-      {
-        "position": 1,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is known to contribute to alpha-helical stability and can enhance hydrophobic interactions, which are important for thermostability. Increasing the hydrophobic character at the beginning of the sequence with leucine could help stabilize the helical structure and reduce proteolytic cleavage."
-      },
       {
         "position": 2,
         "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is known to stabilize alpha-helices due to its hydrophobic nature, which helps in forming a tightly packed core in the helix. This can increase the protein's thermostability and resistance to proteolysis."
-      },
-      {
-        "position": 3,
-        "current_residue": "A",
-        "proposed_residue": "L",
+        "proposed_residue": "E",
         "confidence": 0.7,
-        "reason": "Leucine is known to stabilize alpha-helices and can enhance hydrophobic interactions, contributing to increased thermostability. It also maintains the local hydrophobic environment, potentially reducing the risk of proteolytic cleavage."
+        "reason": "Glutamic acid (E) is known to be a strong helix former and can contribute to helix stability through hydrogen bonding and ionic interactions. Substituting alanine with glutamic acid at this position is likely to enhance helix formation and stability."
       },
       {
         "position": 4,
         "current_residue": "L",
-        "proposed_residue": "I",
+        "proposed_residue": "A",
         "confidence": 0.8,
-        "reason": "Replacing leucine with isoleucine can enhance hydrophobic interactions, which may increase the stability of the alpha-helix and contribute to overall thermostability. Isoleucine is also a bulky hydrophobic residue, similar to leucine, which helps maintain the helical structure and can potentially improve resistance to proteolysis."
+        "reason": "Alanine is a strong helix-forming residue and replacing leucine with alanine at position 4 can enhance helix stability, particularly given the presence of alanine residues nearby, which already promote helical structure."
       },
       {
         "position": 5,
         "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is similar to leucine in hydrophobicity and size, which helps maintain the alpha-helical structure and contributes to the core stability of the protein. Its increased hydrophobicity can enhance packing interactions, thus improving thermostability and resistance to proteolysis."
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Alanine is known to be a strong helix former due to its small size and favorable backbone torsion angles. Substituting leucine with alanine at this position may enhance helical stability in the local region."
       },
       {
         "position": 6,
         "current_residue": "L",
-        "proposed_residue": "I",
+        "proposed_residue": "A",
         "confidence": 0.7,
-        "reason": "Isoleucine is similar to leucine and is often found in alpha-helices. It has a high hydrophobicity which can enhance protein stability and resistance to proteolysis by promoting a tightly packed core in the helix, which is beneficial for thermostability."
+        "reason": "Alanine has a high helix-forming propensity and can stabilize alpha-helices, which aligns with the objective of designing a helix-rich protein. Substituting leucine with alanine at this position could enhance the helical stability of the segment."
       },
       {
         "position": 7,
         "current_residue": "L",
-        "proposed_residue": "I",
+        "proposed_residue": "A",
         "confidence": 0.7,
-        "reason": "Isoleucine is known to enhance hydrophobic interactions, which can stabilize the alpha-helical structure and improve thermostability. It is similar to leucine in hydrophobicity and structure, making it a suitable alternative for maintaining the alpha-helix while potentially increasing the protein's resistance to thermal denaturation and proteolysis."
+        "reason": "Alanine is a small, helix-favoring residue and can enhance helix stability. Replacing leucine with alanine at this position may promote helical propensity in this region without introducing steric hindrance or disrupting the existing structure."
       },
       {
         "position": 8,
         "current_residue": "A",
-        "proposed_residue": "L",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Leucine (L) is a hydrophobic amino acid that is often found in the core of alpha-helical structures and contributes to thermal stability. By introducing leucine at this position, it can enhance the hydrophobic interactions within the helical core, potentially increasing the protein's thermostability and resistance to proteolysis."
+        "reason": "Glutamic acid (E) is a helix-promoting residue due to its side chain properties which favor helical stability and can form hydrogen bonds, enhancing the overall stability of helical structures."
       },
       {
         "position": 9,
         "current_residue": "A",
-        "proposed_residue": "L",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Leucine is a strong helix-forming residue that increases hydrophobic interactions, which can enhance thermostability. It also resists proteolytic cleavage due to its buried side chain in helices."
+        "reason": "Glutamic acid (E) is a strong helix-forming residue. Substituting alanine (A) with glutamic acid at this position could enhance helix stability. The local context of the sequence supports helix formation, and E is commonly found in helix regions."
       },
       {
         "position": 10,
         "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is known to stabilize alpha-helices due to its hydrophobic nature and its propensity to participate in helix-helix interactions, potentially increasing thermostability and resistance to proteolysis."
-      },
-      {
-        "position": 11,
-        "current_residue": "A",
         "proposed_residue": "E",
-        "confidence": 0.7,
-        "reason": "Substituting alanine with glutamic acid (E) can enhance the protein's alpha-helical stability due to its ability to form salt bridges and hydrogen bonds, which contribute to increased thermostability. Glutamic acid's negative charge can also deter proteolytic enzymes, thus making the protein more resistant to proteolysis."
+        "confidence": 0.8,
+        "reason": "Glutamic acid (E) is known to be a strong helix former due to its ability to form hydrogen bonds and its side chain length, which stabilizes the helical structure. Substituting 'A' with 'E' at this position should enhance the helicity of the sequence."
       },
       {
         "position": 12,
         "current_residue": "G",
-        "proposed_residue": "L",
+        "proposed_residue": "A",
         "confidence": 0.8,
-        "reason": "Leucine is known to stabilize alpha-helices due to its hydrophobic nature and ability to participate in hydrophobic core formation, enhancing thermostability. Additionally, leucine can reduce proteolytic cleavage susceptibility by contributing to a more compact structure."
+        "reason": "Alanine is a strong helix former and replacing glycine, which is a helix breaker, with alanine can increase helix stability in this region."
       },
       {
         "position": 13,
         "current_residue": "G",
         "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Substituting glycine (G) with alanine (A) can enhance alpha-helical stability and thermostability due to alanine's propensity to support helix formation, while reducing flexibility associated with glycine, which is less favorable in helical structures."
+        "confidence": 0.8,
+        "reason": "Alanine is known to be a strong helix former, and replacing glycine with alanine in a potential helix region can enhance helical stability. Glycine tends to disrupt helices due to its flexibility, so this substitution is likely to support the objective of designing a more stable helix-rich protein."
       },
       {
         "position": 14,
         "current_residue": "G",
         "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Replacing Glycine (G) with Alanine (A) can enhance alpha-helical stability due to Alanine's strong helical propensity and its ability to fit well into a helix. Additionally, Alanine is less flexible than Glycine, potentially reducing proteolytic susceptibility by limiting conformational freedom."
+        "confidence": 0.8,
+        "reason": "Ala (A) is known to be a strong helix former and replacing Gly (G) with Ala at this position can enhance alpha-helical stability in the local sequence context."
       },
       {
         "position": 15,
         "current_residue": "G",
         "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Replacing glycine with alanine can increase alpha-helical propensity and improve thermostability. Alanine is also more resistant to proteolytic cleavage compared to glycine."
+        "confidence": 0.8,
+        "reason": "Alanine is known to be a strong helix-forming residue. Substituting glycine (which is helix-disrupting) with alanine at this position is likely to stabilize helical structure in this region."
       },
       {
         "position": 16,
         "current_residue": "A",
         "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Glutamic acid (E) is known to enhance thermostability and can form salt bridges that help stabilize alpha-helices. It also increases the protein's resistance to proteolysis due to its charged nature, which can deter proteases."
+        "reason": "Glutamic acid (E) is a helix-promoting residue due to its ability to form hydrogen bonds and its negative charge, which can stabilize the helix structure. Substituting alanine with glutamic acid at this position can enhance helix stability in the local context."
       },
       {
         "position": 17,
         "current_residue": "A",
-        "proposed_residue": "L",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Leucine is known to enhance alpha-helical stability due to its hydrophobic nature, promoting favorable interactions within the helix core and contributing to overall protein stability, which is beneficial for both thermostability and resistance to proteolysis."
+        "reason": "Glutamic acid (E) is known to be a strong helix former due to its ability to form hydrogen bonds and its side chain properties. Substituting alanine (A) with glutamic acid in this context should enhance the helical propensity of the sequence."
       },
       {
         "position": 18,
         "current_residue": "A",
-        "proposed_residue": "L",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Leucine is known to stabilize alpha-helices due to its hydrophobic nature and high helix propensity. This substitution could enhance the thermostability of the helix, potentially increasing resistance to proteolysis."
+        "reason": "Glutamic acid (E) is a helix-promoting residue due to its ability to form hydrogen bonds and interact favorably within a helix structure. Replacing alanine with glutamic acid at position 18 may enhance helical stability in this context, where the surrounding region is composed of amino acids conducive to helix formation."
       },
       {
         "position": 19,
         "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.7,
-        "reason": "Leucine is known to stabilize alpha-helices due to its hydrophobic nature and ability to pack tightly, which can enhance thermostability. Additionally, leucine is less susceptible to proteolytic cleavage compared to alanine, aligning with the objective of proteolysis resistance."
+        "proposed_residue": "E",
+        "confidence": 0.8,
+        "reason": "Glutamic acid (E) is known to stabilize alpha-helices by participating in hydrogen bonds and salt bridges. Given the local context of alanines, introducing a glutamic acid can enhance helix formation without disrupting the existing structure."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_0.pdb",
-      "energy": 1.115187,
-      "objective_score": 0.711406,
-      "combined_score": 0.872919
+      "pdb_path": "/tmp/fold_output/iter_0.pdb",
+      "energy": 0.947849,
+      "objective_score": 0.769966,
+      "combined_score": 0.841119
     },
-    "accepted": true,
-    "score_delta": 0.02875799999999995
+    "accepted": false,
+    "score_delta": -0.0030420000000001
   },
   {
     "iteration": 1,
-    "sequence_before": "LLLLIIIILLLELAAAELLL",
-    "sequence_after": "LLAILLLLAAIQELEEALAI",
+    "sequence_before": "AAAALLLLAAAAGGGGAAAA",
+    "sequence_after": "AAEAEAEEALAEAEAELEEL",
     "mutations": [
       {
         "position": 2,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is a small, helix-favoring residue that can enhance alpha-helical stability. Replacing leucine with alanine could reduce the likelihood of proteolytic cleavage sites and improve thermostability."
-      },
-      {
-        "position": 3,
-        "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine (I) is a hydrophobic amino acid that can stabilize alpha-helical structures through van der Waals interactions. It also contributes to the hydrophobic core, enhancing thermostability. The local context is rich in hydrophobic residues, which supports the incorporation of another hydrophobic residue like isoleucine. This substitution is likely to maintain or improve the protein's resistance to unfolding and proteolysis."
+        "current_residue": "A",
+        "proposed_residue": "E",
+        "confidence": 0.6,
+        "reason": "Glutamic acid (E) is a helix-promoting residue due to its ability to form hydrogen bonds and its negative charge which can interact favorably with other residues in the helix. Despite its previous rejection, it remains a common substitution for enhancing helical stability in this context due to the adjacent helix-favorable leucines (L)."
       },
       {
         "position": 4,
-        "current_residue": "I",
-        "proposed_residue": "L",
+        "current_residue": "L",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Leucine is known to stabilize alpha-helices due to its hydrophobic side chain, which promotes packing and stability. Replacing isoleucine with leucine can enhance thermostability and proteolytic resistance in helical regions."
+        "reason": "Glutamic acid (E) is a helix-promoting residue that can enhance alpha-helical stability and is often found in helical regions. The local context contains multiple leucines, which are also helix-favoring, and introducing E could improve helix propensity without disrupting the local structure."
       },
       {
         "position": 5,
-        "current_residue": "I",
-        "proposed_residue": "L",
+        "current_residue": "L",
+        "proposed_residue": "A",
         "confidence": 0.8,
-        "reason": "Substituting 'I' with 'L' may enhance alpha-helical stability due to the high helical propensity of leucine. Leucine also contributes to hydrophobic packing, which is beneficial for thermostability. The local context is already rich in leucine, suggesting compatibility, and could further resist proteolysis by reducing surface exposure."
+        "reason": "Alanine is often found in helices due to its small size and helix-promoting nature. While 'A' was previously rejected, the local context of consecutive leucines may benefit from increased helix propensity by introducing alanine, facilitating a more stable helix formation."
       },
       {
         "position": 6,
-        "current_residue": "I",
-        "proposed_residue": "L",
+        "current_residue": "L",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Leucine is a preferred residue in alpha-helices and contributes to hydrophobic core stability, which can enhance thermostability. It also resists proteolytic cleavage better than Isoleucine."
+        "reason": "Glutamic acid (E) is known to be a strong helix former. Substituting L with E at this position could enhance the helical propensity of the sequence, contributing to the objective of designing a stable helix-rich protein. The local window suggests a context where introducing a helix-promoting residue could be beneficial."
       },
       {
         "position": 7,
-        "current_residue": "I",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine (L) is a hydrophobic amino acid that stabilizes alpha-helices and contributes to the hydrophobic core, enhancing thermostability. It is also more resistant to proteolysis than isoleucine (I), making it a suitable substitution for increased protein stability."
-      },
-      {
-        "position": 8,
         "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to stabilize alpha-helices due to its small size and helix-promoting properties. Substituting leucine with alanine can enhance helicity and potentially increase thermostability while maintaining resistance to proteolysis."
+        "proposed_residue": "E",
+        "confidence": 0.8,
+        "reason": "Glutamic acid (E) is known to be a strong helix former due to its ability to form hydrogen bonds and its charged side chain, which can stabilize the helix structure. The current residue leucine (L) is also a helix former, but introducing E could enhance helix stability by increasing the likelihood of forming a stable helical dipole and potential salt bridges with other residues in the sequence."
       },
       {
         "position": 9,
-        "current_residue": "L",
-        "proposed_residue": "A",
+        "current_residue": "A",
+        "proposed_residue": "L",
         "confidence": 0.7,
-        "reason": "Alanine is known to be a helix-promoting residue due to its small size and lack of branching, which enhances helix stability. Substituting leucine with alanine at this position could improve the overall thermostability of the alpha-helix without significantly impacting the hydrophobic core, given that leucine and alanine are both hydrophobic."
-      },
-      {
-        "position": 10,
-        "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is a hydrophobic amino acid that can enhance the stability of alpha-helices by promoting strong hydrophobic interactions. Substituting leucine with isoleucine at this position should maintain or increase the helical propensity and contribute to the overall thermostability of the protein, while also being less prone to proteolysis."
+        "reason": "Leucine (L) is a strong helix former and fits well in the local context of leucines, potentially enhancing helix stability. Previous rejection of glutamic acid (E) suggests preference for non-polar residues in this region."
       },
       {
         "position": 11,
-        "current_residue": "E",
-        "proposed_residue": "Q",
-        "confidence": 0.7,
-        "reason": "Glutamine (Q) can form hydrogen bonds similar to glutamic acid (E) but lacks the negative charge, which could reduce susceptibility to proteolytic cleavage and maintain helical stability. This substitution may enhance thermostability without significantly disrupting the alpha-helical structure."
+        "current_residue": "A",
+        "proposed_residue": "E",
+        "confidence": 0.8,
+        "reason": "Glutamic acid (E) is known to be a strong helix former and can stabilize alpha-helical structures. Replacing alanine (A) with glutamic acid in this region could enhance the helical propensity of the sequence."
       },
       {
         "position": 12,
-        "current_residue": "L",
-        "proposed_residue": "E",
+        "current_residue": "G",
+        "proposed_residue": "A",
         "confidence": 0.7,
-        "reason": "Replacing leucine with glutamate can enhance alpha-helix propensity and introduce a negative charge, which can contribute to increased thermostability and protease resistance through potential salt bridge formation with nearby residues."
+        "reason": "Alanine is known to be a strong helix former, and replacing glycine with alanine can increase the helical propensity of the sequence. Although alanine was previously rejected, it is generally a favorable choice for introducing helices, especially given the context of neighboring alanines that can support helix formation."
       },
       {
         "position": 13,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is known to stabilize alpha-helices due to its hydrophobic nature, which can help increase protein thermostability. Additionally, leucine can contribute to the hydrophobic core, enhancing resistance to proteolysis."
+        "current_residue": "G",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamate (E) is a helix-promoting residue due to its ability to form hydrogen bonds and stabilize helical structures. Replacing glycine (G), which is helix-disruptive, with glutamate can enhance helical stability in this region."
       },
       {
         "position": 14,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Replacing alanine with glutamic acid could potentially enhance alpha-helix stability due to improved hydrogen bonding and electrostatic interactions. Glutamic acid is helix-promoting and can participate in salt bridges, which may also increase resistance to proteolysis."
+        "current_residue": "G",
+        "proposed_residue": "A",
+        "confidence": 0.5,
+        "reason": "Alanine is a helix-promoting residue and could help in stabilizing a helical structure. Though it was previously rejected, it still has potential in this context due to its small size and helix-forming propensity."
       },
       {
         "position": 15,
-        "current_residue": "A",
+        "current_residue": "G",
         "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "The substitution of alanine (A) with glutamic acid (E) can enhance the helix's stability through the formation of salt bridges or hydrogen bonds, making the protein more thermostable. Furthermore, glutamic acid is less prone to proteolytic cleavage compared to alanine, which can help in resisting proteolysis. The local context with neighboring leucines (L) can support the integration of glutamic acid without disrupting the alpha-helical structure."
+        "reason": "Glutamic acid (E) is known to promote alpha-helix formation due to its ability to form hydrogen bonds and its favorable side-chain interactions in helical structures. Substituting glycine (G), which is a helix breaker, with E could enhance helical stability in this region."
       },
       {
         "position": 16,
-        "current_residue": "E",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is a small, nonpolar amino acid that is commonly found in alpha-helices and can enhance helix stability. Substituting glutamic acid (E), which is a charged and potentially destabilizing residue in the context of hydrophobic environments, with alanine can increase stability and reduce susceptibility to proteolysis."
+        "current_residue": "A",
+        "proposed_residue": "L",
+        "confidence": 0.7,
+        "reason": "Leucine is a strong helix former and replacing alanine with leucine can enhance helical stability. The local context is a stretch of alanines which can support helix formation, and introducing leucine could further stabilize this region, promoting a helix-rich structure."
+      },
+      {
+        "position": 17,
+        "current_residue": "A",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) is a known helix former, and despite its previous rejection, it is a strong candidate for stabilizing helical structures. The local context contains Gly and Ala, which are neutral for helices, so introducing E might enhance helix propensity."
       },
       {
         "position": 18,
-        "current_residue": "L",
-        "proposed_residue": "A",
+        "current_residue": "A",
+        "proposed_residue": "E",
         "confidence": 0.7,
-        "reason": "Substituting leucine with alanine at the 18th position may enhance alpha-helix formation and contribute to thermostability due to alanine's known helix-promoting properties. This substitution could also reduce the potential for proteolytic cleavage by minimizing exposed bulky side chains."
+        "reason": "Glutamic acid (E) is a helix-promoting residue that can enhance helix stability. Although it was previously rejected, it remains a strong candidate for promoting helical structure in this context. Re-evaluating its potential could be beneficial given the objective to design a helix-rich protein."
       },
       {
         "position": 19,
-        "current_residue": "L",
-        "proposed_residue": "I",
+        "current_residue": "A",
+        "proposed_residue": "L",
         "confidence": 0.8,
-        "reason": "Isoleucine is a hydrophobic residue, similar to leucine, and is known to stabilize alpha-helices due to its bulky side chain, which can contribute to the hydrophobic core essential for thermostability. Additionally, isoleucine is less prone to proteolytic cleavage, which aligns with the goal of enhancing resistance to proteolysis."
+        "reason": "Leucine is a strong helix former and can enhance the stability of helices. Given the local context of alanines, which are also helix formers, substituting with leucine can strengthen the helical propensity without disrupting the existing sequence."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_1.pdb",
-      "energy": 1.176328,
-      "objective_score": 0.750302,
-      "combined_score": 0.920712
+      "pdb_path": "/tmp/fold_output/iter_1.pdb",
+      "energy": 1.172405,
+      "objective_score": 0.831228,
+      "combined_score": 0.967699
     },
     "accepted": true,
-    "score_delta": 0.047792999999999974
+    "score_delta": 0.12353799999999993
   },
   {
     "iteration": 2,
-    "sequence_before": "LLAILLLLAAIQELEEALAI",
-    "sequence_after": "LLIVIVIILLLEQAAALALL",
+    "sequence_before": "AAEAEAEEALAEAEAELEEL",
+    "sequence_after": "AAALALAALAAALALAALLL",
     "mutations": [
       {
         "position": 2,
-        "current_residue": "A",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is a hydrophobic residue that is known to stabilize alpha-helices by promoting hydrophobic packing. Substituting alanine with isoleucine at position 2 should enhance the protein's thermostability while maintaining resistance to proteolysis, given the local hydrophobic context."
+        "current_residue": "E",
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Alanine is a strong helix former and can increase the stability of an alpha helix, which aligns with the objective of designing a helix-rich protein. The local context already has several alanine residues, suggesting that alanine may be well tolerated in this region."
       },
       {
         "position": 3,
-        "current_residue": "I",
-        "proposed_residue": "V",
+        "current_residue": "A",
+        "proposed_residue": "L",
         "confidence": 0.8,
-        "reason": "Valine (V) can enhance the hydrophobic core of an alpha-helix, contributing to increased thermal stability. It is also resistant to proteolysis, similar to isoleucine (I), and fits well in the local hydrophobic environment."
+        "reason": "Leucine is a strong helix former and can enhance the helical stability of the sequence, especially in a region that already contains other helix-promoting residues like alanine and glutamic acid."
       },
       {
         "position": 4,
-        "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is known for its ability to stabilize alpha-helices due to its hydrophobic nature, which can enhance thermostability. It is also resistant to proteolysis due to its bulky side chain. Additionally, isoleucine has been accepted in past designs, suggesting a favorable outcome."
+        "current_residue": "E",
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Alanine is known to be a strong helix former, and replacing glutamic acid with alanine at this position can increase the helical propensity of the sequence. Although 'A' was previously rejected, the context may differ, and alanine's strong helix-forming tendency is beneficial in this case."
       },
       {
         "position": 5,
-        "current_residue": "L",
-        "proposed_residue": "V",
+        "current_residue": "A",
+        "proposed_residue": "L",
         "confidence": 0.8,
-        "reason": "Valine (V) is a small, non-polar amino acid that conserves the hydrophobic nature of leucine (L) and is known to contribute to protein stability due to its beta-branched structure, which can enhance packing within the alpha-helix. This can increase thermostability and potentially reduce proteolytic cleavage sites."
+        "reason": "Leucine is a strong helix former due to its hydrophobic nature and ability to stabilize helices through favorable packing interactions. The current region is rich in helix-promoting residues, and substituting alanine with leucine can enhance helix stability."
       },
       {
         "position": 6,
-        "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine can enhance hydrophobic interactions and contribute to alpha-helix stability, which can increase protein thermostability. Additionally, isoleucine is generally resistant to proteolytic cleavage, making it suitable for the objective."
+        "current_residue": "E",
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Alanine is a strong helix former and is often used to promote helix stability. Given the context of the sequence, replacing glutamic acid with alanine could enhance helical propensity. Previous rejection of alanine may be context-specific, but in this context, it serves the objective well."
       },
       {
         "position": 7,
-        "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine (I) is a hydrophobic amino acid, like leucine (L), which is favorable for maintaining alpha-helical structure and contributing to the hydrophobic core. Isoleucine is also bulkier, which can enhance packing and contribute to increased thermostability. Its use has been successful in similar contexts in the past."
+        "current_residue": "E",
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Alanine is a strong helix former and replacing glutamate with alanine can enhance helical stability, especially given the local sequence context which already contains multiple alanines that support helix formation. Despite 'A' being previously rejected, the local context suggests it may now be beneficial."
       },
       {
         "position": 8,
         "current_residue": "A",
         "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a strong helix former and contributes to hydrophobic core stability, enhancing thermostability. Increasing hydrophobicity here may improve resistance to proteolysis."
+        "confidence": 0.7,
+        "reason": "Leucine is a strong helix former and can enhance helical stability. Given the failure with glutamic acid (E), which can be helical but might lead to charge repulsion, leucine is a non-polar alternative that should enhance stability in a helix-rich context."
       },
       {
         "position": 9,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a common residue in alpha-helices and contributes to hydrophobic core stability, which is important for thermostability. It is also less likely to be targeted by proteases compared to alanine, providing resistance to proteolysis. Previous successes with leucine in similar contexts increase confidence in this substitution."
-      },
-      {
-        "position": 10,
-        "current_residue": "I",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is known to stabilize alpha-helices due to its hydrophobic nature and ability to form strong van der Waals interactions. This substitution maintains the hydrophobic character of the core, which is crucial for thermostability and proteolytic resistance. Previous successes with leucine suggest it is a favorable choice in this context."
-      },
-      {
-        "position": 11,
-        "current_residue": "Q",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) can enhance alpha-helix stability due to its ability to form salt bridges and hydrogen bonds, which are beneficial for maintaining structure at higher temperatures. The local context ('ELE') already contains a glutamic acid, suggesting compatibility and potential for stabilizing interactions. Previous success with glutamic acid in similar contexts further supports this substitution."
-      },
-      {
-        "position": 12,
-        "current_residue": "E",
-        "proposed_residue": "Q",
-        "confidence": 0.8,
-        "reason": "Substituting glutamic acid (E) with glutamine (Q) can maintain the helical propensity while reducing the negative charge, which may enhance thermal stability and reduce susceptibility to proteolysis. Glutamine has been accepted previously, indicating a favorable context for this substitution."
-      },
-      {
-        "position": 13,
         "current_residue": "L",
         "proposed_residue": "A",
         "confidence": 0.7,
-        "reason": "Alanine is a small, hydrophobic residue known to stabilize helices and is less prone to proteolytic attack compared to leucine. The local context supports a helix, and alanine can enhance thermostability due to its helix-stabilizing properties."
+        "reason": "Alanine is known for its strong helix-forming propensity, and replacing leucine with alanine could enhance the helical stability of this region. Despite leucine also being helix-friendly, alanine's smaller size and frequent occurrence in helices make it a potentially better choice given our objective to design a helix-rich protein."
       },
       {
-        "position": 14,
+        "position": 11,
         "current_residue": "E",
         "proposed_residue": "A",
         "confidence": 0.8,
-        "reason": "Substituting glutamic acid (E) with alanine (A) can increase alpha-helical stability and reduce proteolytic cleavage sites. Alanine is known to promote helix formation and has been previously accepted in successful designs. This substitution maintains hydrophobicity and is likely to enhance thermostability by reducing the potential for destabilizing electrostatic interactions."
+        "reason": "Alanine is known to promote alpha-helix formation due to its small, non-bulky side chain, which minimizes steric hindrance. Replacing glutamic acid (E) with alanine (A) at this position could enhance helical stability in the local context, as the sequence already contains several alanines and forms a pattern supportive of helical structures."
+      },
+      {
+        "position": 12,
+        "current_residue": "A",
+        "proposed_residue": "L",
+        "confidence": 0.8,
+        "reason": "Leucine is a strong helix former and its substitution for alanine can enhance helical stability. The presence of leucine at adjacent positions supports local helical structure. Previous success and failure memory suggests exploring options other than alanine."
+      },
+      {
+        "position": 13,
+        "current_residue": "E",
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Alanine is known to be a strong helix-forming residue due to its small side chain, reducing steric hindrance. In the context of a stable helix, alanine can enhance helix propensity. Given the local context where A has been previously rejected, I propose it again with moderate confidence, considering the objective of enhancing helical stability."
+      },
+      {
+        "position": 14,
+        "current_residue": "A",
+        "proposed_residue": "L",
+        "confidence": 0.8,
+        "reason": "Leucine is a strong alpha-helix former and could enhance helical stability in the context of surrounding residues. The current residue, alanine, is also helix-favoring, but leucine may provide greater hydrophobic interaction and stability in a helical structure."
       },
       {
         "position": 15,
         "current_residue": "E",
         "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Substituting glutamic acid (E) with alanine (A) can enhance alpha-helical stability due to alanine's strong helix-forming propensity. Alanine is also more resistant to proteolysis compared to glutamic acid, which can be beneficial for increasing the overall stability of the protein in proteolytic environments. Given past successes with alanine substitutions and the objective, this change is likely advantageous."
+        "confidence": 0.7,
+        "reason": "Alanine is known to be a strong helix former due to its small size and hydrophobic character, which contributes to helix stability. Despite being previously rejected, the current objective of enhancing helix content justifies re-evaluating alanine at this position to potentially increase overall helix propensity."
       },
       {
         "position": 16,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a strong helix former and enhances hydrophobic packing, contributing to thermostability. Additionally, it is more resistant to proteolysis compared to alanine."
-      },
-      {
-        "position": 17,
         "current_residue": "L",
         "proposed_residue": "A",
         "confidence": 0.7,
-        "reason": "Substituting leucine (L) with alanine (A) at position 17 can enhance alpha-helical stability due to alanine's high helix propensity. Additionally, alanine is less prone to proteolytic cleavage compared to leucine, which can contribute to increased resistance against proteolysis. Given the local context of an alpha-helix and the objective of thermostability, alanine is a reasonable choice."
+        "reason": "Alanine is a helix-promoting residue that can enhance helical stability. Given the local context of alternating glutamic acid and leucine, introducing alanine could help stabilize the helical structure. Previous acceptance of leucine suggests that maintaining a hydrophobic residue here is beneficial, and alanine's helix-favoring properties make it a strong candidate for this position."
+      },
+      {
+        "position": 17,
+        "current_residue": "E",
+        "proposed_residue": "L",
+        "confidence": 0.8,
+        "reason": "Leucine is a strong helix former and can stabilize the helix due to its hydrophobic interactions. Given the high presence of helix-promoting residues in the local context and the objective of stabilizing a helix-rich protein, substituting Glutamic acid with Leucine should enhance helical stability."
       },
       {
         "position": 18,
-        "current_residue": "A",
+        "current_residue": "E",
         "proposed_residue": "L",
         "confidence": 0.8,
-        "reason": "Leucine is known to stabilize alpha-helices due to its hydrophobic nature, enhancing the protein's overall stability. Given the local context of 'EALAI', replacing 'A' with 'L' could increase the hydrophobicity of this region, contributing to better packing and reduced proteolytic susceptibility."
-      },
-      {
-        "position": 19,
-        "current_residue": "I",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is known to promote alpha-helical stability due to its hydrophobic nature and ability to pack well within helices. It is less susceptible to proteolysis compared to isoleucine, especially in the context of a helical structure. Previous successes with leucine suggest that it is a favorable choice for enhancing stability and resistance to proteolysis."
+        "reason": "Leucine is a strong helix former and could enhance helical stability in the sequence. The current residue, glutamic acid, can also support helices but might introduce negative charge repulsion with nearby glutamic acids. Since leucine is neutral and hydrophobic, it may stabilize the helix without introducing charge-related issues."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_2.pdb",
-      "energy": 1.265207,
-      "objective_score": 0.698911,
-      "combined_score": 0.925429
+      "pdb_path": "/tmp/fold_output/iter_2.pdb",
+      "energy": 1.049849,
+      "objective_score": 0.799966,
+      "combined_score": 0.899919
     },
-    "accepted": true,
-    "score_delta": 0.004716999999999971
+    "accepted": false,
+    "score_delta": -0.06777999999999995
   },
   {
     "iteration": 3,
-    "sequence_before": "LLIVIVIILLLEQAAALALL",
-    "sequence_after": "ALVILLLLVAIQELLEILAI",
+    "sequence_before": "AAEAEAEEALAEAEAELEEL",
+    "sequence_after": "AAAEAEALAALLEAEAAAAA",
     "mutations": [
       {
-        "position": 0,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is frequently found in alpha-helices and can enhance helix stability. It is also less prone to protease cleavage than leucine, which may improve resistance to proteolysis. The local hydrophobic context supports this substitution."
-      },
-      {
         "position": 2,
-        "current_residue": "I",
-        "proposed_residue": "V",
+        "current_residue": "E",
+        "proposed_residue": "A",
         "confidence": 0.8,
-        "reason": "Valine is similar in size and hydrophobicity to isoleucine, which can maintain the alpha-helical structure and hydrophobic core crucial for stability. Valine's branched side chain can also enhance proteolytic resistance, contributing to the objective of increased thermostability."
+        "reason": "Alanine is a small, non-polar amino acid that is known to be helix-promoting. The local context already contains a high proportion of helix-promoting residues, and alanine can help stabilize the helix structure. Previous attempts with glutamic acid and alanine have been mixed, but the presence of alanine in a helix could improve stability more reliably than glutamic acid in this context."
       },
       {
         "position": 3,
-        "current_residue": "V",
-        "proposed_residue": "I",
+        "current_residue": "A",
+        "proposed_residue": "E",
         "confidence": 0.8,
-        "reason": "Isoleucine (I) maintains hydrophobicity and packing in alpha-helical structures, contributing to stability. Its branching structure may enhance rigidity, beneficial for thermostability and proteolysis resistance. Previous successes with hydrophobic residues suggest this change aligns with objectives."
+        "reason": "Glutamic acid (E) is a helix-promoting residue, and the sequence already contains several E residues, indicating a potential role in stabilizing helical regions. The local context supports replacing A with E to enhance helicity."
       },
       {
         "position": 4,
-        "current_residue": "I",
-        "proposed_residue": "L",
-        "confidence": 0.85,
-        "reason": "Leucine is known to stabilize alpha-helices due to its hydrophobic nature and is frequently found in transmembrane regions, which contribute to thermostability. Additionally, leucine can enhance proteolysis resistance through increased hydrophobic packing."
+        "current_residue": "E",
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Alanine is known to promote alpha-helix formation due to its small and uncharged side chain, which is conducive to the helical structure. Since the objective is to design a stable helix-rich protein, substituting glutamic acid with alanine at position 4 could enhance helical stability. The local context has a significant presence of alanine, suggesting it may be tolerated and potentially beneficial despite one previous rejection."
       },
       {
         "position": 5,
-        "current_residue": "V",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine (L) is a hydrophobic amino acid that is known to stabilize alpha-helices due to its side chain's ability to form favorable interactions with other hydrophobic residues. Given the local context of hydrophobic residues and the objective of thermostability, substituting valine with leucine could enhance the overall stability of the helical structure and maintain resistance to proteolysis. Previous success with leucine in similar contexts supports this choice."
+        "current_residue": "A",
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) is known to be a helix-promoting residue and is already prevalent in the local sequence, suggesting a stable helical environment. Previous attempts with alanine (A) have been mostly rejected, indicating a need for a different approach to enhance helicity. Substituting with E at this position could strengthen helical stability by maintaining a consistent pattern of helix-forming residues."
       },
       {
         "position": 6,
-        "current_residue": "I",
-        "proposed_residue": "L",
-        "confidence": 0.85,
-        "reason": "Leucine is a strong alpha-helix former and contributes to hydrophobic core stability, enhancing thermostability. Additionally, it is resistant to proteolytic cleavage, aligning with the objective. Previous successes with leucine suggest favorable outcomes."
+        "current_residue": "E",
+        "proposed_residue": "A",
+        "confidence": 0.6,
+        "reason": "The objective is to design a stable helix-rich protein. Alanine (A) is a strong helix-forming residue due to its small size and favorable helix propensity. Given the local context, replacing glutamic acid (E) with alanine at position 6 could enhance helix stability. Although 'A' was previously rejected, the current local sequence context and objective make 'A' a reasonable choice here."
       },
       {
         "position": 7,
-        "current_residue": "I",
+        "current_residue": "E",
         "proposed_residue": "L",
-        "confidence": 0.85,
-        "reason": "Replacing isoleucine (I) with leucine (L) can enhance protein stability due to leucine's high helix-forming propensity and its ability to pack tightly in hydrophobic cores, which is beneficial for thermostability. Additionally, leucine's resistance to proteolytic cleavage is advantageous for the objective. Previous acceptance of leucine increases confidence."
-      },
-      {
-        "position": 8,
-        "current_residue": "L",
-        "proposed_residue": "V",
-        "confidence": 0.8,
-        "reason": "Valine is a hydrophobic amino acid that is commonly found in alpha-helical structures and can contribute to protein stability by promoting tight packing in the core. It may enhance thermostability by maintaining a hydrophobic environment and resisting proteolysis due to reduced flexibility compared to leucine."
+        "confidence": 0.7,
+        "reason": "Leucine is a strong helix former and its substitution could enhance helical stability. Given the local context, replacing the current E with L may promote helix formation, supporting the objective of a helix-rich protein. Previous success with glutamate suggests considering hydrophobic residues like L to balance the charge and aid helicity, despite past rejections of similar hydrophobic residues."
       },
       {
         "position": 9,
         "current_residue": "L",
         "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Substituting leucine (L) with alanine (A) can enhance helical propensity and minimize steric clashes, promoting thermostability. Additionally, alanine is less prone to proteolytic cleavage, aligning with the objective. Previous success with alanine substitutions supports this choice."
+        "confidence": 0.7,
+        "reason": "Replacing 'L' with 'A' could improve helical propensity as alanine is a helix-favoring residue. The local context has several alanines and is generally helix-prone, suggesting this substitution could enhance helix stability. 'A' was previously rejected, possibly due to a different context, but here it seems more appropriate."
       },
       {
         "position": 10,
-        "current_residue": "L",
-        "proposed_residue": "I",
+        "current_residue": "A",
+        "proposed_residue": "L",
         "confidence": 0.8,
-        "reason": "Isoleucine is a hydrophobic residue that is favorable for maintaining the stability of alpha-helical structures, especially in the context of a leucine-rich region. Its introduction may enhance hydrophobic interactions, potentially increasing the protein's thermostability. Additionally, isoleucine has been previously accepted in similar positions, boosting confidence in its suitability for resisting proteolysis."
+        "reason": "Leucine is a strong helix former and can help stabilize alpha-helices. It fits well within the context of the local sequence and maintains the non-polar character at this position, enhancing helix stability."
       },
       {
         "position": 11,
         "current_residue": "E",
-        "proposed_residue": "Q",
-        "confidence": 0.8,
-        "reason": "Glutamine (Q) is known to be helix-stabilizing and can contribute to thermostability when replacing glutamic acid (E) in alpha-helices. Furthermore, Q is less prone to proteolytic cleavage compared to E, which can enhance resistance to proteolysis. The memory indicates previous success with Q in this context, supporting the substitution."
+        "proposed_residue": "L",
+        "confidence": 0.75,
+        "reason": "Leucine is known to stabilize alpha helices due to its hydrophobic nature and ability to engage in favorable hydrophobic interactions, which can promote helix formation and stability. Given the local context of alternating alanines and glutamates, introducing leucine could enhance helical propensity while avoiding previously rejected alanine."
       },
       {
         "position": 12,
-        "current_residue": "Q",
+        "current_residue": "A",
         "proposed_residue": "E",
-        "confidence": 0.9,
-        "reason": "Glutamic acid (E) is known to stabilize alpha-helices through favorable interactions and can form salt bridges with other residues, enhancing thermostability. Additionally, E is resistant to proteolytic cleavage, aligning with the objective."
+        "confidence": 0.8,
+        "reason": "Glutamic acid (E) is a helix-promoting residue and could improve alpha-helix stability in this context. Given the local window and previous rejections of 'L' and 'A', introducing 'E' here could enhance helix propensity, aligning with the objective of designing a stable helix-rich protein."
       },
       {
         "position": 13,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a strong helix-forming residue that can enhance alpha-helical structure stability. Its hydrophobic nature also contributes to the protein's core stability, which is beneficial for thermostability. Additionally, given the memory of accepted residues, leucine has been successful previously in this context."
+        "current_residue": "E",
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Alanine is known to be a strong helix former and can enhance helical stability. The local window shows a repetitive pattern of alanines, which suggests that introducing another alanine could promote helix formation. Despite 'A' being rejected in previous attempts, its known helical propensities make it a reasonable choice here."
       },
       {
         "position": 14,
         "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a hydrophobic residue that stabilizes alpha-helices due to its ability to participate in hydrophobic interactions, which are crucial for maintaining structural integrity at high temperatures. Additionally, leucine is not typically targeted by proteases, enhancing proteolytic resistance."
+        "proposed_residue": "E",
+        "confidence": 0.7,
+        "reason": "Glutamic acid (E) is known to favor alpha-helix formation due to its ability to form stabilizing hydrogen bonds. The local context already has a high presence of glutamic acid, indicating that its inclusion is beneficial for helical stability. The previous rejection of alanine (A) suggests that a different residue might improve helix propensity."
       },
       {
         "position": 15,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.85,
-        "reason": "Glutamic acid (E) is known to favor alpha-helical structures and can form salt bridges that contribute to thermostability. Given the local sequence context, introducing E could enhance helix stability and resistance to proteolysis via increased structural rigidity and potential ionic interactions. The acceptance of E in prior designs also supports this substitution."
+        "current_residue": "E",
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Alanine is a strong helix former and the sequence has accepted alanine previously. Substituting E with A could enhance helical propensity given the local context."
       },
       {
         "position": 16,
         "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine (I) is a hydrophobic amino acid known to stabilize alpha-helices and contribute to protein core hydrophobicity, which can enhance thermostability. Additionally, it may provide resistance to proteolytic cleavage by contributing to a more compact and stable structure. Given the local hydrophobic context and successful memory data, this substitution is likely beneficial."
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Alanine is known to be a strong helix former and can contribute to the stability of an alpha-helix, unlike leucine, which has been accepted but does not have as strong a propensity for helix formation as alanine. Previous rejection of alanine may have been context-dependent, but in this local sequence context, it can enhance helical stability."
       },
       {
         "position": 17,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.85,
-        "reason": "Leucine is known to stabilize alpha-helices by providing hydrophobic interactions, which can increase thermostability. It is also resistant to proteolysis due to its bulky side chain, making it suitable for the objective."
+        "current_residue": "E",
+        "proposed_residue": "A",
+        "confidence": 0.8,
+        "reason": "Alanine is a helix-promoting residue and replacing glutamic acid (E) with alanine can enhance helical stability. E has been rejected previously, indicating a need for change. Local context supports this substitution as it aligns with the objective of helix-rich design."
       },
       {
         "position": 18,
-        "current_residue": "L",
+        "current_residue": "E",
         "proposed_residue": "A",
         "confidence": 0.7,
-        "reason": "Alanine is known to stabilize alpha-helices and has been previously accepted in similar contexts. It can enhance thermostability without significantly altering the local helical structure or increasing susceptibility to proteolysis."
+        "reason": "Alanine is known to be a strong helix former, potentially increasing the helical propensity of the segment. Given the objective to design a stable helix-rich protein, substituting the current residue with alanine could enhance local helical structure and stability."
       },
       {
         "position": 19,
         "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is a hydrophobic residue that maintains the alpha-helical structure and enhances thermostability due to its favorable packing within the helix. Its side chain is slightly bulkier than leucine, which could help resist proteolysis by reducing accessible surface area. Isoleucine has been accepted in previous designs, indicating its suitability for this context."
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Alanine is a strong helix former and replacing leucine with alanine can enhance helix stability. The local context LEEL suggests that introducing another helix-favoring residue like alanine could support the objective of designing a stable helix-rich protein. Previous acceptance of leucine suggests hydrophobic residues are tolerated here, and alanine fits this profile while having a higher helix propensity."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_3.pdb",
-      "energy": 1.220545,
-      "objective_score": 0.685351,
-      "combined_score": 0.899428
+      "pdb_path": "/tmp/fold_output/iter_3.pdb",
+      "energy": 1.0012,
+      "objective_score": 0.782091,
+      "combined_score": 0.869735
     },
     "accepted": false,
-    "score_delta": -0.02600099999999994
+    "score_delta": -0.09796399999999994
   },
   {
     "iteration": 4,
-    "sequence_before": "LLIVIVIILLLEQAAALALL",
-    "sequence_after": "MLALVALVIMVAALQLALII",
+    "sequence_before": "AAEAEAEEALAEAEAELEEL",
+    "sequence_after": "AAAKALAQMAAKMAKLLAKA",
     "mutations": [
       {
-        "position": 0,
-        "current_residue": "L",
-        "proposed_residue": "M",
-        "confidence": 0.7,
-        "reason": "Methionine (M) is similar to leucine (L) in hydrophobicity and size, which maintains the alpha-helical structure and hydrophobic core favorable for thermostability. Additionally, methionine can contribute to increased resistance against proteolysis due to its stability and reduced susceptibility to common proteases compared to leucine."
-      },
-      {
         "position": 2,
-        "current_residue": "I",
+        "current_residue": "E",
         "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is a small, hydrophobic residue that is often found in alpha-helices and contributes to helix stability. Its presence can also reduce the likelihood of proteolytic cleavage due to its lack of bulky side chains, which aligns with the objective of designing a thermostable, proteolysis-resistant protein. Previous successes with 'A' support this choice."
+        "confidence": 0.7,
+        "reason": "Substituting E with A at this position can increase helix propensity due to the reduced side chain steric hindrance and the hydrophobic nature of alanine, which is known to stabilize \u03b1-helices. Given the local context, replacing E with A could enhance overall helical stability, although it was previously rejected, the failure rate suggests it might be worth reconsidering with the current objective."
       },
       {
         "position": 3,
-        "current_residue": "V",
-        "proposed_residue": "L",
+        "current_residue": "A",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Leucine (L) is known to enhance alpha-helical stability and is often found in hydrophobic core regions, contributing to thermostability. The success rate with L is high, and it was not rejected previously. Additionally, L is resistant to proteolytic cleavage, making it a suitable choice for this objective."
+        "reason": "Lysine (K) is a helix-promoting residue due to its positive charge, which can form favorable interactions that stabilize an alpha-helix. Additionally, lysine can interact with the negative charge of glutamic acid (E) residues nearby, further enhancing helical stability. Given the rejection of E and the need for helix stabilization, K is a strong candidate."
       },
       {
         "position": 4,
-        "current_residue": "I",
-        "proposed_residue": "V",
+        "current_residue": "E",
+        "proposed_residue": "A",
         "confidence": 0.7,
-        "reason": "Valine (V) is similar to isoleucine (I) in hydrophobicity, which supports the alpha-helical structure and maintains hydrophobic core stability. Valine also has a smaller side chain, which may help reduce steric hindrance, potentially increasing thermostability. Furthermore, valine is not a common target for proteolytic enzymes, maintaining resistance to proteolysis."
+        "reason": "Alanine is known to be a strong helix former and is often used to stabilize alpha helices. Given the local context and the objective to design a stable helix-rich protein, substituting glutamic acid with alanine at this position could enhance helicity. Despite 'A' being previously rejected, the context and objective suggest this change could be beneficial."
       },
       {
         "position": 5,
-        "current_residue": "V",
-        "proposed_residue": "A",
+        "current_residue": "A",
+        "proposed_residue": "L",
         "confidence": 0.7,
-        "reason": "Alanine is known to stabilize alpha-helices due to its small size and ability to fit well in the helix structure, which can enhance thermostability. Additionally, alanine is less prone to proteolytic cleavage compared to valine. Given the high prevalence of aliphatic residues (I, V, L) and the memory data favoring non-polar residues in this region, A is a suitable choice."
+        "reason": "Leucine is a strong helix-forming residue and can help stabilize the helical structure. Despite being previously rejected, given the context of the sequence with several glutamic acids, it might still support helix formation better than alanine."
       },
       {
         "position": 6,
-        "current_residue": "I",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine (L) is a hydrophobic amino acid that stabilizes alpha-helices and enhances thermostability. It is also less prone to proteolytic cleavage compared to isoleucine (I). Given the local context of a hydrophobic region in an alpha-helical motif and the memory of previous successes with similar substitutions, leucine is a suitable choice to enhance the protein's thermostability and resistance to proteolysis."
+        "current_residue": "E",
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Alanine is known to promote helix formation and the surrounding sequence already has several glutamic acid residues which can stabilize the helix through their side chain interactions. Substituting E with A could enhance helix stability given the local context, despite the previous rejection of A in this context."
       },
       {
         "position": 7,
-        "current_residue": "I",
-        "proposed_residue": "V",
-        "confidence": 0.8,
-        "reason": "Valine is similar to isoleucine in terms of hydrophobicity and size, which should maintain the alpha-helical structure. Valine is also known to contribute to protein stability, making it a good candidate to enhance thermostability while resisting proteolysis. Previous success with isoleucine and valine suggests this substitution could be beneficial."
+        "current_residue": "E",
+        "proposed_residue": "Q",
+        "confidence": 0.7,
+        "reason": "Glutamine (Q) can stabilize alpha helices through hydrogen bonding and is similar in size and polarity to glutamic acid (E). It is also not in the rejected list, making it a viable alternative to enhance helix stability."
       },
       {
         "position": 8,
-        "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.85,
-        "reason": "Isoleucine is a hydrophobic amino acid that supports alpha-helical structure and increases protein stability. It is similar to leucine, maintaining the hydrophobic core essential for thermostability and offering resistance to proteolysis."
+        "current_residue": "A",
+        "proposed_residue": "M",
+        "confidence": 0.7,
+        "reason": "Methionine (M) has a strong helix-forming propensity and can enhance helix stability without introducing negative electrostatic interactions like charged residues might. Given the failures with glutamic acid (E) and leucine (L), methionine is a reasonable choice to attempt stabilizing the helical structure."
       },
       {
         "position": 9,
         "current_residue": "L",
-        "proposed_residue": "M",
-        "confidence": 0.85,
-        "reason": "Methionine is often found in alpha-helices and can contribute to thermostability due to its hydrophobic nature, fitting well in the helical structure. Its larger side chain compared to leucine may also offer slightly increased resistance to proteolytic cleavage, enhancing the objective of proteolytic resistance while maintaining helical stability."
-      },
-      {
-        "position": 10,
-        "current_residue": "L",
-        "proposed_residue": "V",
-        "confidence": 0.75,
-        "reason": "Valine is a hydrophobic residue, which can enhance the packing of the alpha-helix and contribute to thermostability. It is also less susceptible to proteolytic cleavage compared to leucine. The local context already favors hydrophobic residues, and past successes with leucine and isoleucine suggest valine could be beneficial."
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Ala (A) is a known helix former and is common in helix-rich structures. The local context of the sequence is rich in Glu (E), which also promotes helicity. Although Ala was previously rejected, the high frequency of Glu nearby may enhance the helix propensity sufficiently to warrant another trial."
       },
       {
         "position": 11,
         "current_residue": "E",
-        "proposed_residue": "A",
+        "proposed_residue": "K",
         "confidence": 0.8,
-        "reason": "Replacing the charged glutamic acid (E) with alanine (A) at this position could enhance thermostability by reducing the potential for destabilizing charge interactions and improving the hydrophobic core of the alpha-helix. Alanine is known to be favorable in alpha-helices and may resist proteolysis better than a charged residue in this context. Previous acceptance of alanine and the pattern of rejection suggest it as a strong candidate."
+        "reason": "Lysine (K) is a helix-favoring residue similar to glutamic acid (E) but provides additional stability through potential salt bridge formation with nearby acidic residues, enhancing the helical stability in the context of the local sequence and objective."
       },
       {
         "position": 12,
-        "current_residue": "Q",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Replacing glutamine with alanine at this position could enhance the alpha-helical structure due to alanine's strong helix-forming propensity, and increase thermostability by promoting hydrophobic interactions, which are beneficial for protein stability. Additionally, alanine is less prone to proteolytic cleavage than glutamine."
+        "current_residue": "A",
+        "proposed_residue": "M",
+        "confidence": 0.7,
+        "reason": "Methionine (M) is known to stabilize alpha helices due to its moderate size and hydrophobic nature. Given the local context of alternating polar and non-polar residues, M could enhance the helical propensity of the segment. This choice also differentiates from previously rejected amino acids."
       },
       {
         "position": 13,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a well-known helix-forming residue that contributes to hydrophobic core stability, enhancing thermostability. Additionally, leucine's bulkiness may offer some protection against proteolytic cleavage. Previous success with 'L' in similar contexts supports this substitution."
+        "current_residue": "E",
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "The objective is to design a stable helix-rich protein. Alanine (A) is a small, non-polar residue that is known to promote \u03b1-helix formation due to its minimal steric hindrance and favorable helix propensity. This substitution could enhance the helical stability in this region, especially given the presence of helix-disrupting glutamic acid (E) residues nearby."
       },
       {
         "position": 14,
         "current_residue": "A",
-        "proposed_residue": "Q",
-        "confidence": 0.85,
-        "reason": "Glutamine can stabilize alpha-helical structures through hydrogen bonding, which could enhance the thermostability. Additionally, glutamine is less prone to proteolysis compared to alanine. The memory shows that glutamine has been accepted previously, which supports its potential benefit in this context."
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Lysine (K) is known to stabilize alpha helices through electrostatic interactions and hydrogen bonding. The local sequence has a high density of glutamic acid (E), which could form salt bridges with lysine, enhancing helix stability. Previous rejections of 'A', 'L', and 'E' suggest that a different strategy might be beneficial."
       },
       {
         "position": 15,
-        "current_residue": "A",
+        "current_residue": "E",
         "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is known to stabilize alpha-helices due to its hydrophobic nature and ability to pack tightly in helical structures. This substitution could enhance the hydrophobic core, contributing to increased thermostability. Additionally, leucine is not easily cleaved by proteases, thus aiding in proteolytic resistance. Previous acceptance of leucine in adjacent positions supports this proposal."
-      },
-      {
-        "position": 16,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is a small, hydrophobic amino acid that is favorable in alpha helices due to its helix-promoting properties. It is also resistant to proteolysis, contributing to increased thermostability. The local context contains other alanine residues, suggesting a compatible environment for this substitution. Previous acceptance of alanine supports this choice."
+        "confidence": 0.7,
+        "reason": "Leucine is a strong helix former and can enhance helix stability. The local context includes many helix-promoting residues like alanine and glutamate, and leucine fits well into this pattern. Given the objective to design a stable helix-rich protein, leucine is a favorable choice. Previous successes with 'E' suggest it was accepted in other contexts, but the objective suggests exploring alternatives here."
       },
       {
         "position": 17,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a well-known alpha-helix stabilizer and is less prone to proteolytic cleavage compared to alanine, especially in a hydrophobic environment. Previous successes with leucine and its acceptance in similar contexts suggest it will enhance the protein's thermostability."
+        "current_residue": "E",
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Alanine is known to be a strong helix-forming residue and can enhance helical stability. Given the local context with alternating acidic residues, replacing E with A at position 17 may promote alpha-helix formation by reducing potential electrostatic repulsion and increasing overall helix propensity, hence increasing stability."
       },
       {
         "position": 18,
-        "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is a hydrophobic residue conducive to alpha-helix formation and stability, increasing thermostability by promoting tight packing in the core. The local sequence is hydrophobic, and isoleucine is a conservative change from leucine, minimizing disruption while enhancing helix stability."
+        "current_residue": "E",
+        "proposed_residue": "K",
+        "confidence": 0.7,
+        "reason": "Substituting glutamic acid (E) with lysine (K) at position 18 could enhance helical stability. Lysine is positively charged and can form favorable salt bridges with negatively charged residues, potentially stabilizing helix formation. Given the local context and previous rejections, lysine has not been tried and may offer a new avenue to increase helical content."
       },
       {
         "position": 19,
         "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is hydrophobic and known to stabilize alpha-helices by promoting tight packing. It has been accepted previously and contributes to hydrophobic core formation, enhancing thermostability and resistance to proteolysis. Despite previous rejection, context suggests it fits well here."
+        "proposed_residue": "A",
+        "confidence": 0.7,
+        "reason": "Alanine is a strong helix former and is often used in designing helix-rich proteins. The current residue, leucine, is also helix-favorable, but alanine can provide greater stability in helical structures. The prior rejection of 'A' was likely context-specific, and here it may contribute positively to the overall helical propensity in this sequence."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_4.pdb",
-      "energy": 1.333365,
-      "objective_score": 0.71781,
-      "combined_score": 0.964032
+      "pdb_path": "/tmp/fold_output/iter_4.pdb",
+      "energy": 1.212796,
+      "objective_score": 0.836999,
+      "combined_score": 0.987318
     },
     "accepted": true,
-    "score_delta": 0.038603000000000054
-  },
-  {
-    "iteration": 5,
-    "sequence_before": "MLALVALVIMVAALQLALII",
-    "sequence_after": "LMLVIIIILLALLIEILALL",
-    "mutations": [
-      {
-        "position": 0,
-        "current_residue": "M",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a hydrophobic residue that can enhance protein stability due to its packing capability in the hydrophobic core. It is often found in alpha-helices and may contribute to increased thermostability. Previous successes with leucine suggest a favorable outcome."
-      },
-      {
-        "position": 1,
-        "current_residue": "L",
-        "proposed_residue": "M",
-        "confidence": 0.8,
-        "reason": "Methionine can help stabilize alpha-helices and is more resistant to oxidation than leucine, which might contribute to increased thermostability. Additionally, methionine is often found in helices and can provide some proteolytic resistance due to its larger side chain."
-      },
-      {
-        "position": 2,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a hydrophobic amino acid that is often found in alpha-helices and can contribute to protein stability by enhancing hydrophobic core packing, which is beneficial for thermostability. Given the local context of hydrophobic residues and the objective of increasing resistance to proteolysis, leucine is a suitable choice. Previous success with leucine increases confidence in this substitution."
-      },
-      {
-        "position": 3,
-        "current_residue": "L",
-        "proposed_residue": "V",
-        "confidence": 0.8,
-        "reason": "Valine is a beta-branched, hydrophobic amino acid that can enhance the stability of alpha-helices due to its ability to pack tightly. It is known to contribute to thermostability and has been accepted in the past. Additionally, its presence in similar positions in thermostable proteins provides precedent for its use in enhancing stability."
-      },
-      {
-        "position": 4,
-        "current_residue": "V",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine (I) is known to stabilize alpha-helices and is often favored in hydrophobic cores which enhances thermostability. It was previously accepted and maintains the hydrophobic character needed for stability."
-      },
-      {
-        "position": 5,
-        "current_residue": "A",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is a hydrophobic amino acid that is favorable in alpha-helical structures, as it can enhance hydrophobic interactions that stabilize the helix. It has been accepted previously, which suggests it is a favorable substitution for this objective. It can also contribute to proteolytic resistance due to its bulky side chain."
-      },
-      {
-        "position": 6,
-        "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is a hydrophobic residue like leucine, which is beneficial for maintaining the stability of an alpha-helix in a hydrophobic core. Isoleucine has been accepted in past designs and contributes to both thermal stability and proteolytic resistance by maintaining the hydrophobic core."
-      },
-      {
-        "position": 7,
-        "current_residue": "V",
-        "proposed_residue": "I",
-        "confidence": 0.85,
-        "reason": "Isoleucine is a hydrophobic residue that is often favored in the core of alpha-helices, contributing to increased stability and resistance to proteolysis. It has been previously accepted in similar contexts, and its branched side chain is known to enhance hydrophobic interactions, which can support thermostability."
-      },
-      {
-        "position": 8,
-        "current_residue": "I",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is frequently found in alpha-helices and is known for its stability in hydrophobic environments, which can enhance thermostability. It is also less prone to proteolytic cleavage compared to isoleucine. Previous successes with 'L' support this substitution."
-      },
-      {
-        "position": 9,
-        "current_residue": "M",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is often found in alpha-helices and contributes to hydrophobic interactions that stabilize the protein's core. It has been successful in the past and was accepted, indicating it aligns well with the objective of increasing thermostability without compromising protease resistance."
-      },
-      {
-        "position": 10,
-        "current_residue": "V",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is a small, helix-stabilizing residue that contributes to protein stability. Its presence in alpha-helices is associated with increased thermostability and reduced proteolysis susceptibility due to its compact and hydrophobic nature. The local context of predominantly hydrophobic residues supports this substitution."
-      },
-      {
-        "position": 11,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a hydrophobic amino acid that is commonly found in the core of alpha-helices, contributing to protein stability. Replacing alanine with leucine at this position should enhance thermostability and maintain resistance to proteolysis, given the hydrophobic nature of the local sequence and its alpha-helical context."
-      },
-      {
-        "position": 12,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine (L) is a strong helix former and its hydrophobic nature can enhance the stability of the alpha-helix, contributing to overall thermostability. It also helps in reducing proteolytic cleavage by burying more of the hydrophobic core. Given the local context of a hydrophobic region and memory of successful substitutions with leucine, this change is likely beneficial."
-      },
-      {
-        "position": 13,
-        "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is a hydrophobic amino acid like leucine, which can contribute to the stability of alpha-helices. It may enhance the hydrophobic core, increasing thermal stability. Additionally, isoleucine is less prone to proteolysis compared to leucine, aligning with the objective."
-      },
-      {
-        "position": 14,
-        "current_residue": "Q",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) can form salt bridges and hydrogen bonds, contributing to the stability of alpha-helices. It also has a higher propensity to be found in helices compared to glutamine (Q), which may slightly increase the protein's thermostability. Additionally, E has been accepted in previous designs, which suggests a good fit for the objective."
-      },
-      {
-        "position": 15,
-        "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is a hydrophobic residue that stabilizes alpha-helices and maintains the protein's structural integrity at higher temperatures. It also reduces the likelihood of proteolysis by contributing to a compact hydrophobic core, which is beneficial for thermostability. Given the local context with surrounding hydrophobic residues, substituting leucine with isoleucine could enhance stability without disrupting the helical structure."
-      },
-      {
-        "position": 16,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a hydrophobic amino acid that is commonly found in the core of alpha-helices, which can enhance protein stability. Substituting alanine with leucine at this position could increase the hydrophobic interactions within the helix, likely improving thermostability and resistance to proteolysis. Previous success with leucine and rejection of isoleucine supports this choice."
-      },
-      {
-        "position": 17,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is known to promote alpha-helical stability due to its small size and helix-friendly nature. Substituting leucine with alanine at position 17 could enhance the stability of the alpha-helix without significantly affecting the hydrophobic character of the membrane region. Previous acceptance of alanine in similar contexts supports this proposal."
-      },
-      {
-        "position": 18,
-        "current_residue": "I",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Substituting isoleucine (I) with leucine (L) at position 18 could enhance alpha-helical stability due to leucine's strong helix-forming propensity. Leucine is also known for promoting hydrophobic interactions, which can enhance the overall stability of the protein structure, making it more resistant to thermal denaturation and proteolysis. The memory indicates leucine has been accepted in design objectives previously, supporting this substitution."
-      },
-      {
-        "position": 19,
-        "current_residue": "I",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is often found in alpha-helical regions and can contribute to helical stability and hydrophobic packing, enhancing thermostability. It is more frequently accepted in prior designs, indicating a potential improvement in this context."
-      }
-    ],
-    "fold_result": {
-      "pdb_path": "outputs/iter_5.pdb",
-      "energy": 1.193646,
-      "objective_score": 0.654238,
-      "combined_score": 0.870001
-    },
-    "accepted": false,
-    "score_delta": -0.09403099999999998
-  },
-  {
-    "iteration": 6,
-    "sequence_before": "MLALVALVIMVAALQLALII",
-    "sequence_after": "VALAIVVILIILLAAAEIVV",
-    "mutations": [
-      {
-        "position": 0,
-        "current_residue": "M",
-        "proposed_residue": "V",
-        "confidence": 0.7,
-        "reason": "Valine is a hydrophobic residue that often contributes to the stabilization of alpha-helices in membrane proteins. It is resistant to proteolysis due to its small, non-polar side chain, which is less accessible to proteases. Previously accepted substitutions in similar contexts have included hydrophobic residues, suggesting a potential success with valine at this position."
-      },
-      {
-        "position": 1,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to stabilize alpha-helices due to its small size and helix propensity. It can enhance the thermostability of the protein without introducing steric hindrance or disrupting the helical structure."
-      },
-      {
-        "position": 2,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is hydrophobic and tends to stabilize alpha-helices, which can contribute to protein thermostability. It is also more resistant to proteolytic cleavage than alanine. Despite being previously rejected in a different context, it aligns well with the current objective and local hydrophobic environment."
-      },
-      {
-        "position": 3,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is known to stabilize alpha-helices due to its small and non-bulky side chain, which supports helix formation. It is also less likely to be recognized by proteases, contributing to proteolysis resistance. Given the past successes with small hydrophobic residues and the current objective, alanine is a suitable choice."
-      },
-      {
-        "position": 4,
-        "current_residue": "V",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine (I) is favored in alpha-helices due to its hydrophobic nature, promoting stability and compact packing within the core. It also contributes to increased resistance against proteolytic cleavage, which aligns with the thermostability and proteolysis resistance objective. Previous successful substitutions include 'I', and 'I' has only been rejected once, supporting a high confidence in this context."
-      },
-      {
-        "position": 5,
-        "current_residue": "A",
-        "proposed_residue": "V",
-        "confidence": 0.8,
-        "reason": "Valine (V) is favored in alpha-helices and contributes to hydrophobic core stability, enhancing thermostability. It's also less prone to proteolytic cleavage compared to alanine (A). Previous successes with 'V' bolster confidence in this context."
-      },
-      {
-        "position": 6,
-        "current_residue": "L",
-        "proposed_residue": "V",
-        "confidence": 0.8,
-        "reason": "Valine is a hydrophobic residue that maintains the alpha-helical structure and contributes to stability. It's smaller than leucine, which might reduce steric clashes and increase packing efficiency, potentially enhancing thermostability. Valine's presence in helical regions of stable proteins suggests it could improve resistance to proteolysis."
-      },
-      {
-        "position": 7,
-        "current_residue": "V",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is known to stabilize alpha-helices due to its hydrophobic nature, which can enhance thermostability. It is also resistant to proteolysis, thus serving both objectives. Previous successes with hydrophobic residues like 'I' and 'V' in similar contexts support this choice."
-      },
-      {
-        "position": 8,
-        "current_residue": "I",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a strong helix-forming residue that can contribute to alpha-helix stability and increase hydrophobic interactions, which are beneficial for thermostability. It has been accepted in similar contexts and is favored over the currently rejected valine at this position."
-      },
-      {
-        "position": 9,
-        "current_residue": "M",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is a hydrophobic amino acid that is commonly found in alpha-helices and is known to contribute to protein stability. It is also resistant to proteolysis due to its hydrophobic nature, making it a suitable choice for enhancing thermostability and resistance to proteolysis in the given alpha-helical context."
-      },
-      {
-        "position": 10,
-        "current_residue": "V",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is similar to valine in terms of hydrophobicity and side chain size, which maintains alpha-helical structure stability. Its presence in the accepted list and previous success in maintaining stability suggests it will contribute to thermostability and proteolytic resistance."
-      },
-      {
-        "position": 11,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a hydrophobic, helix-favoring residue that can enhance the stability of alpha-helices, contributing to overall protein stability. Its presence can help resist proteolysis by maintaining a stable structure. The local sequence has a pattern of hydrophobic residues, and leucine fits well in this context. Although previously rejected, its properties make it a strong candidate given the objective."
-      },
-      {
-        "position": 12,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a hydrophobic amino acid that is commonly found in alpha-helices and contributes to hydrophobic core stability. It also helps to increase the overall hydrophobicity, which can enhance thermostability. Previous acceptance of 'L' suggests it may be favorable, despite one rejection."
-      },
-      {
-        "position": 13,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Substituting leucine with alanine can increase alpha-helical stability by reducing steric hindrance and increasing helix propensity. Alanine is also known to resist proteolysis better than some bulkier hydrophobic amino acids, making it a promising choice for enhancing thermostability while maintaining the helical structure. Previous successes with alanine suggest confidence in this substitution."
-      },
-      {
-        "position": 14,
-        "current_residue": "Q",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is known to stabilize alpha-helices due to its small size and helix propensity, which can enhance thermal stability. It has been previously accepted in similar contexts, supporting its suitability here. Additionally, alanine is less prone to proteolytic cleavage compared to glutamine."
-      },
-      {
-        "position": 15,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine is conducive to alpha-helix formation due to its small size, which reduces steric hindrance. Additionally, alanine is resistant to proteolytic cleavage and has been accepted in previous optimization efforts, making it a suitable choice for enhancing thermostability and proteolytic resistance."
-      },
-      {
-        "position": 16,
-        "current_residue": "A",
-        "proposed_residue": "E",
-        "confidence": 0.7,
-        "reason": "Introducing glutamic acid (E) at this position may enhance thermostability and protease resistance by fostering additional hydrogen bonding or salt bridge opportunities, which can stabilize the alpha-helix. The memory indicates 'E' has been accepted before, suggesting compatibility in similar contexts."
-      },
-      {
-        "position": 17,
-        "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.75,
-        "reason": "Isoleucine (I) is a hydrophobic amino acid that can enhance alpha-helical stability and contribute to the protein's core packing, which may increase thermostability. The local sequence is rich in hydrophobic residues, suggesting a hydrophobic environment that can accommodate isoleucine well. Additionally, isoleucine may provide resistance to proteolysis by maintaining a tightly packed structure."
-      },
-      {
-        "position": 18,
-        "current_residue": "I",
-        "proposed_residue": "V",
-        "confidence": 0.8,
-        "reason": "Valine (V) is a hydrophobic amino acid that can substitute for isoleucine (I) without disrupting the alpha-helical structure. It is often used to enhance protein stability, especially in the core of helices, due to its branched side chain which can contribute to a tightly packed hydrophobic core, increasing thermostability. Given the objective to design a thermostable protein, this substitution may enhance resistance to thermal unfolding and proteolysis."
-      },
-      {
-        "position": 19,
-        "current_residue": "I",
-        "proposed_residue": "V",
-        "confidence": 0.8,
-        "reason": "Valine is a hydrophobic amino acid like isoleucine and leucine, and it fits well in an alpha-helical structure, potentially improving packing and stability. Valine is also slightly smaller, which may enhance packing and reduce susceptibility to proteolysis. Given the context and previous successes, valine is a promising candidate for improving thermostability and resistance to proteolysis."
-      }
-    ],
-    "fold_result": {
-      "pdb_path": "outputs/iter_6.pdb",
-      "energy": 1.238987,
-      "objective_score": 0.592952,
-      "combined_score": 0.851366
-    },
-    "accepted": false,
-    "score_delta": -0.11266600000000004
-  },
-  {
-    "iteration": 7,
-    "sequence_before": "MLALVALVIMVAALQLALII",
-    "sequence_after": "LVLFLLALLLLVLIEMLFLL",
-    "mutations": [
-      {
-        "position": 0,
-        "current_residue": "M",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a strong alpha-helix former and contributes to hydrophobic core stability, enhancing thermostability. It is also resistant to proteolytic cleavage, aligning with the objective. Previously accepted, indicating a favorable context."
-      },
-      {
-        "position": 1,
-        "current_residue": "L",
-        "proposed_residue": "V",
-        "confidence": 0.7,
-        "reason": "Valine is known to stabilize alpha-helices and enhance hydrophobic interactions, which can contribute to increased thermostability. Additionally, valine's smaller side chain compared to leucine might reduce steric clashes and potentially increase proteolytic resistance. Given the local hydrophobic context and past rejections (M, A), valine is a suitable choice."
-      },
-      {
-        "position": 2,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is known to stabilize alpha-helices and contribute to hydrophobic core packing, which enhances thermostability. Despite previous rejection, it aligns with the objective of increased thermostability and proteolysis resistance."
-      },
-      {
-        "position": 3,
-        "current_residue": "L",
-        "proposed_residue": "F",
-        "confidence": 0.7,
-        "reason": "Phenylalanine (F) is a bulky hydrophobic residue that can enhance alpha-helical stability due to its ability to engage in aromatic stacking interactions that stabilize the helical structure. This substitution is intended to increase thermostability while maintaining the hydrophobic character of the region, which is important for alpha-helical integrity. Previous successes with similar hydrophobic residues like L, I, and V suggest this could be favorable for stability."
-      },
-      {
-        "position": 4,
-        "current_residue": "V",
-        "proposed_residue": "L",
-        "confidence": 0.7,
-        "reason": "Leucine is known to stabilize alpha-helical structures and is often found in the hydrophobic core of proteins, which can enhance thermostability. It also resists proteolysis due to its hydrophobic nature. Given that leucine has been both accepted and rejected in past designs, but considering the context of alpha-helix stability, it is a strong candidate."
-      },
-      {
-        "position": 5,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.7,
-        "reason": "Leucine is known to stabilize alpha-helices due to its hydrophobic nature and ability to form a tight packing, which can contribute to overall thermostability. Additionally, it is a bulky residue that can help resist proteolysis. Although leucine was rejected in the past, the current context, which includes a hydrophobic environment and an objective focused on thermostability, supports its re-evaluation."
-      },
-      {
-        "position": 6,
-        "current_residue": "L",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine is a small, hydrophobic amino acid that is known to promote alpha-helical structures, which can contribute to thermostability. Additionally, alanine is less prone to proteolytic cleavage compared to other residues. Given the rejections of 'L', 'I', and 'V', 'A' may offer a balance between hydrophobicity and structural support for thermostability."
-      },
-      {
-        "position": 7,
-        "current_residue": "V",
-        "proposed_residue": "L",
-        "confidence": 0.7,
-        "reason": "Leucine is known to stabilize alpha-helical structures and has been accepted previously. Its hydrophobic nature supports the alpha-helix environment and can enhance thermostability, which is crucial for resisting proteolysis."
-      },
-      {
-        "position": 8,
-        "current_residue": "I",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is favored in alpha-helices due to its hydrophobic nature, contributing to stability and proteolytic resistance. It was previously accepted and fits well given the local hydrophobic environment."
-      },
-      {
-        "position": 9,
-        "current_residue": "M",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is hydrophobic and often found in alpha-helices, enhancing stability. It may improve both thermostability and resistance to proteolysis compared to methionine. Previous acceptance of leucine in similar contexts suggests a favorable outcome."
-      },
-      {
-        "position": 10,
-        "current_residue": "V",
-        "proposed_residue": "L",
-        "confidence": 0.85,
-        "reason": "Leucine is commonly found in alpha-helices and contributes to hydrophobic core stability, enhancing thermostability. It has been previously accepted in similar contexts. The substitution should also help maintain the helicity and reduce proteolytic susceptibility."
-      },
-      {
-        "position": 11,
-        "current_residue": "A",
-        "proposed_residue": "V",
-        "confidence": 0.8,
-        "reason": "Valine is a hydrophobic residue that can enhance the stability of alpha-helices through increased van der Waals interactions. Substituting alanine with valine at this position is likely beneficial for thermostability, especially in a hydrophobic core, and may help resist proteolysis."
-      },
-      {
-        "position": 12,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.85,
-        "reason": "Leucine tends to stabilize alpha-helices due to its hydrophobic nature and is often found in the interior of helical structures, contributing to both thermostability and proteolysis resistance. It has been accepted before and can enhance helix stability in this context."
-      },
-      {
-        "position": 13,
-        "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.8,
-        "reason": "Isoleucine is a hydrophobic amino acid that enhances helical stability and is often found in interior positions of alpha-helices. Its presence can improve protein packing and stability, contributing to resistance against proteolysis. The local context suggests a hydrophobic environment, and isoleucine's beta-branched side chain can provide additional steric hindrance, enhancing thermostability."
-      },
-      {
-        "position": 14,
-        "current_residue": "Q",
-        "proposed_residue": "E",
-        "confidence": 0.7,
-        "reason": "Glutamic acid (E) can contribute to alpha-helical stability through hydrogen bonding, potentially enhancing thermostability. It also can form salt bridges which are beneficial for stability. 'E' has been accepted previously, indicating its potential suitability in this context."
-      },
-      {
-        "position": 15,
-        "current_residue": "L",
-        "proposed_residue": "M",
-        "confidence": 0.8,
-        "reason": "Methionine (M) is known to stabilize alpha-helices due to its ability to participate in helix capping, and it provides additional hydrophobic interactions. Since the local context is rich in hydrophobic residues and includes a successful acceptance of 'M' in previous designs, substituting leucine with methionine could enhance stability and resistance to proteolysis."
-      },
-      {
-        "position": 16,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a helix-favoring residue that can increase hydrophobic core stability, enhancing thermostability. It also resists proteolysis better than alanine, and considering it was accepted before and fits well in the local hydrophobic context, it is a strong candidate."
-      },
-      {
-        "position": 17,
-        "current_residue": "L",
-        "proposed_residue": "F",
-        "confidence": 0.8,
-        "reason": "Phenylalanine (F) is a bulky, hydrophobic residue that can enhance the packing of the alpha-helix and increase thermostability. Its aromatic side chain can also contribute to the stability by engaging in potential stacking interactions, which may help resist proteolysis. Given the local context and the balance of previous experimental outcomes, F is a promising choice for increasing stability."
-      },
-      {
-        "position": 18,
-        "current_residue": "I",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is known to stabilize alpha-helices and is resistant to proteolysis. Given that it has been accepted before and the local context contains hydrophobic residues, substituting Isoleucine with Leucine should enhance thermostability."
-      },
-      {
-        "position": 19,
-        "current_residue": "I",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is commonly found in alpha-helices due to its hydrophobic nature, which promotes stability. It enhances packing and is generally more compatible with helices than isoleucine, especially in the context of enhancing thermostability. Previous results suggest 'L' was accepted, indicating successful integration at similar positions, enhancing confidence in its utility for this objective."
-      }
-    ],
-    "fold_result": {
-      "pdb_path": "outputs/iter_7.pdb",
-      "energy": 1.210655,
-      "objective_score": 0.708104,
-      "combined_score": 0.909124
-    },
-    "accepted": false,
-    "score_delta": -0.05490799999999996
-  },
-  {
-    "iteration": 8,
-    "sequence_before": "MLALVALVIMVAALQLALII",
-    "sequence_after": "LILLIFMLLVILLMEFLMVV",
-    "mutations": [
-      {
-        "position": 0,
-        "current_residue": "M",
-        "proposed_residue": "L",
-        "confidence": 0.7,
-        "reason": "Leucine is a strong alpha-helix former, often found in hydrophobic core regions of proteins, contributing to thermostability. Despite previous rejection, it might enhance thermostability and proteolysis resistance in this context compared to methionine."
-      },
-      {
-        "position": 1,
-        "current_residue": "L",
-        "proposed_residue": "I",
-        "confidence": 0.7,
-        "reason": "Isoleucine (I) maintains hydrophobicity and supports alpha-helical structure, which can contribute to thermostability. Isoleucine is also known for compact packing, which can help resist proteolysis by reducing flexible regions. Given the failure history with other residues, Isoleucine is a reasonable choice for improving thermostability and resistance to proteolysis."
-      },
-      {
-        "position": 2,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a hydrophobic residue that promotes alpha-helical structures and is known to contribute to protein stability. Its presence in successful designs suggests it can enhance thermostability and resistance to proteolysis. Although previously rejected, the current context with adjacent leucine (L) and valine (V) residues may now favor its incorporation."
-      },
-      {
-        "position": 4,
-        "current_residue": "V",
-        "proposed_residue": "I",
-        "confidence": 0.7,
-        "reason": "Isoleucine is a hydrophobic residue similar to valine and is often found in alpha helices. It contributes to the stability of the protein's core and can enhance thermostability. Previous success with isoleucine in similar contexts supports this choice."
-      },
-      {
-        "position": 5,
-        "current_residue": "A",
-        "proposed_residue": "F",
-        "confidence": 0.75,
-        "reason": "Phenylalanine (F) is a bulky, hydrophobic amino acid that can enhance alpha-helical stability and increase thermostability due to its ability to form stacking interactions and contribute to a more rigid structure. The local environment is predominantly hydrophobic, making F a suitable substitution for enhancing structural integrity against thermal and proteolytic challenges."
-      },
-      {
-        "position": 6,
-        "current_residue": "L",
-        "proposed_residue": "M",
-        "confidence": 0.7,
-        "reason": "Methionine (M) can enhance hydrophobic interactions within the alpha-helix, promoting stability. Additionally, M is less flexible than L, which may contribute to proteolysis resistance. The local context supports hydrophobic residues, and M has not been rejected in past designs."
-      },
-      {
-        "position": 7,
-        "current_residue": "V",
-        "proposed_residue": "L",
-        "confidence": 0.7,
-        "reason": "Leucine is known for its high helix propensity and its ability to stabilize alpha-helices due to its hydrophobic nature, which can enhance the overall thermostability of the protein. Previous success with hydrophobic residues like 'I' and 'V', and a balanced acceptance and rejection of similar residues supports this choice."
-      },
-      {
-        "position": 8,
-        "current_residue": "I",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a common residue in alpha-helices and contributes to hydrophobic core formation, enhancing thermostability. It has been accepted in prior designs and offers increased resistance to proteolysis compared to the original isoleucine."
-      },
-      {
-        "position": 9,
-        "current_residue": "M",
-        "proposed_residue": "V",
-        "confidence": 0.8,
-        "reason": "Valine is known to stabilize alpha-helices due to its beta-branched side chain, contributing to increased hydrophobic interactions. This substitution can enhance thermostability and may reduce proteolytic cleavage by making the helix more rigid and less accessible to proteases. Given the local hydrophobic context and previous rejections, valine is a promising candidate."
-      },
-      {
-        "position": 10,
-        "current_residue": "V",
-        "proposed_residue": "I",
-        "confidence": 0.7,
-        "reason": "Isoleucine is a well-tolerated hydrophobic residue that can stabilize alpha-helical structures. Its presence can enhance the packing of the helices, which contributes to thermostability. This substitution balances the need for hydrophobicity and structural integrity, potentially increasing resistance to proteolysis."
-      },
-      {
-        "position": 11,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a common residue in alpha-helices, contributing to hydrophobic interactions that stabilize the helical structure. It is often found in the core of thermostable proteins and can enhance resistance to proteolysis due to its hydrophobic nature. Although previously rejected, in this context, it complements the existing leucine at position 12, potentially increasing the overall hydrophobic core stability."
-      },
-      {
-        "position": 12,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is known to stabilize alpha-helices due to its hydrophobic nature and is often found in the core of proteins to enhance thermostability. Although 'L' was previously rejected, the context here within a hydrophobic region suggests its potential to improve stability against proteolysis."
-      },
-      {
-        "position": 13,
-        "current_residue": "L",
-        "proposed_residue": "M",
-        "confidence": 0.8,
-        "reason": "Methionine (M) is often found in alpha-helices and can contribute to increased stability due to its ability to form hydrophobic interactions. Additionally, M is less prone to proteolysis compared to L, making it a potentially better choice for enhancing thermostability and resistance to proteolysis in this context."
-      },
-      {
-        "position": 14,
-        "current_residue": "Q",
-        "proposed_residue": "E",
-        "confidence": 0.8,
-        "reason": "Glutamic acid (E) is known to stabilize alpha-helices and can form salt bridges, contributing to protein stability. It was previously accepted and aligns with the objective of enhancing thermostability. Although E was once rejected, it may have been context-dependent, and the local helical environment with neighboring residues could accommodate E better now."
-      },
-      {
-        "position": 15,
-        "current_residue": "L",
-        "proposed_residue": "F",
-        "confidence": 0.7,
-        "reason": "Phenylalanine (F) is a hydrophobic amino acid that can enhance the stability of alpha-helices through stronger van der Waals interactions and packing within the hydrophobic core, which is beneficial for increasing thermostability. Its aromatic side chain can contribute to the rigidity of the structure, making it more resistant to proteolytic degradation. While leucine (L) is also hydrophobic, phenylalanine's aromatic nature provides additional stabilizing interactions in helical contexts. The sequence context and objective align well with this substitution, and it hasn't been previously rejected."
-      },
-      {
-        "position": 16,
-        "current_residue": "A",
-        "proposed_residue": "L",
-        "confidence": 0.8,
-        "reason": "Leucine is a strong alpha-helix former and increases hydrophobic interactions, contributing to thermostability. Although it was previously rejected, it might have been context-dependent. Given the alpha-helical and hydrophobic nature of the local sequence, L can enhance stability and protect against proteolysis."
-      },
-      {
-        "position": 17,
-        "current_residue": "L",
-        "proposed_residue": "M",
-        "confidence": 0.8,
-        "reason": "Methionine can stabilize alpha-helices and increase hydrophobic interactions, potentially enhancing thermostability. It is also less prone to proteolytic cleavage compared to leucine."
-      },
-      {
-        "position": 18,
-        "current_residue": "I",
-        "proposed_residue": "V",
-        "confidence": 0.7,
-        "reason": "Valine is similar to isoleucine in terms of hydrophobicity and size, which is beneficial for maintaining the alpha-helical structure. Valine can increase protein stability due to its branched aliphatic side chain, which contributes to a compact hydrophobic core, enhancing thermostability. The memory indicates that valine has been previously rejected, but this rejection could be context-dependent, and in this specific context, it could provide improved stability and resistance to proteolysis."
-      },
-      {
-        "position": 19,
-        "current_residue": "I",
-        "proposed_residue": "V",
-        "confidence": 0.7,
-        "reason": "Valine is a beta-branched, hydrophobic amino acid that stabilizes alpha-helices, and its presence can enhance the hydrophobic core, improving thermostability. Valine's smaller size compared to isoleucine may also reduce proteolytic access without significantly disrupting the helix."
-      }
-    ],
-    "fold_result": {
-      "pdb_path": "outputs/iter_8.pdb",
-      "energy": 1.32504,
-      "objective_score": 0.665918,
-      "combined_score": 0.929567
-    },
-    "accepted": false,
-    "score_delta": -0.03446499999999997
+    "score_delta": 0.019619000000000053
   }
 ]

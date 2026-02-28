@@ -67,7 +67,7 @@ class DesignEngine:
         score_history: list[float] = []
         history: list[IterationRecord] = []
 
-        initial_fold = self._fold_engine.fold_and_score(current_seq, objective, output_dir, -1)
+        initial_fold = self._fold(current_seq, objective, output_dir, -1)
         best_score = initial_fold.combined_score
         score_history.append(best_score)
 
@@ -87,9 +87,7 @@ class DesignEngine:
 
             log_mutation_summary(len(current_seq), len(applied))
 
-            fold_result = self._fold_engine.fold_and_score(
-                candidate_seq, objective, output_dir, iteration
-            )
+            fold_result = self._fold(candidate_seq, objective, output_dir, iteration)
 
             accepted = should_accept(fold_result.combined_score, best_score)
             score_delta = fold_result.combined_score - best_score
@@ -122,9 +120,7 @@ class DesignEngine:
                 log_early_stop(reason)
                 break
 
-        final_fold = self._fold_engine.fold_and_score(
-            current_seq, objective, output_dir, self._cfg.max_iterations
-        )
+        final_fold = self._fold(current_seq, objective, output_dir, self._cfg.max_iterations)
         log_final_result(current_seq, best_score, final_fold.pdb_path)
 
         result = DesignResult(
@@ -173,7 +169,9 @@ class DesignEngine:
         iteration: int,
     ) -> list[MutationProposal]:
         """Fan out to Modal for true parallelism."""
-        from protein_swarm.modal_app.functions import run_residue_agent_remote
+        import modal
+
+        agent_fn = modal.Function.from_name("protein-swarm", "run_residue_agent_remote")
 
         inputs: list[AgentInput] = []
         for pos in range(len(sequence)):
@@ -184,7 +182,14 @@ class DesignEngine:
         if self._cfg.debug:
             log_debug(f"Dispatching {len(inputs)} agents to Modal (iteration {iteration})")
 
-        results = list(run_residue_agent_remote.map(input_dicts))
+        try:
+            results = list(agent_fn.map(input_dicts))
+        except Exception as e:
+            raise RuntimeError(
+                "Failed to call Modal agents. Make sure the app is deployed:\n"
+                "  modal deploy protein_swarm/modal_app/app.py\n"
+                "Or run fully local with --no-modal"
+            ) from e
         return [MutationProposal(**r) for r in results]
 
     def _build_agent_input(
@@ -211,6 +216,51 @@ class DesignEngine:
             llm_max_tokens=llm.max_tokens,
             llm_max_retries=llm.max_retries,
         )
+
+    def _fold(
+        self,
+        sequence: str,
+        objective: ObjectiveSpec,
+        output_dir: Path,
+        iteration: int,
+    ) -> FoldResult:
+        """Run the fold engine locally or on Modal depending on config."""
+        if self._cfg.modal_fold:
+            return self._fold_modal(sequence, objective, iteration)
+        return self._fold_engine.fold_and_score(sequence, objective, output_dir, iteration)
+
+    def _fold_modal(
+        self,
+        sequence: str,
+        objective: ObjectiveSpec,
+        iteration: int,
+    ) -> FoldResult:
+        """Dispatch folding to Modal — CPU (dummy) or GPU worker."""
+        import modal
+
+        objective_dict = objective.model_dump()
+
+        if self._cfg.modal_fold_gpu:
+            fn_name = "run_fold_gpu_remote"
+        else:
+            fn_name = "run_fold_dummy_remote"
+
+        fold_fn = modal.Function.from_name("protein-swarm", fn_name)
+
+        if self._cfg.debug:
+            label = "GPU" if self._cfg.modal_fold_gpu else "CPU"
+            log_debug(f"Folding on Modal {label} worker (iteration {iteration})")
+
+        try:
+            result_dict = fold_fn.remote(sequence, objective_dict, iteration)
+        except Exception as e:
+            raise RuntimeError(
+                f"Failed to call Modal fold function ({type(e).__name__}: {e}).\n"
+                "  Make sure the app is deployed: modal deploy protein_swarm/modal_app/app.py\n"
+                "  Or remove --modal-fold to fold locally"
+            ) from e
+
+        return FoldResult(**result_dict)
 
     @staticmethod
     def _save_artefacts(result: DesignResult, output_dir: Path) -> None:
