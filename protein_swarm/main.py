@@ -66,24 +66,33 @@ def design(
     output_dir: str = typer.Option("outputs", "--output-dir", help="Directory for output artefacts"),
     confidence_threshold: float = typer.Option(0.5, "--confidence-threshold", help="Minimum agent confidence"),
     plateau_window: int = typer.Option(5, "--plateau-window", help="Iterations for plateau detection"),
+    # ── LLM flags ────────────────────────────────────────────────────────
     use_llm: bool = typer.Option(False, "--use-llm", help="Use LLM-backed agents instead of heuristics"),
     llm_provider: str = typer.Option("openai", "--llm-provider", help="LLM provider: openai | anthropic | together"),
     llm_model: str = typer.Option("gpt-4o-mini", "--llm-model", help="LLM model identifier"),
     llm_api_key: Optional[str] = typer.Option(None, "--llm-api-key", help="LLM API key (or set OPENAI_API_KEY env var)"),
     llm_temperature: float = typer.Option(0.7, "--llm-temperature", help="LLM sampling temperature"),
+    # ── Rosetta / scoring flags ──────────────────────────────────────────
+    use_rosetta: bool = typer.Option(True, "--use-rosetta/--no-rosetta", help="Enable local PyRosetta scoring"),
+    rosetta_relax: bool = typer.Option(False, "--rosetta-relax", help="Run FastRelax before scoring"),
+    rosetta_relax_cycles: int = typer.Option(1, "--rosetta-relax-cycles", help="FastRelax cycles"),
+    w_physics: float = typer.Option(0.55, "--w-physics", help="Scoring weight: physics (Rosetta)"),
+    w_objective: float = typer.Option(0.35, "--w-objective", help="Scoring weight: objective heuristic"),
+    w_confidence: float = typer.Option(0.10, "--w-confidence", help="Scoring weight: pLDDT confidence"),
+    rosetta_norm_target: float = typer.Option(-200.0, "--rosetta-norm-target", help="Sigmoid centre for Rosetta normalisation"),
+    rosetta_norm_scale: float = typer.Option(50.0, "--rosetta-norm-scale", help="Sigmoid scale for Rosetta normalisation"),
 ) -> None:
     """Run the swarm-based protein design loop.
 
-    Modal flags require a running Modal app. Either deploy first with
-    'modal deploy protein_swarm/modal_app/app.py' or run the whole script
-    under 'modal run'.  Use --no-modal for fully local execution.
+    Modal flags require a running Modal app. Deploy first with
+    'modal deploy protein_swarm/modal_app/functions.py'.
+    Use --no-modal for fully local execution.
     """
     sequence = _validate_sequence(sequence)
 
     if modal_fold_gpu and not modal_fold:
         modal_fold = True
-    
-    # newly added
+
     allowed_local = {"dummy", "esmfold-local"}
     if fold_backend not in allowed_local:
         raise typer.BadParameter(f"--fold-backend must be one of {sorted(allowed_local)}")
@@ -99,15 +108,46 @@ def design(
         temperature=llm_temperature,
     )
 
+    folding_cfg = FoldingConfig(
+        use_rosetta=use_rosetta,
+        rosetta_relax=rosetta_relax,
+        rosetta_relax_cycles=rosetta_relax_cycles,
+        w_physics=w_physics,
+        w_objective=w_objective,
+        w_confidence=w_confidence,
+        rosetta_norm_target=rosetta_norm_target,
+        rosetta_norm_scale=rosetta_norm_scale,
+    )
+
     console.print(f"\n[bold]Protein Swarm Design Engine[/bold]")
     console.print(f"  Sequence length : {len(sequence)}")
     console.print(f"  Objective       : {objective}")
     console.print(f"  Max iterations  : {max_iterations}")
     console.print(f"  Mutation rate   : {mutation_rate}")
     console.print(f"  Modal parallel  : {not no_modal}")
-    console.print(f"  Modal fold      : {modal_fold}" + (f" (GPU)" if modal_fold_gpu else " (CPU)" if modal_fold else ""))
-    console.print(f"  Fold backend    : {fold_backend}" if not modal_fold else f"  Fold backend    : Modal/{remote_fold_backend}")
-    console.print(f"  LLM agents      : {use_llm} ({llm_provider}/{llm_model})" if use_llm else f"  LLM agents      : {use_llm}")
+    console.print(
+        f"  Modal fold      : {modal_fold}"
+        + (f" (GPU)" if modal_fold_gpu else " (CPU)" if modal_fold else "")
+    )
+    console.print(
+        f"  Fold backend    : {fold_backend}"
+        if not modal_fold
+        else f"  Fold backend    : Modal/{remote_fold_backend}"
+    )
+    console.print(
+        f"  Rosetta scoring : {'ON' if use_rosetta else 'OFF'}"
+        + (f"  relax={rosetta_relax} cycles={rosetta_relax_cycles}" if use_rosetta else "")
+    )
+    console.print(
+        f"  Score weights   : physics={folding_cfg.w_physics:.2f}  "
+        f"objective={folding_cfg.w_objective:.2f}  "
+        f"confidence={folding_cfg.w_confidence:.2f}"
+    )
+    console.print(
+        f"  LLM agents      : {use_llm} ({llm_provider}/{llm_model})"
+        if use_llm
+        else f"  LLM agents      : {use_llm}"
+    )
     console.print(f"  Output dir      : {output_dir}")
     console.print()
 
@@ -130,7 +170,7 @@ def design(
 
     engine = DesignEngine(
         swarm_config=swarm_cfg,
-        folding_config=FoldingConfig(),
+        folding_config=folding_cfg,
         memory_config=MemoryConfig(),
     )
 

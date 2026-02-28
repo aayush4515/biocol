@@ -6,6 +6,7 @@ agent work to Modal (or runs locally in non-Modal mode).
 from __future__ import annotations
 
 import json
+import math
 from pathlib import Path
 
 from protein_swarm.agents.constraint_guard import validate_proposals
@@ -36,6 +37,18 @@ from protein_swarm.utils.logging import (
 )
 
 
+def _rosetta_to_physics_score(
+    rosetta_total: float,
+    norm_target: float,
+    norm_scale: float,
+) -> float:
+    """Convert Rosetta energy (lower=better) to a 0-1 score (higher=better).
+
+    Uses a logistic sigmoid centred on norm_target.
+    """
+    return 1.0 / (1.0 + math.exp((rosetta_total - norm_target) / norm_scale))
+
+
 class DesignEngine:
     """Orchestrates the full multi-agent design loop."""
 
@@ -49,20 +62,7 @@ class DesignEngine:
         self._cfg = swarm_config or SwarmConfig()
         self._fold_cfg = folding_config or FoldingConfig()
         self._mem_cfg = memory_config or MemoryConfig()
-        # self._fold_engine: FoldEngine = fold_engine or DummyFoldEngine(self._fold_cfg)
         self._fold_engine: FoldEngine = fold_engine or self._make_fold_engine()
-
-    # def _make_fold_engine(self) -> FoldEngine:
-    #     """
-    #     Choose local fold engine based on config flags.
-    #     Note: Modal folding is handled separately in _fold() when modal_fold=True.
-    #     """
-    #     backend = getattr(self._cfg, "fold_backend", "dummy")  # e.g. "dummy" | "esmfold-local"
-    #     if backend == "dummy":
-    #         return DummyFoldEngine(self._fold_cfg)
-    #     if backend == "esmfold-local":
-    #         return ESMFoldEngine(self._fold_cfg)
-    #     raise ValueError(f"Unknown fold_backend={backend}")
 
     def _make_fold_engine(self) -> FoldEngine:
         backend = self._cfg.fold_backend
@@ -161,6 +161,8 @@ class DesignEngine:
         self._save_artefacts(result, output_dir)
         return result
 
+    # ── agent dispatch ───────────────────────────────────────────────────
+
     def _run_agents(
         self,
         sequence: str,
@@ -168,7 +170,6 @@ class DesignEngine:
         objective: ObjectiveSpec,
         iteration: int,
     ) -> list[MutationProposal]:
-        """Dispatch residue agents — locally or via Modal."""
         if self._cfg.modal_parallel:
             return self._run_agents_modal(sequence, memory, objective, iteration)
         return self._run_agents_local(sequence, memory, objective)
@@ -193,7 +194,6 @@ class DesignEngine:
         objective: ObjectiveSpec,
         iteration: int,
     ) -> list[MutationProposal]:
-        """Fan out to Modal for true parallelism."""
         import modal
 
         agent_fn = modal.Function.from_name("protein-swarm", "run_residue_agent_remote")
@@ -212,7 +212,7 @@ class DesignEngine:
         except Exception as e:
             raise RuntimeError(
                 "Failed to call Modal agents. Make sure the app is deployed:\n"
-                "  modal deploy protein_swarm/modal_app/app.py\n"
+                "  modal deploy protein_swarm/modal_app/functions.py\n"
                 "Or run fully local with --no-modal"
             ) from e
         return [MutationProposal(**r) for r in results]
@@ -242,6 +242,8 @@ class DesignEngine:
             llm_max_retries=llm.max_retries,
         )
 
+    # ── folding / scoring ────────────────────────────────────────────────
+
     def _fold(
         self,
         sequence: str,
@@ -252,128 +254,27 @@ class DesignEngine:
         """Run the fold engine locally or on Modal depending on config."""
         if self._cfg.modal_fold:
             return self._fold_modal(sequence, objective, iteration)
-        return self._fold_engine.fold_and_score(sequence, objective, output_dir, iteration)
+        return self._fold_local(sequence, objective, output_dir, iteration)
 
-    # def _fold_modal(
-    #     self,
-    #     sequence: str,
-    #     objective: ObjectiveSpec,
-    #     iteration: int,
-    # ) -> FoldResult:
-    #     """Dispatch folding to Modal — CPU (dummy) or GPU ESMFold worker."""
-    #     import modal
+    def _fold_local(
+        self,
+        sequence: str,
+        objective: ObjectiveSpec,
+        output_dir: Path,
+        iteration: int,
+    ) -> FoldResult:
+        """Fold locally and optionally run Rosetta scoring."""
+        result = self._fold_engine.fold_and_score(sequence, objective, output_dir, iteration)
 
-    #     from protein_swarm.folding.structure_utils import write_pdb_text, sanitize_sequence
-    #     from protein_swarm.folding.scoring import compute_objective_score
-    #     from protein_swarm.schemas import FoldResult
+        if not self._fold_cfg.use_rosetta:
+            return result
 
-    #     sequence = sanitize_sequence(sequence)
-
-    #     # remote_backend = getattr(self._cfg, "remote_fold_backend", "esmfold")  # "esmfold" | "dummy"
-
-    #     # if remote_backend == "esmfold":
-    #     #     fn_name = "run_esmfold"   # must match @app.function name
-    #     # elif remote_backend == "dummy":
-    #     #     fn_name = "run_fold_dummy_remote"
-    #     # else:
-    #     #     raise ValueError(f"Unknown remote_fold_backend={remote_backend}")
-
-    #     remote_backend = self._cfg.remote_fold_backend
-    #     if remote_backend == "esmfold":
-    #         fn_name = "run_esmfold"
-    #     elif remote_backend == "dummy":
-    #         fn_name = "run_fold_dummy_remote"
-    #     else:
-    #         raise ValueError(f"Unknown remote_fold_backend='{remote_backend}'")
-
-    #     fold_fn = modal.Function.from_name("protein-swarm", fn_name)
-
-    #     if self._cfg.debug:
-    #         log_debug(f"Folding on Modal backend='{remote_backend}' (iteration {iteration})")
-
-    #     try:
-    #         if remote_backend == "esmfold":
-    #             # Returns {"pdb": <pdb_text>, "mean_plddt": <0..100>}
-    #             result = fold_fn.remote(sequence)
-    #             pdb_text = result["pdb"]
-    #             mean_plddt = float(result["mean_plddt"])
-
-    #             # Write local PDB
-    #             output_dir = Path(self._cfg.output_dir)
-    #             output_dir.mkdir(parents=True, exist_ok=True)
-    #             pdb_path = write_pdb_text(pdb_text, output_dir / f"iter_{iteration}.pdb")
-
-    #             # Score locally
-    #             obj_score = compute_objective_score(sequence, objective)
-
-    #             # Energy proxy
-    #             energy = mean_plddt / 100.0
-
-    #             cfg = self._fold_cfg
-    #             combined = cfg.energy_weight * energy + cfg.objective_weight * obj_score
-
-    #             return FoldResult(
-    #                 pdb_path=pdb_path,
-    #                 energy=round(energy, 6),
-    #                 objective_score=round(obj_score, 6),
-    #                 combined_score=round(combined, 6),
-    #             )
-
-    #         # Dummy remote path (keeps your existing contract)
-    #         objective_dict = objective.model_dump()
-    #         result_dict = fold_fn.remote(sequence, objective_dict, iteration)
-    #         return FoldResult(**result_dict)
-
-    #     except Exception as e:
-    #         raise RuntimeError(
-    #             f"Failed to call Modal fold function '{fn_name}' ({type(e).__name__}: {e}).\n"
-    #             "Make sure the app is deployed: modal deploy protein_swarm/modal_app/functions.py\n"
-    #             "Or remove --modal-fold to fold locally."
-    #         ) from e
-
-
-    # def _fold_modal(
-    #     self,
-    #     sequence: str,
-    #     objective: ObjectiveSpec,
-    #     iteration: int,
-    # ) -> FoldResult:
-    #     """Dispatch folding to Modal — CPU (dummy) or GPU worker."""
-    #     import modal
-
-    #     objective_dict = objective.model_dump()
-
-    #     # if self._cfg.modal_fold_gpu:
-    #     #     fn_name = "run_fold_gpu_remote"
-    #     # else:
-    #     #     fn_name = "run_fold_dummy_remote"
-
-    #     # Decide which remote fold backend to call.
-    #     remote_backend = getattr(self._cfg, "remote_fold_backend", "dummy")  # "dummy" | "esmfold"
-
-    #     if remote_backend == "esmfold":
-    #         fn_name = "run_esmfold"  # the Modal function name in modal_app/functions.py
-    #     elif remote_backend == "dummy":
-    #         fn_name = "run_fold_dummy_remote"
-    #     else:
-    #         raise ValueError(f"Unknown remote_fold_backend={remote_backend}")
-
-    #     fold_fn = modal.Function.from_name("protein-swarm", fn_name)
-
-    #     if self._cfg.debug:
-    #         label = "GPU" if self._cfg.modal_fold_gpu else "CPU"
-    #         log_debug(f"Folding on Modal {label} worker (iteration {iteration})")
-
-    #     try:
-    #         result_dict = fold_fn.remote(sequence, objective_dict, iteration)
-    #     except Exception as e:
-    #         raise RuntimeError(
-    #             f"Failed to call Modal fold function ({type(e).__name__}: {e}).\n"
-    #             "  Make sure the app is deployed: modal deploy protein_swarm/modal_app/app.py\n"
-    #             "  Or remove --modal-fold to fold locally"
-    #         ) from e
-
-    #     return FoldResult(**result_dict)
+        return self._rescore_with_rosetta(
+            pdb_path=result.pdb_path,
+            sequence=sequence,
+            objective=objective,
+            mean_plddt=result.energy * 100.0,
+        )
 
     def _fold_modal(
         self,
@@ -381,7 +282,7 @@ class DesignEngine:
         objective: ObjectiveSpec,
         iteration: int,
     ) -> FoldResult:
-        """Dispatch folding to Modal — supports ESMFold GPU backend."""
+        """Fold on Modal (ESMFold GPU) then score locally with Rosetta + heuristics."""
         import modal
 
         from protein_swarm.folding.scoring import compute_objective_score
@@ -394,7 +295,7 @@ class DesignEngine:
         if remote_backend == "esmfold":
             fn_name = "run_esmfold"
         elif remote_backend == "dummy":
-            fn_name = "run_fold_dummy_remote"  # only if you implement it
+            fn_name = "run_fold_dummy_remote"
         else:
             raise ValueError(f"Unknown remote_fold_backend='{remote_backend}'")
 
@@ -405,33 +306,21 @@ class DesignEngine:
 
         try:
             if remote_backend == "esmfold":
-                # Modal returns {"pdb": "...", "mean_plddt": 0..100}
                 result = fold_fn.remote(sequence)
                 pdb_text = result["pdb"]
                 mean_plddt = float(result["mean_plddt"])
 
-                # Save PDB locally in the same outputs directory
                 output_dir = Path(self._cfg.output_dir)
                 output_dir.mkdir(parents=True, exist_ok=True)
                 pdb_path = write_pdb_text(pdb_text, output_dir / f"iter_{iteration}.pdb")
 
-                # Score locally
-                obj_score = compute_objective_score(sequence, objective)
-
-                # Energy proxy from confidence
-                energy = mean_plddt / 100.0
-
-                cfg = self._fold_cfg
-                combined = cfg.energy_weight * energy + cfg.objective_weight * obj_score
-
-                return FoldResult(
+                return self._rescore_with_rosetta(
                     pdb_path=pdb_path,
-                    energy=round(energy, 6),
-                    objective_score=round(obj_score, 6),
-                    combined_score=round(combined, 6),
+                    sequence=sequence,
+                    objective=objective,
+                    mean_plddt=mean_plddt,
                 )
 
-            # If you ever add dummy remote folding function, keep this:
             objective_dict = objective.model_dump()
             result_dict = fold_fn.remote(sequence, objective_dict, iteration)
             return FoldResult(**result_dict)
@@ -442,6 +331,78 @@ class DesignEngine:
                 "Make sure the app is deployed: modal deploy protein_swarm/modal_app/functions.py\n"
                 "Or remove --modal-fold to fold locally."
             ) from e
+
+    def _rescore_with_rosetta(
+        self,
+        pdb_path: str,
+        sequence: str,
+        objective: ObjectiveSpec,
+        mean_plddt: float,
+    ) -> FoldResult:
+        """Compute the 3-component combined score.
+
+        physics_score:    from Rosetta energy (or falls back to confidence)
+        objective_score:  heuristic sequence-level scoring
+        confidence_score: ESMFold mean pLDDT / 100
+        """
+        from protein_swarm.folding.scoring import compute_objective_score
+
+        cfg = self._fold_cfg
+        confidence_score = mean_plddt / 100.0
+        obj_score = compute_objective_score(sequence, objective)
+
+        if cfg.use_rosetta:
+            from protein_swarm.folding.rosetta_energy import score_pdb_with_pyrosetta
+
+            rosetta_result = score_pdb_with_pyrosetta(
+                pdb_path,
+                relax=cfg.rosetta_relax,
+                relax_cycles=cfg.rosetta_relax_cycles,
+            )
+            rosetta_total = rosetta_result["rosetta_total_score"]
+            physics_score = _rosetta_to_physics_score(
+                rosetta_total, cfg.rosetta_norm_target, cfg.rosetta_norm_scale,
+            )
+
+            if rosetta_result["relaxed_pdb_path"]:
+                pdb_path = rosetta_result["relaxed_pdb_path"]
+
+            if self._cfg.debug:
+                log_debug(
+                    f"  pLDDT={mean_plddt:.1f}  confidence={confidence_score:.4f}  "
+                    f"rosetta={rosetta_total:.1f}  physics={physics_score:.4f}  "
+                    f"objective={obj_score:.4f}"
+                )
+        else:
+            physics_score = confidence_score
+            if self._cfg.debug:
+                log_debug(
+                    f"  pLDDT={mean_plddt:.1f}  confidence={confidence_score:.4f}  "
+                    f"objective={obj_score:.4f}  (rosetta disabled, physics=confidence)"
+                )
+
+        combined = (
+            cfg.w_physics * physics_score
+            + cfg.w_objective * obj_score
+            + cfg.w_confidence * confidence_score
+        )
+
+        if self._cfg.debug:
+            log_debug(
+                f"  combined = {cfg.w_physics:.2f}*{physics_score:.4f} "
+                f"+ {cfg.w_objective:.2f}*{obj_score:.4f} "
+                f"+ {cfg.w_confidence:.2f}*{confidence_score:.4f} "
+                f"= {combined:.4f}"
+            )
+
+        return FoldResult(
+            pdb_path=pdb_path,
+            energy=round(physics_score, 6),
+            objective_score=round(obj_score, 6),
+            combined_score=round(combined, 6),
+        )
+
+    # ── artefact persistence ─────────────────────────────────────────────
 
     @staticmethod
     def _save_artefacts(result: DesignResult, output_dir: Path) -> None:

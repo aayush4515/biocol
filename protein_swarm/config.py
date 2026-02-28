@@ -6,9 +6,12 @@ All tunable parameters live here. Nothing is hardcoded in business logic.
 
 from __future__ import annotations
 
+import logging
 import os
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
+
+logger = logging.getLogger(__name__)
 
 
 class LLMConfig(BaseModel):
@@ -63,13 +66,64 @@ class SwarmConfig(BaseModel):
 
 
 class FoldingConfig(BaseModel):
-    """Configuration for the folding / scoring subsystem."""
+    """Configuration for the folding / scoring subsystem.
 
-    energy_weight: float = Field(default=0.4, ge=0.0, le=1.0)
-    objective_weight: float = Field(default=0.6, ge=0.0, le=1.0)
+    Scoring weights (w_physics, w_objective, w_confidence) control how the
+    final combined_score is computed:
+
+        combined = w_physics * physics_score
+                 + w_objective * objective_score
+                 + w_confidence * confidence_score
+
+    - physics_score:    Rosetta energy mapped to [0,1] via logistic sigmoid.
+                        Falls back to confidence_score when Rosetta is disabled.
+    - objective_score:  Heuristic score from sequence-level objective analysis.
+    - confidence_score: ESMFold mean pLDDT normalised to [0,1].
+
+    Rosetta normalisation:  The raw Rosetta total_score (lower = better) is
+    converted to a 0-1 "goodness" value using:
+        physics_score = 1 / (1 + exp((score - norm_target) / norm_scale))
+    where norm_target is the "good" energy centre and norm_scale controls the
+    steepness of the sigmoid.
+    """
+
+    # ── scoring weights ──────────────────────────────────────────────────
+    w_physics: float = Field(default=0.55, ge=0.0, description="Weight for physics-based (Rosetta) score")
+    w_objective: float = Field(default=0.35, ge=0.0, description="Weight for heuristic objective score")
+    w_confidence: float = Field(default=0.10, ge=0.0, description="Weight for ESMFold pLDDT confidence")
+
+    # ── rosetta ──────────────────────────────────────────────────────────
+    use_rosetta: bool = Field(default=True, description="Run local PyRosetta scoring on predicted PDBs")
+    rosetta_relax: bool = Field(default=False, description="Run FastRelax before scoring (slower, better energy)")
+    rosetta_relax_cycles: int = Field(default=1, ge=1, description="Number of FastRelax cycles when relax is enabled")
+
+    rosetta_norm_target: float = Field(
+        default=-200.0,
+        description="Sigmoid centre for Rosetta score normalisation (typical 'good' energy)",
+    )
+    rosetta_norm_scale: float = Field(
+        default=50.0, gt=0.0,
+        description="Sigmoid scale — smaller = steeper transition around norm_target",
+    )
+
+    # ── legacy heuristic knobs (used by DummyFoldEngine / objective scorer) ──
     diversity_bonus: float = Field(default=0.1, ge=0.0)
     helix_bonus: float = Field(default=0.15, ge=0.0)
     repeat_penalty: float = Field(default=0.2, ge=0.0)
+
+    @model_validator(mode="after")
+    def _normalise_weights(self) -> "FoldingConfig":
+        total = self.w_physics + self.w_objective + self.w_confidence
+        if total <= 0:
+            raise ValueError("Scoring weights must sum to a positive value")
+        if abs(total - 1.0) > 1e-6:
+            logger.debug(
+                "Scoring weights sum to %.6f — auto-normalising to 1.0", total,
+            )
+            self.w_physics /= total
+            self.w_objective /= total
+            self.w_confidence /= total
+        return self
 
 
 class MemoryConfig(BaseModel):

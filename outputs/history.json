@@ -2,1981 +2,1699 @@
   {
     "iteration": 0,
     "sequence_before": "VVVVVVVVVVVVVVVVVVVV",
-    "sequence_after": "GGPGGPPGPPPPPGPGPGGG",
+    "sequence_after": "GGGPGGPGPPGPGPGPGPGG",
     "mutations": [
       {
         "position": 0,
         "current_residue": "V",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its flexibility and can promote turn formation, enhancing the overall structural dynamics of the sequence while maintaining a repeating pattern."
+        "reason": "Glycine (G) is known for its flexibility and can promote turn formation, making it suitable for introducing flexibility in the sequence while maintaining a repeating pattern."
       },
       {
         "position": 1,
         "current_residue": "V",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to promote flexibility and is often found in turns due to its small size and lack of side chain sterics, making it a suitable substitution for introducing flexibility in the sequence."
+        "reason": "Glycine (G) is a well-known turn-promoting residue that introduces flexibility in protein structures, making it suitable for achieving the objective of promoting turns while maintaining repetitive sequence patterns."
       },
       {
         "position": 2,
         "current_residue": "V",
-        "proposed_residue": "P",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Proline is known for introducing turns and kinks in protein structures, which can enhance flexibility while maintaining a repeating pattern in the sequence."
+        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it a suitable substitution to introduce flexibility in the sequence."
       },
       {
         "position": 3,
         "current_residue": "V",
-        "proposed_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to introduce turns in protein structures, thus enhancing the desired flexibility while fitting well into the repeating sequence pattern."
+        "reason": "Proline (P) is known for introducing kinks and promoting turns in protein structures, which could enhance flexibility in the sequence."
       },
       {
         "position": 4,
         "current_residue": "V",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for introducing flexibility and promoting turns in protein structures, making it suitable for the objective of enhancing flexibility while maintaining a repeating sequence pattern."
+        "reason": "Glycine (G) is known for its ability to introduce flexibility and facilitate turns in protein structures, making it a suitable substitution in this context."
       },
       {
         "position": 5,
         "current_residue": "V",
-        "proposed_residue": "P",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Proline (P) is known for introducing kinks and promoting turns in protein structures, which can enhance flexibility while maintaining a repeating sequence pattern."
+        "reason": "Glycine (G) is known to introduce flexibility and promote turns in protein structures, making it a suitable substitution for enhancing flexibility in this repetitive sequence."
       },
       {
         "position": 6,
         "current_residue": "V",
         "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline (P) is known to introduce turns and flexibility in protein structures, making it a suitable candidate for promoting flexibility in this repetitive sequence."
+        "confidence": 0.9,
+        "reason": "Proline (P) is known for introducing turns and kinks in protein structures, which would enhance flexibility while maintaining some repetitive characteristics in the sequence."
       },
       {
         "position": 7,
         "current_residue": "V",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for promoting flexibility and is often found in turns, making it a suitable substitution at this position to enhance the desired structural feature."
+        "reason": "Glycine (G) is known for its ability to introduce flexibility into protein structures, making it suitable for turn-promoting residues. The substitution at position 7 can help break the repetitive nature of the sequence while allowing for flexibility."
       },
       {
         "position": 8,
         "current_residue": "V",
         "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline (P) is known for introducing turns and bends in protein structures, which will enhance flexibility in the sequence while maintaining a repetitive pattern."
+        "confidence": 0.9,
+        "reason": "Proline is known to introduce bends and kinks in protein structures, promoting flexibility and turn formation, which aligns with the objective of introducing flexibility in the sequence."
       },
       {
         "position": 9,
         "current_residue": "V",
         "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Proline (P) is known for introducing kinks and flexibility in protein structures, making it an excellent choice for promoting turns while maintaining the repeating sequence pattern."
+        "confidence": 0.8,
+        "reason": "Proline is known for introducing turns and bends in protein structures, which can enhance flexibility while maintaining a repetitive sequence pattern."
       },
       {
         "position": 10,
         "current_residue": "V",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline (P) is known for introducing turns and kinks in protein structures, which can enhance flexibility in the sequence while maintaining a repetitive pattern."
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it an ideal substitution to introduce flexibility in the sequence."
       },
       {
         "position": 11,
         "current_residue": "V",
         "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline (P) is known for introducing turns and kinks in protein structures due to its unique cyclic structure, which can enhance flexibility while maintaining a repeating pattern."
+        "confidence": 0.9,
+        "reason": "Proline (P) is known for introducing kinks and promoting turns in protein structures, which enhances flexibility in repetitive sequences."
       },
       {
         "position": 12,
         "current_residue": "V",
-        "proposed_residue": "P",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Proline (P) is known for promoting turns and introducing flexibility in protein structures, which aligns with the objective of creating turn-promoting residues while maintaining the repeating sequence patterns."
+        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures, making it suitable for creating the desired flexibility in a repetitive sequence."
       },
       {
         "position": 13,
         "current_residue": "V",
-        "proposed_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is a known turn-promoting residue that introduces flexibility in protein structures, making it suitable for creating turns in a repetitive sequence."
+        "reason": "Proline (P) is known for its ability to introduce turns and kinks in protein structures, which can increase flexibility. It fits the objective of promoting turn formation while maintaining a repeating sequence pattern."
       },
       {
         "position": 14,
         "current_residue": "V",
-        "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Proline (P) is known for introducing flexibility and promoting turns in protein structures. Substituting the valine at position 14 with proline can enhance the turn propensity while maintaining a repeating sequence pattern."
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is known to introduce flexibility and is often found in turns and loops, which aligns with the objective of promoting flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 15,
         "current_residue": "V",
-        "proposed_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to introduce turns in protein structures, which aligns with the objective of promoting flexibility while maintaining a repeating sequence."
+        "reason": "Proline (P) is known for introducing bends and promoting turns in protein structures, which aligns with the objective of increasing flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 16,
         "current_residue": "V",
-        "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Proline (P) is known for introducing flexibility and promoting turns in protein structures due to its unique cyclic structure, which disrupts regular secondary structure patterns."
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is known for introducing flexibility into protein structures and can promote turns, making it a suitable substitution at this position to enhance flexibility while maintaining a repeating pattern."
       },
       {
         "position": 17,
         "current_residue": "V",
-        "proposed_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures, making it suitable for achieving the goal of flexibility while maintaining a repeating pattern."
+        "reason": "Proline is known for introducing turns and flexibility in protein structures, making it suitable for creating a more dynamic conformation in the repeating sequence."
       },
       {
         "position": 18,
         "current_residue": "V",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine is known for promoting flexibility due to its small size and lack of side chain, making it suitable for introducing turns in repetitive sequences."
+        "reason": "Glycine (G) is a well-known turn-promoting residue that introduces flexibility due to its small side chain, which can help create a more favorable environment for turns in the protein structure."
       },
       {
         "position": 19,
         "current_residue": "V",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it a suitable substitution to introduce flexibility while maintaining a repeating pattern."
+        "reason": "Glycine (G) is known for its flexibility and ability to promote turns in protein structures, making it a strong candidate for enhancing flexibility in the sequence."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_0.pdb",
-      "energy": 0.008994,
-      "objective_score": 0.282551,
-      "combined_score": 0.173128
+      "pdb_path": "outputs/iter_0.relaxed.pdb",
+      "energy": 0.027474,
+      "objective_score": 0.299863,
+      "combined_score": 0.120963
     },
     "accepted": true,
-    "score_delta": 0.157406
+    "score_delta": 0.096971
   },
   {
     "iteration": 1,
-    "sequence_before": "GGPGGPPGPPPPPGPGPGGG",
-    "sequence_after": "PPGPPGGPGGGGGPGPGPPP",
+    "sequence_before": "GGGPGGPGPPGPGPGPGPGG",
+    "sequence_after": "PPPGPPGPGGPGPGPGPGPP",
     "mutations": [
       {
         "position": 0,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proline (P) is known to promote turns in protein structures and can introduce flexibility, enhancing the overall conformational dynamics of the sequence."
+        "reason": "Proline is known to induce turns and can enhance flexibility in protein structures, making it suitable for introducing turn-promoting characteristics in the sequence."
       },
       {
         "position": 1,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proline (P) is known to introduce bends and promote turns in protein structures, which aligns with the objective of enhancing flexibility while fitting into a repeating sequence pattern."
+        "reason": "Proline (P) is known for introducing turns and kinks in protein structures, promoting flexibility while maintaining a repeating pattern with the existing glycine residues."
       },
       {
         "position": 2,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.7,
-        "reason": "Glycine (G) is known for its high flexibility and is often used to promote turns in protein structures, making it a suitable substitution to enhance the flexibility in the sequence."
-      },
-      {
-        "position": 3,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at this position can introduce a turn-promoting effect due to its unique cyclic structure, which may enhance flexibility and help in forming repeating sequence patterns."
+        "reason": "Proposing proline (P) at position 2 can introduce flexibility and promote turn formation due to its unique cyclic structure, enhancing the overall dynamics of the sequence while maintaining a repeating pattern with the surrounding glycine residues."
+      },
+      {
+        "position": 3,
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is known for its high flexibility and can promote turns in protein structures, making it a suitable substitution to enhance flexibility while maintaining a repeating pattern."
       },
       {
         "position": 4,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at this position can introduce a kink or turn in the polypeptide chain, promoting flexibility while maintaining the repeating pattern of residues."
+        "reason": "Proposing proline (P) to introduce flexibility and promote turn formation, which aligns well with the objective of creating repeating sequence patterns."
       },
       {
         "position": 5,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can promote flexibility due to 'G's smaller side chain, facilitating turn formation and supporting a repeating sequence pattern."
+        "reason": "Proposing Proline (P) at position 5 may introduce flexibility and help in turn formation, aligning with the objective of promoting turns while maintaining a repeating pattern."
       },
       {
         "position": 6,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known to promote flexibility and is often found in turn regions. Substituting P with G can introduce more flexibility into this segment while maintaining the repeating pattern."
+        "reason": "Glycine (G) is known for promoting flexibility in protein structures, and substituting P with G can enhance the turn formation while maintaining the repeating pattern."
       },
       {
         "position": 7,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proline (P) can introduce flexibility and promote turns in the protein structure, fitting the objective of creating a turn-promoting residue while maintaining a repeating pattern in the sequence."
+        "reason": "Proposing proline (P) at this position can introduce a turn-promoting structure, enhancing flexibility while maintaining the repeating pattern of the sequence."
       },
       {
         "position": 8,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it a suitable substitution to enhance the overall flexibility of the sequence while maintaining the repeating pattern."
+        "reason": "Substituting 'P' with 'G' can introduce flexibility and promote turns due to glycine's unique properties, enhancing the overall structural dynamics while maintaining a repeating pattern."
       },
       {
         "position": 9,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures. Substituting P with G at this position could enhance the desired flexibility while maintaining a repeating pattern."
+        "reason": "Substituting 'P' with 'G' can introduce flexibility due to glycine's small side chain, which is beneficial for promoting turn formation and creating a repeating pattern in the sequence."
       },
       {
         "position": 10,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can introduce flexibility as 'G' is known to promote turns and is less sterically hindered, fitting well within the repeating sequence pattern."
+        "reason": "Proposing proline (P) at position 10 introduces a turn-promoting residue, which enhances flexibility and contributes to the repeating sequence pattern."
       },
       {
         "position": 11,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Substituting proline (P) with glycine (G) at this position can introduce flexibility and promote turns due to glycine's unique ability to adopt various conformations, complementing the repeating pattern in the local sequence."
+        "reason": "Glycine (G) is known to introduce flexibility and is often found in turn regions, making it suitable for promoting flexibility in the sequence while maintaining a repeating pattern."
       },
       {
         "position": 12,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its small size and flexibility, making it an excellent candidate for introducing turn-promoting characteristics in the sequence while maintaining a repeating pattern."
+        "reason": "Proposing proline (P) at position 12 enhances flexibility and promotes turn formation, fitting well with the surrounding proline-rich sequence, while maintaining the repeating pattern."
       },
       {
         "position": 13,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Proposing proline (P) at position 13 may enhance flexibility and promote turn formation in the sequence, while maintaining the repetitive nature of the surrounding residues."
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a turn-promoting residue that can enhance flexibility in the structure, while maintaining a repeating pattern with the surrounding residues."
       },
       {
         "position": 14,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can introduce flexibility due to glycine's unique structure, promoting turn formation while maintaining a repeating pattern."
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proposing 'P' (Proline) at position 14 can introduce a turn-promoting residue, which enhances flexibility and supports the desired repeating sequence pattern."
       },
       {
         "position": 15,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' (proline) at position 15 can introduce flexibility and promote turn formation due to its unique cyclic structure, which is known to favor bends in the protein backbone. Additionally, it complements the existing repeating pattern of 'PG' in the local window."
-      },
-      {
-        "position": 16,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, which aligns with the objective of introducing flexibility while maintaining a repeating pattern."
+        "reason": "Substituting 'P' with 'G' can introduce more flexibility due to glycine's smaller side chain, which can promote turn formation in the structure while maintaining the repeating pattern."
+      },
+      {
+        "position": 16,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proposing 'P' at position 16 introduces a proline residue, which is known for promoting turns and flexibility in protein structures, while maintaining the repeating pattern of the sequence."
       },
       {
         "position": 17,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "P",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at this position can introduce flexibility and promote turn formation in the sequence, enhancing the overall structural dynamics while fitting into the repeating pattern."
+        "reason": "Substituting 'P' with 'G' introduces more flexibility and can promote turn formation, while maintaining the repeating pattern of residues."
       },
       {
         "position": 18,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' (proline) at this position can introduce a turn and enhance flexibility in the peptide structure, while also contributing to the repeating pattern of the sequence."
+        "reason": "Proposing proline (P) introduces a turn-promoting residue that can enhance flexibility while maintaining a repeating pattern in the sequence."
       },
       {
         "position": 19,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at this position could introduce a turn-promoting characteristic due to its unique cyclic structure, which is known to enhance flexibility in protein structures. Additionally, proline can create repeating sequence patterns when placed in proximity to other prolines, aligning with the objective."
+        "reason": "Proposing 'P' (Proline) introduces a turn-promoting residue which can enhance flexibility in the sequence. Its unique cyclic structure can facilitate bends or turns, aligning with the objective of promoting flexibility and creating repeating patterns."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_1.pdb",
-      "energy": 0.009082,
-      "objective_score": 0.282551,
-      "combined_score": 0.173163
+      "pdb_path": "outputs/iter_1.relaxed.pdb",
+      "energy": 0.031402,
+      "objective_score": 0.299863,
+      "combined_score": 0.123132
     },
     "accepted": true,
-    "score_delta": 3.500000000000725e-05
+    "score_delta": 0.0021690000000000043
   },
   {
     "iteration": 2,
-    "sequence_before": "PPGPPGGPGGGGGPGPGPPP",
-    "sequence_after": "GGPGGPPGPPPPPGPGPGGG",
+    "sequence_before": "PPPGPPGPGGPGPGPGPGPP",
+    "sequence_after": "GGGPGGPGPPGPGPGPGPGG",
     "mutations": [
       {
         "position": 0,
         "current_residue": "P",
         "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility in protein structures and can promote turns, which aligns with the objective of creating flexible repeating sequence patterns."
+        "confidence": 0.9,
+        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns due to its small side chain, which can help create the desired repeating sequence pattern."
       },
       {
         "position": 1,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.9,
-        "reason": "Glycine (G) is a well-known turn-promoting residue that introduces flexibility due to its small size and lack of side chain, which can enhance the desired turn-promoting properties while maintaining a repeating pattern."
+        "reason": "Glycine is known for its flexibility and ability to promote turns in protein structures, making it suitable for enhancing the desired flexibility and supporting repeating sequence patterns."
       },
       {
         "position": 2,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting G with P at this position can promote flexibility and contribute to a turn structure, aligning with the objective of introducing turn-promoting residues while maintaining a repeating sequence pattern."
-      },
-      {
-        "position": 3,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.9,
-        "reason": "Substituting 'P' with 'G' introduces flexibility due to glycine's unique structure, promoting turns while maintaining a repeating pattern with the adjacent 'G' residues."
+        "reason": "Glycine (G) is known for introducing flexibility and is a common turn-promoting residue. Substituting 'P' with 'G' at this position can enhance the overall flexibility of the sequence while maintaining a repeating pattern."
+      },
+      {
+        "position": 3,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Substituting 'G' with 'P' can enhance flexibility and promote turn formation due to the unique structure of proline, which can introduce kinks in the backbone, while maintaining the repeating pattern in the sequence."
       },
       {
         "position": 4,
         "current_residue": "P",
         "proposed_residue": "G",
-        "confidence": 0.9,
-        "reason": "Glycine (G) promotes flexibility and is known to enhance turns in protein structures, fitting well with the objective of introducing flexibility while maintaining a repeating pattern."
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a known turn-promoting residue that introduces flexibility in the structure, making it suitable for creating repeating sequence patterns."
       },
       {
         "position": 5,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting G with P can introduce more flexibility and promote turn formation, enhancing the overall structural dynamics while maintaining a repeating pattern."
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures, making it a strong candidate for enhancing the flexibility of the sequence."
       },
       {
         "position": 6,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' to introduce a turn-promoting residue that can enhance flexibility, while also maintaining a repeating pattern with the adjacent 'P' residues."
+        "reason": "Substituting G with P introduces a proline, which is known to promote turns and flexibility in protein structures, while also maintaining the repeating pattern of the sequence."
       },
       {
         "position": 7,
         "current_residue": "P",
         "proposed_residue": "G",
-        "confidence": 0.9,
-        "reason": "Glycine (G) is known to introduce flexibility and is often found in turn regions of proteins. It fits well within the repeating pattern and enhances the overall flexibility of the sequence."
+        "confidence": 0.8,
+        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it suitable for introducing flexibility in the sequence."
       },
       {
         "position": 8,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' (proline) introduces flexibility and helps promote turns in the sequence, aligning with the objective of enhancing flexibility while maintaining the repeating pattern."
+        "reason": "Substituting 'G' with 'P' can promote flexibility and help form turns due to the unique cyclic structure of proline, while maintaining a repeating pattern with the other 'P' residues."
       },
       {
         "position": 9,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' introduces a proline residue which is known to promote turns and can enhance flexibility in the structure, while maintaining the repeating sequence pattern."
+        "reason": "Substituting 'G' with 'P' can introduce flexibility and promote turn formation while maintaining the repeating sequence pattern."
       },
       {
         "position": 10,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "P",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) introduces a turn-promoting residue, which can enhance flexibility in the structure while maintaining the repeating sequence pattern."
+        "reason": "Glycine (G) is known for introducing flexibility in protein structures and can promote turns, making it a suitable substitution to enhance flexibility while maintaining the repeating pattern."
       },
       {
         "position": 11,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at this position can introduce flexibility and promote turns due to its unique cyclic structure, which helps in creating bending points in the polypeptide chain, thus supporting the objective of introducing flexibility."
+        "reason": "Substituting G with P can introduce flexibility and promote turns, while fitting well within the repeating pattern of the sequence."
       },
       {
         "position": 12,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "P",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Proposing 'P' introduces a turn-promoting residue which can enhance flexibility and fits well with the existing repeating sequence pattern."
+        "reason": "Substituting P with G at position 12 can introduce more flexibility due to G's small size, promoting turn formation while maintaining a repeating sequence pattern."
       },
       {
         "position": 13,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.9,
-        "reason": "Glycine (G) is a well-known turn-promoting residue that introduces flexibility due to its small size and lack of a side chain, which can enhance the formation of turns in the sequence."
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Substituting 'G' with 'P' can introduce flexibility and promote turn formation in the sequence, while maintaining a repeating pattern of 'P' residues."
       },
       {
         "position": 14,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' to introduce a turn-promoting residue that enhances flexibility and fits well with the surrounding pattern."
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Substituting 'P' with 'G' introduces flexibility and supports turn formation while maintaining the repeating pattern of the sequence."
       },
       {
         "position": 15,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.9,
-        "reason": "Glycine (G) is a well-known turn-promoting residue that introduces flexibility due to its small side chain, making it suitable for enhancing the flexibility of the protein while maintaining a repeating pattern."
-      },
-      {
-        "position": 16,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' at position 16 introduces a turn-promoting residue that enhances flexibility while maintaining a repeating pattern with neighboring residues."
+        "reason": "Substituting 'G' with 'P' can enhance the flexibility and turn-promoting characteristics of the sequence, as proline is known for inducing bends and turns in protein structures."
       },
       {
-        "position": 17,
+        "position": 16,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.9,
-        "reason": "Substituting 'P' with 'G' introduces flexibility by promoting turns and fits well in the repeating sequence pattern observed in the local context."
+        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures, making it a strong candidate to enhance the flexibility in the local context while maintaining a repeating pattern."
+      },
+      {
+        "position": 17,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Substituting 'G' with 'P' can introduce more flexibility due to the turn-promoting nature of proline, while maintaining a repeating pattern in the sequence."
       },
       {
         "position": 18,
         "current_residue": "P",
         "proposed_residue": "G",
-        "confidence": 0.9,
-        "reason": "Glycine (G) introduces significant flexibility due to its small size and lack of side chain, promoting turn formation and enhancing the overall structural dynamics of the protein."
+        "confidence": 0.8,
+        "reason": "Glycine (G) is known for its flexibility and ability to promote turns in protein structures, which aligns with the objective of introducing flexibility while maintaining a repeating pattern."
       },
       {
         "position": 19,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.9,
-        "reason": "Glycine (G) is known to promote flexibility and is effective in turn formation, making it suitable for the objective of introducing flexibility while fitting into the repeating sequence pattern."
+        "reason": "Glycine (G) is known for its ability to introduce flexibility and is often found in turns and loops, making it a strong candidate for enhancing flexibility in the sequence while maintaining the repeating pattern."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_2.pdb",
-      "energy": 0.008994,
-      "objective_score": 0.282551,
-      "combined_score": 0.173128
+      "pdb_path": "outputs/iter_2.relaxed.pdb",
+      "energy": 0.027474,
+      "objective_score": 0.299863,
+      "combined_score": 0.120963
     },
     "accepted": false,
-    "score_delta": -3.500000000000725e-05
+    "score_delta": -0.0021690000000000043
   },
   {
     "iteration": 3,
-    "sequence_before": "PPGPPGGPGGGGGPGPGPPP",
-    "sequence_after": "GGPGGPPPPPPPPGPGPSGG",
+    "sequence_before": "PPPGPPGPGGPGPGPGPGPP",
+    "sequence_after": "GGGPGGSGSSGPGSGAGNGG",
     "mutations": [
       {
         "position": 0,
         "current_residue": "P",
         "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine is a known turn-promoting residue that can introduce flexibility into the protein structure, enhancing the potential for repeating sequence patterns."
+        "confidence": 0.7,
+        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures. Although G was previously rejected, the local context suggests that a substitution at this position may be more favorable given the objective of enhancing flexibility."
       },
       {
         "position": 1,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and is effective in promoting turns in protein structures, thus aligning with the objective of enhancing flexibility while maintaining repeating sequence patterns."
+        "reason": "Substituting 'P' with 'G' can introduce flexibility due to glycine's unique structure, which promotes turn formation. This aligns with the objective of creating a flexible, repeating sequence pattern."
       },
       {
         "position": 2,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' introduces flexibility due to its tendency to promote turns, while also maintaining a repeating sequence pattern."
-      },
-      {
-        "position": 3,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' introduces flexibility and promotes turn formation, aligning with the objective of creating a more dynamic structure while maintaining the repeating pattern."
+        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it suitable for increasing flexibility in this repeating sequence."
+      },
+      {
+        "position": 3,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Substituting 'G' with 'P' can introduce flexibility and promote a turn, contributing to the desired repeating sequence pattern. Previous successes with 'P' support this choice."
       },
       {
         "position": 4,
         "current_residue": "P",
         "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures, and it aligns with the need for a repeating sequence pattern while fitting in the local context."
+        "confidence": 0.7,
+        "reason": "Glycine is known for promoting flexibility and is suitable for turn formation, which aligns with the objective of introducing flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 5,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "P",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Substituting G with P can introduce flexibility by promoting turns, aligning with the objective of creating repeating sequence patterns, and it has been accepted in similar contexts."
+        "reason": "Glycine (G) is known to promote flexibility and is often found in turns, making it suitable for enhancing the desired flexibility while maintaining the repeating pattern."
       },
       {
         "position": 6,
         "current_residue": "G",
-        "proposed_residue": "P",
+        "proposed_residue": "S",
         "confidence": 0.8,
-        "reason": "Proposing 'P' at position 6 can introduce flexibility due to its ability to promote turns in protein structures, and it aligns with the objective of creating repeating sequence patterns."
+        "reason": "Serine (S) is a turn-promoting residue that can introduce flexibility and promote structural variation in the sequence, aligning well with the objective of enhancing flexibility while maintaining a repetitive pattern."
+      },
+      {
+        "position": 7,
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.6,
+        "reason": "Substituting 'P' with 'G' can introduce flexibility due to glycine's unique structure, promoting turn formation in the sequence while maintaining a repeating pattern."
       },
       {
         "position": 8,
         "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' can introduce flexibility and promote turn formation due to its unique backbone conformation, aligning with the objective of creating repeating sequence patterns."
+        "proposed_residue": "S",
+        "confidence": 0.7,
+        "reason": "Serine (S) is known to promote flexibility and can also facilitate turn formation, which aligns with the objective of introducing flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 9,
         "current_residue": "G",
-        "proposed_residue": "P",
+        "proposed_residue": "S",
         "confidence": 0.8,
-        "reason": "Proposing 'P' at position 9 introduces a proline residue, which is known to induce turns and introduce flexibility in protein structures, while maintaining the repeating pattern."
+        "reason": "Serine (S) is known to promote flexibility and can help create turn structures, fitting the objective of introducing flexibility while maintaining a repeating pattern."
       },
       {
         "position": 10,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "P",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Proposing 'P' introduces a turn-promoting residue that can enhance flexibility and create a repeating pattern, fitting the objective well."
+        "reason": "Glycine is known for its high flexibility and ability to promote turns in protein structures, making it suitable for introducing flexibility while also fitting into the repeating sequence pattern."
       },
       {
         "position": 11,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' introduces a turn-promoting residue which can enhance flexibility and create repeating sequence patterns."
+        "reason": "Substituting 'G' with 'P' can introduce more flexibility and promote turn formation, enhancing the overall flexibility of the sequence while maintaining a repeating pattern."
       },
       {
         "position": 12,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "P",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at this position can introduce flexibility and promote turn formation due to its unique cyclic structure, which is favorable for creating repeating sequence patterns."
+        "reason": "Substituting 'P' with 'G' can introduce flexibility and is consistent with the observed success of 'G' in promoting turns in the local sequence context."
       },
       {
         "position": 13,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.9,
-        "reason": "Glycine (G) promotes flexibility and is known to facilitate turns in protein structures. Given the context of a repeating pattern and recent successes in similar contexts, this substitution is likely to enhance the desired flexibility."
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine (S) is known to promote flexibility and can disrupt the regularity of the repeating sequence while also providing potential hydrogen bonding opportunities, enhancing turn formation."
       },
       {
         "position": 14,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' at this position may introduce flexibility due to its propensity to promote turns, which aligns with the objective of creating repeating sequence patterns while maintaining some structural stability."
-      },
-      {
-        "position": 15,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can introduce more flexibility and promote turn formation, while aligning with the successful acceptance of 'G' in the context."
+        "reason": "The substitution of 'P' with 'G' can enhance flexibility due to 'G' being a smaller residue that promotes turns, and it aligns with the objective of creating repeating sequence patterns."
+      },
+      {
+        "position": 15,
+        "current_residue": "G",
+        "proposed_residue": "A",
+        "confidence": 0.8,
+        "reason": "Alanine (A) is known to promote flexibility and can help create turn-like structures in repeating sequence patterns, fitting the objective well."
       },
       {
         "position": 16,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "P",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Substituting 'G' with 'P' could introduce flexibility due to proline's unique cyclic structure, promoting turns in the sequence and maintaining a repeating pattern."
+        "reason": "Substituting 'P' with 'G' can introduce more flexibility and promote turns, aligning with the objective of creating repeating sequence patterns, as 'G' is known for its ability to adopt various conformations."
       },
       {
         "position": 17,
-        "current_residue": "P",
-        "proposed_residue": "S",
+        "current_residue": "G",
+        "proposed_residue": "N",
         "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and can help introduce turn structures in protein sequences, aligning well with the objective of creating flexible repeating patterns."
+        "reason": "Asparagine (N) can introduce flexibility due to its ability to form hydrogen bonds, which can promote turn formation while maintaining a compatible size within the sequence."
       },
       {
         "position": 18,
         "current_residue": "P",
         "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' introduces flexibility due to 'G's smaller side chain, which promotes turns and can create a repeating pattern with adjacent residues."
+        "confidence": 0.7,
+        "reason": "Substituting 'P' with 'G' can introduce flexibility due to glycine's ability to adopt different conformations, which may promote turn formation and help maintain a repeating sequence pattern."
       },
       {
         "position": 19,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can increase flexibility due to glycine's ability to adopt various conformations and promote turns. The local context of 'GPPP' suggests that introducing another 'G' could enhance the turn-promoting characteristics of the sequence."
+        "reason": "Glycine (G) is known to promote flexibility and is often found in turns; it can enhance the structural dynamics of the sequence while maintaining the repeating pattern."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_3.pdb",
-      "energy": 0.008994,
-      "objective_score": 0.292842,
-      "combined_score": 0.179303
+      "pdb_path": "outputs/iter_3.relaxed.pdb",
+      "energy": 0.021078,
+      "objective_score": 0.424649,
+      "combined_score": 0.161095
     },
     "accepted": true,
-    "score_delta": 0.006139999999999979
+    "score_delta": 0.03796299999999998
   },
   {
     "iteration": 4,
-    "sequence_before": "GGPGGPPPPPPPPGPGPSGG",
-    "sequence_after": "PPGPPGGGGGGGGPGPGTPP",
+    "sequence_before": "GGGPGGSGSSGPGSGAGNGG",
+    "sequence_after": "PPPGPPGPGGPGPGPGPGPP",
     "mutations": [
       {
         "position": 0,
         "current_residue": "G",
         "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline (P) is known to introduce turns and promote flexibility in protein structures, making it suitable for enhancing the desired characteristics while fitting into the repeating sequence pattern."
+        "confidence": 0.9,
+        "reason": "Proline (P) is known to introduce turns and flexibility in protein structures, promoting the desired turn-promoting characteristics while maintaining a repeating pattern with the adjacent residues."
       },
       {
         "position": 1,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proline is known for promoting turns and introducing flexibility in protein structures, which aligns well with the objective of creating flexible turn-promoting residues."
+        "reason": "Proposing 'P' at position 1 introduces a proline residue, known for promoting turns and flexibility in protein structures, while also maintaining a repeating pattern with the existing sequence."
       },
       {
         "position": 2,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine is known for its ability to introduce flexibility and is often found in turns and loops, making it suitable for promoting flexibility in the sequence."
-      },
-      {
-        "position": 3,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' to introduce a turn-promoting structure which enhances flexibility and maintains a repeating pattern with the surrounding 'G' residues."
+        "reason": "Proposing 'P' at position 2 introduces a turn-promoting residue, which enhances flexibility and aligns with the objective of creating repeating sequence patterns."
+      },
+      {
+        "position": 3,
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Substituting Proline (P) with Glycine (G) can introduce more flexibility due to Glycine's ability to adopt various conformations, promoting turns in the structure while maintaining a repeating pattern."
       },
       {
         "position": 4,
         "current_residue": "G",
         "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' at position 4 introduces a turn-promoting residue, which can enhance flexibility while maintaining a repeating sequence pattern. This substitution has been accepted previously, supporting its potential effectiveness."
+        "confidence": 0.9,
+        "reason": "Proposing 'P' (proline) at position 4 introduces flexibility and promotes turn formation, aligning well with the objective of creating repeating sequence patterns while maintaining local structural integrity."
       },
       {
         "position": 5,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can introduce flexibility due to glycine's unique ability to adopt various conformations, which is beneficial for turn-promoting structures. This aligns with the objective of creating repeating sequence patterns."
+        "reason": "Substituting G with P can introduce a turn-promoting effect, enhancing flexibility while maintaining a repeating pattern in the sequence."
       },
       {
         "position": 6,
-        "current_residue": "P",
+        "current_residue": "S",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for promoting flexibility and can help in creating turn structures, fitting well with the objective of introducing flexibility while aligning with previous successes."
+        "reason": "Glycine (G) is known for promoting flexibility and can help introduce turns in the protein structure, fitting well with the objective of creating repeating sequence patterns."
       },
       {
         "position": 7,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' introduces flexibility and supports turn formation, aligning with the objective of promoting a flexible structure while maintaining a repeating pattern."
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proposing proline (P) at position 7 to promote flexibility and enhance the turn structure, fitting well with the repeating sequence pattern and past successes with proline."
       },
       {
         "position": 8,
-        "current_residue": "P",
+        "current_residue": "S",
         "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' introduces flexibility due to glycine's unique backbone conformation, which can promote turn formation while maintaining the repeating pattern."
+        "confidence": 0.7,
+        "reason": "Substituting 'S' with 'G' can introduce flexibility due to glycine's ability to promote turns and its small size, which aligns with the objective of creating repeating sequence patterns."
       },
       {
         "position": 9,
-        "current_residue": "P",
+        "current_residue": "S",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known to promote flexibility and is often found in turns. It fits well in repeating patterns and can help create the desired structural flexibility."
+        "reason": "Glycine (G) is known to promote flexibility and is often found in turns, making it suitable for introducing flexibility while maintaining a repeating pattern."
       },
       {
         "position": 10,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' introduces flexibility due to 'G's smaller side chain, promoting turn formation while maintaining a repeating sequence pattern."
+        "reason": "Proposing proline (P) at position 10 to introduce flexibility and promote turns, while maintaining the repeating sequence pattern of the surrounding residues."
       },
       {
         "position": 11,
         "current_residue": "P",
         "proposed_residue": "G",
-        "confidence": 0.9,
-        "reason": "Substituting P with G can introduce flexibility due to glycine's small side chain, promoting turns and enhancing the overall dynamic nature of the sequence."
+        "confidence": 0.8,
+        "reason": "Substituting 'P' with 'G' can introduce more flexibility as glycine promotes turn formation and is known for its ability to adopt various conformations, aligning with the objective of creating flexible structures in repeating patterns."
       },
       {
         "position": 12,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures. Given the local context and the goal of introducing flexibility while maintaining the repeating pattern, substituting P with G at this position is likely to enhance the desired structural properties."
+        "reason": "Proposing 'P' (Proline) at position 12 can enhance flexibility and promote turn formation due to its unique cyclic structure, which can disrupt regular secondary structure patterns while maintaining the repeating sequence context."
       },
       {
         "position": 13,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Substituting 'G' with 'P' at this position can enhance flexibility and promote turns, aligning with the objective of creating repeating sequence patterns while leveraging the success of previous 'P' residues."
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is known to promote flexibility and is often found in turns, which aligns with the objective of introducing turn-promoting residues while maintaining a repeating sequence pattern."
       },
       {
         "position": 14,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting P with G can introduce more flexibility due to G's small side chain, promoting turn formation while maintaining a repeating pattern."
-      },
-      {
-        "position": 15,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' promotes flexibility and maintains the repeating sequence pattern, which is beneficial for introducing turns."
+        "reason": "Proposing proline (P) at position 14 can introduce flexibility and promote turn formation in the structure, as proline is known for its ability to induce bends in polypeptide chains, while also maintaining the repeating pattern with the surrounding residues."
+      },
+      {
+        "position": 15,
+        "current_residue": "A",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is known for its high flexibility and is often used to promote turns in protein structures, fitting well within the repeating sequence pattern."
       },
       {
         "position": 16,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.9,
-        "reason": "Glycine (G) is known to promote flexibility and is often found in turns. Substituting P with G at this position aligns with the objective of introducing flexibility while maintaining the repeating pattern."
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline (P) is known for introducing turns and flexibility in protein structures, which aligns with the objective of promoting flexibility while maintaining a repeating pattern."
       },
       {
         "position": 17,
-        "current_residue": "S",
-        "proposed_residue": "T",
+        "current_residue": "N",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Threonine (T) is a turn-promoting residue that can enhance flexibility in the structure, fitting the objective of introducing flexibility while maintaining a repeating pattern."
+        "reason": "Glycine (G) is known for promoting flexibility in protein structures due to its small size and ability to adopt various conformations, making it suitable for introducing turns and enhancing flexibility in the sequence."
       },
       {
         "position": 18,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' at this position can introduce flexibility due to its turn-promoting characteristics, while also creating a repeating sequence pattern with the adjacent 'G' and 'P' residues."
+        "reason": "Proline (P) is known to introduce flexibility and promote turn formation in protein structures, which aligns well with the objective of creating turn-promoting residues in the sequence."
       },
       {
         "position": 19,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' at position 19 can enhance flexibility by promoting turns due to its unique backbone conformation, while also maintaining the repeating pattern observed in the sequence."
+        "reason": "Proline is known for promoting turns in protein structures and would introduce flexibility while maintaining a repeating sequence pattern."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_4.pdb",
-      "energy": 0.008971,
-      "objective_score": 0.292842,
-      "combined_score": 0.179294
+      "pdb_path": "outputs/iter_4.relaxed.pdb",
+      "energy": 0.031402,
+      "objective_score": 0.299863,
+      "combined_score": 0.123132
     },
     "accepted": false,
-    "score_delta": -8.999999999981245e-06
+    "score_delta": -0.03796299999999998
   },
   {
     "iteration": 5,
-    "sequence_before": "GGPGGPPPPPPPPGPGPSGG",
-    "sequence_after": "PPAPPNAGAGGAGPAPSPPP",
+    "sequence_before": "GGGPGGSGSSGPGSGAGNGG",
+    "sequence_after": "PPPGPPGPGTPTPNSGPPPP",
     "mutations": [
       {
         "position": 0,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting 'G' with 'P' can introduce flexibility and promote turn formation, aligning with the objective of creating repeating sequence patterns."
+        "reason": "Proline is known to promote flexibility and can introduce turns in protein structures, fitting the objective of creating repeating sequence patterns."
       },
       {
         "position": 1,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' at this position can introduce flexibility and promote turns due to its unique cyclic structure, while also fitting well within the repeating sequence pattern."
+        "reason": "Proline (P) is known to promote turns and flexibility in protein structures, which aligns with the objective of introducing flexibility and creating repeating patterns."
       },
       {
         "position": 2,
-        "current_residue": "P",
-        "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Alanine (A) is known to promote flexibility and can fit well in turn regions, enhancing the structural dynamics while maintaining a repeating pattern."
-      },
-      {
-        "position": 3,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' to enhance flexibility and promote turns, aligning with the objective of introducing repeating sequence patterns."
+        "reason": "Proposing proline (P) to introduce flexibility and promote turn formation, which aligns with the objective of creating repeating sequence patterns."
+      },
+      {
+        "position": 3,
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is known for promoting flexibility and is suitable for creating turns in protein structures, enhancing the repetitive nature of the sequence."
       },
       {
         "position": 4,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting G with P can enhance flexibility and promote turns in the structure due to the unique conformational preferences of proline, while also maintaining the repeating pattern in the sequence."
+        "reason": "Proposing 'P' as it promotes flexibility and can help introduce turns in the structure, while also fitting the repeating pattern better than 'G'."
       },
       {
         "position": 5,
-        "current_residue": "P",
-        "proposed_residue": "N",
-        "confidence": 0.8,
-        "reason": "Asparagine (N) is a polar, flexible residue that can promote turns and introduce flexibility in the protein structure, while maintaining a repeating pattern with the surrounding residues."
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proposing 'P' (proline) at this position is expected to introduce flexibility and promote turn formation, aligning with the objective of creating repeating sequence patterns."
       },
       {
         "position": 6,
-        "current_residue": "P",
-        "proposed_residue": "A",
+        "current_residue": "S",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Alanine (A) is a small and flexible amino acid that can promote turn formation, fitting the objective of introducing flexibility while maintaining a repeating pattern with adjacent glycine residues."
+        "reason": "Glycine (G) is known to promote flexibility and is often found in turns or loops, making it suitable for introducing the desired flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 7,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can enhance flexibility and promote turns in the structure, while also fitting into the repeating sequence pattern."
+        "reason": "Proposing proline (P) at position 7 to introduce flexibility and promote a turn, fitting the objective of enhancing flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 8,
-        "current_residue": "P",
-        "proposed_residue": "A",
+        "current_residue": "S",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Alanine is a small and flexible residue that can disrupt the hydrophobic packing of proline-rich regions, promoting turn formation and enhancing flexibility."
+        "reason": "Glycine (G) is known to promote flexibility and can facilitate turn formation, making it suitable for achieving the objective of introducing flexibility while maintaining a repeating pattern."
       },
       {
         "position": 9,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "S",
+        "proposed_residue": "T",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'G' can introduce flexibility due to glycine's high conformational freedom, which is beneficial for turn-promoting structures while maintaining a repeating pattern with adjacent 'G' residues."
+        "reason": "Threonine (T) can introduce flexibility due to its hydroxyl group and can promote turns in protein structures, aligning with the objective of creating flexible regions while maintaining a repeating pattern."
       },
       {
         "position": 10,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it suitable for enhancing the flexibility of the sequence while maintaining the repeating pattern."
+        "reason": "Proline is known for promoting turns and introducing flexibility in protein structures, which aligns with the objective of creating flexible regions."
       },
       {
         "position": 11,
         "current_residue": "P",
-        "proposed_residue": "A",
+        "proposed_residue": "T",
         "confidence": 0.8,
-        "reason": "Alanine is a small and flexible residue that can promote turns and introduce flexibility into the structure, fitting well with the surrounding sequence context."
+        "reason": "Threonine (T) is known to promote flexibility and can help in forming turns, while also fitting well with the surrounding sequence to create a repeating pattern."
       },
       {
         "position": 12,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting P with G introduces flexibility and is known to promote turns in protein structures, enhancing the potential for repeating sequence patterns."
+        "reason": "Proposing Proline (P) at this position could introduce flexibility and promote turn formation, aligning with the goal of creating repeating sequence patterns. Proline is known to induce bends in peptide chains."
       },
       {
         "position": 13,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "S",
+        "proposed_residue": "N",
         "confidence": 0.8,
-        "reason": "Substituting G with P can introduce more rigidity and promote turns in the local sequence context, which aligns with the objective of enhancing flexibility through turn-promoting residues."
+        "reason": "Asparagine (N) is known to promote flexibility and can introduce turn-like structures, which aligns with the objective of creating flexible regions while maintaining a repeating pattern."
       },
       {
         "position": 14,
-        "current_residue": "P",
-        "proposed_residue": "A",
+        "current_residue": "G",
+        "proposed_residue": "S",
         "confidence": 0.8,
-        "reason": "Alanine (A) is a small and flexible residue that can promote turns and enhance the overall flexibility of the protein, while fitting well into the repeating sequence pattern."
+        "reason": "Serine (S) is known to promote flexibility and can introduce turn structures, aligning with the objective of creating a repeating sequence pattern while enhancing flexibility."
       },
       {
         "position": 15,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "A",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Proposing 'P' at this position enhances flexibility through its known role in promoting turns, while maintaining the repeating pattern in the sequence."
+        "reason": "Glycine (G) is known for its high flexibility and is often used to promote turns in protein structures, which aligns with the objective of introducing flexibility while maintaining a repeating sequence."
       },
       {
         "position": 16,
-        "current_residue": "P",
-        "proposed_residue": "S",
-        "confidence": 0.7,
-        "reason": "Serine (S) is a turn-promoting residue that can introduce flexibility and maintain the repeating pattern of the sequence."
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline (P) is known to promote flexibility and is commonly found in turns. Its unique structure can help facilitate the desired turn-promoting characteristics while maintaining a repeating sequence pattern."
       },
       {
         "position": 17,
-        "current_residue": "S",
+        "current_residue": "N",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' at position 17 promotes flexibility and is consistent with the repeating sequence pattern, as proline is known for inducing turns in protein structures."
+        "reason": "Proposing proline (P) at position 17 can introduce flexibility and promote turn formation, which aligns with the objective of creating repeating sequence patterns. Given the local context, it will help in maintaining structural dynamics."
       },
       {
         "position": 18,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' at this position can introduce flexibility and promote turns due to its unique structure, while also maintaining a repeating pattern with the neighboring 'G' and 'G' residues."
+        "reason": "Proposing proline (P) at this position can enhance flexibility and promote turn formation due to its unique cyclic structure, aligning with the objective of introducing turn-promoting residues while maintaining a repeating pattern."
       },
       {
         "position": 19,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' at position 19 can promote turn formation due to its unique cyclic structure, which introduces flexibility and can support the repeating sequence pattern desired."
+        "reason": "Proline is known for introducing kinks and promoting turns in protein structures, which aligns with the objective of increasing flexibility while maintaining a repeating sequence pattern."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_5.pdb",
-      "energy": 0.008796,
-      "objective_score": 0.447234,
-      "combined_score": 0.271859
+      "pdb_path": "outputs/iter_5.relaxed.pdb",
+      "energy": 0.032665,
+      "objective_score": 0.414649,
+      "combined_score": 0.163979
     },
     "accepted": true,
-    "score_delta": 0.09255600000000003
+    "score_delta": 0.0028840000000000254
   },
   {
     "iteration": 6,
-    "sequence_before": "PPAPPNAGAGGAGPAPSPPP",
-    "sequence_after": "GGGGGPPPNPPNSSNANSNG",
+    "sequence_before": "PPPGPPGPGTPTPNSGPPPP",
+    "sequence_after": "GGGSGGSGSSGSGSTANNNG",
     "mutations": [
       {
         "position": 0,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine is known to introduce flexibility and is effective in promoting turns in protein structures, which aligns with the objective."
+        "reason": "Glycine (G) is known for promoting flexibility and is often found in turns, making it a suitable substitution to enhance the flexibility of the protein and create repeating sequence patterns."
       },
       {
         "position": 1,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures, making it suitable for enhancing the desired flexibility in this sequence."
+        "reason": "Glycine (G) promotes flexibility and can help in forming turns, fitting the objective of introducing flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 2,
-        "current_residue": "A",
+        "current_residue": "P",
         "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known to promote flexibility and is often found in turn structures, making it a suitable substitution to enhance the desired flexibility and repeating pattern."
+        "confidence": 0.9,
+        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it suitable for introducing flexibility while maintaining a repeating pattern in the sequence."
       },
       {
         "position": 3,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "S",
         "confidence": 0.8,
-        "reason": "Glycine (G) is a known turn-promoting residue that introduces flexibility and can help create repeating sequence patterns."
+        "reason": "Serine (S) is a turn-promoting residue that can introduce flexibility while maintaining a repeating pattern with the existing prolines."
       },
       {
         "position": 4,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known to introduce flexibility and promote turns in protein structures, fitting the objective of enhancing flexibility while potentially maintaining the repeating sequence pattern."
+        "reason": "Glycine (G) is known for its high flexibility and propensity to promote turns in protein structures, which aligns with the objective of introducing flexibility and creating a repeating sequence pattern."
       },
       {
         "position": 5,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting 'N' with 'P' can introduce flexibility as proline often promotes turns in protein structures, and it aligns with the observed successful residues to create repeating patterns."
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.6,
+        "reason": "Glycine (G) is known for its ability to introduce flexibility and is often found in turn regions, which aligns with the objective of promoting flexibility while maintaining a repeating pattern."
       },
       {
         "position": 6,
-        "current_residue": "A",
-        "proposed_residue": "P",
+        "current_residue": "G",
+        "proposed_residue": "S",
         "confidence": 0.8,
-        "reason": "Substituting 'A' with 'P' can introduce flexibility due to proline's unique structure, which often promotes turns in protein structures. This aligns with the objective of creating turn-promoting residues and can help establish a repeating pattern."
+        "reason": "Serine is known to promote flexibility and can help introduce turn structures, while maintaining a repeating pattern with the surrounding residues."
       },
       {
         "position": 7,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Substituting 'G' with 'P' can introduce flexibility due to proline's unique ring structure, promoting turn formation and contributing to the desired repeating sequence pattern."
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine (G) is well-known for promoting flexibility and turn formation in protein structures, making it a suitable choice for enhancing flexibility in the sequence while maintaining a repeating pattern."
       },
       {
         "position": 8,
-        "current_residue": "A",
-        "proposed_residue": "N",
-        "confidence": 0.7,
-        "reason": "N is known to promote flexibility and can contribute to turn formation, fitting well with the local sequence context and objective of introducing flexibility."
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.9,
+        "reason": "Serine (S) is a turn-promoting residue that can introduce flexibility and fits well within the local sequence context, helping to create a repeating pattern."
       },
       {
         "position": 9,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "T",
+        "proposed_residue": "S",
         "confidence": 0.8,
-        "reason": "Substituting 'G' with 'P' can introduce flexibility and promote turn formation, aligning with the objective of creating repeating sequence patterns."
+        "reason": "Substituting 'T' with 'S' introduces a smaller side chain that can promote flexibility and support turn formation, aligning with the objective of creating repeating sequence patterns."
       },
       {
         "position": 10,
-        "current_residue": "G",
-        "proposed_residue": "P",
+        "current_residue": "P",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Proposing 'P' introduces flexibility due to its capacity to promote turns, while also maintaining the repeating sequence pattern observed in the local context."
+        "reason": "Glycine is known to promote flexibility and is effective in creating turns in protein structures. This substitution can enhance the desired flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 11,
-        "current_residue": "A",
-        "proposed_residue": "N",
-        "confidence": 0.7,
-        "reason": "Substituting 'A' with 'N' can promote turn formation due to the presence of an amide group, which can enhance flexibility while maintaining a repeating pattern with the adjacent 'G' residues."
+        "current_residue": "T",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine is known to promote flexibility and can help facilitate turns in protein structures, making it a suitable choice for introducing flexibility while maintaining a repeating pattern with adjacent residues."
       },
       {
         "position": 12,
-        "current_residue": "G",
-        "proposed_residue": "S",
+        "current_residue": "P",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Serine (S) is known to introduce flexibility and is often found in turn structures, promoting the desired flexibility while maintaining potential for sequence patterns."
+        "reason": "Glycine (G) is known for its flexibility and ability to promote turns in protein structures, making it a strong candidate for increasing the overall flexibility of the sequence while maintaining the repeating pattern."
       },
       {
         "position": 13,
-        "current_residue": "P",
+        "current_residue": "N",
         "proposed_residue": "S",
         "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and can facilitate turn formation, which aligns with the objective of introducing flexibility while maintaining a repeating pattern."
+        "reason": "Serine (S) is known to promote flexibility and can help in forming turns due to its small side chain and ability to form hydrogen bonds, which aligns with the objective of introducing flexibility and creating repeating sequence patterns."
       },
       {
         "position": 14,
-        "current_residue": "A",
-        "proposed_residue": "N",
-        "confidence": 0.8,
-        "reason": "Asparagine (N) can promote flexibility and is known to facilitate turns in protein structures, fitting well with the objective of introducing turn-promoting residues while maintaining a pattern."
+        "current_residue": "S",
+        "proposed_residue": "T",
+        "confidence": 0.7,
+        "reason": "Threonine (T) is known to promote turns in protein structures and can introduce flexibility while maintaining a repeating pattern with the surrounding residues."
       },
       {
         "position": 15,
-        "current_residue": "P",
+        "current_residue": "G",
         "proposed_residue": "A",
-        "confidence": 0.7,
-        "reason": "Substituting 'P' with 'A' can introduce flexibility due to 'A' being a smaller and more flexible residue, which may promote turn formation while maintaining a repeating pattern."
+        "confidence": 0.8,
+        "reason": "Alanine (A) is known to promote flexibility and can aid in turn formation, fitting well with the objective of introducing flexibility and creating repeating sequence patterns."
       },
       {
         "position": 16,
-        "current_residue": "S",
+        "current_residue": "P",
         "proposed_residue": "N",
         "confidence": 0.8,
-        "reason": "Substituting 'S' with 'N' can introduce flexibility due to the polar nature of asparagine, which can promote turn formation and help in creating repeating sequence patterns."
+        "reason": "Substituting 'P' with 'N' can introduce flexibility and promote turn formation, while maintaining a similar size and polarity to promote repeating sequence patterns."
       },
       {
         "position": 17,
         "current_residue": "P",
-        "proposed_residue": "S",
+        "proposed_residue": "N",
         "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and is compatible with turn structures, enhancing the likelihood of achieving a more dynamic conformation while maintaining the repetitive pattern."
+        "reason": "N is a polar amino acid that can introduce flexibility and promote turns, fitting well with the surrounding residues while maintaining a repeating pattern."
       },
       {
         "position": 18,
         "current_residue": "P",
         "proposed_residue": "N",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'N' can introduce flexibility due to the presence of a polar side chain, which may promote turn formation in the sequence while maintaining some structural integrity."
+        "reason": "Asparagine (N) promotes flexibility and can form hydrogen bonds, potentially assisting in turn formation while contributing to a repeating sequence pattern."
       },
       {
         "position": 19,
         "current_residue": "P",
         "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for promoting flexibility and is effective in turn formation, which aligns well with the objective of introducing flexibility while maintaining a repeating sequence pattern."
+        "reason": "Glycine (G) is known for promoting flexibility and is effective in creating turns in protein structures, which aligns with the objective of introducing flexibility while maintaining a repeating pattern."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_6.pdb",
-      "energy": 0.007073,
-      "objective_score": 0.448775,
-      "combined_score": 0.272094
+      "pdb_path": "outputs/iter_6.relaxed.pdb",
+      "energy": 0.017396,
+      "objective_score": 0.444203,
+      "combined_score": 0.165624
     },
     "accepted": true,
-    "score_delta": 0.00023499999999998522
+    "score_delta": 0.0016449999999999798
   },
   {
     "iteration": 7,
-    "sequence_before": "GGGGGPPPNPPNSSNANSNG",
-    "sequence_after": "PPPPPNANTNGSGPGPPPPP",
+    "sequence_before": "GGGSGGSGSSGSGSTANNNG",
+    "sequence_after": "PPPPPPPPPPPPPPPPPPPP",
     "mutations": [
       {
         "position": 0,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.9,
-        "reason": "Proposing proline (P) at position 0 introduces a turn-promoting residue, enhancing flexibility while maintaining a repeating pattern with existing prolines in the sequence."
+        "reason": "Proline is known to promote turns and introduce flexibility in protein structures, making it a suitable substitution for enhancing the desired properties in the sequence."
       },
       {
         "position": 1,
         "current_residue": "G",
         "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposed substitution to proline (P) introduces a turn-promoting residue that can enhance flexibility in the sequence while maintaining a repetitive pattern."
+        "confidence": 0.9,
+        "reason": "Proline is known to introduce turns and bends in protein structures, promoting flexibility while maintaining a repeating pattern in the sequence."
       },
       {
         "position": 2,
         "current_residue": "G",
         "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' (proline) to introduce flexibility and promote turns, which aligns with the objective of creating repeating sequence patterns."
+        "confidence": 0.9,
+        "reason": "Proline is known to introduce flexibility and promote turns in protein structures, making it a strong candidate for enhancing the desired property while fitting into the repeating sequence."
       },
       {
         "position": 3,
-        "current_residue": "G",
+        "current_residue": "S",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at this position can introduce flexibility and promote turn formation, enhancing the repeat pattern while maintaining the structural integrity of the sequence."
+        "reason": "Proline is known for promoting turns and introducing flexibility in protein structures, which aligns with the objective of increasing flexibility and creating repeating patterns."
       },
       {
         "position": 4,
         "current_residue": "G",
         "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' to promote flexibility and potential turn formation, while aligning with the repeating sequence patterns observed in the local context."
+        "confidence": 0.9,
+        "reason": "Proline is known to introduce flexibility and promote turns in protein structures, which aligns with the objective of enhancing flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 5,
-        "current_residue": "P",
-        "proposed_residue": "N",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting P with N can introduce flexibility and promote turns, as N is known to favor such conformations. Additionally, it aligns with the accepted residues and can create repeating sequence patterns."
+        "reason": "Proline is known for promoting turns and introducing flexibility in protein structures, fitting well with the objective of creating repeating sequence patterns."
       },
       {
         "position": 6,
-        "current_residue": "P",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine (A) is a small amino acid that promotes flexibility and can help create turn-promoting structures while maintaining the integrity of the repeating sequence pattern."
+        "current_residue": "S",
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proline is known to introduce turns and flexibility in protein structures, making it an ideal substitution for promoting flexibility while maintaining the repeating nature of the sequence."
       },
       {
         "position": 7,
-        "current_residue": "P",
-        "proposed_residue": "N",
-        "confidence": 0.8,
-        "reason": "Substituting 'P' with 'N' can introduce flexibility and promote turns due to 'N' being a polar amino acid, which can facilitate hydrogen bonding and contribute to structural variability. This aligns with the objective of creating flexible regions while maintaining a repeating pattern."
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proline is known to promote turns in protein structures, which can introduce flexibility and break up repetitive patterns effectively."
       },
       {
         "position": 8,
-        "current_residue": "N",
-        "proposed_residue": "T",
+        "current_residue": "S",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Threonine (T) is known for promoting flexibility and can support turn formation, while also fitting well into repeating sequence patterns."
+        "reason": "Proline is known for promoting turns and introducing flexibility in protein structures, which aligns with the objective of creating flexible regions and repeating patterns."
       },
       {
         "position": 9,
-        "current_residue": "P",
-        "proposed_residue": "N",
+        "current_residue": "S",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'N' can introduce flexibility due to the presence of a polar side chain, promoting turn structures while maintaining a repeating pattern."
+        "reason": "Proline is known to introduce turns and enhance flexibility in protein structures, fitting well with the objective of promoting flexible regions while maintaining a repeating pattern."
       },
       {
         "position": 10,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is a well-known turn-promoting residue that enhances flexibility and can help in creating repeating sequence patterns."
+        "reason": "Proline is known to introduce flexibility and is often found in turns, which aligns with the objective of promoting flexible structures while maintaining a repeating pattern."
       },
       {
         "position": 11,
-        "current_residue": "N",
-        "proposed_residue": "S",
+        "current_residue": "S",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Serine (S) is known for promoting flexibility and can support turn formation, which aligns with the objective of introducing flexibility while maintaining a repeating pattern with the adjacent proline (P) residues."
+        "reason": "Proline is known for its ability to introduce flexibility and promote turns in protein structures, making it suitable for enhancing the desired properties in the sequence."
       },
       {
         "position": 12,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns, which aligns with the objective of introducing flexibility while maintaining a repeating sequence pattern."
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proline is known for introducing bends and turns in protein structures, which can enhance flexibility while maintaining the repeating nature of the sequence."
       },
       {
         "position": 13,
         "current_residue": "S",
         "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Proposing 'P' introduces a turn-promoting proline, which enhances flexibility and can help create repeating sequence patterns."
+        "confidence": 0.8,
+        "reason": "Proline (P) is known to induce turns and enhance flexibility in protein structures, making it suitable for promoting a turn in the sequence while maintaining the overall pattern."
       },
       {
         "position": 14,
-        "current_residue": "N",
-        "proposed_residue": "G",
+        "current_residue": "T",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known to promote flexibility and is often found in turns, making it a suitable substitution for introducing flexibility while maintaining a repeating pattern."
+        "reason": "Proline (P) is known to induce turns and increase flexibility in protein structures, making it suitable for the objective of promoting flexibility while creating repeating sequence patterns."
       },
       {
         "position": 15,
         "current_residue": "A",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at position 15 could introduce a turn-promoting feature in the local sequence, enhancing flexibility while maintaining a repeating pattern."
+        "reason": "Proline is known to introduce kinks and promote turns in protein structures, which aligns with the objective of enhancing flexibility while maintaining a repeating pattern."
       },
       {
         "position": 16,
         "current_residue": "N",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' (proline) to introduce flexibility and promote turn formation in the context of the surrounding residues while maintaining a repeating sequence pattern."
+        "reason": "Proline is known to introduce kinks and flexibility in protein structures, which can promote turn formation and help in creating a repeating sequence pattern."
       },
       {
         "position": 17,
-        "current_residue": "S",
+        "current_residue": "N",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at position 17 can introduce flexibility and promote turns in the structure, while also creating a repeating sequence pattern with the existing proline residues."
+        "reason": "Proline is known to promote turns in protein structures and can introduce flexibility in the sequence, aligning with the objective of creating repeating sequence patterns."
       },
       {
         "position": 18,
         "current_residue": "N",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at position 18 can introduce flexibility and promote turn formation, which aligns with the objective of creating repeating sequence patterns."
+        "reason": "Proline is known to introduce flexibility and is often found in turns, promoting the desired structural features while maintaining a repeating pattern."
       },
       {
         "position": 19,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' to enhance flexibility and promote a turn, which aligns with the objective of creating repeating sequence patterns. 'P' is known for its unique structure that facilitates turns."
+        "reason": "Proline is known to promote turns in protein structures and can enhance flexibility in this context, while also fitting well into the repeating sequence pattern."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_7.pdb",
-      "energy": 0.008589,
-      "objective_score": 0.449897,
-      "combined_score": 0.273374
+      "pdb_path": "outputs/iter_7.relaxed.pdb",
+      "energy": 0.044368,
+      "objective_score": 0.02,
+      "combined_score": 0.032231
     },
-    "accepted": true,
-    "score_delta": 0.0012800000000000034
+    "accepted": false,
+    "score_delta": -0.13339299999999998
   },
   {
     "iteration": 8,
-    "sequence_before": "PPPPPNANTNGSGPGPPPPP",
-    "sequence_after": "GGAGGGSPSGSTSSSANSNG",
+    "sequence_before": "GGGSGGSGSSGSGSTANNNG",
+    "sequence_after": "PPPPPPPPPPPPPPPGPPPP",
     "mutations": [
       {
         "position": 0,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and can promote turns in protein structures, making it a suitable substitution for enhancing flexibility in this context."
+        "reason": "Proline is known to promote turns and flexibility in protein structures, making it a good candidate to introduce the desired flexibility while maintaining a repeating pattern."
       },
       {
         "position": 1,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its flexibility and ability to promote turns in protein structures, which aligns with the objective of introducing flexibility while maintaining the repeating pattern."
+        "reason": "Proline is known for promoting turns and introducing flexibility, which aligns with the objective of creating turn-promoting residues while maintaining a repeating pattern."
       },
       {
         "position": 2,
-        "current_residue": "P",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Alanine (A) is known to promote flexibility due to its small side chain, making it a suitable substitution for introducing turns while maintaining a repeating sequence pattern."
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proline is known to introduce turns and flexibility in protein structures, and given the previous acceptance of 'P' in similar contexts, this substitution is likely to enhance the desired properties."
       },
       {
         "position": 3,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "S",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its flexibility and ability to promote turns in protein structures, making it suitable for introducing the desired flexibility while maintaining the repeating pattern."
+        "reason": "Proline is known for introducing turns and flexibility in protein structures, which aligns with the objective of promoting flexibility while creating repeating sequence patterns."
       },
       {
         "position": 4,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for promoting flexibility and can facilitate turn formation in protein structures. It fits well with the objective of introducing flexible turns while maintaining a repeating pattern."
+        "reason": "Proline (P) is known for introducing turns and flexibility in protein structures, which aligns well with the objective of promoting flexibility and creating repeating sequence patterns."
       },
       {
         "position": 5,
-        "current_residue": "N",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for introducing flexibility into protein structures and can promote turns, enhancing the overall dynamic nature of the sequence while maintaining some repetitive pattern."
+        "reason": "Proline (P) is known for introducing turns and kinks in protein structures, which can enhance flexibility. Given the objective to promote flexibility and create repeating patterns, substituting G with P is likely to be beneficial."
       },
       {
         "position": 6,
-        "current_residue": "A",
-        "proposed_residue": "S",
+        "current_residue": "S",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and turn formation due to its hydroxyl group, which can engage in hydrogen bonding. This substitution can help introduce the desired flexibility in the structure while maintaining a potential repeating pattern with the surrounding residues."
+        "reason": "Proline is known to introduce turns and promote flexibility in protein structures, which aligns with the objective of introducing flexibility and creating repeating sequence patterns."
       },
       {
         "position": 7,
-        "current_residue": "N",
+        "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting 'N' with 'P' can enhance flexibility and promote turn formation due to the unique properties of proline, which can introduce kinks and disrupt regular secondary structures, while fitting into the repeating pattern established by the surrounding residues."
+        "reason": "Proline is known for introducing turns and flexibility in protein structures, and it aligns with the goal of creating repeating sequence patterns."
       },
       {
         "position": 8,
-        "current_residue": "T",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and can facilitate turn formation in protein structures, aligning with the objective of introducing flexibility while maintaining a repeating sequence pattern."
+        "current_residue": "S",
+        "proposed_residue": "P",
+        "confidence": 0.7,
+        "reason": "Proline is known to promote turns and introduce flexibility in protein structures, which aligns with the objective of introducing flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 9,
-        "current_residue": "N",
-        "proposed_residue": "G",
+        "current_residue": "S",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is a well-known turn-promoting residue that enhances flexibility in protein structures, making it suitable for introducing flexibility while maintaining repeating sequence patterns."
+        "reason": "Proline is known for introducing turns in protein structures, which can enhance flexibility in the sequence while maintaining the repeating pattern."
       },
       {
         "position": 10,
         "current_residue": "G",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and can help create a turn in the protein structure, aligning with the objective of enhancing flexibility while maintaining a repeating sequence pattern."
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proline (P) is known for promoting turns and introducing flexibility in protein structures, which aligns with the objective of enhancing flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 11,
         "current_residue": "S",
-        "proposed_residue": "T",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Threonine (T) is known to promote flexibility and can help form turns in protein structures, fitting well with the objective of introducing flexibility while aligning with the existing pattern."
+        "reason": "Proline is known to introduce turns and increase flexibility in protein structures, which aligns with the objective of promoting flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 12,
         "current_residue": "G",
-        "proposed_residue": "S",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and can help form turns in protein structures, fitting the objective of introducing flexibility while maintaining a repeating pattern."
+        "reason": "Proline is known for promoting turns and introducing flexibility in protein structures, which aligns with the objective of enhancing flexibility and creating repeating patterns."
       },
       {
         "position": 13,
-        "current_residue": "P",
-        "proposed_residue": "S",
+        "current_residue": "S",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'S' can introduce some flexibility due to the hydroxyl group, promoting turn formation while maintaining a similar structure to the current residue. This aligns with the goal of creating repeating sequence patterns."
+        "reason": "Proline is known to introduce kinks and flexibility in protein structures, making it a good candidate for promoting turns while maintaining the repeating sequence pattern."
       },
       {
         "position": 14,
-        "current_residue": "G",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Serine is known to promote flexibility and can help create turn structures, fitting the objective of introducing flexibility while also maintaining a repetitive sequence pattern."
+        "current_residue": "T",
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proline is known to introduce kinks and flexibility in protein structures, promoting turns. It fits well with the local context and enhances the desired repeating sequence pattern."
       },
       {
         "position": 15,
-        "current_residue": "P",
-        "proposed_residue": "A",
+        "current_residue": "A",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Alanine (A) is known to promote flexibility and can fit well into turn structures, making it a suitable substitution to introduce flexibility in the sequence."
+        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures, fitting well with the objective of enhancing flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 16,
-        "current_residue": "P",
-        "proposed_residue": "N",
-        "confidence": 0.7,
-        "reason": "Substituting P with N introduces a polar side chain that can promote flexibility and potentially facilitate turn formation, while maintaining a repeating pattern with previously accepted residues."
+        "current_residue": "N",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline is known for promoting turns and introducing flexibility in protein structures, making it a suitable candidate for enhancing the overall flexibility of the sequence while maintaining the repeating pattern."
       },
       {
         "position": 17,
-        "current_residue": "P",
-        "proposed_residue": "S",
+        "current_residue": "N",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting 'P' with 'S' introduces flexibility due to the smaller side chain of serine, promoting turn formation while maintaining a similar repeating pattern with the surrounding residues."
+        "reason": "Proline (P) is known to promote turns and introduce flexibility in protein structures, making it suitable for achieving the objective of enhancing flexibility while creating repeating sequence patterns."
       },
       {
         "position": 18,
-        "current_residue": "P",
-        "proposed_residue": "N",
-        "confidence": 0.8,
-        "reason": "Asparagine (N) is a turn-promoting residue that can introduce flexibility while maintaining a repeating pattern with the nearby N residue."
+        "current_residue": "N",
+        "proposed_residue": "P",
+        "confidence": 0.7,
+        "reason": "Proline is known for promoting turns and introducing flexibility in protein structures, which aligns with the objective of creating turn-promoting residues while maintaining a repeating sequence pattern."
       },
       {
         "position": 19,
-        "current_residue": "P",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is a well-known turn-promoting residue that introduces flexibility into protein structures, making it suitable for enhancing the desired turn formation in the sequence."
+        "reason": "Proline is known for introducing turns and flexibility in protein structures, which aligns with the objective of creating a turn-promoting residue while maintaining the repeating nature of the sequence."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_8.pdb",
-      "energy": 0.005555,
-      "objective_score": 0.489613,
-      "combined_score": 0.295989
+      "pdb_path": "outputs/iter_8.relaxed.pdb",
+      "energy": 0.045188,
+      "objective_score": 0.116506,
+      "combined_score": 0.066462
     },
-    "accepted": true,
-    "score_delta": 0.022614999999999996
+    "accepted": false,
+    "score_delta": -0.099162
   },
   {
     "iteration": 9,
-    "sequence_before": "GGAGGGSPSGSTSSSANSNG",
-    "sequence_after": "PPPPPSGGSPTGGGTGPPPP",
+    "sequence_before": "GGGSGGSGSSGSGSTANNNG",
+    "sequence_after": "PPPPPPPPPPPPPSPGPPPP",
     "mutations": [
       {
         "position": 0,
         "current_residue": "G",
         "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline is known to promote turns and can introduce flexibility in the structure, which aligns with the objective of creating turn-promoting residues and repeating patterns."
+        "confidence": 0.7,
+        "reason": "Proline is known for its turn-promoting properties, which could enhance flexibility in the protein structure while maintaining a repetitive pattern."
       },
       {
         "position": 1,
         "current_residue": "G",
         "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Proline is known to introduce turns and increase flexibility in protein structures, making it suitable for promoting the desired structural features while fitting the repeating sequence pattern."
+        "confidence": 0.8,
+        "reason": "Proline (P) is known to introduce kinks and promote turns in protein structures, enhancing flexibility while fitting with the repeating pattern."
       },
       {
         "position": 2,
-        "current_residue": "A",
+        "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proline is known for promoting turns and introducing flexibility in protein structures, which aligns with the objective of creating a turn-promoting residue while maintaining a repeating sequence pattern."
+        "reason": "Proline (P) is known to introduce flexibility and is often found in turns of protein structures. Given the local context and the objective of creating turn-promoting residues, substituting G with P may enhance flexibility while maintaining a repeating pattern."
       },
       {
         "position": 3,
-        "current_residue": "G",
+        "current_residue": "S",
         "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Proline is known for introducing bends and turns in protein structures, promoting flexibility while maintaining the repeating sequence pattern."
+        "confidence": 0.8,
+        "reason": "Proline (P) is known for promoting turns and introducing flexibility in protein structures, which aligns with the objective of enhancing flexibility and creating repeating sequence patterns."
       },
       {
         "position": 4,
         "current_residue": "G",
         "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Proline (P) is known to promote turns and introduce flexibility in protein structures, making it a suitable substitution to achieve the objective of flexibility and repetitive patterns."
+        "confidence": 0.8,
+        "reason": "Proline is known to introduce turns and bends in protein structures, enhancing flexibility and aiding in the formation of repeating sequence patterns."
       },
       {
         "position": 5,
         "current_residue": "G",
-        "proposed_residue": "S",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting 'G' with 'S' can increase flexibility due to the presence of a hydroxyl group, promoting turn formation and maintaining the repeating sequence pattern."
+        "reason": "Proline is known for introducing flexibility and promoting turns in protein structures, making it a suitable candidate for enhancing flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 6,
         "current_residue": "S",
-        "proposed_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its flexibility and can promote turns in protein structures. Given the local context and the goal of introducing flexibility, substituting 'S' with 'G' would enhance the potential for a turn-promoting structure while maintaining a repeating pattern."
+        "reason": "Proline is known to promote turns and introduce flexibility in protein structures, making it suitable for enhancing the desired turn-promoting properties in the local sequence."
       },
       {
         "position": 7,
-        "current_residue": "P",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures, and it fits well with the surrounding glycine-rich sequence to create a repeating pattern."
-      },
-      {
-        "position": 9,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing 'P' as it is known to promote turns and enhance flexibility in protein structures, which aligns with the objective of introducing flexibility while maintaining a repeating sequence pattern."
+        "reason": "Proline (P) is known to introduce turns and flexibility in protein structures, and it aligns with the objective of promoting flexibility while maintaining a repeating sequence pattern."
+      },
+      {
+        "position": 8,
+        "current_residue": "S",
+        "proposed_residue": "P",
+        "confidence": 0.7,
+        "reason": "Proline is known to introduce flexibility and promote turns in protein structures, which aligns with the objective of introducing flexibility while maintaining repeating sequence patterns."
+      },
+      {
+        "position": 9,
+        "current_residue": "S",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline is known to introduce flexibility and promote turns in protein structures, which aligns with the objective to create turn-promoting residues."
       },
       {
         "position": 10,
-        "current_residue": "S",
-        "proposed_residue": "T",
-        "confidence": 0.8,
-        "reason": "Threonine (T) is known to promote flexibility and can help in turn formation, making it a suitable substitute for Serine (S) in this context."
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proline is known for promoting turns and introducing flexibility in protein structures, making it a strong candidate for enhancing the desired properties in the repeating sequence."
       },
       {
         "position": 11,
-        "current_residue": "T",
-        "proposed_residue": "G",
+        "current_residue": "S",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is a highly flexible amino acid that can promote turns and enhance the overall flexibility of the protein, fitting well with the objective of creating flexible structures while also fitting into the existing sequence pattern."
+        "reason": "Proline is known for introducing turns and promoting flexibility in protein structures, which aligns well with the objective of creating a turn-promoting residue while maintaining a repeating sequence pattern."
       },
       {
         "position": 12,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility into protein structures, making it suitable for turn-promoting residues, and its substitution maintains a repeating pattern with the surrounding sequence."
-      },
-      {
-        "position": 13,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known to promote flexibility and can help in creating turn structures, fitting well within the context of the surrounding residues."
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proline (P) is known for introducing bends and turns in protein structures, which aligns with the objective to introduce flexibility and create turn-promoting residues."
       },
       {
         "position": 14,
-        "current_residue": "S",
-        "proposed_residue": "T",
-        "confidence": 0.8,
-        "reason": "Threonine (T) is known to promote flexibility and can contribute to turn formation, fitting well within the objective of introducing flexible regions and aiding in the creation of repeating sequence patterns."
+        "current_residue": "T",
+        "proposed_residue": "P",
+        "confidence": 0.7,
+        "reason": "Proline is known to introduce turns and enhance flexibility in protein structures, making it suitable for promoting turn formation while maintaining a repeating sequence motif."
       },
       {
         "position": 15,
         "current_residue": "A",
         "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine is a known turn-promoting residue that can enhance flexibility, and its introduction could help create repeating sequence patterns."
+        "confidence": 0.7,
+        "reason": "Substituting 'A' with 'G' can enhance flexibility due to the small size of Glycine, promoting turn formation and maintaining the repeating sequence pattern."
       },
       {
         "position": 16,
         "current_residue": "N",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proline (P) is known to promote turns in protein structures, which can enhance flexibility and is compatible with the existing sequence pattern."
+        "reason": "Proline (P) is known for promoting turns and introducing flexibility in protein structures, which aligns with the objective of creating turn-promoting residues while also contributing to repetitive sequence patterns."
       },
       {
         "position": 17,
-        "current_residue": "S",
+        "current_residue": "N",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proline is known to induce turns and promote flexibility in protein structures. Given the surrounding sequence context, it can help create a repeating pattern while maintaining the desired flexibility."
+        "reason": "Proline is known to introduce flexibility and promote turns in protein structures, making it suitable for enhancing the flexibility of the sequence while fitting into a repeating pattern."
       },
       {
         "position": 18,
         "current_residue": "N",
         "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline (P) is known for promoting turns and introducing flexibility in protein structures, which aligns well with the objective of creating a turn-promoting environment while maintaining a repeating sequence pattern."
+        "confidence": 0.7,
+        "reason": "Proline is known for introducing kinks and promoting turns in protein structures, which aligns with the objective of introducing flexibility and creating repeating sequence patterns."
       },
       {
         "position": 19,
         "current_residue": "G",
         "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline is known to induce turns and promote flexibility in protein structures, which aligns with the objective of introducing flexibility and creating repeating sequence patterns."
+        "confidence": 0.9,
+        "reason": "Proline is known to promote turns in protein structures and can enhance flexibility, making it suitable for introducing turn-promoting residues. Also, it has been accepted in past design attempts."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_9.pdb",
-      "energy": 0.008972,
-      "objective_score": 0.385993,
-      "combined_score": 0.235184
+      "pdb_path": "outputs/iter_9.relaxed.pdb",
+      "energy": 0.041896,
+      "objective_score": 0.182661,
+      "combined_score": 0.087817
     },
     "accepted": false,
-    "score_delta": -0.060805
+    "score_delta": -0.07780699999999999
   },
   {
     "iteration": 10,
-    "sequence_before": "GGAGGGSPSGSTSSSANSNG",
-    "sequence_after": "PPSPPPGASPGSTPGGPPPP",
+    "sequence_before": "GGGSGGSGSSGSGSTANNNG",
+    "sequence_after": "PPPPPPPPPPPPPPPGGPPP",
     "mutations": [
       {
         "position": 0,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proline is known to promote turn formation and introduce flexibility in protein structures, which aligns with the objective of creating turn-promoting residues."
+        "reason": "Proline (P) is known to introduce flexibility and promote turns in protein structures, which aligns with the objective of enhancing flexibility and creating repeating sequence patterns."
       },
       {
         "position": 1,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline is known to promote turns and introduce flexibility in protein structures, which aligns with the objective of enhancing flexibility while maintaining a repeating sequence pattern."
-      },
-      {
-        "position": 2,
-        "current_residue": "A",
-        "proposed_residue": "S",
-        "confidence": 0.8,
-        "reason": "Serine (S) is known to promote flexibility and is often found in turn regions. Its introduction can enhance the structural dynamics while maintaining a repeating pattern in the sequence."
-      },
-      {
-        "position": 3,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline (P) is known for introducing turns and enhancing flexibility in protein structures, which aligns with the objective of promoting flexibility and creating repeating sequence patterns."
-      },
-      {
-        "position": 4,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.9,
-        "reason": "Proline (P) is known to promote turns and flexibility in protein structures, making it a suitable substitution for enhancing the desired properties while fitting well into the surrounding sequence context."
-      },
-      {
-        "position": 5,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Proline is known to promote turns and introduce flexibility in the protein structure, aligning well with the objective of creating repeating sequence patterns."
-      },
-      {
-        "position": 6,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Substituting 'S' with 'G' can enhance flexibility due to glycine's small size, promoting turn formation while maintaining a repetitive pattern."
-      },
-      {
-        "position": 7,
-        "current_residue": "P",
-        "proposed_residue": "A",
-        "confidence": 0.8,
-        "reason": "Substituting proline (P) with alanine (A) can enhance flexibility, as alanine is known to promote turn formation and is less sterically hindered, thus supporting the objective of introducing flexibility and creating repeating sequence patterns."
-      },
-      {
-        "position": 9,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.6,
-        "reason": "Proposing proline (P) at this position can introduce flexibility and promote turns, aligning with the objective of creating repeating sequence patterns. Although proline has been rejected in the past, its structural properties may still provide benefits in this specific context."
-      },
-      {
-        "position": 10,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its flexibility and is often found in turns and loops, which aligns with the objective of introducing flexibility and creating repeating sequence patterns."
-      },
-      {
-        "position": 11,
-        "current_residue": "T",
-        "proposed_residue": "S",
-        "confidence": 0.7,
-        "reason": "Substituting 'T' with 'S' can enhance flexibility by promoting turn formation, while maintaining sequence homogeneity with the surrounding residues."
-      },
-      {
-        "position": 12,
-        "current_residue": "S",
-        "proposed_residue": "T",
-        "confidence": 0.8,
-        "reason": "Threonine (T) is known to promote flexibility and can help form turns in protein structures, fitting well with the objective of introducing flexibility while maintaining a repeating pattern."
-      },
-      {
-        "position": 13,
-        "current_residue": "S",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline is known to promote turns and flexibility in protein structures, making it suitable for the objective of introducing flexibility while maintaining a repeating pattern."
-      },
-      {
-        "position": 14,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, which aligns with the objective of introducing flexibility while maintaining a repeating sequence pattern."
-      },
-      {
-        "position": 15,
-        "current_residue": "A",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it suitable for enhancing turn-promoting characteristics in the sequence."
-      },
-      {
-        "position": 16,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline (P) is known for introducing turns and flexibility in protein structures, which aligns well with the objective of promoting flexibility through turn-promoting residues."
-      },
-      {
-        "position": 17,
-        "current_residue": "S",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline is known to promote flexibility and is often found in turns of protein structures. Its introduction at this position can enhance the overall flexibility while maintaining the repeating pattern."
-      },
-      {
-        "position": 18,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline is known to promote turns and introduce flexibility in protein structures, making it suitable for achieving the objective of creating turn-promoting residues."
-      },
-      {
-        "position": 19,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline is known to introduce flexibility and promote turns in protein structures, which aligns with the objective of creating a more flexible region while also fitting into the repeating sequence pattern."
-      }
-    ],
-    "fold_result": {
-      "pdb_path": "outputs/iter_10.pdb",
-      "energy": 0.008984,
-      "objective_score": 0.42488,
-      "combined_score": 0.258521
-    },
-    "accepted": false,
-    "score_delta": -0.037468
-  },
-  {
-    "iteration": 11,
-    "sequence_before": "GGAGGGSPSGSTSSSANSNG",
-    "sequence_after": "PPGPPPGNSSGGPPGGPPGP",
-    "mutations": [
-      {
-        "position": 0,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline is known for promoting turns and introducing flexibility in protein structures, which aligns with the objective of creating turn-promoting residues."
-      },
-      {
-        "position": 1,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline is known for introducing turns and kinks in protein structures, which can enhance flexibility and support the formation of repeating sequence patterns."
+        "reason": "Proline is known to promote turns and introduce flexibility in protein structures, aligning with the objective of creating turn-promoting residues while maintaining a repeating sequence pattern."
       },
       {
         "position": 2,
-        "current_residue": "A",
-        "proposed_residue": "G",
+        "current_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Substituting 'A' with 'G' introduces flexibility due to the smaller side chain of glycine, which can promote turn formation and contribute to repeating sequence patterns."
+        "reason": "Proline is known for promoting turns and flexibility in protein structures, which aligns well with the objective of introducing flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 3,
-        "current_residue": "G",
+        "current_residue": "S",
         "proposed_residue": "P",
-        "confidence": 0.9,
-        "reason": "Proline is known to promote turns and introduce flexibility in protein structures, which aligns well with the objective of creating flexibility while maintaining a repeating sequence pattern."
+        "confidence": 0.8,
+        "reason": "Proline is known to introduce kinks and promote flexibility in protein structures, making it suitable for the objective of enhancing flexibility and creating turn-promoting residues."
       },
       {
         "position": 4,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proline (P) is known for introducing turns and kinks in protein structures, promoting flexibility. Given the local context and the objective of creating repeating sequence patterns, substituting G with P could enhance the desired properties."
+        "reason": "Proline is known to promote turns in protein structures and could enhance flexibility while maintaining the repeating sequence pattern."
       },
       {
         "position": 5,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proline is known to promote turns and introduce flexibility in protein structures, which aligns with the objective of enhancing flexibility while also maintaining a repeating pattern."
+        "reason": "Proline is known to introduce flexibility and promote turns in protein structures, which aligns with the objective of creating flexible regions while maintaining a repeating sequence pattern."
       },
       {
         "position": 6,
         "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.7,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility in protein structures due to its small size and lack of a side chain. Substituting S with G at this position can promote turn formation and enhance the overall flexibility of the sequence, aligning with the objective of creating repeating patterns."
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline (P) is known to introduce turns and bends in protein structures, promoting flexibility while fitting the repeating sequence pattern."
       },
       {
         "position": 7,
-        "current_residue": "P",
-        "proposed_residue": "N",
-        "confidence": 0.8,
-        "reason": "Asparagine (N) is a turn-promoting residue that can enhance flexibility in protein structures. It fits well within the local context and supports the objective of creating repeating sequence patterns."
-      },
-      {
-        "position": 9,
         "current_residue": "G",
-        "proposed_residue": "S",
-        "confidence": 0.7,
-        "reason": "Substituting G with S can introduce flexibility and promote turn formation, aligning with the objective of creating repeating sequence patterns."
-      },
-      {
-        "position": 10,
-        "current_residue": "S",
-        "proposed_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, which aligns with the objective of introducing flexibility while maintaining a repeating sequence pattern."
+        "reason": "Proline is known to introduce kinks and promote turns in protein structures, which can enhance flexibility and support the repeating sequence pattern."
       },
       {
-        "position": 11,
-        "current_residue": "T",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is a turn-promoting residue that introduces flexibility into the protein structure, which aligns with the objective of creating flexibility and repeating sequence patterns."
-      },
-      {
-        "position": 12,
+        "position": 8,
         "current_residue": "S",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proline is known for introducing turns and promoting flexibility in protein structures, which aligns with the objective of creating turn-promoting residues."
+        "reason": "Proline (P) is a well-known turn-promoting residue that introduces flexibility in protein structures, which aligns with the objective of enhancing flexibility through turn formation. The local context of the sequence also supports the introduction of P due to its unique side chain structure."
+      },
+      {
+        "position": 9,
+        "current_residue": "S",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline is known to promote turns and introduce flexibility in protein structures, making it suitable for the objective of enhancing flexibility while maintaining a repeating sequence pattern."
+      },
+      {
+        "position": 10,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline is known to introduce turns and promote flexibility in protein structures, making it suitable for the objective of enhancing flexibility and creating repeating sequence patterns."
+      },
+      {
+        "position": 11,
+        "current_residue": "S",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline is known to introduce flexibility and promote turns in protein structures, which aligns with the objective of enhancing flexibility while maintaining a repeating pattern."
+      },
+      {
+        "position": 12,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline is known to introduce flexibility and promote turns in protein structures, making it suitable for enhancing the desired flexibility while fitting the turn-promoting requirement."
       },
       {
         "position": 13,
         "current_residue": "S",
         "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline is known to introduce flexibility and promote turns in protein structures, which aligns with the objective of enhancing flexibility and creating repeating patterns."
+        "confidence": 0.7,
+        "reason": "Proline is known to promote turns and introduce flexibility in protein structures due to its unique cyclic structure and lack of free rotation around the N-C\u03b1 bond. This can help in achieving the objective of introducing flexibility in the sequence."
       },
       {
         "position": 14,
-        "current_residue": "S",
-        "proposed_residue": "G",
+        "current_residue": "T",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, making it suitable for introducing flexibility while maintaining the sequence pattern."
+        "reason": "Proline is known to promote turns and introduce flexibility in protein structures, which aligns with the objective of enhancing flexibility while maintaining a repeating pattern in the sequence."
       },
       {
         "position": 15,
         "current_residue": "A",
         "proposed_residue": "G",
-        "confidence": 0.7,
-        "reason": "Glycine (G) is known to introduce flexibility and promote turns in protein structures, especially in regions where flexibility is desired. The local sequence context suggests a potential for repeating patterns that can be enhanced by incorporating glycine."
+        "confidence": 0.8,
+        "reason": "Glycine (G) is known for its flexibility and ability to promote turns in protein structures, which aligns with the objective of increasing flexibility while maintaining a repeating pattern."
       },
       {
         "position": 16,
         "current_residue": "N",
-        "proposed_residue": "P",
+        "proposed_residue": "G",
         "confidence": 0.8,
-        "reason": "Proline (P) is known to promote turns in protein structures, which can introduce flexibility while fitting well with the surrounding sequence context."
+        "reason": "Glycine (G) is known for promoting flexibility and is often found in turn regions, which aligns with the objective of introducing flexibility and creating repeating sequence patterns."
       },
       {
         "position": 17,
-        "current_residue": "S",
+        "current_residue": "N",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proline is known for promoting turns and introducing flexibility in protein structures, which aligns with the objective to create turn-promoting residues."
+        "reason": "Proline is known to promote flexibility and is often found in turns, which aligns with the objective of introducing flexibility and creating repeating sequence patterns."
       },
       {
         "position": 18,
         "current_residue": "N",
-        "proposed_residue": "G",
+        "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Glycine (G) is known for its high flexibility and ability to promote turns in protein structures, which aligns with the objective of introducing flexibility while maintaining a repeating sequence pattern."
+        "reason": "Proline is known to introduce flexibility and create turns in protein structures, which aligns with the objective of promoting flexibility while maintaining a repeating sequence pattern."
       },
       {
         "position": 19,
         "current_residue": "G",
         "proposed_residue": "P",
         "confidence": 0.8,
-        "reason": "Proposing proline (P) at this position can introduce flexibility and promote turn formation, aligning with the objective of enhancing structural dynamics while maintaining a repeating pattern."
+        "reason": "Proline (P) is known for promoting turns in protein structures due to its unique backbone conformation, which can introduce flexibility while maintaining the repeating nature of the sequence."
       }
     ],
     "fold_result": {
-      "pdb_path": "outputs/iter_11.pdb",
-      "energy": 0.008966,
-      "objective_score": 0.396082,
-      "combined_score": 0.241236
+      "pdb_path": "outputs/iter_10.relaxed.pdb",
+      "energy": 0.043627,
+      "objective_score": 0.133406,
+      "combined_score": 0.071522
     },
     "accepted": false,
-    "score_delta": -0.054752999999999996
-  },
-  {
-    "iteration": 12,
-    "sequence_before": "GGAGGGSPSGSTSSSANSNG",
-    "sequence_after": "PPPPPPGTSPGGGPGGGPPP",
-    "mutations": [
-      {
-        "position": 0,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline (P) is known for its ability to introduce flexibility and promote turns in protein structures, which aligns with the objective of introducing flexibility while maintaining a repeating sequence pattern."
-      },
-      {
-        "position": 1,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline (P) is known to promote turns and introduce flexibility in protein structures, which aligns with the objective of introducing flexibility through turn-promoting residues."
-      },
-      {
-        "position": 2,
-        "current_residue": "A",
-        "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Proline is known to introduce turns and promote flexibility in protein structures, fitting the objective of creating a repeating pattern while enhancing flexibility."
-      },
-      {
-        "position": 3,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline (P) is known to induce turns and introduce flexibility in protein structures, making it a suitable candidate for enhancing the desired properties while maintaining a repeating sequence pattern."
-      },
-      {
-        "position": 4,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing 'P' (proline) at this position can introduce a turn-promoting structure, enhancing flexibility and maintaining the repeating nature of the sequence."
-      },
-      {
-        "position": 5,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Proline is known to introduce turns and increase flexibility in protein structures, making it suitable for the objective of promoting flexibility while creating repeating sequence patterns."
-      },
-      {
-        "position": 6,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.7,
-        "reason": "Glycine (G) promotes flexibility due to its small size and lack of a side chain, which can help create turn-promoting regions in the sequence."
-      },
-      {
-        "position": 7,
-        "current_residue": "P",
-        "proposed_residue": "T",
-        "confidence": 0.8,
-        "reason": "Threonine (T) is a turn-promoting residue that can introduce flexibility into the structure, making it suitable for enhancing flexibility while maintaining a repeating pattern."
-      },
-      {
-        "position": 9,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Proline is known for promoting turns and introducing flexibility in protein structures, which aligns with the objective of enhancing flexibility while maintaining a repeating sequence pattern."
-      },
-      {
-        "position": 10,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known to promote flexibility in protein structures and can facilitate turn formation, aligning with the objective of introducing flexibility while potentially maintaining a repeating sequence pattern."
-      },
-      {
-        "position": 11,
-        "current_residue": "T",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine is known for its high flexibility and ability to promote turns in protein structures, making it suitable for introducing flexibility while fitting the objective of creating repeating patterns."
-      },
-      {
-        "position": 12,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.8,
-        "reason": "Glycine (G) is known for promoting flexibility due to its small side chain, which can help in forming turns and repeating sequence patterns."
-      },
-      {
-        "position": 13,
-        "current_residue": "S",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline (P) is known to promote bends and turns in protein structures, which aligns with the objective of introducing flexibility and creating repeating patterns in the sequence."
-      },
-      {
-        "position": 14,
-        "current_residue": "S",
-        "proposed_residue": "G",
-        "confidence": 0.7,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and is a common choice for promoting turns in protein structures. The local context suggests that a flexible residue would be beneficial, and G has been accepted in similar sequences before."
-      },
-      {
-        "position": 15,
-        "current_residue": "A",
-        "proposed_residue": "G",
-        "confidence": 0.7,
-        "reason": "Glycine (G) is a known turn-promoting residue that introduces flexibility in protein structures. Its small size allows for tighter turns, which aligns with the objective of enhancing flexibility and creating repeating sequence patterns."
-      },
-      {
-        "position": 16,
-        "current_residue": "N",
-        "proposed_residue": "G",
-        "confidence": 0.7,
-        "reason": "Glycine (G) is known for its ability to introduce flexibility and promote turns in protein structures, making it suitable for enhancing the desired flexibility while maintaining sequence patterns."
-      },
-      {
-        "position": 17,
-        "current_residue": "S",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proposing proline (P) at this position as it is known to promote turns and introduce flexibility in protein structures, aligning with the objective of creating repeating sequence patterns."
-      },
-      {
-        "position": 18,
-        "current_residue": "N",
-        "proposed_residue": "P",
-        "confidence": 0.7,
-        "reason": "Proline is known to introduce bends and promote turns in protein structures, which aligns with the objective of increasing flexibility and creating repeating sequence patterns."
-      },
-      {
-        "position": 19,
-        "current_residue": "G",
-        "proposed_residue": "P",
-        "confidence": 0.8,
-        "reason": "Proline is known to introduce flexibility and is often found in turns, making it suitable for promoting turn-like structures in the context of a repeating sequence."
-      }
-    ],
-    "fold_result": {
-      "pdb_path": "outputs/iter_12.pdb",
-      "energy": 0.008937,
-      "objective_score": 0.352965,
-      "combined_score": 0.215354
-    },
-    "accepted": false,
-    "score_delta": -0.08063500000000001
+    "score_delta": -0.09410199999999999
   }
 ]
