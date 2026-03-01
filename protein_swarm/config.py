@@ -113,7 +113,7 @@ class FoldingConfig(BaseModel):
     # ── rosetta ──────────────────────────────────────────────────────────
     use_rosetta: bool = Field(default=True, description="Run local PyRosetta scoring on predicted PDBs")
     rosetta_relax: bool = Field(default=False, description="Run FastRelax before scoring (slower, better energy)")
-    rosetta_relax_cycles: int = Field(default=1, ge=1, description="Number of FastRelax cycles when relax is enabled")
+    rosetta_relax_cycles: int = Field(default=0, ge=0, description="Number of FastRelax cycles when relax is enabled (0 = no relax)")
 
     rosetta_norm_target: float = Field(
         default=-200.0,

@@ -22,7 +22,7 @@
       <form id="run-form" class="controls">
         <section class="control-section">
           <h3 class="section-title">Sequence &amp; objective</h3>
-          <label>Sequence</label>
+          <label>Protein sequence</label>
           <textarea id="sequence" name="sequence" rows="2" placeholder="e.g. VVVVVVVVVVVVVVVVVVVV">VVVVVVVVVVVVVVVVVVVV</textarea>
           <label>Objective / Prompt</label>
           <textarea id="objective" name="objective" rows="2" placeholder="e.g. introduce flexibility through turn-promoting residues">introduce flexibility through
@@ -33,24 +33,29 @@ patterns</textarea>
         <section class="control-section">
           <h3 class="section-title">Run</h3>
           <label>Max iterations</label>
-          <select id="max_iterations" name="max_iterations">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="50" selected>50</option>
-            <option value="100">100</option>
-          </select>
-          <label>Mutation rate</label>
-          <input type="number" id="mutation_rate" name="mutation_rate" min="0" max="1" step="0.05" value="0.2" />
-          <label>Confidence threshold</label>
-          <input type="number" id="confidence_threshold" name="confidence_threshold" min="0" max="1" step="0.05" value="0.6" />
+          <div id="max_iterations_wrap" class="custom-dropdown-wrap">
+            <select id="max_iterations" name="max_iterations" aria-hidden="true">
+              <!-- Options 1-50 populated by JS -->
+            </select>
+            <div class="custom-dropdown" data-for="max_iterations">
+              <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">50</button>
+              <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
+            </div>
+          </div>
+          <label>Mutation rate <span id="mutation_rate_value" class="control-value">0.2</span></label>
+          <input type="range" id="mutation_rate" name="mutation_rate" min="0" max="1" step="0.05" value="0.2" />
+          <label>LLM confidence threshold <span id="confidence_threshold_value" class="control-value">0.6</span></label>
+          <input type="range" id="confidence_threshold" name="confidence_threshold" min="0" max="1" step="0.05" value="0.6" />
           <label>Plateau window</label>
-          <select id="plateau_window" name="plateau_window">
-            <option value="3">3</option>
-            <option value="5">5</option>
-            <option value="10" selected>10</option>
-            <option value="15">15</option>
-          </select>
+          <div id="plateau_window_wrap" class="custom-dropdown-wrap">
+            <select id="plateau_window" name="plateau_window" aria-hidden="true">
+              <!-- Options 1 to max_iterations-1 populated by JS -->
+            </select>
+            <div class="custom-dropdown" data-for="plateau_window">
+              <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">10</button>
+              <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
+            </div>
+          </div>
         </section>
         <section class="control-section">
           <h3 class="section-title">LLM</h3>
@@ -59,26 +64,40 @@ patterns</textarea>
             <span>Use LLM agents</span>
           </label>
           <label>Model</label>
-          <select id="llm_model" name="llm_model">
-            <option value="gpt-4o-mini" selected>gpt-4o-mini</option>
-            <option value="gpt-4o">gpt-4o</option>
-            <option value="claude-3-5-sonnet">claude-3-5-sonnet</option>
-          </select>
+          <div id="llm_model_wrap" class="custom-dropdown-wrap">
+            <select id="llm_model" name="llm_model" aria-hidden="true">
+              <option value="gpt-4o-mini" selected>gpt-4o-mini</option>
+              <option value="gpt-4o">gpt-4o</option>
+              <option value="claude-3-5-sonnet">claude-3-5-sonnet</option>
+            </select>
+            <div class="custom-dropdown" data-for="llm_model">
+              <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">gpt-4o-mini</button>
+              <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
+            </div>
+          </div>
         </section>
         <section class="control-section">
-          <h3 class="section-title">Folding</h3>
+          <h3 class="section-title">Protein folding</h3>
           <label class="row">
             <input type="checkbox" id="modal_fold" name="modal_fold" />
             <span>Modal fold (remote)</span>
           </label>
-          <label>Remote backend</label>
-          <select id="remote_fold_backend" name="remote_fold_backend">
-            <option value="esmfold" selected>esmfold</option>
-            <option value="dummy">dummy</option>
-          </select>
+          <label>Folding Engine</label>
+          <div id="remote_fold_backend_wrap" class="custom-dropdown-wrap">
+            <select id="remote_fold_backend" name="remote_fold_backend" aria-hidden="true">
+              <option value="esmfold" selected>esmfold</option>
+              <option value="omegafold">omegafold</option>
+              <option value="alphafold">alphafold</option>
+              <option value="dummy">dummy</option>
+            </select>
+            <div class="custom-dropdown" data-for="remote_fold_backend">
+              <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">esmfold</button>
+              <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
+            </div>
+          </div>
         </section>
         <section class="control-section">
-          <h3 class="section-title">Rosetta</h3>
+          <h3 class="section-title">Rosetta engine</h3>
           <label class="row">
             <input type="checkbox" id="use_rosetta" name="use_rosetta" checked />
             <span>Use Rosetta</span>
@@ -88,12 +107,20 @@ patterns</textarea>
             <span>Rosetta relax</span>
           </label>
           <label>Relax cycles</label>
-          <select id="rosetta_relax_cycles" name="rosetta_relax_cycles">
-            <option value="1">1</option>
-            <option value="3" selected>3</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-          </select>
+          <div id="rosetta_relax_cycles_wrap" class="custom-dropdown-wrap">
+            <select id="rosetta_relax_cycles" name="rosetta_relax_cycles" aria-hidden="true">
+              <option value="0" selected>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <div class="custom-dropdown" data-for="rosetta_relax_cycles">
+              <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">0</button>
+              <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
+            </div>
+          </div>
           <label>Norm target</label>
           <input type="number" id="rosetta_norm_target" name="rosetta_norm_target" step="any" value="-10" />
           <label>Norm scale</label>

@@ -70,7 +70,7 @@ class RunRequest(BaseModel):
     # Rosetta
     use_rosetta: bool = Field(default=True)
     rosetta_relax: bool = Field(default=False)
-    rosetta_relax_cycles: int = Field(default=1, ge=1, le=20)
+    rosetta_relax_cycles: int = Field(default=0, ge=0, le=20)
     rosetta_norm_target: float = Field(default=-200.0)
     rosetta_norm_scale: float = Field(default=50.0, gt=0.0)
     # Scoring weights

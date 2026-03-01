@@ -24,6 +24,130 @@
   let currentIteration = 0;
   let completedCount = 0;
 
+  (function initRunControls() {
+    var maxIterEl = document.getElementById("max_iterations");
+    var plateauEl = document.getElementById("plateau_window");
+
+    function syncCustomDropdown(selectId) {
+      var sel = document.getElementById(selectId);
+      if (!sel) return;
+      var wrap = sel.closest(".custom-dropdown-wrap");
+      if (!wrap) return;
+      var trigger = wrap.querySelector(".custom-dropdown__trigger");
+      var list = wrap.querySelector(".custom-dropdown__list");
+      if (!trigger || !list) return;
+      var val = sel.value || "";
+      trigger.innerHTML = val + ' <span class="custom-dropdown__chevron">\u25BC</span>';
+      list.innerHTML = "";
+      for (var k = 0; k < sel.options.length; k++) {
+        var op = sel.options[k];
+        var div = document.createElement("div");
+        div.className = "custom-dropdown__option" + (op.selected ? " is-selected" : "");
+        div.setAttribute("role", "option");
+        div.setAttribute("data-value", op.value);
+        div.textContent = op.textContent;
+        (function (optionValue) {
+          div.addEventListener("click", function () {
+            sel.value = optionValue;
+            trigger.innerHTML = optionValue + ' <span class="custom-dropdown__chevron">\u25BC</span>';
+            list.querySelectorAll(".custom-dropdown__option").forEach(function (el) { el.classList.toggle("is-selected", el.getAttribute("data-value") === optionValue); });
+            list.classList.remove("is-open");
+            trigger.setAttribute("aria-expanded", "false");
+            if (selectId === "max_iterations") fillPlateauWindow();
+          });
+        })(op.value);
+        list.appendChild(div);
+      }
+    }
+
+    function setupCustomDropdown(selectId) {
+      var wrap = document.getElementById(selectId + "_wrap") || document.getElementById(selectId).closest(".custom-dropdown-wrap");
+      if (!wrap) return;
+      var trigger = wrap.querySelector(".custom-dropdown__trigger");
+      var list = wrap.querySelector(".custom-dropdown__list");
+      if (!trigger || !list) return;
+      trigger.addEventListener("click", function (e) {
+        e.preventDefault();
+        var isOpen = list.classList.toggle("is-open");
+        trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (isOpen) {
+          var opt = list.querySelector("[data-value=\"" + document.getElementById(selectId).value + "\"]");
+          if (opt) opt.scrollIntoView({ block: "nearest" });
+        }
+      });
+      document.addEventListener("click", function (e) {
+        if (!wrap.contains(e.target)) {
+          list.classList.remove("is-open");
+          trigger.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    if (maxIterEl) {
+      for (var i = 1; i <= 50; i++) {
+        var opt = document.createElement("option");
+        opt.value = String(i);
+        opt.textContent = String(i);
+        if (i === 50) opt.selected = true;
+        maxIterEl.appendChild(opt);
+      }
+      syncCustomDropdown("max_iterations");
+      setupCustomDropdown("max_iterations");
+    }
+    function fillPlateauWindow() {
+      if (!plateauEl || !maxIterEl) return;
+      var max = parseInt(maxIterEl.value, 10) || 50;
+      var current = plateauEl.value;
+      plateauEl.innerHTML = "";
+      for (var j = 1; j < max; j++) {
+        var o = document.createElement("option");
+        o.value = String(j);
+        o.textContent = String(j);
+        if (String(j) === current) o.selected = true;
+        plateauEl.appendChild(o);
+      }
+      if (plateauEl.selectedIndex < 0 && plateauEl.options.length) {
+        var defaultVal = Math.min(10, max - 1);
+        plateauEl.value = String(defaultVal);
+      }
+      syncCustomDropdown("plateau_window");
+    }
+    fillPlateauWindow();
+    setupCustomDropdown("plateau_window");
+    if (maxIterEl) maxIterEl.addEventListener("change", fillPlateauWindow);
+
+    ["llm_model", "remote_fold_backend", "rosetta_relax_cycles"].forEach(function (id) {
+      syncCustomDropdown(id);
+      setupCustomDropdown(id);
+    });
+
+    var mutationRateEl = document.getElementById("mutation_rate");
+    var mutationRateVal = document.getElementById("mutation_rate_value");
+    if (mutationRateEl && mutationRateVal) {
+      function updateMutationVal() { mutationRateVal.textContent = mutationRateEl.value; }
+      mutationRateEl.addEventListener("input", updateMutationVal);
+      updateMutationVal();
+    }
+    var confThreshEl = document.getElementById("confidence_threshold");
+    var confThreshVal = document.getElementById("confidence_threshold_value");
+    if (confThreshEl && confThreshVal) {
+      function updateConfVal() { confThreshVal.textContent = confThreshEl.value; }
+      confThreshEl.addEventListener("input", updateConfVal);
+      updateConfVal();
+    }
+
+    var rosettaRelaxEl = document.getElementById("rosetta_relax");
+    var relaxCyclesEl = document.getElementById("rosetta_relax_cycles");
+    if (rosettaRelaxEl && relaxCyclesEl) {
+      rosettaRelaxEl.addEventListener("change", function () {
+        if (!rosettaRelaxEl.checked) {
+          relaxCyclesEl.value = "0";
+          syncCustomDropdown("rosetta_relax_cycles");
+        }
+      });
+    }
+  })();
+
   const spinnerSvg = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><line x1=\"12\" y1=\"2\" x2=\"12\" y2=\"6\"/><line x1=\"12\" y1=\"18\" x2=\"12\" y2=\"22\"/><line x1=\"4.93\" y1=\"4.93\" x2=\"7.76\" y2=\"7.76\"/><line x1=\"16.24\" y1=\"16.24\" x2=\"19.07\" y2=\"19.07\"/><line x1=\"2\" y1=\"12\" x2=\"6\" y2=\"12\"/><line x1=\"18\" y1=\"12\" x2=\"22\" y2=\"12\"/><line x1=\"4.93\" y1=\"19.07\" x2=\"7.76\" y2=\"16.24\"/><line x1=\"16.24\" y1=\"7.76\" x2=\"19.07\" y2=\"4.93\"/></svg>";
   const checkSvg = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"/><polyline points=\"22 4 12 14.01 9 11.01\"/></svg>";
 
@@ -63,7 +187,7 @@
     if (isFinalMessage(message)) {
       extraClass += " log-entry--final";
       var seq = message.slice("Final Protein Design:".length).trim();
-      lineContent = "<span class=\"log-entry__text\">Final Protein Design:<br><span class=\"log-final-box\">" + escapeHtml(seq) + "</span></span>";
+      lineContent = "<span class=\"log-entry__text\">Final Protein Design: <span class=\"log-final-box\">" + escapeHtml(seq) + "</span></span>";
     } else {
       lineContent = "<span class=\"log-entry__text\">" + escapeHtml(message) + "</span>";
     }
@@ -152,7 +276,7 @@
       remote_fold_backend: getVal("remote_fold_backend", "esmfold"),
       use_rosetta: getChecked("use_rosetta"),
       rosetta_relax: getChecked("rosetta_relax"),
-      rosetta_relax_cycles: parseInt(getVal("rosetta_relax_cycles", "1"), 10) || 1,
+      rosetta_relax_cycles: parseInt(getVal("rosetta_relax_cycles", "0"), 10) || 0,
       rosetta_norm_target: parseFloat(getVal("rosetta_norm_target", "-200")) || -200,
       rosetta_norm_scale: parseFloat(getVal("rosetta_norm_scale", "50")) || 50,
       w_physics: parseFloat(getVal("w_physics", "0.55")) || 0.55,

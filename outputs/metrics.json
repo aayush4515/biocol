@@ -1,8 +1,8 @@
 {
   "initial_sequence": "VVVVVVVVVVVVVVVVVVVV",
-  "final_sequence": "GSGGGGSGGGSGGNGNPNGG",
+  "final_sequence": "VVVVVVVVVVVVVVVVVVVV",
   "objective": "introduce flexibility through\nturn-promoting residues while\ncreating repeating sequence\npatterns",
-  "best_score": 0.203022,
-  "total_iterations": 5,
+  "best_score": 0.014118,
+  "total_iterations": 1,
   "final_pdb_path": "outputs/final_structure.pdb"
 }
