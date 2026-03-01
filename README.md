@@ -2,12 +2,16 @@
 
 Swarm-based multi-agent protein sequence optimisation using ESMFold (Modal GPU) and PyRosetta (local) scoring.
 
+**Project layout:** Backend code lives under `backend/` (e.g. `backend/protein_swarm/`); run artefacts go to `backend/outputs/`. The HSSP/DSSP tooling lives in `backend/hssp-3.0.10/`. The web dashboard lives under `frontend/dashboard/`. Run CLI and dashboard from the repo root with `PYTHONPATH=backend` (and `frontend` for the dashboard server).
+
 ## Setup
 
 ### 1. Install local dependencies
 
+From the repo root:
+
 ```bash
-pip install -r protein_swarm/requirements.txt
+pip install -r requirements.txt
 ```
 
 For Rosetta scoring, install PyRosetta separately (requires a license):
@@ -21,15 +25,17 @@ python -c "import pyrosetta_installer; pyrosetta_installer.install_pyrosetta()"
 
 ```bash
 modal token set          # one-time auth
-modal deploy protein_swarm/modal_app/functions.py
+modal deploy backend/protein_swarm/modal_app/functions.py
 ```
 
 ## Usage
 
 ### Full pipeline (ESMFold on Modal + local Rosetta scoring)
 
+From the repo root (backend must be on `PYTHONPATH`):
+
 ```bash
-python -m protein_swarm.main design \
+PYTHONPATH=backend python -m protein_swarm.main design \
   -s "VVVVVVVVVVVVVVVVVVVV" \
   -o "introduce flexibility through turn-promoting residues" \
   --use-llm \
@@ -41,7 +47,7 @@ python -m protein_swarm.main design \
 ### Without Rosetta (confidence-only scoring)
 
 ```bash
-python -m protein_swarm.main design \
+PYTHONPATH=backend python -m protein_swarm.main design \
   -s "VVVVVVVVVVVVVVVVVVVV" \
   -o "Design a stable helix-rich protein" \
   --modal-fold --remote-fold-backend esmfold \
@@ -52,11 +58,25 @@ python -m protein_swarm.main design \
 ### Fully local (no Modal, no Rosetta)
 
 ```bash
-python -m protein_swarm.main design \
+PYTHONPATH=backend python -m protein_swarm.main design \
   -s "ACDEFGHIKLMNPQRSTVWY" \
   -o "maximise diversity" \
   --no-modal --no-rosetta \
   --max-iterations 10
+```
+
+### Dashboard (web UI)
+
+From the repo root:
+
+```bash
+PYTHONPATH=backend python -m protein_swarm.main dashboard
+```
+
+Or run the server directly:
+
+```bash
+PYTHONPATH=backend:frontend uvicorn dashboard.server:app --host 0.0.0.0 --port 8000
 ```
 
 ### Scoring weights
@@ -91,10 +111,10 @@ BioPython (`biopython>=1.81`) is required and included in `requirements.txt`.
 ### Prompt debugging (--dump-prompts)
 
 When running with `--debug --dump-prompts`, the engine writes every LLM agent prompt
-to `outputs/debug/prompts/iter_X_pos_Y.txt` for inspection:
+to `backend/outputs/debug/prompts/iter_X_pos_Y.txt` for inspection:
 
 ```bash
-python -m protein_swarm.main design \
+PYTHONPATH=backend python -m protein_swarm.main design \
   -s "VVVVVVVVVVVVVVVVVVVV" \
   -o "Design a stable helix-rich protein" \
   --use-llm --modal-fold --remote-fold-backend esmfold \

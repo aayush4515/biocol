@@ -4,11 +4,11 @@
 
 services:
   - type: web
-    name: biocol-dashboard
+    name: biocol
     runtime: python
 
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn protein_swarm.dashboard.server:app --host 0.0.0.0 --port $PORT
+    startCommand: env PYTHONPATH=backend:frontend uvicorn dashboard.server:app --host 0.0.0.0 --port $PORT
 
     # Optional: add env vars in Render Dashboard (e.g. OPENAI_API_KEY, Modal)
     # envVars:
