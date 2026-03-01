@@ -129,28 +129,37 @@
     return div;
   }
 
+  function getVal(id, def) {
+    var el = document.getElementById(id);
+    return el && el.value !== undefined ? el.value : def;
+  }
+  function getChecked(id, def) {
+    var el = document.getElementById(id);
+    return el ? !!el.checked : (def !== undefined ? def : false);
+  }
+
   function buildPayload() {
     return {
-      sequence: document.getElementById("sequence").value.trim(),
-      objective: document.getElementById("objective").value.trim(),
-      max_iterations: parseInt(document.getElementById("max_iterations").value, 10),
-      mutation_rate: parseFloat(document.getElementById("mutation_rate").value) || 0.3,
-      confidence_threshold: parseFloat(document.getElementById("confidence_threshold").value) || 0.5,
-      plateau_window: parseInt(document.getElementById("plateau_window").value, 10) || 5,
-      use_llm: document.getElementById("use_llm").checked,
-      llm_model: document.getElementById("llm_model").value,
-      modal_fold: document.getElementById("modal_fold").checked,
-      remote_fold_backend: document.getElementById("remote_fold_backend").value,
-      use_rosetta: document.getElementById("use_rosetta").checked,
-      rosetta_relax: document.getElementById("rosetta_relax").checked,
-      rosetta_relax_cycles: parseInt(document.getElementById("rosetta_relax_cycles").value, 10),
-      rosetta_norm_target: parseFloat(document.getElementById("rosetta_norm_target").value) || -200,
-      rosetta_norm_scale: parseFloat(document.getElementById("rosetta_norm_scale").value) || 50,
-      w_physics: parseFloat(document.getElementById("w_physics").value) || 0.55,
-      w_objective: parseFloat(document.getElementById("w_objective").value) || 0.35,
-      w_confidence: parseFloat(document.getElementById("w_confidence").value) || 0.10,
-      debug: document.getElementById("debug").checked,
-      dump_prompts: document.getElementById("dump_prompts").checked,
+      sequence: (getVal("sequence") || "").trim(),
+      objective: (getVal("objective") || "").trim(),
+      max_iterations: parseInt(getVal("max_iterations", "50"), 10) || 50,
+      mutation_rate: parseFloat(getVal("mutation_rate", "0.3")) || 0.3,
+      confidence_threshold: parseFloat(getVal("confidence_threshold", "0.5")) || 0.5,
+      plateau_window: parseInt(getVal("plateau_window", "5"), 10) || 5,
+      use_llm: getChecked("use_llm"),
+      llm_model: getVal("llm_model", "gpt-4o-mini"),
+      modal_fold: getChecked("modal_fold"),
+      remote_fold_backend: getVal("remote_fold_backend", "esmfold"),
+      use_rosetta: getChecked("use_rosetta"),
+      rosetta_relax: getChecked("rosetta_relax"),
+      rosetta_relax_cycles: parseInt(getVal("rosetta_relax_cycles", "1"), 10) || 1,
+      rosetta_norm_target: parseFloat(getVal("rosetta_norm_target", "-200")) || -200,
+      rosetta_norm_scale: parseFloat(getVal("rosetta_norm_scale", "50")) || 50,
+      w_physics: parseFloat(getVal("w_physics", "0.55")) || 0.55,
+      w_objective: parseFloat(getVal("w_objective", "0.35")) || 0.35,
+      w_confidence: parseFloat(getVal("w_confidence", "0.10")) || 0.10,
+      debug: true,
+      dump_prompts: true,
     };
   }
 
@@ -198,11 +207,18 @@
     );
   }
 
+  if (runForm) {
   runForm.addEventListener("submit", async function (e) {
     e.preventDefault();
-    if (runBtn.disabled) return;
+    if (runBtn && runBtn.disabled) return;
 
-    const payload = buildPayload();
+    var payload;
+    try {
+      payload = buildPayload();
+    } catch (err) {
+      alert("Failed to read form: " + (err && err.message ? err.message : String(err)));
+      return;
+    }
     if (!payload.sequence || !payload.objective) {
       alert("Please enter sequence and objective.");
       return;
@@ -324,6 +340,7 @@
       setRunning(false);
     };
   });
+  }
 
   function openProteinModal() {
     if (!proteinModal || !proteinModalViewer || !proteinModalError) return;

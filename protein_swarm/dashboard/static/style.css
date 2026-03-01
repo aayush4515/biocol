@@ -83,11 +83,27 @@ body {
   justify-content: center;
 }
 
+.sidebar-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
 .sidebar-title {
   margin: 0;
-  font-size: 1rem;
+  font-family: Cambria, "Cambria Math", "Hoefler Text", serif;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--zinc-100);
+}
+
+.sidebar-subtitle {
+  margin: 0;
+  font-family: Cambria, "Cambria Math", "Hoefler Text", serif;
+  font-size: 1.0rem;
+  font-weight: 400;
+  color: var(--zinc-400);
+  letter-spacing: 0.02em;
 }
 
 .sidebar .controls {
