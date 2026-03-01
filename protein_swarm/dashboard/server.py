@@ -67,16 +67,10 @@ class RunRequest(BaseModel):
     modal_parallel: bool = Field(default=True)
     fold_backend: str = Field(default="dummy")
     remote_fold_backend: str = Field(default="esmfold")
-    # Rosetta
+    # Rosetta (norm target/scale and scoring weights are hardcoded server-side)
     use_rosetta: bool = Field(default=True)
     rosetta_relax: bool = Field(default=False)
     rosetta_relax_cycles: int = Field(default=0, ge=0, le=20)
-    rosetta_norm_target: float = Field(default=-200.0)
-    rosetta_norm_scale: float = Field(default=50.0, gt=0.0)
-    # Scoring weights
-    w_physics: float = Field(default=0.55, ge=0.0)
-    w_objective: float = Field(default=0.35, ge=0.0)
-    w_confidence: float = Field(default=0.10, ge=0.0)
     # Debug
     debug: bool = Field(default=False)
     dump_prompts: bool = Field(default=False)
@@ -106,11 +100,11 @@ def _run_engine(req: RunRequest) -> None:
         use_rosetta=req.use_rosetta,
         rosetta_relax=req.rosetta_relax,
         rosetta_relax_cycles=req.rosetta_relax_cycles,
-        rosetta_norm_target=req.rosetta_norm_target,
-        rosetta_norm_scale=req.rosetta_norm_scale,
-        w_physics=req.w_physics,
-        w_objective=req.w_objective,
-        w_confidence=req.w_confidence,
+        rosetta_norm_target=-200.0,
+        rosetta_norm_scale=50.0,
+        w_physics=0.55,
+        w_objective=0.35,
+        w_confidence=0.10,
     )
     swarm_cfg = SwarmConfig(
         use_llm_agents=req.use_llm,
