@@ -176,7 +176,8 @@ body {
 
 .controls textarea,
 .controls select,
-.controls input[type="number"] {
+.controls input[type="number"],
+.controls input[type="password"] {
   width: 100%;
   margin-bottom: 0.6rem;
   padding: 0.5rem 0.65rem;
@@ -192,6 +193,13 @@ body {
   margin-left: 0.35rem;
   color: var(--zinc-400);
   font-size: 0.75rem;
+}
+
+.control-hint {
+  font-weight: normal;
+  color: var(--zinc-500);
+  font-size: 0.7rem;
+  text-transform: none;
 }
 
 .controls input[type="range"] {

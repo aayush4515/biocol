@@ -2,16 +2,1288 @@
   {
     "iteration": 0,
     "sequence_before": "VVVVVVVVVVVVVVVVVVVV",
-    "sequence_after": "VVVVVVVVVVVVVVVVVVVV",
-    "mutations": [],
+    "sequence_after": "GGGGGGGGGGGGGGGGGGGG",
+    "mutations": [
+      {
+        "position": 0,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and is a turn-promoting residue, which will help introduce the desired structural diversity and flexibility in the sequence."
+      },
+      {
+        "position": 1,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) introduces flexibility and promotes turn formation, suitable for breaking the repetitive structure while maintaining a potential helical context."
+      },
+      {
+        "position": 2,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine introduces flexibility and breaks the repetitive sequence while maintaining potential helical formation."
+      },
+      {
+        "position": 3,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine introduces flexibility and is a turn-promoting residue, which aligns with the design goal of introducing flexibility while creating repeating sequence patterns."
+      },
+      {
+        "position": 4,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine (G) is a turn-promoting residue that introduces flexibility while breaking the homogeneity of the repeating sequence, aiding in achieving the design goal."
+      },
+      {
+        "position": 5,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine introduces flexibility as a turn-promoting residue while maintaining sequence diversity and disrupting the long repeat of V residues."
+      },
+      {
+        "position": 6,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine (G) introduces flexibility and is a turn-promoting residue, which aligns with the design goal of introducing flexibility while breaking the repetitive sequence pattern."
+      },
+      {
+        "position": 7,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a turn-promoting residue that introduces flexibility in the alpha-helix while maintaining a repeating sequence pattern."
+      },
+      {
+        "position": 8,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine is a turn-promoting residue that introduces flexibility, helping to break the long stretch of V residues while maintaining a balance in the helical context."
+      },
+      {
+        "position": 9,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine is a turn-promoting residue that introduces flexibility while maintaining a repeating pattern in the sequence."
+      },
+      {
+        "position": 10,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine promotes flexibility and is a turn-promoting residue, which aligns with the goal of introducing flexibility while breaking the repetitive sequence pattern."
+      },
+      {
+        "position": 11,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.85,
+        "reason": "Glycine introduces flexibility and can disrupt the alpha helix while maintaining some structural integrity, aiding in turn promotion and breaking the repetitive sequence."
+      },
+      {
+        "position": 12,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine introduces flexibility and can promote turns, aligning with the design goal of breaking the repetitive sequence while maintaining structural integrity."
+      },
+      {
+        "position": 13,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and can disrupt the alpha helix to introduce turns, aligning with the design goal for flexibility and sequence diversity."
+      },
+      {
+        "position": 14,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a turn-promoting residue that can introduce flexibility while breaking the repetitive pattern, aiding in structural stability."
+      },
+      {
+        "position": 15,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine (G) is a turn-promoting residue that introduces flexibility and breaks the repetitive pattern while being compatible with the helical context."
+      },
+      {
+        "position": 16,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine introduces flexibility and promotes turns, which aligns with the design goal while maintaining a diverse sequence."
+      },
+      {
+        "position": 17,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine (G) is a turn-promoting residue that will introduce flexibility while maintaining a diverse sequence, breaking the long repeat stretch."
+      },
+      {
+        "position": 18,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine introduces flexibility and can promote turns while breaking up the repeating sequence of V residues."
+      },
+      {
+        "position": 19,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine (G) is a strong turn-promoting residue that introduces flexibility and breaks the repeating pattern while maintaining structural integrity in the turn/coil region."
+      }
+    ],
     "fold_result": {
-      "pdb_path": "outputs/iter_0.pdb",
-      "energy": 0.009306,
+      "pdb_path": "outputs/iter_0.relaxed.pdb",
+      "energy": 0.364162,
       "objective_score": 0.02,
-      "combined_score": 0.014118,
-      "rosetta_total_score": null
+      "combined_score": 0.137416,
+      "rosetta_total_score": 1.15
     },
     "accepted": false,
-    "score_delta": 0.0
+    "score_delta": -0.110397
+  },
+  {
+    "iteration": 1,
+    "sequence_before": "VVVVVVVVVVVVVVVVVVVV",
+    "sequence_after": "VGGVVVVGGGGGGVVGGVVV",
+    "mutations": [
+      {
+        "position": 1,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine (G) introduces flexibility and promotes turn formation, which aligns with the design goal of increasing flexibility despite previous rejection; it can help create a more diverse sequence."
+      },
+      {
+        "position": 2,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine introduces flexibility and can help break the repetitive sequence, promoting turn formation while maintaining some structural integrity."
+      },
+      {
+        "position": 7,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.6,
+        "reason": "Glycine introduces flexibility, promoting turn formation, and breaks the repetitive sequence while maintaining a helical structure."
+      },
+      {
+        "position": 8,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and could help introduce the desired turn-promoting character, breaking the repetitive sequence while still maintaining some structural integrity."
+      },
+      {
+        "position": 9,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine introduces flexibility and promotes turns, helping to achieve the design goal, despite previous rejections due to concerns about energy."
+      },
+      {
+        "position": 10,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine introduces flexibility and can promote turns, which aligns well with the design goal despite previous rejections."
+      },
+      {
+        "position": 11,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine introduces flexibility and promotes turns, aligning with the design goal despite potential disruption to the alpha helix."
+      },
+      {
+        "position": 12,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine introduces flexibility and can promote turns, helping to achieve the design goal of introducing flexibility while maintaining a better sequence diversity."
+      },
+      {
+        "position": 15,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) introduces flexibility and promotes turns, which is needed to achieve the design goal of introducing flexibility and breaking the repetitive sequence."
+      },
+      {
+        "position": 16,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine introduces flexibility and promotes turns, which aligns with the design goal of introducing flexibility while breaking up the repetitive sequence."
+      }
+    ],
+    "fold_result": {
+      "pdb_path": "outputs/iter_1.relaxed.pdb",
+      "energy": 0.307975,
+      "objective_score": 0.272551,
+      "combined_score": 0.231687,
+      "rosetta_total_score": 6.19
+    },
+    "accepted": false,
+    "score_delta": -0.016126
+  },
+  {
+    "iteration": 2,
+    "sequence_before": "VVVVVVVVVVVVVVVVVVVV",
+    "sequence_after": "GVVGVVVSVVVVVVVVVGGG",
+    "mutations": [
+      {
+        "position": 0,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a turn-promoting residue that introduces flexibility and breaks the repeating pattern."
+      },
+      {
+        "position": 3,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine introduces flexibility and is a turn-promoting residue, which aligns with the design goal of introducing flexibility while breaking up the repetitive sequence."
+      },
+      {
+        "position": 7,
+        "current_residue": "V",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility while maintaining some helical propensity, helping to achieve the design goal of introducing flexibility and breaking sequence repetition."
+      },
+      {
+        "position": 17,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine (G) is a turn-promoting residue that can introduce flexibility in the helical region, aiding in the design goal of creating repeating sequence patterns."
+      },
+      {
+        "position": 18,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine introduces flexibility and can promote turns while maintaining a low energy state, which aligns with the design goal of introducing flexibility."
+      },
+      {
+        "position": 19,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine (G) is a strong turn-promoting residue that can introduce flexibility at a turn/bend/coil region, which aligns with the design goal of creating flexibility and breaking up the repetitive sequence."
+      }
+    ],
+    "fold_result": {
+      "pdb_path": "outputs/iter_2.relaxed.pdb",
+      "energy": 0.402545,
+      "objective_score": 0.269613,
+      "combined_score": 0.263762,
+      "rosetta_total_score": -2.1
+    },
+    "accepted": true,
+    "score_delta": 0.01594899999999999
+  },
+  {
+    "iteration": 3,
+    "sequence_before": "GVVGVVVSVVVVVVVVVGGG",
+    "sequence_after": "PGGSGGGGVGSGVGGGGSPP",
+    "mutations": [
+      {
+        "position": 0,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline is a strong turn-promoting residue that can introduce flexibility and break the repetitive pattern while maintaining structural integrity."
+      },
+      {
+        "position": 1,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a strong turn-promoting residue that will introduce flexibility while breaking the repeat pattern, aligning with the goal of enhancing structural diversity."
+      },
+      {
+        "position": 2,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and fits the turn-promoting residue requirement, balancing the need for sequence diversity."
+      },
+      {
+        "position": 3,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility, helps maintain diversity in the sequence, and fits well in the surface-exposed position."
+      },
+      {
+        "position": 4,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a strong turn-promoting residue that introduces flexibility, aligning with the design goal to create turn-promoting residues while maintaining sequence diversity."
+      },
+      {
+        "position": 5,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a turn-promoting residue that introduces flexibility, aligning well with the design goal to create a more diverse and flexible sequence."
+      },
+      {
+        "position": 6,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) introduces flexibility and is a turn-promoting residue, which aligns with the design goal of introducing flexibility and varying the sequence."
+      },
+      {
+        "position": 7,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine (G) is a turn-promoting residue that introduces flexibility, which aligns with the design goal of enhancing flexibility and breaking up the repetitive sequence pattern."
+      },
+      {
+        "position": 9,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and can introduce necessary turns in the sequence, aligning with the design goal despite previous rejections due to energy concerns."
+      },
+      {
+        "position": 10,
+        "current_residue": "V",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility while breaking the repeating 'V' pattern, aligning with the design goal."
+      },
+      {
+        "position": 11,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine promotes flexibility and turn formation, aligning with the design goal of introducing flexibility and breaking the repetitive sequence pattern."
+      },
+      {
+        "position": 13,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine introduces flexibility and breaks the repeating pattern while promoting a turn, aligning with the design goal."
+      },
+      {
+        "position": 14,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine is a turn-promoting residue that can introduce flexibility and help break the repeating pattern, aligning with the design goal."
+      },
+      {
+        "position": 15,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and turns, which aligns with the design goal to introduce flexibility while breaking the repeating sequence pattern."
+      },
+      {
+        "position": 16,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine introduces flexibility and promotes turns, aligning with the design goal of increasing flexibility and diversity."
+      },
+      {
+        "position": 17,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility while maintaining sequence diversity, which aligns with the design goal."
+      },
+      {
+        "position": 18,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.7,
+        "reason": "Proline introduces flexibility and can promote turns, aiding in the design goal of creating a more varied sequence while maintaining structural integrity."
+      },
+      {
+        "position": 19,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline (P) is a strong turn-promoting residue which can introduce flexibility and help break up the long repeat sequence, aiding in achieving the design goal."
+      }
+    ],
+    "fold_result": {
+      "pdb_path": "outputs/iter_3.relaxed.pdb",
+      "energy": 0.428876,
+      "objective_score": 0.387662,
+      "combined_score": 0.326293,
+      "rosetta_total_score": -4.27
+    },
+    "accepted": true,
+    "score_delta": 0.062531
+  },
+  {
+    "iteration": 4,
+    "sequence_before": "PGGSGGGGVGSGVGGGGSPP",
+    "sequence_after": "GPSGSSSSGSGSSSSNDGGG",
+    "mutations": [
+      {
+        "position": 0,
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a strong turn-promoting residue that introduces flexibility, aligning with the design goal of enhancing flexibility and breaking up repetitive sequence patterns."
+      },
+      {
+        "position": 1,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline (P) introduces flexibility and breaks the repeat pattern, promoting turn formation while maintaining a turn-promoting character."
+      },
+      {
+        "position": 2,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility and maintains diversity in the sequence, improving the design goal."
+      },
+      {
+        "position": 3,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a highly flexible turn-promoting residue that can enhance structural flexibility while breaking up the repeating sequence pattern."
+      },
+      {
+        "position": 4,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility while also providing more sequence diversity compared to Glycine (G). It maintains the flexibility required for the design goal."
+      },
+      {
+        "position": 5,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine is a turn-promoting residue that can introduce flexibility and diversity while maintaining the turn structure, which aligns with the design goal."
+      },
+      {
+        "position": 6,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility while providing more sequence diversity and breaking the repetitive pattern."
+      },
+      {
+        "position": 7,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.9,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility and enhances sequence diversity, aligning well with the design goal."
+      },
+      {
+        "position": 8,
+        "current_residue": "V",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a strong turn-promoting residue that can enhance flexibility, aligning with the design goal while also breaking the repeating pattern."
+      },
+      {
+        "position": 9,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine is a turn-promoting residue that enhances flexibility and introduces diversity without disrupting the existing structure."
+      },
+      {
+        "position": 10,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.6,
+        "reason": "Glycine promotes flexibility and can introduce turns, which aligns with the design goal of enhancing flexibility while breaking up the repeating sequence."
+      },
+      {
+        "position": 11,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine promotes flexibility and can help introduce diversity while supporting turn formation, aligning well with the design goal."
+      },
+      {
+        "position": 12,
+        "current_residue": "V",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility and helps break the repeating pattern while maintaining structural integrity."
+      },
+      {
+        "position": 13,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility while maintaining some sequence diversity and not disrupting the overall structure."
+      },
+      {
+        "position": 14,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine is a turn-promoting residue that introduces flexibility and helps break the repetitive sequence pattern, aligning with the design goal."
+      },
+      {
+        "position": 15,
+        "current_residue": "G",
+        "proposed_residue": "N",
+        "confidence": 0.8,
+        "reason": "Asparagine (N) is a turn-promoting residue that introduces flexibility while providing diversity in the sequence, breaking the repeating G pattern."
+      },
+      {
+        "position": 16,
+        "current_residue": "G",
+        "proposed_residue": "D",
+        "confidence": 0.8,
+        "reason": "Aspartic acid (D) promotes turns and introduces diversity while maintaining flexibility."
+      },
+      {
+        "position": 17,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) promotes flexibility and is a turn-promoting residue, which aligns with the design goal of introducing flexibility while breaking the repeat pattern."
+      },
+      {
+        "position": 18,
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine introduces flexibility and promotes turns, aligning with the design goal while increasing sequence diversity."
+      },
+      {
+        "position": 19,
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine (G) promotes flexibility and is a strong turn-promoting residue, which aligns with the design goal of introducing flexibility while maintaining a repeating sequence pattern."
+      }
+    ],
+    "fold_result": {
+      "pdb_path": "outputs/iter_4.relaxed.pdb",
+      "energy": 0.460047,
+      "objective_score": 0.415337,
+      "combined_score": 0.349376,
+      "rosetta_total_score": -6.8
+    },
+    "accepted": true,
+    "score_delta": 0.02308300000000002
+  },
+  {
+    "iteration": 5,
+    "sequence_before": "GPSGSSSSGSGSSSSNDGGG",
+    "sequence_after": "PGGSGGGGPGSGGGGGGSPP",
+    "mutations": [
+      {
+        "position": 0,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proline is a strong turn-promoting residue that introduces flexibility and can help create repeating sequence patterns."
+      },
+      {
+        "position": 1,
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a strong turn-promoting residue that introduces flexibility and helps break the repeating sequence pattern."
+      },
+      {
+        "position": 2,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a strong turn-promoting residue that enhances flexibility and fits well in the highly flexible and surface-exposed position, aiding in achieving the design goal of introducing flexibility and breaking sequence repetition."
+      },
+      {
+        "position": 3,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility and maintains diversity in the sequence while promoting the design goal."
+      },
+      {
+        "position": 4,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a strong turn-promoting residue that introduces flexibility and diversity in the sequence, aligning with the design goal."
+      },
+      {
+        "position": 5,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a strong turn-promoting residue that introduces flexibility, aligning well with the design goal of creating more structural diversity and flexibility."
+      },
+      {
+        "position": 6,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) introduces flexibility and is a turn-promoting residue, which aligns with the design goal of enhancing flexibility and reducing repetitive residues."
+      },
+      {
+        "position": 7,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a strong turn-promoting residue that introduces flexibility and helps break the repetitive sequence pattern, contributing to the design goal."
+      },
+      {
+        "position": 8,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline is known for introducing turns and can help enhance flexibility while breaking the repeating sequence pattern."
+      },
+      {
+        "position": 9,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a strong turn-promoting residue that enhances flexibility and disrupts repetitive sequences, aligning with the design goal."
+      },
+      {
+        "position": 10,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.9,
+        "reason": "Serine is a turn-promoting residue that enhances flexibility and introduces diversity to the sequence, aligning well with the design goal."
+      },
+      {
+        "position": 11,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and turn formation, aligning with the design goal of introducing flexibility and improving sequence diversity."
+      },
+      {
+        "position": 12,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine (G) introduces flexibility and promotes turns, aligning with the design goal of introducing flexibility and creating repeating sequence patterns."
+      },
+      {
+        "position": 13,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and introduces a breaking point in the repeating sequence, aligning with the design goal of increasing flexibility while maintaining a diverse sequence."
+      },
+      {
+        "position": 14,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a strong turn-promoting residue that introduces flexibility and helps break the repetitive sequence pattern."
+      },
+      {
+        "position": 15,
+        "current_residue": "N",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and turn formation, aligning with the design goal to introduce flexibility and create repeating sequence patterns."
+      },
+      {
+        "position": 16,
+        "current_residue": "D",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine introduces flexibility and promotes turns, aligning with the design goal of creating repeating sequence patterns."
+      },
+      {
+        "position": 17,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine (S) is a turn-promoting residue that can introduce flexibility and improve sequence diversity while maintaining structural integrity."
+      },
+      {
+        "position": 18,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proline introduces flexibility and can promote turns, aiding in the design goal of increasing flexibility and creating repeating sequence patterns."
+      },
+      {
+        "position": 19,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.9,
+        "reason": "Proline (P) is a strong turn-promoting residue that can introduce flexibility and help break up repetitive sequences."
+      }
+    ],
+    "fold_result": {
+      "pdb_path": "outputs/iter_5.relaxed.pdb",
+      "energy": 0.458433,
+      "objective_score": 0.318364,
+      "combined_score": 0.305482,
+      "rosetta_total_score": -6.67
+    },
+    "accepted": false,
+    "score_delta": -0.043894000000000044
+  },
+  {
+    "iteration": 6,
+    "sequence_before": "GPSGSSSSGSGSSSSNDGGG",
+    "sequence_after": "PGGSGGGGSGGGGGGGGSPP",
+    "mutations": [
+      {
+        "position": 0,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.7,
+        "reason": "Proline can introduce flexibility and help create turn-promoting structures, aligning with the design goal of enhancing flexibility while introducing sequence diversity."
+      },
+      {
+        "position": 1,
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a strong turn-promoting residue that introduces flexibility and may help break the repetitive sequence pattern."
+      },
+      {
+        "position": 2,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a strong turn-promoting residue that introduces flexibility and can help break the repetitive sequence pattern."
+      },
+      {
+        "position": 3,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.7,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility and maintains the desired repeating sequence pattern."
+      },
+      {
+        "position": 4,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine (G) is a strong turn-promoting residue that introduces flexibility and can help break the repeating pattern, aligning with the design goal."
+      },
+      {
+        "position": 5,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine is a strong turn-promoting residue that introduces flexibility, fits the design goal of promoting turns, and enhances sequence diversity."
+      },
+      {
+        "position": 6,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine (G) is a turn-promoting residue that can introduce flexibility and break up the repetitive sequence pattern while fitting the design goal."
+      },
+      {
+        "position": 7,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a strong turn-promoting residue that introduces flexibility, fitting the design goal of creating repeating sequence patterns."
+      },
+      {
+        "position": 8,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.7,
+        "reason": "Serine is a turn-promoting residue that can enhance flexibility while providing some diversity in the sequence."
+      },
+      {
+        "position": 9,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and can introduce necessary turns while maintaining a repeating sequence pattern."
+      },
+      {
+        "position": 11,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and turn formation, aligning with the design goal of introducing flexibility while maintaining a repeating pattern."
+      },
+      {
+        "position": 12,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine (G) promotes flexibility and can help introduce turns in the sequence, aligning with the design goal despite previous rejections."
+      },
+      {
+        "position": 13,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine promotes flexibility and can enhance turn formation, breaking the repetitive sequence pattern while maintaining low energy."
+      },
+      {
+        "position": 14,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a turn-promoting residue that can introduce flexibility while breaking the repetitive pattern of serine, aiding in achieving the design goal."
+      },
+      {
+        "position": 15,
+        "current_residue": "N",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine (G) promotes flexibility and is a turn-promoting residue that aligns with the design goal of introducing flexibility while creating repeating sequence patterns."
+      },
+      {
+        "position": 16,
+        "current_residue": "D",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and turn formation, aligning with the design goal of introducing flexibility while creating repeating sequence patterns."
+      },
+      {
+        "position": 17,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.7,
+        "reason": "Serine (S) is a turn-promoting residue that can introduce flexibility while maintaining sequence diversity, and it has been accepted in the past, aligning with the design goal."
+      },
+      {
+        "position": 18,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.6,
+        "reason": "Proline introduces flexibility and can promote turns, aligning with the design goal of creating repeating sequence patterns while enhancing structural diversity."
+      },
+      {
+        "position": 19,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.6,
+        "reason": "Proline (P) is a strong turn-promoting residue that can introduce flexibility and may help break the repeating sequence pattern while maintaining structural integrity."
+      }
+    ],
+    "fold_result": {
+      "pdb_path": "outputs/iter_6.relaxed.pdb",
+      "energy": 0.424008,
+      "objective_score": 0.28933,
+      "combined_score": 0.280354,
+      "rosetta_total_score": -3.87
+    },
+    "accepted": false,
+    "score_delta": -0.06902200000000003
+  },
+  {
+    "iteration": 7,
+    "sequence_before": "GPSGSSSSGSGSSSSNDGGG",
+    "sequence_after": "PGGGGGDGGGSGSGGGGSPS",
+    "mutations": [
+      {
+        "position": 0,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline is a strong turn-promoting residue that can introduce flexibility and help create repeating sequence patterns."
+      },
+      {
+        "position": 1,
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) promotes flexibility and can introduce turn-promoting characteristics, aiding in breaking up the repeating sequence patterns."
+      },
+      {
+        "position": 2,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a strong turn-promoting residue that can introduce flexibility, aligning with the design goal to enhance structural flexibility while avoiding excessive sequence repetition."
+      },
+      {
+        "position": 4,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine (G) is a strong turn-promoting residue that can enhance flexibility, aligning with the design goal of introducing flexibility and creating repeating sequence patterns."
+      },
+      {
+        "position": 5,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a strong turn-promoting residue that can introduce flexibility, aligning with the design goal of enhancing flexibility and breaking sequence repetition."
+      },
+      {
+        "position": 6,
+        "current_residue": "S",
+        "proposed_residue": "D",
+        "confidence": 0.8,
+        "reason": "Aspartic acid (D) is a turn-promoting residue that can introduce flexibility while maintaining diversity in the sequence, contributing positively to the design goal."
+      },
+      {
+        "position": 7,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a strong turn-promoting residue that enhances flexibility and helps break up repetitive patterns in the sequence, aligning with the design goal."
+      },
+      {
+        "position": 9,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a strong turn-promoting residue that enhances flexibility and introduces diversity in the sequence, aligning with the design goal."
+      },
+      {
+        "position": 10,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine is a turn-promoting residue that enhances flexibility and contributes to sequence diversity while maintaining the design goal."
+      },
+      {
+        "position": 11,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and turn formation, aligning with the design goal of introducing flexibility and creating repeating sequence patterns."
+      },
+      {
+        "position": 13,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) promotes flexibility and can enhance turn formation, which aligns with the design goal of introducing flexibility and breaking up the repeating sequence patterns."
+      },
+      {
+        "position": 14,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a turn-promoting residue that introduces flexibility and helps break the repeating sequence pattern, aligning with the design goal."
+      },
+      {
+        "position": 15,
+        "current_residue": "N",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) promotes flexibility and is a turn-promoting residue, aligning with the design goal of introducing flexibility while also offering potential for repeating sequence patterns."
+      },
+      {
+        "position": 16,
+        "current_residue": "D",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and turn formation, aligning with design goals and providing diversity."
+      },
+      {
+        "position": 17,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.7,
+        "reason": "Serine (S) is a turn-promoting residue that can enhance flexibility while introducing diversity to the sequence."
+      },
+      {
+        "position": 18,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.7,
+        "reason": "Proline is a turn-promoting residue that can introduce flexibility while creating a diverse pattern in the sequence."
+      },
+      {
+        "position": 19,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.7,
+        "reason": "Serine (S) is a turn-promoting residue that can introduce flexibility while maintaining diversity in the sequence."
+      }
+    ],
+    "fold_result": {
+      "pdb_path": "outputs/iter_7.relaxed.pdb",
+      "energy": 0.443493,
+      "objective_score": 0.361112,
+      "combined_score": 0.319487,
+      "rosetta_total_score": -5.46
+    },
+    "accepted": false,
+    "score_delta": -0.029889
+  },
+  {
+    "iteration": 8,
+    "sequence_before": "GPSGSSSSGSGSSSSNDGGG",
+    "sequence_after": "NPSGDGCDGDSGSSGGGPSG",
+    "mutations": [
+      {
+        "position": 0,
+        "current_residue": "G",
+        "proposed_residue": "N",
+        "confidence": 0.8,
+        "reason": "Asparagine (N) is a turn-promoting residue that introduces flexibility, enhances sequence diversity, and maintains structural integrity in highly flexible positions."
+      },
+      {
+        "position": 4,
+        "current_residue": "S",
+        "proposed_residue": "D",
+        "confidence": 0.8,
+        "reason": "Aspartic acid (D) is a turn-promoting residue that introduces flexibility while breaking up the repeating sequence pattern, enhancing overall sequence diversity."
+      },
+      {
+        "position": 5,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a strong turn-promoting residue that increases flexibility and can help break the repetitive pattern in the sequence."
+      },
+      {
+        "position": 6,
+        "current_residue": "S",
+        "proposed_residue": "C",
+        "confidence": 0.8,
+        "reason": "Cysteine (C) introduces some flexibility and can contribute to structural diversity while preventing repetitive patterns."
+      },
+      {
+        "position": 7,
+        "current_residue": "S",
+        "proposed_residue": "D",
+        "confidence": 0.8,
+        "reason": "Aspartic acid (D) is a turn-promoting residue that introduces flexibility and helps maintain sequence diversity while avoiding repetitive residues."
+      },
+      {
+        "position": 9,
+        "current_residue": "S",
+        "proposed_residue": "D",
+        "confidence": 0.8,
+        "reason": "Aspartic acid (D) is a turn-promoting residue that introduces flexibility, maintaining the turn structure while providing diversity and potentially improving interaction with the surrounding polar environment."
+      },
+      {
+        "position": 10,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine promotes turns and flexibility, aligning with the design goal to introduce flexibility and break up the repeating sequence patterns."
+      },
+      {
+        "position": 11,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and can help introduce turns, aligning with the design goal of enhancing flexibility in the sequence."
+      },
+      {
+        "position": 14,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a strong turn-promoting residue that can increase flexibility and break the repeating pattern, aligning with the design goal."
+      },
+      {
+        "position": 15,
+        "current_residue": "N",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a strong turn-promoting residue that introduces flexibility, which aligns with the design goal of promoting turns and enhancing structural diversity."
+      },
+      {
+        "position": 16,
+        "current_residue": "D",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and turns, aligning with the design goal of introducing flexibility while also aiding in creating repeating sequence patterns."
+      },
+      {
+        "position": 17,
+        "current_residue": "G",
+        "proposed_residue": "P",
+        "confidence": 0.8,
+        "reason": "Proline (P) is a turn-promoting residue that can introduce flexibility and break the repetitive sequence pattern, enhancing overall structural diversity."
+      },
+      {
+        "position": 18,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility while maintaining a degree of polar character, which can help break the repeating pattern and improve local structural dynamics."
+      }
+    ],
+    "fold_result": {
+      "pdb_path": "outputs/iter_8.relaxed.pdb",
+      "energy": 0.48458,
+      "objective_score": 0.493955,
+      "combined_score": 0.393602,
+      "rosetta_total_score": -8.77
+    },
+    "accepted": true,
+    "score_delta": 0.04422599999999999
+  },
+  {
+    "iteration": 9,
+    "sequence_before": "NPSGDGCDGDSGSSGGGPSG",
+    "sequence_after": "GGGSGSSSGSGSSGSNDGGS",
+    "mutations": [
+      {
+        "position": 0,
+        "current_residue": "N",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine is a strong turn-promoting residue that introduces flexibility and aligns with the design goal of creating repeating sequence patterns."
+      },
+      {
+        "position": 1,
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine (G) is a strong turn-promoting residue that introduces flexibility. Despite past rejections, its role is crucial for achieving the design goal of increasing flexibility."
+      },
+      {
+        "position": 2,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine (G) is a strong turn-promoting residue that introduces flexibility and helps achieve the design goal of creating repeating sequence patterns."
+      },
+      {
+        "position": 3,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.7,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility and enhances the potential for repeating sequence patterns."
+      },
+      {
+        "position": 4,
+        "current_residue": "D",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine (G) is a strong turn-promoting residue that enhances flexibility and can help achieve the design goal of introducing flexibility while contributing to the repeating sequence pattern."
+      },
+      {
+        "position": 5,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.9,
+        "reason": "Serine is a turn-promoting residue that can introduce flexibility and enhance diversity in the sequence."
+      },
+      {
+        "position": 6,
+        "current_residue": "C",
+        "proposed_residue": "S",
+        "confidence": 0.9,
+        "reason": "Serine (S) is a turn-promoting residue that introduces flexibility and promotes the desired sequence patterns."
+      },
+      {
+        "position": 7,
+        "current_residue": "D",
+        "proposed_residue": "S",
+        "confidence": 0.9,
+        "reason": "Serine (S) is a turn-promoting residue that can enhance flexibility and maintain sequence diversity while fitting into the structural context of the protein."
+      },
+      {
+        "position": 9,
+        "current_residue": "D",
+        "proposed_residue": "S",
+        "confidence": 0.9,
+        "reason": "Serine (S) is a turn-promoting residue that adds flexibility and maintains the repeating sequence pattern, enhancing structural dynamics."
+      },
+      {
+        "position": 10,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine promotes flexibility and can introduce turns, aligning well with the design goal of enhancing flexibility and creating sequence patterns."
+      },
+      {
+        "position": 11,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.9,
+        "reason": "Serine promotes flexibility and diversity while aligning with the design goal of introducing turn-promoting residues."
+      },
+      {
+        "position": 13,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.7,
+        "reason": "Glycine (G) introduces flexibility and can enhance turn formation, potentially improving the structural dynamics while maintaining the turn-promoting properties."
+      },
+      {
+        "position": 14,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.8,
+        "reason": "Serine is a turn-promoting residue that can enhance flexibility and contribute to sequence diversity while maintaining a favorable energy profile."
+      },
+      {
+        "position": 15,
+        "current_residue": "G",
+        "proposed_residue": "N",
+        "confidence": 0.9,
+        "reason": "Asparagine (N) is a turn-promoting residue that introduces flexibility and improves sequence diversity, aligning well with the design goal."
+      },
+      {
+        "position": 16,
+        "current_residue": "G",
+        "proposed_residue": "D",
+        "confidence": 0.8,
+        "reason": "Aspartic acid (D) promotes turns and introduces diversity, aligning with the design goal of flexibility and maintaining a repeating sequence pattern."
+      },
+      {
+        "position": 17,
+        "current_residue": "P",
+        "proposed_residue": "G",
+        "confidence": 0.9,
+        "reason": "Glycine (G) promotes flexibility and is a strong turn-promoting residue, aligning well with the goal of introducing flexibility while maintaining a repeating sequence pattern."
+      },
+      {
+        "position": 18,
+        "current_residue": "S",
+        "proposed_residue": "G",
+        "confidence": 0.8,
+        "reason": "Glycine (G) is a strong turn-promoting residue that enhances flexibility, fits well with the design goal of introducing flexibility, and maintains sequence diversity."
+      },
+      {
+        "position": 19,
+        "current_residue": "G",
+        "proposed_residue": "S",
+        "confidence": 0.6,
+        "reason": "Serine (S) is a turn-promoting residue that can introduce flexibility, enhancing the turn structure while diversifying the sequence."
+      }
+    ],
+    "fold_result": {
+      "pdb_path": "outputs/iter_9.relaxed.pdb",
+      "energy": 0.415926,
+      "objective_score": 0.385957,
+      "combined_score": 0.320581,
+      "rosetta_total_score": -3.21
+    },
+    "accepted": false,
+    "score_delta": -0.073021
   }
 ]

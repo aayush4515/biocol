@@ -98,8 +98,9 @@
       if (!plateauEl || !maxIterEl) return;
       var max = parseInt(maxIterEl.value, 10) || 50;
       var current = plateauEl.value;
+      var plateauMax = max <= 2 ? 2 : max - 1;
       plateauEl.innerHTML = "";
-      for (var j = 1; j < max; j++) {
+      for (var j = 2; j <= plateauMax; j++) {
         var o = document.createElement("option");
         o.value = String(j);
         o.textContent = String(j);
@@ -107,7 +108,7 @@
         plateauEl.appendChild(o);
       }
       if (plateauEl.selectedIndex < 0 && plateauEl.options.length) {
-        var defaultVal = Math.min(10, max - 1);
+        var defaultVal = Math.min(10, Math.max(2, plateauMax));
         plateauEl.value = String(defaultVal);
       }
       syncCustomDropdown("plateau_window");
@@ -262,26 +263,38 @@
     return el ? !!el.checked : (def !== undefined ? def : false);
   }
 
+  function num(val, defaultVal) {
+    var n = Number(val);
+    return (n !== n || n === undefined) ? defaultVal : n;
+  }
+
   function buildPayload() {
+    var maxIter = Math.max(1, Math.min(500, num(parseInt(getVal("max_iterations", "50"), 10), 50)));
+    var plateauRaw = num(parseInt(getVal("plateau_window", "5"), 10), 5);
+    var plateau_window = Math.max(2, Math.min(plateauRaw, maxIter - 1));
     return {
       sequence: (getVal("sequence") || "").trim(),
       objective: (getVal("objective") || "").trim(),
-      max_iterations: parseInt(getVal("max_iterations", "50"), 10) || 50,
-      mutation_rate: parseFloat(getVal("mutation_rate", "0.3")) || 0.3,
-      confidence_threshold: parseFloat(getVal("confidence_threshold", "0.5")) || 0.5,
-      plateau_window: parseInt(getVal("plateau_window", "5"), 10) || 5,
+      max_iterations: maxIter,
+      mutation_rate: Math.max(0, Math.min(1, num(parseFloat(getVal("mutation_rate", "0.3")), 0.3))),
+      confidence_threshold: Math.max(0, Math.min(1, num(parseFloat(getVal("confidence_threshold", "0.5")), 0.5))),
+      plateau_window: plateau_window,
+      output_dir: getVal("output_dir") || "outputs",
       use_llm: getChecked("use_llm"),
+      llm_provider: getVal("llm_provider") || "openai",
       llm_model: getVal("llm_model", "gpt-4o-mini"),
       modal_fold: getChecked("modal_fold"),
+      modal_parallel: getChecked("modal_parallel", true),
+      fold_backend: getVal("fold_backend") || "dummy",
       remote_fold_backend: getVal("remote_fold_backend", "esmfold"),
       use_rosetta: getChecked("use_rosetta"),
       rosetta_relax: getChecked("rosetta_relax"),
-      rosetta_relax_cycles: parseInt(getVal("rosetta_relax_cycles", "0"), 10) || 0,
-      rosetta_norm_target: parseFloat(getVal("rosetta_norm_target", "-200")) || -200,
-      rosetta_norm_scale: parseFloat(getVal("rosetta_norm_scale", "50")) || 50,
-      w_physics: parseFloat(getVal("w_physics", "0.55")) || 0.55,
-      w_objective: parseFloat(getVal("w_objective", "0.35")) || 0.35,
-      w_confidence: parseFloat(getVal("w_confidence", "0.10")) || 0.10,
+      rosetta_relax_cycles: Math.max(0, Math.min(20, num(parseInt(getVal("rosetta_relax_cycles", "0"), 10), 0))),
+      rosetta_norm_target: num(parseFloat(getVal("rosetta_norm_target", "-200")), -200),
+      rosetta_norm_scale: Math.max(0.01, num(parseFloat(getVal("rosetta_norm_scale", "50")), 50)),
+      w_physics: Math.max(0, num(parseFloat(getVal("w_physics", "0.55")), 0.55)),
+      w_objective: Math.max(0, num(parseFloat(getVal("w_objective", "0.35")), 0.35)),
+      w_confidence: Math.max(0, num(parseFloat(getVal("w_confidence", "0.10")), 0.10)),
       debug: true,
       dump_prompts: true,
     };

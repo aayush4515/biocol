@@ -16,7 +16,7 @@ import threading
 from pathlib import Path
 from queue import Empty, Queue
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse, PlainTextResponse, StreamingResponse
 from pydantic import BaseModel, Field
@@ -58,7 +58,7 @@ class RunRequest(BaseModel):
     confidence_threshold: float = Field(default=0.5, ge=0.0, le=1.0)
     plateau_window: int = Field(default=5, ge=2)
     output_dir: str = Field(default="outputs")
-    # LLM
+    # LLM (API key from OPENAI_API_KEY env only)
     use_llm: bool = Field(default=False)
     llm_provider: str = Field(default="openai")
     llm_model: str = Field(default="gpt-4o-mini")
@@ -155,6 +155,18 @@ def api_run(req: RunRequest) -> dict:
     except ValueError as e:
         return {"ok": False, "error": str(e)}
 
+    if req.use_llm:
+        llm_cfg = LLMConfig(
+            provider=req.llm_provider,
+            model=req.llm_model,
+            api_key=None,
+            temperature=0.7,
+        )
+        try:
+            llm_cfg.resolve_api_key()
+        except ValueError as e:
+            return {"ok": False, "error": str(e) + " Export it before starting the dashboard, e.g. export OPENAI_API_KEY=sk-..."}
+
     with _run_lock:
         if _run_active:
             return {"ok": False, "error": "A run is already in progress."}
@@ -224,7 +236,7 @@ def static_file(path: str) -> FileResponse:
     """Serve static assets."""
     full = STATIC_DIR / path
     if not full.is_file():
-        raise FileNotFoundError(path)
+        raise HTTPException(status_code=404, detail=f"Not found: {path}")
     return FileResponse(full)
 
 
