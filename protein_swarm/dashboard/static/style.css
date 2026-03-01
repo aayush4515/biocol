@@ -19,6 +19,8 @@
   --green-500: #22c55e;
   --green-600: #16a34a;
   --red-500: #ef4444;
+  --gold: #d4af37;
+  --gold-dim: #b8960c;
   /* Layout */
   --gap: 16px;
   --sidebar-width: 260px;
@@ -676,42 +678,83 @@ body {
   color: var(--zinc-500);
 }
 
-/* —— Bottom panel: two halves (scores | logs) —— */
+/* —— Bottom panel: golden frame with two inner golden-bordered panels —— */
 .bottom-panel {
   height: var(--bottom-panel-height);
   min-height: var(--bottom-panel-height);
   flex-shrink: 0;
+  padding: 6px;
+  background: var(--zinc-950);
+  border: 2px solid var(--gold);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+}
+
+.bottom-panel__frame {
   display: flex;
   flex-direction: row;
-  gap: 0;
-  background: var(--zinc-900);
-  border: 1px solid var(--zinc-800);
-  border-radius: var(--radius);
-  overflow: hidden;
+  gap: 6px;
+  height: 100%;
+  min-height: 0;
+  background: var(--zinc-950);
 }
 
 .bottom-panel-half {
   min-width: 0;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid var(--zinc-800);
-  overflow: hidden;
 }
 
 .bottom-panel-logs {
-  flex: 1.15;
+  flex: 0.95;
 }
 
 .bottom-panel-scores {
-  flex: 0.85;
+  flex: 1.1;
 }
 
-.bottom-panel-half:last-child {
-  border-right: none;
-}
-
-.bottom-panel .panel-header {
+/* Header: plain text only, outside box, centered on top border of golden box */
+.bottom-panel-half__header {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  width: fit-content;
+  max-width: 100%;
   flex-shrink: 0;
+  margin-top: 0.4rem;
+  margin-bottom: -0.55em;
+  padding: 0 0.5rem;
+  background: var(--zinc-950);
+  border: none;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+}
+
+.bottom-panel-half__header .panel-title {
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--zinc-300);
+}
+
+.bottom-panel-half__header.panel-header {
+  background: var(--zinc-950);
+  padding: 0 0.5rem;
+  border-bottom: none;
+}
+
+.bottom-panel-half__box {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--zinc-950);
 }
 
 .bottom-panel-inner {
@@ -720,7 +763,31 @@ body {
   overflow: auto;
 }
 
-/* Log list (right half) — terminal-like */
+/* Current sequence & scores — plain text lines */
+.bottom-panel-scores__text {
+  padding: 0.5rem 0.75rem;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--zinc-300);
+}
+
+.bottom-panel-scores__text .score-line {
+  padding: 0.2rem 0;
+  line-height: 1.5;
+  color: var(--zinc-300);
+}
+
+.bottom-panel-scores__text .sequence-display {
+  font-size: 11px;
+  word-break: break-all;
+  color: var(--green-500);
+}
+
+.bottom-panel-scores__text #current-sequence.empty {
+  color: var(--zinc-500);
+}
+
+/* Log list (left half) — terminal-like */
 .log-list {
   padding: 0.5rem 0.75rem;
   font-size: 11px;

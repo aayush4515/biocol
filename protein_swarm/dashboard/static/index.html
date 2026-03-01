@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Protein Swarm Dashboard</title>
   <link rel="stylesheet" href="/static/style.css" />
+  <link rel="icon" href="/static/biocol.ico" type="image/x-icon">
 </head>
 <body>
   <div class="layout">
@@ -155,53 +156,28 @@ patterns</textarea>
       </div>
 
       <section class="bottom-panel">
-        <div class="bottom-panel-half bottom-panel-logs">
-          <header class="panel-header">
-            <span class="panel-icon panel-icon--blue" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="m16.24 7.76 2.83-2.83"/></svg>
-            </span>
-            <h3 class="panel-title">Logs</h3>
-          </header>
-          <div id="log-content" class="bottom-panel-inner log-list"></div>
-        </div>
-        <div class="bottom-panel-half bottom-panel-scores">
-          <header class="panel-header">
-            <span class="panel-icon panel-icon--blue" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-            </span>
-            <h3 class="panel-title">Current sequence &amp; scores</h3>
-          </header>
-          <div class="bottom-panel-inner">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Metric</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="data-table__label">Sequence</td>
-                  <td class="data-table__value data-table__value--mono"><code id="current-sequence" class="sequence-display">—</code></td>
-                </tr>
-                <tr>
-                  <td class="data-table__label">Best score</td>
-                  <td class="data-table__value data-table__value--mono"><span id="best-score">—</span></td>
-                </tr>
-                <tr>
-                  <td class="data-table__label">Rosetta energy</td>
-                  <td class="data-table__value data-table__value--mono"><span id="rosetta-energy">—</span></td>
-                </tr>
-                <tr>
-                  <td class="data-table__label">Energy trend</td>
-                  <td class="data-table__value"><span id="energy-trend" class="status-pill status-pill--blue">—</span></td>
-                </tr>
-                <tr>
-                  <td class="data-table__label">Mean pLDDT</td>
-                  <td class="data-table__value data-table__value--mono"><span id="mean-plddt">—</span></td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="bottom-panel__frame">
+          <div class="bottom-panel-half bottom-panel-logs">
+            <header class="bottom-panel-half__header panel-header">
+              <h3 class="panel-title">Activity</h3>
+            </header>
+            <div class="bottom-panel-half__box">
+              <div id="log-content" class="bottom-panel-inner log-list"></div>
+            </div>
+          </div>
+          <div class="bottom-panel-half bottom-panel-scores">
+            <header class="bottom-panel-half__header panel-header">
+              <h3 class="panel-title">Current sequence &amp; scores</h3>
+            </header>
+            <div class="bottom-panel-half__box">
+              <div class="bottom-panel-inner bottom-panel-scores__text">
+                <div class="score-line">Sequence: <code id="current-sequence" class="sequence-display">—</code></div>
+                <div class="score-line">Best score: <span id="best-score">—</span></div>
+                <div class="score-line">Rosetta energy: <span id="rosetta-energy">—</span></div>
+                <div class="score-line">Energy trend: <span id="energy-trend" class="status-pill status-pill--blue">—</span></div>
+                <div class="score-line">Mean pLDDT: <span id="mean-plddt">—</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
