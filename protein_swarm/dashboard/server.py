@@ -12,7 +12,9 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import sqlite3
 import threading
+from datetime import datetime, timezone
 from pathlib import Path
 from queue import Empty, Queue
 
@@ -45,6 +47,84 @@ app.add_middleware(
 
 # Directory containing static files (index.html, etc.)
 STATIC_DIR = Path(__file__).resolve().parent / "static"
+# SQLite database for run history and total-proteins counter
+DATA_DIR = Path(__file__).resolve().parent / "data"
+DB_PATH = DATA_DIR / "runs.db"
+_db_lock = threading.Lock()
+
+
+def _init_db() -> None:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    with _db_lock:
+        conn = sqlite3.connect(DB_PATH)
+        try:
+            conn.execute(
+                """
+                CREATE TABLE IF NOT EXISTS runs (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    created_at TEXT NOT NULL,
+                    initial_sequence TEXT NOT NULL,
+                    final_sequence TEXT NOT NULL,
+                    use_llm INTEGER NOT NULL,
+                    iterations INTEGER NOT NULL,
+                    protein_length INTEGER NOT NULL
+                )
+                """
+            )
+            conn.commit()
+        finally:
+            conn.close()
+
+
+def _record_run(
+    initial_sequence: str,
+    final_sequence: str,
+    use_llm: bool,
+    iterations: int,
+    protein_length: int,
+) -> None:
+    _init_db()
+    created = datetime.now(timezone.utc).isoformat()
+    with _db_lock:
+        conn = sqlite3.connect(DB_PATH)
+        try:
+            conn.execute(
+                """
+                INSERT INTO runs (created_at, initial_sequence, final_sequence, use_llm, iterations, protein_length)
+                VALUES (?, ?, ?, ?, ?, ?)
+                """,
+                (created, initial_sequence, final_sequence, 1 if use_llm else 0, iterations, protein_length),
+            )
+            conn.commit()
+        finally:
+            conn.close()
+
+
+def _get_history(limit: int = 100) -> list[dict]:
+    _init_db()
+    with _db_lock:
+        conn = sqlite3.connect(DB_PATH)
+        try:
+            conn.row_factory = sqlite3.Row
+            cur = conn.execute(
+                "SELECT id, created_at, initial_sequence, final_sequence, use_llm, iterations, protein_length FROM runs ORDER BY id DESC LIMIT ?",
+                (limit,),
+            )
+            rows = cur.fetchall()
+            return [dict(r) for r in rows]
+        finally:
+            conn.close()
+
+
+def _get_total_proteins() -> int:
+    _init_db()
+    with _db_lock:
+        conn = sqlite3.connect(DB_PATH)
+        try:
+            cur = conn.execute("SELECT COUNT(*) FROM runs")
+            return cur.fetchone()[0]
+        finally:
+            conn.close()
 
 
 class RunRequest(BaseModel):
@@ -132,6 +212,25 @@ def _run_engine(req: RunRequest) -> None:
     )
     try:
         engine.run(sequence, req.objective, progress_callback=on_progress)
+        # Record run in SQLite for history and total-proteins counter
+        metrics_path = _last_output_dir / "metrics.json"
+        if metrics_path.is_file():
+            try:
+                data = json.loads(metrics_path.read_text())
+                initial = data.get("initial_sequence") or sequence
+                final = data.get("final_sequence") or sequence
+                iters = data.get("total_iterations")
+                if iters is None:
+                    iters = req.max_iterations
+                _record_run(
+                    initial_sequence=initial,
+                    final_sequence=final,
+                    use_llm=req.use_llm,
+                    iterations=iters,
+                    protein_length=len(final),
+                )
+            except Exception as db_err:
+                logger.warning("Failed to record run to history: %s", db_err)
     except Exception as e:
         logger.exception("Run failed")
         _event_queue.put({"type": "run_error", "message": str(e)})
@@ -214,6 +313,35 @@ def api_final_pdb() -> PlainTextResponse:
     if not pdb_path.is_file():
         return PlainTextResponse(content="Final structure file not found.", status_code=404)
     return PlainTextResponse(content=pdb_path.read_text())
+
+
+@app.get("/api/history")
+def api_history(limit: int = 100) -> dict:
+    """Return run history for the History tab (start/end sequence, LLM, iterations, length)."""
+    if limit < 1 or limit > 500:
+        limit = 100
+    rows = _get_history(limit=limit)
+    # Serialize for JSON (sqlite3.Row may have int for use_llm)
+    return {
+        "runs": [
+            {
+                "id": r["id"],
+                "created_at": r["created_at"],
+                "initial_sequence": r["initial_sequence"],
+                "final_sequence": r["final_sequence"],
+                "use_llm": bool(r["use_llm"]),
+                "iterations": r["iterations"],
+                "protein_length": r["protein_length"],
+            }
+            for r in rows
+        ],
+    }
+
+
+@app.get("/api/stats")
+def api_stats() -> dict:
+    """Return total number of proteins (runs) for the live counter."""
+    return {"total_proteins": _get_total_proteins()}
 
 
 @app.get("/")

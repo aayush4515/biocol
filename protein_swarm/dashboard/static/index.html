@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Biocol Dashboard</title>
+  <title>BioCol Dashboard</title>
   <link rel="stylesheet" href="/static/style.css" />
   <link rel="icon" href="/static/biocol.ico" type="image/x-icon">
 </head>
 <body>
+  <div id="splash-overlay" class="splash-overlay" aria-hidden="false">
+    <div class="splash-content">
+      <h1 class="splash-title">BioCol</h1>
+      <p class="splash-slogan">Protein Engineering with AI</p>
+    </div>
+  </div>
   <div class="layout">
     <aside class="sidebar">
       <header class="sidebar-header">
@@ -15,7 +21,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </span>
         <div class="sidebar-brand">
-          <h1 class="sidebar-title">Biocol</h1>
+          <h1 class="sidebar-title">BioCol</h1>
           <p class="sidebar-subtitle">Protein Engineering with AI.</p>
         </div>
       </header>
@@ -132,6 +138,14 @@ patterns</textarea>
     </aside>
 
     <main class="main">
+      <nav class="main-tabs" role="tablist">
+        <button type="button" class="main-tab main-tab--active" data-tab="design" role="tab" aria-selected="true">Design</button>
+        <button type="button" class="main-tab" data-tab="history" role="tab" aria-selected="false">History</button>
+        <button type="button" class="main-tab" data-tab="about" role="tab" aria-selected="false">About</button>
+        <button type="button" class="main-tab" data-tab="contact" role="tab" aria-selected="false">Contact us</button>
+        <span class="topbar-counter">Total proteins designed: <span id="total-proteins-count">0</span></span>
+      </nav>
+      <div id="tab-design" class="tab-panel tab-panel--active" role="tabpanel">
       <div class="top-section">
         <div class="agent-window">
           <div class="agent-window__title">Agent Window</div>
@@ -186,8 +200,91 @@ patterns</textarea>
           </div>
         </div>
       </section>
+      </div>
+      <div id="tab-history" class="tab-panel" role="tabpanel" hidden>
+        <header class="history-panel-header">
+          <h2 class="history-panel-title">Run history</h2>
+          <button type="button" id="history-refresh-btn" class="history-refresh-btn">Refresh</button>
+        </header>
+        <div class="history-table-wrap">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Start sequence</th>
+                <th>End sequence</th>
+                <th>LLM</th>
+                <th>Iterations</th>
+                <th>Length</th>
+              </tr>
+            </thead>
+            <tbody id="history-tbody">
+            </tbody>
+          </table>
+          <p id="history-empty" class="history-empty">No runs yet. Complete a design run to see history.</p>
+        </div>
+      </div>
+      <div id="tab-about" class="tab-panel" role="tabpanel" hidden>
+        <div class="about-float-wrap">
+          <article id="about-content" class="about-float-card markdown-body"></article>
+        </div>
+      </div>
+      <div id="tab-contact" class="tab-panel" role="tabpanel" hidden>
+        <div class="about-float-wrap">
+          <article id="contact-content" class="about-float-card markdown-body"></article>
+        </div>
+      </div>
     </main>
   </div>
+  <script type="text/markdown" id="about-markdown">
+# BioCol — Protein Engineering with AI
+
+**BioCol** is a swarm-based protein design engine that optimizes amino acid sequences using multi-agent reasoning and structure prediction.
+
+## The story
+
+Designing proteins that fold into desired shapes and perform specific functions has long been a challenge in biology. BioCol approaches this by treating each residue in a sequence as an *agent* that can propose changes. These agents use local structural context, design objectives, and shared memory to suggest mutations. Proposed sequences are folded (e.g. with ESMFold), scored with physics-based and objective-driven metrics, and accepted or rejected in an iterative loop—so the sequence evolves toward the goal while staying structurally sound.
+
+## What it does
+
+- **Multi-agent design:** Each position is an agent that proposes mutations based on structure, memory, and your objective.
+- **Structure-aware:** Integrates folding (ESMFold on Modal or local dummy) and optional PyRosetta scoring for energy and stability.
+- **LLM-backed or heuristic:** Agents can use an LLM (e.g. GPT-4o-mini) for reasoning or run with fast heuristic rules.
+- **Dashboard:** Run designs from the web UI, stream progress, view 3D structures, and browse run history.
+
+## How to use
+
+Use the **Design** tab to enter an initial sequence and a natural-language objective (e.g. *"introduce flexibility through turn-promoting residues"*). Configure iterations, LLM, and folding options in the left panel, then run. The **History** tab lists past runs; the counter in the top bar shows total proteins designed so far.
+  </script>
+  <script type="text/markdown" id="contact-markdown">
+# Contact us
+
+Get in touch with the developers behind BioCol.
+
+---
+
+## Developers
+
+![Aayush Acharya](/static/Aayush.jpg)
+
+### Aayush Acharya [![LinkedIn](/static/linkedin.svg)](https://linkedin.com/in/aayush4515) [![GitHub](/static/github.svg)](https://github.com/aayush4515)
+
+**CS & Math** at Elmhurst University  
+**SWE Intern** @ A2Z Imaging  
+
+<span class="contact-email">aayushacharya1545@gmail.com</span>
+
+---
+
+![Dung Nguyen](/static/Dung.png)
+
+### Dung Nguyen [![LinkedIn](/static/linkedin.svg)](https://linkedin.com/in/nguyend77/) [![GitHub](/static/github.svg)](https://github.com/nguyend77)
+
+**Math & Econ** at Elmhurst University  
+**ML Researcher** and Enthusiast  
+
+<span class="contact-email">dnguy9448@365.elmhurst.edu</span>
+  </script>
 
   <div id="protein-modal" class="protein-modal" aria-hidden="true">
     <div class="protein-modal__backdrop"></div>
@@ -205,6 +302,7 @@ patterns</textarea>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/3dmol@2.5.4/build/3Dmol-min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="/static/app.js"></script>
 </body>
 </html>

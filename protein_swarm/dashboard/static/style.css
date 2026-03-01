@@ -54,17 +54,18 @@ body {
   padding: var(--gap);
 }
 
-/* —— Sidebar: narrow for more central space —— */
+/* —— Sidebar: brighter, more attractive —— */
 .sidebar {
   width: var(--sidebar-width);
   min-width: var(--sidebar-width);
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  background: var(--zinc-900);
-  border: 1px solid var(--zinc-800);
+  background: linear-gradient(180deg, #2d2d32 0%, #252528 100%);
+  border: 1px solid var(--zinc-600);
   border-radius: var(--radius);
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 .sidebar-header {
@@ -73,7 +74,8 @@ body {
   gap: 10px;
   padding: var(--gap);
   flex-shrink: 0;
-  border-bottom: 1px solid var(--zinc-800);
+  border-bottom: 1px solid var(--zinc-700);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .sidebar-icon {
@@ -105,6 +107,7 @@ body {
   color: var(--zinc-400);
   letter-spacing: 0.02em;
 }
+
 
 .sidebar .controls {
   flex: 1;
@@ -1116,4 +1119,307 @@ body {
 .data-table code {
   font-family: var(--font-mono);
   font-size: 11px;
+}
+
+/* Splash overlay (~2s: fade in, hold, fade out) */
+.splash-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--zinc-950);
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  pointer-events: none;
+}
+
+.splash-overlay.splash-visible {
+  opacity: 1;
+  transition-duration: 0.5s;
+}
+
+.splash-overlay.splash-fade-out {
+  opacity: 0;
+}
+
+.splash-overlay[aria-hidden="true"] {
+  display: none;
+}
+
+.splash-content {
+  text-align: center;
+}
+
+.splash-title {
+  margin: 0;
+  font-family: Cambria, "Cambria Math", "Hoefler Text", serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--zinc-100);
+  letter-spacing: 0.02em;
+}
+
+.splash-slogan {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.1rem;
+  color: var(--zinc-400);
+  letter-spacing: 0.03em;
+}
+
+/* Main tabs (Design / History) */
+.main-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 var(--gap);
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--zinc-800);
+  background: var(--zinc-900);
+}
+
+.topbar-counter {
+  margin-left: auto;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--zinc-400);
+}
+
+.topbar-counter #total-proteins-count {
+  font-weight: 700;
+  color: var(--blue-500);
+}
+
+.main-tab {
+  padding: 0.6rem 1rem;
+  border: none;
+  background: transparent;
+  color: var(--zinc-500);
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.main-tab:hover {
+  color: var(--zinc-300);
+}
+
+.main-tab.main-tab--active {
+  color: var(--blue-500);
+  border-bottom-color: var(--blue-500);
+}
+
+.tab-panel {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.tab-panel.tab-panel--active {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-panel[hidden] {
+  display: none !important;
+}
+
+/* History tab */
+.history-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--gap);
+  border-bottom: 1px solid var(--zinc-800);
+}
+
+.history-panel-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--zinc-100);
+}
+
+.history-refresh-btn {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--zinc-600);
+  border-radius: var(--radius-sm);
+  background: var(--zinc-800);
+  color: var(--zinc-300);
+  font-size: 0.75rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.history-refresh-btn:hover {
+  background: var(--zinc-700);
+  color: var(--zinc-100);
+}
+
+.history-table-wrap {
+  flex: 1;
+  overflow: auto;
+  padding: var(--gap);
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.history-table th,
+.history-table td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--zinc-800);
+}
+
+.history-table th {
+  color: var(--zinc-500);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+.history-table td {
+  color: var(--zinc-300);
+}
+
+.history-table code {
+  font-size: 0.75rem;
+  word-break: break-all;
+}
+
+.history-empty {
+  color: var(--zinc-500);
+  font-size: 0.9rem;
+  margin: 1rem 0 0 0;
+  display: none;
+}
+
+.history-table-wrap:not(.has-rows) .history-empty {
+  display: block;
+}
+
+/* About tab — floating card with markdown */
+.about-float-wrap {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--gap);
+  overflow: auto;
+  min-height: 0;
+}
+
+.about-float-card {
+  width: 100%;
+  max-width: 640px;
+  padding: 2rem;
+  background: var(--zinc-900);
+  border: 1px solid var(--zinc-700);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  color: var(--zinc-200);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.markdown-body h1 {
+  margin: 0 0 1rem 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--zinc-100);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--zinc-700);
+}
+
+.markdown-body h2 {
+  margin: 1.5rem 0 0.75rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--zinc-100);
+}
+
+.markdown-body h3 {
+  margin: 1.25rem 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--zinc-300);
+}
+
+.markdown-body h3 a > img {
+  margin-left: 0.5rem;
+}
+
+.markdown-body p {
+  margin: 0 0 0.75rem 0;
+}
+
+.markdown-body ul, .markdown-body ol {
+  margin: 0 0 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.markdown-body li {
+  margin: 0.25rem 0;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+  color: var(--zinc-100);
+}
+
+.markdown-body code {
+  padding: 0.15em 0.4em;
+  background: var(--zinc-800);
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+.markdown-body pre {
+  margin: 0.75rem 0;
+  padding: 1rem;
+  background: var(--zinc-950);
+  border: 1px solid var(--zinc-800);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+}
+
+.markdown-body pre code {
+  padding: 0;
+  background: none;
+}
+
+.markdown-body img {
+  display: block;
+  max-width: 120px;
+  height: auto;
+  border-radius: 50%;
+  margin: 0.5rem 0 1rem 0;
+  border: 2px solid var(--zinc-700);
+}
+
+.markdown-body a > img {
+  display: inline-block;
+  max-width: 22px;
+  height: 22px;
+  width: 22px;
+  border-radius: 0;
+  margin: 0 0.35rem 0 0;
+  border: none;
+  vertical-align: middle;
+}
+
+.markdown-body .contact-email {
+  color: var(--zinc-300);
+  font-style: normal;
 }

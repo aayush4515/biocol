@@ -443,6 +443,7 @@
             inProgressContent.innerHTML = "";
             var agentContent = document.getElementById("agent-window-content");
             if (agentContent) agentContent.classList.add("run-finished");
+            if (typeof updateTotalProteins === "function") updateTotalProteins();
             break;
           case "run_error":
             if (eventSource) {
@@ -546,4 +547,98 @@
       });
     });
   }
+
+  function updateTotalProteins() {
+    var el = document.getElementById("total-proteins-count");
+    if (!el) return;
+    fetch("/api/stats").then(function (r) { return r.json(); }).then(function (d) {
+      el.textContent = d.total_proteins != null ? String(d.total_proteins) : "0";
+    }).catch(function () { el.textContent = "0"; });
+  }
+
+  function loadHistory() {
+    var tbody = document.getElementById("history-tbody");
+    var wrap = document.querySelector(".history-table-wrap");
+    var emptyEl = document.getElementById("history-empty");
+    if (!tbody) return;
+    fetch("/api/history").then(function (r) { return r.json(); }).then(function (d) {
+      var runs = d.runs || [];
+      tbody.innerHTML = "";
+      runs.forEach(function (run) {
+        var tr = document.createElement("tr");
+        var date = run.created_at ? run.created_at.replace("T", " ").slice(0, 19) : "—";
+        var start = (run.initial_sequence || "").length > 30 ? (run.initial_sequence || "").slice(0, 30) + "…" : (run.initial_sequence || "—");
+        var end = (run.final_sequence || "").length > 30 ? (run.final_sequence || "").slice(0, 30) + "…" : (run.final_sequence || "—");
+        tr.innerHTML = "<td>" + date + "</td><td><code>" + escapeHtml(start) + "</code></td><td><code>" + escapeHtml(end) + "</code></td><td>" + (run.use_llm ? "Yes" : "No") + "</td><td>" + (run.iterations != null ? run.iterations : "—") + "</td><td>" + (run.protein_length != null ? run.protein_length : "—") + "</td>";
+        tbody.appendChild(tr);
+      });
+      if (wrap) wrap.classList.toggle("has-rows", runs.length > 0);
+      if (emptyEl) emptyEl.style.display = runs.length > 0 ? "none" : "block";
+    }).catch(function () {
+      if (wrap) wrap.classList.remove("has-rows");
+      if (emptyEl) emptyEl.style.display = "block";
+    });
+  }
+
+  function renderAboutMarkdown() {
+    var scriptEl = document.getElementById("about-markdown");
+    var contentEl = document.getElementById("about-content");
+    if (!scriptEl || !contentEl) return;
+    var raw = scriptEl.textContent || "";
+    if (typeof marked !== "undefined") {
+      contentEl.innerHTML = (marked.parse ? marked.parse(raw) : marked(raw));
+    } else {
+      contentEl.textContent = raw;
+    }
+  }
+
+  function renderContactMarkdown() {
+    var scriptEl = document.getElementById("contact-markdown");
+    var contentEl = document.getElementById("contact-content");
+    if (!scriptEl || !contentEl) return;
+    var raw = scriptEl.textContent || "";
+    if (typeof marked !== "undefined") {
+      contentEl.innerHTML = (marked.parse ? marked.parse(raw) : marked(raw));
+    } else {
+      contentEl.textContent = raw;
+    }
+    contentEl.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+      var span = document.createElement("span");
+      span.className = "contact-email";
+      span.textContent = a.textContent;
+      a.parentNode.replaceChild(span, a);
+    });
+  }
+
+  document.querySelectorAll(".main-tab").forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      var tabId = tab.getAttribute("data-tab");
+      document.querySelectorAll(".main-tab").forEach(function (t) { t.classList.remove("main-tab--active"); t.setAttribute("aria-selected", "false"); });
+      tab.classList.add("main-tab--active");
+      tab.setAttribute("aria-selected", "true");
+      document.querySelectorAll(".tab-panel").forEach(function (p) { p.classList.remove("tab-panel--active"); p.hidden = true; });
+      var panel = document.getElementById("tab-" + tabId);
+      if (panel) { panel.classList.add("tab-panel--active"); panel.hidden = false; }
+      if (tabId === "history") loadHistory();
+      if (tabId === "about") renderAboutMarkdown();
+      if (tabId === "contact") renderContactMarkdown();
+    });
+  });
+
+  var historyRefreshBtn = document.getElementById("history-refresh-btn");
+  if (historyRefreshBtn) historyRefreshBtn.addEventListener("click", loadHistory);
+
+  var splashEl = document.getElementById("splash-overlay");
+  if (splashEl) {
+    splashEl.classList.add("splash-visible");
+    setTimeout(function () {
+      splashEl.classList.add("splash-fade-out");
+      splashEl.style.transition = "opacity 1s ease-out";
+      setTimeout(function () {
+        splashEl.setAttribute("aria-hidden", "true");
+      }, 1000);
+    }, 1000);
+  }
+
+  updateTotalProteins();
 })();
