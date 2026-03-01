@@ -1,0 +1,12 @@
+modal>=0.68.0
+typer>=0.12.0
+pydantic>=2.9.0
+rich>=13.9.0
+numpy>=2.1.0
+openai>=1.40.0
+biopython>=1.81
+pyrosetta==2025.19+release.1354d05daa
+torch
+transformers
+accelerate
+safetensors
