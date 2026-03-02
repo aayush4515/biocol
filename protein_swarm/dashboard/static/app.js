@@ -87,7 +87,7 @@
         var opt = document.createElement("option");
         opt.value = String(i);
         opt.textContent = String(i);
-        if (i === 50) opt.selected = true;
+        if (i === 10) opt.selected = true;
         maxIterEl.appendChild(opt);
       }
       syncCustomDropdown("max_iterations");
@@ -95,7 +95,7 @@
     }
     function fillPlateauWindow() {
       if (!plateauEl || !maxIterEl) return;
-      var max = parseInt(maxIterEl.value, 10) || 50;
+      var max = parseInt(maxIterEl.value, 10) || 10;
       var current = plateauEl.value;
       var plateauMax = max <= 2 ? 2 : max - 1;
       plateauEl.innerHTML = "";
@@ -262,7 +262,7 @@
   }
 
   function buildPayload() {
-    var maxIter = Math.max(1, Math.min(500, num(parseInt(getVal("max_iterations", "50"), 10), 50)));
+    var maxIter = Math.max(1, Math.min(500, num(parseInt(getVal("max_iterations", "10"), 10), 10)));
     var plateauRaw = num(parseInt(getVal("plateau_window", "5"), 10), 5);
     var plateau_window = Math.max(2, Math.min(plateauRaw, maxIter - 1));
     return {
@@ -361,6 +361,11 @@
     var agentContent = document.getElementById("agent-window-content");
     if (agentContent) agentContent.classList.remove("run-finished");
 
+    var designStart = document.getElementById("design-start");
+    var designRunView = document.getElementById("design-run-view");
+    if (designStart) designStart.classList.add("design-start--hidden");
+    if (designRunView) designRunView.classList.remove("design-run-view--hidden");
+
     try {
       const res = await fetch("/api/run", {
         method: "POST",
@@ -371,11 +376,15 @@
       if (!data.ok) {
         alert(data.error || "Failed to start run.");
         setRunning(false);
+        designStart && designStart.classList.remove("design-start--hidden");
+        designRunView && designRunView.classList.add("design-run-view--hidden");
         return;
       }
     } catch (err) {
       alert("Request failed: " + err.message);
       setRunning(false);
+      designStart && designStart.classList.remove("design-start--hidden");
+      designRunView && designRunView.classList.add("design-run-view--hidden");
       return;
     }
 
@@ -669,6 +678,36 @@
       a.parentNode.replaceChild(span, a);
     });
   }
+
+  (function initConfigPopover() {
+    var configToggle = document.getElementById("config-toggle");
+    var configPopover = document.getElementById("config-popover");
+    if (!configToggle || !configPopover) return;
+    function positionPopover() {
+      var rect = configToggle.getBoundingClientRect();
+      configPopover.style.top = (rect.bottom + 6) + "px";
+      configPopover.style.left = rect.left + "px";
+    }
+    configToggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var isOpen = configPopover.getAttribute("aria-hidden") !== "true";
+      if (!isOpen) {
+        positionPopover();
+      }
+      configPopover.setAttribute("aria-hidden", isOpen ? "true" : "false");
+      configToggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
+      configToggle.classList.toggle("config-toggle--open", !isOpen);
+      if (!isOpen) requestAnimationFrame(positionPopover);
+    });
+    document.addEventListener("click", function (e) {
+      if (!configPopover.contains(e.target) && e.target !== configToggle) {
+        configPopover.setAttribute("aria-hidden", "true");
+        configToggle.setAttribute("aria-expanded", "false");
+        configToggle.classList.remove("config-toggle--open");
+      }
+    });
+  })();
 
   document.querySelectorAll(".main-tab").forEach(function (tab) {
     tab.addEventListener("click", function () {

@@ -15,127 +15,10 @@
     </div>
   </div>
   <div class="layout">
-    <aside class="sidebar">
-      <header class="sidebar-header">
-        <span class="sidebar-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        </span>
-        <div class="sidebar-brand">
-          <h1 class="sidebar-title">BioCol</h1>
-          <p class="sidebar-subtitle">Protein Engineering with AI.</p>
-        </div>
-      </header>
-      <form id="run-form" class="controls">
-        <section class="control-section">
-          <h3 class="section-title">Sequence &amp; objective</h3>
-          <label>Protein sequence</label>
-          <textarea id="sequence" name="sequence" rows="2" placeholder="e.g. VVVVVVVVVVVVVVVVVVVV">VVVVVVVVVVVVVVVVVVVV</textarea>
-          <label>Objective / Prompt</label>
-          <textarea id="objective" name="objective" rows="2" placeholder="e.g. introduce flexibility through turn-promoting residues">introduce flexibility through
-turn-promoting residues while
-creating repeating sequence
-patterns</textarea>
-        </section>
-        <section class="control-section">
-          <h3 class="section-title">Run</h3>
-          <label>Max iterations</label>
-          <div id="max_iterations_wrap" class="custom-dropdown-wrap">
-            <select id="max_iterations" name="max_iterations" aria-hidden="true">
-              <!-- Options 1-50 populated by JS -->
-            </select>
-            <div class="custom-dropdown" data-for="max_iterations">
-              <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">50</button>
-              <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
-            </div>
-          </div>
-          <label>Mutation rate <span id="mutation_rate_value" class="control-value">0.2</span></label>
-          <input type="range" id="mutation_rate" name="mutation_rate" min="0" max="1" step="0.05" value="0.2" />
-          <label>LLM confidence threshold <span id="confidence_threshold_value" class="control-value">0.6</span></label>
-          <input type="range" id="confidence_threshold" name="confidence_threshold" min="0" max="1" step="0.05" value="0.6" />
-          <label>Plateau window</label>
-          <div id="plateau_window_wrap" class="custom-dropdown-wrap">
-            <select id="plateau_window" name="plateau_window" aria-hidden="true">
-              <!-- Options 1 to max_iterations-1 populated by JS -->
-            </select>
-            <div class="custom-dropdown" data-for="plateau_window">
-              <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">10</button>
-              <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
-            </div>
-          </div>
-        </section>
-        <section class="control-section">
-          <h3 class="section-title">LLM</h3>
-          <label class="row">
-            <input type="checkbox" id="use_llm" name="use_llm" />
-            <span>Use LLM agents</span>
-          </label>
-          <label>Model</label>
-          <div id="llm_model_wrap" class="custom-dropdown-wrap">
-            <select id="llm_model" name="llm_model" aria-hidden="true">
-              <option value="gpt-4o-mini" selected>gpt-4o-mini</option>
-              <option value="gpt-4o">gpt-4o</option>
-              <option value="claude-3-5-sonnet">claude-3-5-sonnet</option>
-            </select>
-            <div class="custom-dropdown" data-for="llm_model">
-              <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">gpt-4o-mini</button>
-              <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
-            </div>
-          </div>
-        </section>
-        <section class="control-section">
-          <h3 class="section-title">Protein folding</h3>
-          <label class="row">
-            <input type="checkbox" id="modal_fold" name="modal_fold" />
-            <span>Modal fold (remote)</span>
-          </label>
-          <label>Folding Engine</label>
-          <div id="remote_fold_backend_wrap" class="custom-dropdown-wrap">
-            <select id="remote_fold_backend" name="remote_fold_backend" aria-hidden="true">
-              <option value="esmfold" selected>esmfold</option>
-              <option value="omegafold">omegafold</option>
-              <option value="alphafold">alphafold</option>
-              <option value="dummy">dummy</option>
-            </select>
-            <div class="custom-dropdown" data-for="remote_fold_backend">
-              <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">esmfold</button>
-              <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
-            </div>
-          </div>
-        </section>
-        <section class="control-section">
-          <h3 class="section-title">Rosetta engine</h3>
-          <label class="row">
-            <input type="checkbox" id="use_rosetta" name="use_rosetta" checked />
-            <span>Use Rosetta</span>
-          </label>
-          <label class="row">
-            <input type="checkbox" id="rosetta_relax" name="rosetta_relax" />
-            <span>Rosetta relax</span>
-          </label>
-          <label>Relax cycles</label>
-          <div id="rosetta_relax_cycles_wrap" class="custom-dropdown-wrap">
-            <select id="rosetta_relax_cycles" name="rosetta_relax_cycles" aria-hidden="true">
-              <option value="0" selected>0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-            <div class="custom-dropdown" data-for="rosetta_relax_cycles">
-              <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">0</button>
-              <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
-            </div>
-          </div>
-        </section>
-        <button type="submit" id="run-btn" class="run-btn">
-          <span class="run-btn-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          </span>
-          Run
-        </button>
-      </form>
-    </aside>
+    <header class="site-header">
+      <h1 class="site-header__title">BioCol</h1>
+      <p class="site-header__subtitle">Protein Engineering with AI</p>
+    </header>
 
     <main class="main">
       <nav class="main-tabs" role="tablist">
@@ -145,62 +28,183 @@ patterns</textarea>
         <button type="button" class="main-tab" data-tab="contact" role="tab" aria-selected="false">Contact us</button>
         <span class="topbar-counter">Total proteins designed: <span id="total-proteins-count">0</span></span>
       </nav>
+
       <div id="tab-design" class="tab-panel tab-panel--active" role="tabpanel">
-      <div class="top-section">
-        <div class="agent-window">
-          <div class="agent-window__title">Agent Window</div>
-          <div id="agent-window-content" class="agent-window__content">
-        <section class="panel pane in-progress">
-          <header class="panel-header">
-            <span class="panel-icon panel-icon--yellow" aria-hidden="true">
-              <svg class="spinner" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
-            </span>
-            <h2 class="panel-title">In progress</h2>
-            <span id="in-progress-badge" class="panel-badge">0</span>
-          </header>
-          <div id="in-progress-content" class="pane-content scrollable"></div>
-        </section>
-        <section class="panel pane completed">
-          <header class="panel-header">
-            <span class="panel-icon panel-icon--green" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </span>
-            <h2 class="panel-title">Completed</h2>
-            <span id="completed-badge" class="panel-badge">0</span>
-            <button type="button" id="view-protein-btn" class="view-protein-btn">View Protein</button>
-          </header>
-          <div id="completed-content" class="pane-content scrollable"></div>
-        </section>
+        <div id="design-start" class="design-start">
+          <form id="run-form" class="design-form">
+            <div class="design-inputs">
+              <label for="sequence">Protein sequence</label>
+              <textarea id="sequence" name="sequence" rows="2" placeholder="e.g. VVVVVVVVVVVVVVVVVVVV">VVVVVVVVVVVVVVVVVVVV</textarea>
+              <label for="objective">Objective / Prompt</label>
+              <textarea id="objective" name="objective" rows="2" placeholder="e.g. introduce flexibility through turn-promoting residues">introduce flexibility through turn-promoting residues</textarea>
+            </div>
+            <div class="design-actions">
+              <div class="config-dropdown-wrap">
+                <button type="button" id="config-toggle" class="config-toggle" aria-expanded="false" aria-haspopup="true">
+                  Configurations <span class="config-toggle__chevron">&#9660;</span>
+                </button>
+                <div id="config-popover" class="config-popover" aria-hidden="true">
+                  <div class="config-popover__content controls">
+                    <section class="control-section">
+                      <h3 class="section-title">Run</h3>
+                      <label>Max iterations</label>
+                      <div id="max_iterations_wrap" class="custom-dropdown-wrap">
+                        <select id="max_iterations" name="max_iterations" aria-hidden="true"></select>
+                        <div class="custom-dropdown" data-for="max_iterations">
+                          <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">10</button>
+                          <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
+                        </div>
+                      </div>
+                      <label>Mutation rate <span id="mutation_rate_value" class="control-value">0.2</span></label>
+                      <input type="range" id="mutation_rate" name="mutation_rate" min="0" max="1" step="0.05" value="0.2" />
+                      <label>LLM confidence threshold <span id="confidence_threshold_value" class="control-value">0.6</span></label>
+                      <input type="range" id="confidence_threshold" name="confidence_threshold" min="0" max="1" step="0.05" value="0.6" />
+                      <label>Plateau window</label>
+                      <div id="plateau_window_wrap" class="custom-dropdown-wrap">
+                        <select id="plateau_window" name="plateau_window" aria-hidden="true"></select>
+                        <div class="custom-dropdown" data-for="plateau_window">
+                          <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">10</button>
+                          <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="control-section">
+                      <h3 class="section-title">LLM</h3>
+                      <label class="row">
+                        <input type="checkbox" id="use_llm" name="use_llm" />
+                        <span>Use LLM agents</span>
+                      </label>
+                      <label>Model</label>
+                      <div id="llm_model_wrap" class="custom-dropdown-wrap">
+                        <select id="llm_model" name="llm_model" aria-hidden="true">
+                          <option value="gpt-4o-mini" selected>gpt-4o-mini</option>
+                          <option value="gpt-4o">gpt-4o</option>
+                          <option value="claude-3-5-sonnet">claude-3-5-sonnet</option>
+                        </select>
+                        <div class="custom-dropdown" data-for="llm_model">
+                          <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">gpt-4o-mini</button>
+                          <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="control-section">
+                      <h3 class="section-title">Protein folding</h3>
+                      <label class="row">
+                        <input type="checkbox" id="modal_fold" name="modal_fold" />
+                        <span>Modal fold (remote)</span>
+                      </label>
+                      <label>Folding Engine</label>
+                      <div id="remote_fold_backend_wrap" class="custom-dropdown-wrap">
+                        <select id="remote_fold_backend" name="remote_fold_backend" aria-hidden="true">
+                          <option value="esmfold" selected>esmfold</option>
+                          <option value="omegafold">omegafold</option>
+                          <option value="alphafold">alphafold</option>
+                          <option value="dummy">dummy</option>
+                        </select>
+                        <div class="custom-dropdown" data-for="remote_fold_backend">
+                          <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">esmfold</button>
+                          <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="control-section">
+                      <h3 class="section-title">Rosetta engine</h3>
+                      <label class="row">
+                        <input type="checkbox" id="use_rosetta" name="use_rosetta" checked />
+                        <span>Use Rosetta</span>
+                      </label>
+                      <label class="row">
+                        <input type="checkbox" id="rosetta_relax" name="rosetta_relax" />
+                        <span>Rosetta relax</span>
+                      </label>
+                      <label>Relax cycles</label>
+                      <div id="rosetta_relax_cycles_wrap" class="custom-dropdown-wrap">
+                        <select id="rosetta_relax_cycles" name="rosetta_relax_cycles" aria-hidden="true">
+                          <option value="0" selected>0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                        <div class="custom-dropdown" data-for="rosetta_relax_cycles">
+                          <button type="button" class="custom-dropdown__trigger" aria-expanded="false" aria-haspopup="listbox">0</button>
+                          <div class="custom-dropdown__list" role="listbox" aria-hidden="true"></div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" id="run-btn" class="run-btn">
+                <span class="run-btn-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </span>
+                Run
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div id="design-run-view" class="design-run-view design-run-view--hidden">
+          <div class="design-run-frame">
+          <div class="top-section">
+            <div class="agent-window">
+              <div class="agent-window__title">Agent Window</div>
+              <div id="agent-window-content" class="agent-window__content">
+                <section class="panel pane in-progress">
+                  <header class="panel-header">
+                    <span class="panel-icon panel-icon--yellow" aria-hidden="true">
+                      <svg class="spinner" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+                    </span>
+                    <h2 class="panel-title">In progress</h2>
+                    <span id="in-progress-badge" class="panel-badge">0</span>
+                  </header>
+                  <div id="in-progress-content" class="pane-content scrollable"></div>
+                </section>
+                <section class="panel pane completed">
+                  <header class="panel-header">
+                    <span class="panel-icon panel-icon--green" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </span>
+                    <h2 class="panel-title">Completed</h2>
+                    <span id="completed-badge" class="panel-badge">0</span>
+                    <button type="button" id="view-protein-btn" class="view-protein-btn">View Protein</button>
+                  </header>
+                  <div id="completed-content" class="pane-content scrollable"></div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <section class="bottom-panel">
+            <div class="bottom-panel__frame">
+              <div class="bottom-panel-half bottom-panel-logs">
+                <header class="bottom-panel-half__header panel-header">
+                  <h3 class="panel-title">Activity</h3>
+                </header>
+                <div class="bottom-panel-half__box">
+                  <div id="log-content" class="bottom-panel-inner log-list"></div>
+                </div>
+              </div>
+              <div class="bottom-panel-half bottom-panel-scores">
+                <header class="bottom-panel-half__header panel-header">
+                  <h3 class="panel-title">Current sequence &amp; scores</h3>
+                </header>
+                <div class="bottom-panel-half__box">
+                  <div class="bottom-panel-inner bottom-panel-scores__text">
+                    <div class="score-line">Sequence: <code id="current-sequence" class="sequence-display">—</code></div>
+                    <div class="score-line">Best score: <span id="best-score">—</span></div>
+                    <div class="score-line">Rosetta energy: <span id="rosetta-energy">—</span></div>
+                    <div class="score-line">Energy trend: <span id="energy-trend" class="status-pill status-pill--blue">—</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
           </div>
         </div>
       </div>
 
-      <section class="bottom-panel">
-        <div class="bottom-panel__frame">
-          <div class="bottom-panel-half bottom-panel-logs">
-            <header class="bottom-panel-half__header panel-header">
-              <h3 class="panel-title">Activity</h3>
-            </header>
-            <div class="bottom-panel-half__box">
-              <div id="log-content" class="bottom-panel-inner log-list"></div>
-            </div>
-          </div>
-          <div class="bottom-panel-half bottom-panel-scores">
-            <header class="bottom-panel-half__header panel-header">
-              <h3 class="panel-title">Current sequence &amp; scores</h3>
-            </header>
-            <div class="bottom-panel-half__box">
-              <div class="bottom-panel-inner bottom-panel-scores__text">
-                <div class="score-line">Sequence: <code id="current-sequence" class="sequence-display">—</code></div>
-                <div class="score-line">Best score: <span id="best-score">—</span></div>
-                <div class="score-line">Rosetta energy: <span id="rosetta-energy">—</span></div>
-                <div class="score-line">Energy trend: <span id="energy-trend" class="status-pill status-pill--blue">—</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      </div>
       <div id="tab-history" class="tab-panel" role="tabpanel" hidden>
         <header class="history-panel-header">
           <h2 class="history-panel-title">Run history</h2>
@@ -255,7 +259,7 @@ Designing proteins that fold into desired shapes and perform specific functions 
 
 ## How to use
 
-Use the **Design** tab to enter an initial sequence and a natural-language objective (e.g. *"introduce flexibility through turn-promoting residues"*). Configure iterations, LLM, and folding options in the left panel, then run. The **History** tab lists past runs; the counter in the top bar shows total proteins designed so far.
+Use the **Design** tab to enter an initial sequence and a natural-language objective (e.g. *"introduce flexibility through turn-promoting residues"*). Click **Configurations** to adjust iterations, LLM, and folding options, then run. The **History** tab lists past runs; the counter in the top bar shows total proteins designed so far.
   </script>
   <script type="text/markdown" id="contact-markdown">
 # Contact us
