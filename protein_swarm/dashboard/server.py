@@ -55,6 +55,7 @@ _db_lock = threading.Lock()
 
 def _init_db() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
+    (DATA_DIR / "pdbs").mkdir(parents=True, exist_ok=True)
     with _db_lock:
         conn = sqlite3.connect(DB_PATH)
         try:
@@ -68,7 +69,8 @@ def _init_db() -> None:
                     use_llm INTEGER NOT NULL,
                     iterations INTEGER NOT NULL,
                     protein_length INTEGER NOT NULL,
-                    image_path TEXT
+                    image_path TEXT,
+                    pdb_path TEXT
                 )
                 """
             )
@@ -77,6 +79,9 @@ def _init_db() -> None:
             columns = [row[1] for row in cur.fetchall()]
             if "image_path" not in columns:
                 conn.execute("ALTER TABLE runs ADD COLUMN image_path TEXT")
+                conn.commit()
+            if "pdb_path" not in columns:
+                conn.execute("ALTER TABLE runs ADD COLUMN pdb_path TEXT")
                 conn.commit()
         finally:
             conn.close()
@@ -116,7 +121,7 @@ def _get_history(limit: int = 100) -> list[dict]:
         try:
             conn.row_factory = sqlite3.Row
             cur = conn.execute(
-                "SELECT id, created_at, initial_sequence, final_sequence, use_llm, iterations, protein_length, image_path FROM runs ORDER BY id DESC LIMIT ?",
+                "SELECT id, created_at, initial_sequence, final_sequence, use_llm, iterations, protein_length, image_path, pdb_path FROM runs ORDER BY id DESC LIMIT ?",
                 (limit,),
             )
             rows = cur.fetchall()
@@ -125,66 +130,25 @@ def _get_history(limit: int = 100) -> list[dict]:
             conn.close()
 
 
-def _update_run_image_path(run_id: int, image_path: str) -> None:
+def _update_run_pdb_path(run_id: int, pdb_path: str) -> None:
     with _db_lock:
         conn = sqlite3.connect(DB_PATH)
         try:
-            conn.execute("UPDATE runs SET image_path = ? WHERE id = ?", (image_path, run_id))
+            conn.execute("UPDATE runs SET pdb_path = ? WHERE id = ?", (pdb_path, run_id))
             conn.commit()
         finally:
             conn.close()
 
 
-def _pdb_to_png(pdb_path: Path, out_path: Path) -> bool:
-    """Render PDB CA trace to a PNG image. Returns True on success."""
+def _store_run_pdb(pdb_path: Path, run_id: int) -> None:
+    """Copy PDB to data/pdbs/{run_id}.pdb and update DB. Run synchronously after design completes."""
     try:
-        from Bio.PDB import PDBParser
-        import matplotlib
-        matplotlib.use("Agg")
-        import matplotlib.pyplot as plt
-        from mpl_toolkits.mplot3d import Axes3D
-
-        parser = PDBParser(QUIET=True)
-        structure = parser.get_structure("s", str(pdb_path))
-        model = structure[0]
-        coords = []
-        for chain in model:
-            for res in chain.get_residues():
-                if res.id[0] != " ":
-                    continue
-                if "CA" in res:
-                    coords.append(res["CA"].get_coord())
-        if len(coords) < 2:
-            return False
-        import numpy as np
-        xyz = np.array(coords)
-        x, y, z = xyz[:, 0], xyz[:, 1], xyz[:, 2]
-        out_path.parent.mkdir(parents=True, exist_ok=True)
-        fig = plt.figure(figsize=(6, 5), dpi=100)
-        ax = fig.add_subplot(111, projection="3d")
-        ax.scatter(x, y, z, c=z, cmap="viridis", s=8, alpha=0.9)
-        ax.set_xlabel("X")
-        ax.set_ylabel("Y")
-        ax.set_zlabel("Z")
-        ax.view_init(elev=15, azim=45)
-        plt.tight_layout()
-        plt.savefig(out_path, bbox_inches="tight", pad_inches=0.1)
-        plt.close()
-        return True
+        dest = DATA_DIR / "pdbs" / f"{run_id}.pdb"
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(pdb_path.read_text())
+        _update_run_pdb_path(run_id, f"pdbs/{run_id}.pdb")
     except Exception as e:
-        logger.warning("PDB to image failed: %s", e)
-        return False
-
-
-def _generate_run_image_background(pdb_path: Path, run_id: int) -> None:
-    """Run in background: generate PNG from PDB and update DB."""
-    images_dir = DATA_DIR / "images"
-    images_dir.mkdir(parents=True, exist_ok=True)
-    out_path = images_dir / f"{run_id}.png"
-    if _pdb_to_png(pdb_path, out_path):
-        _update_run_image_path(run_id, f"images/{run_id}.png")
-    else:
-        logger.warning("Could not generate image for run %s", run_id)
+        logger.warning("Could not store PDB for run %s: %s", run_id, e)
 
 
 def _get_total_proteins() -> int:
@@ -302,11 +266,7 @@ def _run_engine(req: RunRequest) -> None:
                     protein_length=len(final),
                 )
                 if final_pdb.is_file() and run_id:
-                    threading.Thread(
-                        target=_generate_run_image_background,
-                        args=(final_pdb, run_id),
-                        daemon=True,
-                    ).start()
+                    _store_run_pdb(final_pdb, run_id)
             except Exception as db_err:
                 logger.warning("Failed to record run to history: %s", db_err)
     except Exception as e:
@@ -399,7 +359,7 @@ def api_history(limit: int = 100) -> dict:
     if limit < 1 or limit > 500:
         limit = 100
     rows = _get_history(limit=limit)
-    # Serialize for JSON (sqlite3.Row may have int for use_llm)
+    # Serialize for JSON (sqlite3.Row may have int for use_llm). has_image = has 3D structure (PDB) for 3Dmol viewer
     return {
         "runs": [
             {
@@ -410,24 +370,24 @@ def api_history(limit: int = 100) -> dict:
                 "use_llm": bool(r["use_llm"]),
                 "iterations": r["iterations"],
                 "protein_length": r["protein_length"],
-                "has_image": bool(r.get("image_path")),
+                "has_image": bool(r.get("pdb_path")),
             }
             for r in rows
         ],
     }
 
 
-@app.get("/api/run-image/{run_id:int}", response_model=None)
-def api_run_image(run_id: int):
-    """Return the stored 3D image PNG for a run (for History tab eye button)."""
+@app.get("/api/run-pdb/{run_id:int}", response_model=None)
+def api_run_pdb(run_id: int) -> PlainTextResponse:
+    """Return the stored PDB content for a run (for History tab 3Dmol viewer)."""
     rows = _get_history(limit=10000)
     run = next((r for r in rows if r["id"] == run_id), None)
-    if not run or not run.get("image_path"):
-        raise HTTPException(status_code=404, detail="No image for this run")
-    image_path = DATA_DIR / run["image_path"]
-    if not image_path.is_file():
-        raise HTTPException(status_code=404, detail="Image file not found")
-    return FileResponse(image_path, media_type="image/png")
+    if not run or not run.get("pdb_path"):
+        raise HTTPException(status_code=404, detail="No PDB for this run")
+    pdb_path = DATA_DIR / run["pdb_path"]
+    if not pdb_path.is_file():
+        raise HTTPException(status_code=404, detail="PDB file not found")
+    return PlainTextResponse(content=pdb_path.read_text())
 
 
 @app.get("/api/stats")

@@ -1,0 +1,15 @@
+{"sessionId":"4e0ca1","location":"app.js:initHistoryEyeClicks","message":"Init","data":{"tbodyExists":true},"timestamp":1772497132277,"hypothesisId":"A"}
+{"sessionId": "4e0ca1", "location": "server.py", "message": "post_run_check", "data": {"metricsExists": true, "finalPdbExists": true, "outputDir": "/Users/aayush/Desktop/hackillinois/outputs"}, "timestamp": 1772497275292}
+{"sessionId": "4e0ca1", "location": "server.py", "message": "run_complete", "data": {"metricsExists": true, "finalPdbExists": true, "runId": 18, "outputDir": "/Users/aayush/Desktop/hackillinois/outputs"}, "timestamp": 1772497275320}
+{"sessionId": "4e0ca1", "location": "server.py", "message": "image_gen_start", "data": {"runId": 18, "pdbExists": true, "pdbPath": "/Users/aayush/Desktop/hackillinois/outputs/final_structure.pdb"}, "timestamp": 1772497275323}
+{"sessionId": "4e0ca1", "location": "server.py", "message": "image_gen_done", "data": {"runId": 18, "success": true, "outExists": true}, "timestamp": 1772497284742}
+{"sessionId": "4e0ca1", "location": "server.py", "message": "api_history", "data": {"runCount": 18, "sample": [{"id": 18, "image_path": "images/18.png"}, {"id": 17, "image_path": null}, {"id": 16, "image_path": null}]}, "timestamp": 1772497293084}
+{"sessionId":"4e0ca1","location":"app.js:loadHistory","message":"History loaded","data":{"runsCount":18,"withImage":1},"timestamp":1772497293094,"hypothesisId":"D"}
+{"sessionId":"4e0ca1","location":"app.js:eyeClick","message":"Eye clicked","data":{"runId":"18","hasImage":true,"willOpen":true},"timestamp":1772497294788,"hypothesisId":"B"}
+{"sessionId":"4e0ca1","location":"app.js:openRunImageModal","message":"openRunImageModal called","data":{"runId":"18","modalExists":true,"imgExists":true},"timestamp":1772497294789,"hypothesisId":"C"}
+{"sessionId":"4e0ca1","location":"app.js:eyeClick","message":"Eye clicked","data":{"runId":"18","hasImage":true,"willOpen":true},"timestamp":1772497306052,"hypothesisId":"B"}
+{"sessionId":"4e0ca1","location":"app.js:openRunImageModal","message":"openRunImageModal called","data":{"runId":"18","modalExists":true,"imgExists":true},"timestamp":1772497306052,"hypothesisId":"C"}
+{"sessionId":"4e0ca1","location":"app.js:eyeClick","message":"Eye clicked","data":{"runId":"18","hasImage":true,"willOpen":true},"timestamp":1772497310035,"hypothesisId":"B"}
+{"sessionId":"4e0ca1","location":"app.js:openRunImageModal","message":"openRunImageModal called","data":{"runId":"18","modalExists":true,"imgExists":true},"timestamp":1772497310036,"hypothesisId":"C"}
+{"sessionId":"4e0ca1","location":"app.js:eyeClick","message":"Eye clicked","data":{"runId":"18","hasImage":true,"willOpen":true},"timestamp":1772497324250,"hypothesisId":"B"}
+{"sessionId":"4e0ca1","location":"app.js:openRunImageModal","message":"openRunImageModal called","data":{"runId":"18","modalExists":true,"imgExists":true},"timestamp":1772497324251,"hypothesisId":"C"}

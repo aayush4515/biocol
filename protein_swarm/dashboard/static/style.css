@@ -1454,19 +1454,16 @@ body {
 }
 
 .run-image-modal__panel {
-  max-width: 560px;
+  max-width: 900px;
 }
 
 .run-image-modal__content {
-  padding: var(--gap);
-  overflow: auto;
-  text-align: center;
-}
-
-.run-image-modal__content img {
-  max-width: 100%;
-  height: auto;
-  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 /* About tab — floating card with markdown */

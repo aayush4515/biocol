@@ -566,19 +566,59 @@
   }
 
   var runImageModal = document.getElementById("run-image-modal");
-  var runImageImg = document.getElementById("run-image-img");
+  var runImageViewer = document.getElementById("run-image-viewer");
+  var runImageError = document.getElementById("run-image-error");
   var runImageSaveBtn = document.getElementById("run-image-save-btn");
   var runImageCloseBtn = document.getElementById("run-image-close-btn");
+  var runImageViewerInstance = null;
 
   function openRunImageModal(runId) {
-    if (!runImageModal || !runImageImg) return;
-    runImageImg.src = "/api/run-image/" + runId;
+    if (!runImageModal || !runImageViewer || !runImageError) return;
+    runImageError.style.display = "none";
+    runImageError.textContent = "";
+    runImageViewer.innerHTML = "";
+    runImageViewerInstance = null;
     runImageModal.setAttribute("aria-hidden", "false");
+
+    fetch("/api/run-pdb/" + runId)
+      .then(function (res) {
+        if (!res.ok) return res.text().then(function (t) { throw new Error(t || "Failed to load PDB"); });
+        return res.text();
+      })
+      .then(function (pdbText) {
+        if (typeof $3Dmol === "undefined") {
+          throw new Error("3Dmol.js not loaded");
+        }
+        function initViewer() {
+          var w = runImageViewer.offsetWidth;
+          var h = runImageViewer.offsetHeight;
+          if (w <= 0 || h <= 0) {
+            setTimeout(initViewer, 50);
+            return;
+          }
+          runImageViewer.style.width = w + "px";
+          runImageViewer.style.height = h + "px";
+          var viewer = $3Dmol.createViewer(runImageViewer, { backgroundColor: "white" });
+          viewer.addModel(pdbText, "pdb");
+          viewer.setStyle({ cartoon: { color: "spectrum" } });
+          viewer.zoomTo();
+          viewer.render();
+          runImageViewerInstance = viewer;
+        }
+        requestAnimationFrame(function () {
+          requestAnimationFrame(initViewer);
+        });
+      })
+      .catch(function (err) {
+        runImageError.textContent = err.message || "Could not load structure.";
+        runImageError.style.display = "block";
+      });
   }
 
   function closeRunImageModal() {
     if (runImageModal) runImageModal.setAttribute("aria-hidden", "true");
-    if (runImageImg) runImageImg.src = "";
+    runImageViewerInstance = null;
+    if (runImageViewer) runImageViewer.innerHTML = "";
   }
 
   if (runImageCloseBtn) runImageCloseBtn.addEventListener("click", closeRunImageModal);
@@ -587,15 +627,20 @@
   }
   if (runImageSaveBtn) {
     runImageSaveBtn.addEventListener("click", function () {
-      var src = runImageImg && runImageImg.src;
-      if (!src) return;
-      fetch(src).then(function (r) { return r.blob(); }).then(function (blob) {
+      if (!runImageViewerInstance) return;
+      var png = runImageViewerInstance.pngURI();
+      var p = typeof png === "object" && png && typeof png.then === "function" ? png : Promise.resolve(png);
+      p.then(function (dataUrl) {
         var a = document.createElement("a");
-        a.href = URL.createObjectURL(blob);
+        a.href = dataUrl;
         a.download = "run-structure.png";
         a.click();
-        URL.revokeObjectURL(a.href);
-      }).catch(function () {});
+      }).catch(function () {
+        if (runImageError) {
+          runImageError.textContent = "Could not export image.";
+          runImageError.style.display = "block";
+        }
+      });
     });
   }
 
@@ -645,7 +690,12 @@
       if (!row) return;
       var runId = row.getAttribute("data-run-id");
       var hasImage = row.getAttribute("data-has-image") === "1";
-      if (hasImage && runId) openRunImageModal(runId);
+      var willOpen = !!(hasImage && runId);
+      if (willOpen) {
+        openRunImageModal(runId);
+      } else {
+        alert("No 3D structure image available for this run yet.");
+      }
     });
   })();
 
